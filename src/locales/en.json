@@ -1,0 +1,147 @@
+{
+    "loader": {
+        "text": "Entering the Eternal Cycle"
+    },
+    "topBar": {
+        "title": "The Infinite Cycle"
+    },
+    "runeNav": {
+        "origin": "The Origin",
+        "worldTree": "World Tree",
+        "pantheon": "Divine Pantheon",
+        "bestiary": "Bestiary",
+        "shadowRealm": "Shadow Realm",
+        "sagas": "Epic Sagas"
+    },
+    "realms": {
+        "origin": "The Primordial Void",
+        "worldTree": "Bayterek — The World Tree",
+        "pantheon": "The Upper World — Celestial Realm",
+        "bestiary": "The Middle World — Steppes",
+        "shadowRealm": "The Lower World — Tamag",
+        "sagas": "Legends of the Eternal Cycle"
+    },
+    "hero": {
+        "subtitle": "From the Primordial Waters of Creation",
+        "title": "The Infinite Cycle",
+        "lore": "Before time, before earth, before the sky was woven — there was only the endless dark water. From its depths rose <strong>Ak Ana</strong>, the White Mother, carrying the breath of creation — <em>Kut</em>. She whispered, and the cosmos stirred into being.",
+        "btn": "Begin the Journey",
+        "scroll": "Scroll to Descend"
+    },
+    "worldTree": {
+        "heading": "Bayterek",
+        "sub": "The World Tree",
+        "p1": "At the center of all existence stands <strong>Bayterek</strong> — the sacred World Tree whose roots descend into the Abyss of <em>Tamag</em>, whose trunk sustains the mortal realm of the Steppes, and whose branches reach into the celestial palace of <em>Tengri</em>.",
+        "p2": "The World Tree is the axis of all cosmology — a bridge between gods and mortals, between life and death. Every soul, every spirit, every saga flows through its veins.",
+        "upper": "☀ Upper World — Celestial",
+        "middle": "🌿 Middle World — Steppe",
+        "lower": "🔥 Lower World — Tamag"
+    },
+    "pantheon": {
+        "tag": "The Upper World",
+        "heading": "The Divine",
+        "headingGold": "Pantheon",
+        "desc": "The gods who shaped the cosmos and govern the fate of every soul beneath the Eternal Blue Sky.",
+        "kayra": {
+            "name": "Kayra Han",
+            "role": "The Primordial God",
+            "desc": "The supreme creator who existed before all. Father of Ülgen and Erlik, he shaped the two brothers and set them upon their eternal paths — one to light, one to darkness."
+        },
+        "ulgen": {
+            "name": "Ülgen",
+            "role": "God of Benevolence",
+            "desc": "Ruler of the Upper World with seven sons who embody the elements of nature. Ülgen guides shamans through the sky's seventeen layers and bestows the sacred Kut upon the worthy."
+        },
+        "kyzagan": {
+            "name": "Kyzagan",
+            "role": "God of War",
+            "desc": "Son of Ülgen and guardian of warriors. Kyzagan rides the crimson storm, his blazing sword cleaving the sky. He blesses armies with courage and judges the valor of fallen heroes."
+        },
+        "nexusTitle": "The Celestial Nexus",
+        "nexusDesc": "Hover over a deity to reveal their connections and influence over the realms"
+    },
+    "bestiary": {
+        "tag": "The Middle World",
+        "heading": "Bestiary of the",
+        "headingGold": "Steppes",
+        "desc": "Creatures and spirits that roam between the realms — companions of heroes, products of curses, and guardians of nature.",
+        "tulpar": {
+            "name": "Tulpar",
+            "type": "The Winged Horse",
+            "desc": "Divine steed of legendary heroes, Tulpar soars between the clouds on feathered wings of pure light.",
+            "loreTitle": "Lore of Tulpar",
+            "lore1": "Born from the tears of Ülgen when he wept for banished heroes, the Tulpar is the most sacred companion a warrior can earn. Only those deemed worthy by the Sky God may ride upon its back through the seventeen layers of heaven.",
+            "lore2": "In the sagas of Manas and Oghuz, the Tulpar carries its rider through impossible battles and across the boundaries between the living and the dead.",
+            "connection": "Companion of Heroes · Blessed by Ülgen"
+        },
+        "tepegoz": {
+            "name": "Tepegöz",
+            "type": "The One-Eyed Giant",
+            "desc": "A terrifying cyclops born of a curse, terrorizing the Oghuz tribes until Basat the hero defeats it.",
+            "loreTitle": "Lore of Tepegöz",
+            "lore1": "Tepegöz was born from an unnatural union between a shepherd and a Peri (fairy). The creature grew into an unstoppable giant with a single eye, devouring sixty men per day.",
+            "lore2": "Only the hero Basat — raised by a lion and blessed with divine courage — could face the beast and pierce its single eye with a red-hot iron stake.",
+            "connection": "Product of a Curse · Slain by Basat"
+        },
+        "arcura": {
+            "name": "Arçura",
+            "type": "The Forest Spirit",
+            "desc": "Guardian of the wild, Arçura lures wanderers into the deep forest and can grant wisdom — or madness.",
+            "loreTitle": "Lore of Arçura",
+            "lore1": "Arçura dwells in the deepest, most ancient forests of the Turkic lands. She appears in many forms — sometimes as a beautiful maiden, sometimes as a towering figure covered in bark and moss.",
+            "lore2": "Shamans would commune with Arçura to gain knowledge of medicinal herbs and the spirits of nature.",
+            "connection": "Nature Guardian · Ally of Shamans"
+        },
+        "asena": {
+            "name": "Asena",
+            "type": "The Grey Wolf",
+            "desc": "Sacred mother wolf of the Turkic peoples, she nursed the last surviving boy and gave birth to ten tribes.",
+            "loreTitle": "Lore of Asena",
+            "lore1": "When enemies slaughtered the entire Turkic tribe, a single wounded boy was left for dead. A celestial she-wolf, Asena, found the child and nursed him back to health in a hidden valley surrounded by mountains.",
+            "lore2": "Asena is the most sacred symbol of Turkic identity — the divine wolf who ensured the survival and rebirth of an entire civilization. The wolf banner flies at the front of every great army.",
+            "connection": "Mother of Tribes · Blessed by Tengri"
+        }
+    },
+    "shadow": {
+        "tag": "The Lower World — Tamag",
+        "heading": "The Shadow",
+        "headingAccent": "Realm",
+        "desc": "Where the boundary between light and darkness fractures. Enter the domain of Erlik Han, lord of death and judgment.",
+        "erlikTitle": "Erlik Han",
+        "erlikP1": "<strong>Erlik Han</strong> — brother of Ülgen, cast into the abyss by Kayra Han for his pride and defiance. He rules the nine layers of the underworld from a throne of black iron, commanding an army of dark spirits.",
+        "erlikP2": "When mortals die, their souls must pass through Erlik's domain. He weighs their deeds upon scales of bone — the righteous ascend to the Upper World, while the guilty remain in Tamag, bound by spirit threads of crimson fire.",
+        "alkarisi": "Alkarısı",
+        "alkarisiDesc": "Demon that haunts mothers and newborns — a shadow of Erlik's jealousy over creation.",
+        "karabura": "Karabura",
+        "karaburaDesc": "Dark storm spirit that brings blizzards and chaos — the breath of Erlik's rage.",
+        "judgment": "The Judgment of Souls",
+        "judgmentDesc": "Every soul is weighed — virtue ascends, guilt descends into the nine layers of Tamag."
+    },
+    "sagas": {
+        "tag": "Legends Eternal",
+        "heading": "The Epic",
+        "headingGold": "Sagas",
+        "desc": "Tales woven into the very fabric of the steppes — of iron mountains, divine wolves, and the unbreakable spirit of a people.",
+        "explore": "Explore the Legend ⟶",
+        "ergenekon": {
+            "title": "The Saga of Ergenekon",
+            "p1": "After a devastating defeat, the surviving Turkic tribes retreated into <strong>Ergenekon</strong> — a hidden valley enclosed by impassable iron mountains. For generations they lived in isolation, growing strong and numerous, forging their identity in the fires of patience.",
+            "p2": "When the valley could no longer hold them, a blacksmith melted the iron mountain itself with a great forge. The Turkic people poured forth like a river of steel, reborn and unstoppable. The day of their emergence is celebrated as <em>Nevruz</em> — the New Day."
+        },
+        "oghuz": {
+            "title": "The Epic of Oghuz Khagan",
+            "p1": "<strong>Oghuz Khagan</strong> was born with the face of the sky, the strength of the mountain, and the heart of the wolf. From infancy, he spoke to eagles and commanded rivers. He conquered the four corners of the world, guided by a divine grey wolf.",
+            "p2": "He divided his empire among his six sons — three of the Sun (Bozok) and three of the Moon (Üçok) — creating the foundation of all great Turkic dynasties that would shape the world for millennia."
+        },
+        "asena": {
+            "title": "The Legend of Asena & The Great Migration",
+            "p1": "When enemies destroyed the Turkic people, only a single boy survived, grievously wounded. A celestial she-wolf, <strong>Asena</strong>, found the dying child and nursed him in a secret cave among the Altai Mountains.",
+            "p2": "From their divine bond came ten sons — each the father of a great Turkic tribe. When the population outgrew the sacred valley, they migrated across the vast steppes of Central Asia, carrying the wolf banner as their eternal symbol."
+        }
+    },
+    "footer": {
+        "title": "The Infinite Cycle",
+        "subtitle": "A Digital Museum of Turkic Cosmology",
+        "copy": "© The Infinite Cycle · Inspired by Ancient Turkic Mythology"
+    }
+}
