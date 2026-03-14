@@ -176,6 +176,15 @@
         "heading": "Bozkırların",
         "headingGold": "Yaratıkları",
         "desc": "Diyarlar arasında dolaşan yaratıklar ve ruhlar — kahramanların yoldaşları, lanetlerin ürünleri ve doğanın koruyucuları.",
+        "bukre": {
+            "name": "Bükre",
+            "type": "Ejderha",
+            "desc": "Türk mitolojisindeki en güçlü ve bilge ejderha figürlerinden biridir. Kötü ejderha olan Sangal ile yaptığı efsanevi savaşlarla tanınır. Ayakları olmayan, devasa bir yılan formunda tasvir edilir. İyiliği ve gücü temsil eder; her dokuz yılda bir yeryüzüne inerek düzeni ve dengeyi sağlar.",
+            "loreTitle": "Bükre'nin Hikâyesi",
+            "lore1": "Bükre, gök ile yer arasındaki dengeyi koruyan kadim bir varlıktır. Ayakları yoktur; devasa gövdesiyle toprağı sarar ve gökyüzüne uzanır. Savaşlarında yeryüzünü sarsar, ancak amacı her zaman düzeni yeniden tesis etmektir.",
+            "lore2": "En büyük mücadelesi, yeraltından çıkan ve dünyayı yok etmeye çalışan kötü ejderha Sangal iledir. Bükre, Sangal'ı yenerek insanlığa ve doğaya nefes aldırır. Bu savaşlar, Türk mitolojisinde iyilik ve kötülük arasındaki ebedi mücadeleyi simgeler.",
+            "connection": "Kadim Ejderha · İyiliğin Koruyucusu"
+        },
         "tulpar": {
             "name": "Tulpar",
             "type": "Kanatlı At",
@@ -211,6 +220,33 @@
             "lore1": "Düşmanlar tüm Türk boyunu katlettiklerinde, tek bir yaralı çocuk ölüme terk edildi. Göksel bir dişi kurt, Asena, çocuğu buldu ve dağlarla çevrili gizli bir vadide sağlığına kavuşturdu.",
             "lore2": "Asena, Türk kimliğinin en kutsal simgesidir — tüm bir medeniyetin hayatta kalmasını ve yeniden doğuşunu sağlayan ilahi kurt. Kurt bayrağı her büyük ordunun önünde dalgalanır.",
             "connection": "Boyların Anası · Tengri'nin Kutsaması"
+        },
+        "alkarisi": {
+            "name": "Alkarısı",
+            "type": "Ruh Hasatçısı",
+            "desc": "Erlik Han’ın yeryüzündeki en eski gölgelerinden biridir. Genellikle kırmızı kıyafetlerle tasvir edilir. Taze yaşam enerjisini hedef alır ve kurbanlarını yeraltı efendisine taşır.",
+            "loreTitle": "Alkarısı'nın Hikâyesi",
+            "lore1": "Alkarısı, Erlik Han tarafından yeryüzüne gönderilen habis ruhlardan biridir. En çok lohusa kadınlara ve yeni doğan bebeklere musallat olur. Kırmızı giysileri ve uzun saçlarıyla bilinir, ancak yüzü genellikle korkunç bir maske şeklindedir.",
+            "lore2": "İnsanların yaşam enerjisini, özellikle de 'kut'u hasat etmek için çalışır. Kurbanlarını yeraltı zindanlarına sürükler ve Erlik Han'ın ordusunu güçlendirir. Şamanlar ve bilge kadınlar, onu demir, üzerlik otu ve al rengiyle uzak tutmaya çalışır.",
+            "connection": "Erlik'in Avcısı · Yaşam Enerjisi Hırsızı"
+        },
+        "abasi": {
+            "name": "Abasılar",
+            "type": "Yeraltı Ordusu",
+            "desc": "Erlik Han’ın en kalabalık ordusunu oluşturan şer ruhlardır. Tek gözlü, tek bacaklı veya dişsiz olarak tasvir edilirler. İnsanlara hastalık bulaştırmak, talihsizlik getirmek ve kurbanlarını yeraltı zindanlarına sürüklemekle görevlidirler.",
+            "loreTitle": "Abasılar'ın Hikâyesi",
+            "lore1": "Abasılar, Erlik Han’ın yeraltı dünyasındaki en sadık hizmetkârlarıdır. Her biri farklı bir kötülük ve hastalık kaynağıdır. Bazıları tek gözlüdür, bazıları tek bacaklıdır, bazıları ise korkunç dişlere sahiptir.",
+            "lore2": "İnsanların yaşam enerjisini çalmak ve onları yeraltı zindanlarına hapsetmek için çalışırlar. Şamanlar, Abasılar'ı uzak tutmak için demir nesneler kullanır ve güçlü dualar okur.",
+            "connection": "Erlik'in Ordusu · Hastalık Taşıyıcıları"
+        },
+        "kamos": {
+            "name": "Kamos",
+            "type": "Zihinsel Musibet",
+            "desc": "Geceleri insanların üzerine çöken karanlık bir enerjidir. Erlik Han’ın, insanların en savunmasız anı olan uykularını kontrol etmek için kullandığı bir varlıktır.",
+            "loreTitle": "Kamos'un Hikâyesi",
+            "lore1": "Kamos, Erlik Han tarafından yeryüzüne gönderilen karanlık bir varlıktır. Geceleri insanların üzerine çöker ve onları hareket edemez hale getirir. Kurbanlarının nefesini keser ve korkunç kabuslar görmelerine neden olur.",
+            "lore2": "Şamanlar, Kamos'u uzak tutmak için metal nesneler kullanır ve güçlü dualar okur. Kurbanlarının uyanık kalmasını sağlayarak onu uzak tutmaya çalışırlar.",
+            "connection": "Erlik'in Gölgesi · Kabusların Efendisi"
         }
     },
     "shadow": {
@@ -225,106 +261,143 @@
         "karaburaDesc": "Erlik Han'ın yeraltındaki demir ocaklarını koruyan ve karanlık enerjiyi taşıyan varlık.",
         "judgment": "Büyük Yargı",
         "judgmentDesc": "Ruhların Tamag'daki ebedi yolculuğuna karar veren yeraltı adaleti.",
-        "exploreCreatures": "Yeraltı Varlıklarını Keşfet"
-    },
-    "kulliyat": {
-        "back": "← Ana Sayfaya Dön",
-        "title": "KARANLIK",
-        "titleAccent": "KÜLLİYAT",
-        "subtitle": "Erlik Han'ın iradesiyle şekillenen habis ruhların ve kadim yaratıkların gizli tarihi.",
-        "weaknessLabel": "Zafiyeti:",
-        "categoryLabel": "Sınıf:",
-        "footer": "Bu bilgiler kadim Türk mitolojisi kaynaklarından derlenmiştir.",
-        "creatures": {
-            "alkarisi": {
-                "title": "Alkarısı",
-                "sub": "Lohusa ve Yaşam Enerjisi Avcısı",
-                "desc": "Erlik Han’ın yeryüzündeki en eski gölgelerinden biridir. Genellikle kırmızı kıyafetlerle tasvir edilir. Taze yaşam enerjisini hedef alır ve kurbanlarını yeraltı efendisine taşır.",
-                "weak": "Demir, al rengi ve üzerlik otu.",
-                "cat": "Ruh Hasatçısı"
-            },
-            "abasi": {
-                "title": "Abasılar",
-                "sub": "Yeraltı Dünyasının Piyadeleri",
-                "desc": "Erlik Han’ın en kalabalık ordusunu oluştururlar. Tek gözlü veya tek bacaklı formlarda olabilirler. İnsanlara hastalık bulaştırmak ve ruhları yeraltı zindanlarına çekmekle görevlidirler.",
-                "weak": "Güneş ışığı ve şaman duaları.",
-                "cat": "Hizmetkar/Savaşçı"
-            },
-            "kamos": {
-                "title": "Kamos",
-                "sub": "Kabusların ve Uykunun Efendisi",
-                "desc": "Geceleri insanların üzerine çöken karanlık bir enerjidir. Erlik Han’ın, insanların en savunmasız anı olan uykularını kontrol etmek için kullandığı bir varlıktır.",
-                "weak": "Uyanıklık ve metal nesneler.",
-                "cat": "Zihinsel Musibet"
-            }
+        "exploreCreatures": "Yeraltı Varlıklarını Keşfet",
+        "alkarisi": "Alkarısı",
+        "alkarisiDesc": "Lohusa kadınlara musallat olan, yaşam enerjisi (Kut) çalan habis bir ruh.",
+        "bukre": {
+            "name": "Bükre",
+            "type": "Kadim Ejderha",
+            "desc": "Kötü ejderha Sangal ile savaşan, iyiliği ve dengeyi temsil eden bilge ejderha.",
+            "title": "Bükre'nin Efsanesi",
+            "connection": "Derinliklerin Muhafızı"
         }
     },
-    "sagas": {
-        "tag": "Sonsuz Efsaneler",
-        "heading": "Büyük",
-        "headingGold": "Destanlar",
-        "desc": "Bozkırların dokusuna işlenmiş hikâyeler — demir dağların, ilahi kurtların ve bir halkın kırılmaz ruhunun.",
-        "explore": "Efsaneyi Keşfet ⟶",
-        "ergenekon": {
-            "title": "Ergenekon Destanı",
-            "p1": "Yıkıcı bir yenilginin ardından, hayatta kalan Türk boyları <strong>Ergenekon</strong>'a çekildi — aşılmaz demir dağlarla çevrili gizli bir vadi. Nesiller boyunca tecrit içinde yaşadılar, güçlendiler ve çoğaldılar, kimliklerini sabrın ateşinde dövdüler.",
-            "p2": "Vadi artık onları tutamaz hale geldiğinde, bir demirci demir dağın kendisini büyük bir körükle eritti. Türk halkı çelik bir nehir gibi dışarı aktı, yeniden doğmuş ve durdurulamaz. Ortaya çıkışlarının günü <em>Nevruz</em> — Yeni Gün olarak kutlanır."
+    "creatures": {
+        "abasi": {
+            "name": "Abasılar",
+            "type": "Yeraltı Ordusu",
+            "desc": "Erlik Han’ın en kalabalık ordusunu oluşturan şer ruhlardır. Tek gözlü, tek bacaklı veya dişsiz olarak tasvir edilirler. İnsanlara hastalık bulaştırmak, talihsizlik getirmek ve kurbanlarını yeraltı zindanlarına sürüklemekle görevlidirler.",
+            "loreTitle": "Abasılar'ın Hikâyesi",
+            "lore1": "Abasılar, Erlik Han’ın yeraltı dünyasındaki en sadık hizmetkârlarıdır. Her biri farklı bir kötülük ve hastalık kaynağıdır. Bazıları tek gözlüdür, bazıları tek bacaklıdır, bazıları ise korkunç dişlere sahiptir.",
+            "lore2": "İnsanların yaşam enerjisini çalmak ve onları yeraltı zindanlarına hapsetmek için çalışırlar. Şamanlar, Abasılar'ı uzak tutmak için demir nesneler kullanır ve güçlü dualar okur.",
+            "connection": "Erlik'in Ordusu · Hastalık Taşıyıcıları"
         },
-        "oghuz": {
-            "title": "Oğuz Kağan Destanı",
-            "p1": "<strong>Oğuz Kağan</strong> göğün yüzü, dağın gücü ve kurdun kalbiyle doğdu. Bebekliğinden itibaren kartallarla konuştu ve nehirlere hükmetti. İlahi bir bozkurtun rehberliğinde dünyanın dört bir yanını fethetti.",
-            "p2": "İmparatorluğunu altı oğlu arasında böldü — Güneşin üçü (Bozok) ve Ay'ın üçü (Üçok) — dünyayı bin yıl boyunca şekillendirecek tüm büyük Türk hanedanlıklarının temelini attı."
-        },
-        "asena": {
-            "title": "Asena Efsanesi ve Büyük Göç",
-            "p1": "Düşmanlar Türk halkını yok ettiğinde, yalnızca tek bir child hayatta kaldı, ağır yaralı. Göksel bir dişi kurt, <strong>Asena</strong>, ölmekte olan çocuğu buldu ve Altay Dağları arasındaki gizli bir mağarada emzirdi.",
-            "p2": "İlahi bağlarından on oğul doğdu — her biri büyük bir Türk boyunun babası. Nüfus kutsal vadiyi aştığında, kurt bayrağını sonsuz sembolleri olarak taşıyarak Orta Asya'nın uçsuz bucaksız bozkırlarına göç ettiler."
-        }
-    },
-    "footer": {
-        "title": "Sonsuz Döngü",
-        "subtitle": "Türk Kozmolojisinin Dijital Müzesi",
-        "copyright": "© Sonsuz Döngü · Kadim Türk Mitolojisinden İlhamla",
-        "source": "Kaynak: Orhun Yazıtları ve Türk Folkloru",
-        "influenceMap": {
-            "title": "Yaradılışın Ağı",
-            "desc": "Her ruh, yaratık ve efsane tek bir kaynaktan akar — Kadim Yaratıcı Kayra Han",
-            "hover": "Ruh ipliklerini ortaya çıkarmak için üzerine gelin",
-            "kayraHan": "Kayra Han",
-            "ulgen": "Ülgen",
-            "erlik": "Erlik Han",
-            "umay": "Umay Ana",
-            "earthSpirits": "Doğa Ruhları",
-            "darkEntities": "Karanlık Varlıklar",
-            "humanity": "İnsanlık"
-        }
-    },
-    "epic": {
-        "ergenekon": {
-            "p1": "Büyük bir yenilginin ardından, Türk boylarından geriye sadece Kıyan ve Nüküz adında iki kişi ve eşleri kalmıştı. Düşmanlardan kaçarken, sarp dağların arasında, sadece bir geyiğin geçebileceği kadar dar bir geçit buldular.",
-            "p2": "Bu geçitten geçtiklerinde, karşılarına akarsuların, meyve ağaçlarının ve av hayvanlarının bol olduğu, her tarafı aşılmaz yüksek dağlarla çevrili gizli ve cennet gibi bir vadi çıktı. Bu yere, 'maden yeri' anlamına gelen Ergenekon adını verdiler.",
-            "h2": "Demir Dağın Erimesi",
-            "p3": "Dört yüz yıl boyunca Ergenekon'da yaşadılar ve o kadar çoğaldılar ki artık bu vadiye sığmaz oldular. Atalarının buraya geldiği o dar geçidi bulamadılar. Dağların etrafını araştırırken, sadece bir yerde demir madeni olduğunu fark ettiler.",
-            "p4": "Bir demirci, bu dağın eritilebileceğini söyledi. Dağın etrafına bir sıra odun, a sıra kömür dizdiler. Yetmiş deriden devasa körükler yaptılar. Hep birlikte körükleri çektiklerinde ateş o kadar hiddetlendi ki, demir dağ eridi ve yüklü bir devenin geçebileceği kadar büyük bir yol açıldı.",
-            "p5": "O gün, Türklerin yeniden doğuş günü oldu. Gök yeleli, kutsal bir Bozkurt'un (Gökböri) rehberliğinde Ergenekon'dan çıktılar ve atalarının intikamını alarak tüm bozkırlara yeniden hakim oldular."
-        },
-        "oghuz": {
-            "title": "OĞUZ KAĞAN DESTANI",
-            "subtitle": "Gök Yüzlü Kağan",
-            "p1": "Oğuz Kağan, göğün yüzü gibi mavi, ağzı ateş gibi kızıl, gözleri elmas gibi parlak bir çocuk olarak doğdu. Daha kırk günlükken konuşmaya, yürümeye ve çiğ et yemeye başladı. O, Tengri'nin yeryüzündeki gölgesi olarak her türlü silahı kullanmakta ustaydı.",
-            "p2": "Günün birinde halkını tehdit eden devasa bir canavarı (Kıyant) tek başına öldürdü. Bu zaferinden sonra, bir ışık süzmesi içinde beliren ilahi bir kadınla evlendi. Ondan Gün, Ay ve Yıldız adında üç oğlu oldu. Daha sonra bir ağaç kovuğunda bulduğu başka bir kadınla evlendi ve ondan da Gök, Dağ ve Deniz adında üç oğlu oldu.",
-            "h2": "Gökbörü'nün Rehberliği",
-            "p3": "Oğuz Kağan, bir gün ordusuyla seferdeyken karşısında gök yeleli, büyük bir erkek kurt belirdi. Kurt, 'Ey Oğuz, sen nereye gidersen ben de önünde yürüyeceğim' dedi. Türk ordusu bu ilahi rehberin peşinden giderek dünyanın dört bir yanını fethetti.",
-            "p4": "Oğuz Kağan yaşlandığında, altın yayını ve üç gümüş okunu oğulları arasında paylaştırdı. Ülkesini Bozoklar ve Üçoklar olarak ikiye ayırdı. Evlatlarına birlik ve beraberlik içinde kalmalarını öğütledi. Onun mirası, yüzyıllar boyunca hüküm sürecek olan büyük Türk hanedanlarının temeli oldu."
-        },
-        "asena": {
-            "title": "ASENA EFSANESİ VE BÜYÜK GÖÇ",
-            "subtitle": "Yeniden Doğuşun Kutsal Kurdu",
-            "p1": "Kadim zamanlarda, Türk boyları büyük bir düşman saldırısına uğradı. Tüm halk katledildi, geriye sadece kollar ve bacakları kesilmiş küçük bir çocuk bırakıldı. Düşmanlar onun öleceğini sanarak bir bataklığa terk ettiler.",
-            "p2": "Gökten inen dişi bir kurt olan Asena, çocuğu buldu ve yaralarını yalayıp iyileştirdi. Onu her gün etle besleyerek büyümesini sağladı. Çocuk büyüdüğünde kurdun eşi oldu. Düşmanlar çocuğun hayatta olduğunu öğrenip onu öldürmeye geldiklerinde, Asena uçarak Altay Dağları arasındaki gizli bir mağaraya sığındı.",
-            "h2": "On Boyun Doğuşu",
-            "p3": "Mağaranın arkasında cennet gibi bir vadi vardı. Asena orada on tane erkek çocuk doğurdu. Bu çocuklar büyüdüler ve dışarıdan kızlarla evlenerek on büyük Türk boyunu oluşturdular. Soyları o kadar çoğaldı ki artık vadiye sığmaz oldular.",
-            "p4": "İlahi Kurt'un rehberliğinde, vadiyi terk edip açık bozkırlara göç etmeye karar verdiler. Kurt bayrağını en önde taşıyarak, atalarının topraklarına geri döndüler. Bu büyük göç, Türklerin bozkırlardaki ebedi hakimiyetinin başlangıcı oldu."
+        "kamos": {
+            "name": "Kamos",
+            "type": "Zihinsel Musibet",
+            "desc": "Geceleri insanların üzerine çöken karanlık bir enerjidir. Erlik Han’ın, insanların en savunmasız anı olan uykularını kontrol etmek için kullandığı bir varlıktır.",
+            "loreTitle": "Kamos'un Hikâyesi",
+            "lore1": "Kamos, Erlik Han tarafından yeryüzüne gönderilen karanlık bir varlıktır. Geceleri insanların üzerine çöker ve onları hareket edemez hale getirir. Kurbanlarının nefesini keser ve korkunç kabuslar görmelerine neden olur.",
+            "lore2": "Şamanlar, Kamos'u uzak tutmak için metal nesneler kullanır ve güçlü dualar okur. Kurbanlarının uyanık kalmasını sağlayarak onu uzak tutmaya çalışırlar.",
+            "connection": "Erlik'in Gölgesi · Kabusların Efendisi"
         }
     }
+},
+"kulliyat": {
+    "back": "← Ana Sayfaya Dön",
+    "title": "KARANLIK",
+    "titleAccent": "KÜLLİYAT",
+    "subtitle": "Erlik Han'ın iradesiyle şekillenen habis ruhların ve kadim yaratıkların gizli tarihi.",
+    "weaknessLabel": "Zafiyeti:",
+    "categoryLabel": "Sınıf:",
+    "footer": "Bu bilgiler kadim Türk mitolojisi kaynaklarından derlenmiştir.",
+    "creatures": {
+        "alkarisi": {
+            "title": "Alkarısı",
+            "sub": "Lohusa ve Yaşam Enerjisi Avcısı",
+            "desc": "Erlik Han’ın yeryüzündeki en eski gölgelerinden biridir. Genellikle kırmızı kıyafetlerle tasvir edilir. Taze yaşam enerjisini hedef alır ve kurbanlarını yeraltı efendisine taşır.",
+            "weak": "Demir, al rengi ve üzerlik otu.",
+            "cat": "Ruh Hasatçısı"
+        },
+        "abasi": {
+            "title": "Abasılar",
+            "sub": "Yeraltı Dünyasının Piyadeleri",
+            "desc": "Erlik Han’ın en kalabalık ordusunu oluştururlar. Tek gözlü veya tek bacaklı formlarda olabilirler. İnsanlara hastalık bulaştırmak ve ruhları yeraltı zindanlarına çekmekle görevlidirler.",
+            "weak": "Güneş ışığı ve şaman duaları.",
+            "cat": "Hizmetkar/Savaşçı"
+        },
+        "kamos": {
+            "title": "Kamos",
+            "sub": "Kabusların ve Uykunun Efendisi",
+            "desc": "Geceleri insanların üzerine çöken karanlık bir enerjidir. Erlik Han’ın, insanların en savunmasız anı olan uykularını kontrol etmek için kullandığı bir varlıktır.",
+            "weak": "Uyanıklık ve metal nesneler.",
+            "cat": "Zihinsel Musibet"
+        },
+        "bukre": {
+            "title": "BÜKRE",
+            "sub": "Kadim Ejderha ve Koruyucu Ruh",
+            "cat": "Mitolojik Güç / Dengeleyici",
+            "desc": "Türk mitolojisindeki en güçlü ve bilge ejderha figürlerinden biridir. Kötü ejderha olan Sangal ile yaptığı efsanevi savaşlarla tanınır. Ayakları olmayan, devasa bir yılan formunda tasvir edilir. İyiliği ve gücü temsil eder; her dokuz yılda bir yeryüzüne inerek düzeni ve dengeyi sağlar.",
+            "weak": "Kötülüğün mutlak hakimiyeti ve Sangal'ın karanlık büyüsü."
+        }
+    }
+},
+"sagas": {
+    "tag": "Sonsuz Efsaneler",
+    "heading": "Büyük",
+    "headingGold": "Destanlar",
+    "desc": "Bozkırların dokusuna işlenmiş hikâyeler — demir dağların, ilahi kurtların ve bir halkın kırılmaz ruhunun.",
+    "explore": "Efsaneyi Keşfet ⟶",
+    "ergenekon": {
+        "title": "Ergenekon Destanı",
+        "p1": "Yıkıcı bir yenilginin ardından, hayatta kalan Türk boyları <strong>Ergenekon</strong>'a çekildi — aşılmaz demir dağlarla çevrili gizli bir vadi. Nesiller boyunca tecrit içinde yaşadılar, güçlendiler ve çoğaldılar, kimliklerini sabrın ateşinde dövdüler.",
+        "p2": "Vadi artık onları tutamaz hale geldiğinde, bir demirci demir dağın kendisini büyük bir körükle eritti. Türk halkı çelik bir nehir gibi dışarı aktı, yeniden doğmuş ve durdurulamaz. Ortaya çıkışlarının günü <em>Nevruz</em> — Yeni Gün olarak kutlanır."
+    },
+    "oghuz": {
+        "title": "Oğuz Kağan Destanı",
+        "p1": "<strong>Oğuz Kağan</strong> göğün yüzü, dağın gücü ve kurdun kalbiyle doğdu. Bebekliğinden itibaren kartallarla konuştu ve nehirlere hükmetti. İlahi bir bozkurtun rehberliğinde dünyanın dört bir yanını fethetti.",
+        "p2": "İmparatorluğunu altı oğlu arasında böldü — Güneşin üçü (Bozok) ve Ay'ın üçü (Üçok) — dünyayı bin yıl boyunca şekillendirecek tüm büyük Türk hanedanlıklarının temelini attı."
+    },
+    "asena": {
+        "title": "Asena Efsanesi ve Büyük Göç",
+        "p1": "Düşmanlar Türk halkını yok ettiğinde, yalnızca tek bir child hayatta kaldı, ağır yaralı. Göksel bir dişi kurt, <strong>Asena</strong>, ölmekte olan çocuğu buldu ve Altay Dağları arasındaki gizli bir mağarada emzirdi.",
+        "p2": "İlahi bağlarından on oğul doğdu — her biri büyük bir Türk boyunun babası. Nüfus kutsal vadiyi aştığında, kurt bayrağını sonsuz sembolleri olarak taşıyarak Orta Asya'nın uçsuz bucaksız bozkırlarına göç ettiler."
+    }
+},
+"footer": {
+    "title": "Sonsuz Döngü",
+    "subtitle": "Türk Kozmolojisinin Dijital Müzesi",
+    "copyright": "© Sonsuz Döngü · Kadim Türk Mitolojisinden İlhamla",
+    "source": "Kaynak: Orhun Yazıtları ve Türk Folkloru",
+    "influenceMap": {
+        "title": "Yaradılışın Ağı",
+        "desc": "Her ruh, yaratık ve efsane tek bir kaynaktan akar — Kadim Yaratıcı Kayra Han",
+        "hover": "Ruh ipliklerini ortaya çıkarmak için üzerine gelin",
+        "kayraHan": "Kayra Han",
+        "ulgen": "Ülgen",
+        "erlik": "Erlik Han",
+        "umay": "Umay Ana",
+        "earthSpirits": "Doğa Ruhları",
+        "darkEntities": "Karanlık Varlıklar",
+        "humanity": "İnsanlık"
+    }
+},
+"epic": {
+    "ergenekon": {
+        "p1": "Büyük bir yenilginin ardından, Türk boylarından geriye sadece Kıyan ve Nüküz adında iki kişi ve eşleri kalmıştı. Düşmanlardan kaçarken, sarp dağların arasında, sadece bir geyiğin geçebileceği kadar dar bir geçit buldular.",
+        "p2": "Bu geçitten geçtiklerinde, karşılarına akarsuların, meyve ağaçlarının ve av hayvanlarının bol olduğu, her tarafı aşılmaz yüksek dağlarla çevrili gizli ve cennet gibi bir vadi çıktı. Bu yere, 'maden yeri' anlamına gelen Ergenekon adını verdiler.",
+        "h2": "Demir Dağın Erimesi",
+        "p3": "Dört yüz yıl boyunca Ergenekon'da yaşadılar ve o kadar çoğaldılar ki artık bu vadiye sığmaz oldular. Atalarının buraya geldiği o dar geçidi bulamadılar. Dağların etrafını araştırırken, sadece bir yerde demir madeni olduğunu fark ettiler.",
+        "p4": "Bir demirci, bu dağın eritilebileceğini söyledi. Dağın etrafına bir sıra odun, a sıra kömür dizdiler. Yetmiş deriden devasa körükler yaptılar. Hep birlikte körükleri çektiklerinde ateş o kadar hiddetlendi ki, demir dağ eridi ve yüklü bir devenin geçebileceği kadar büyük bir yol açıldı.",
+        "p5": "O gün, Türklerin yeniden doğuş günü oldu. Gök yeleli, kutsal bir Bozkurt'un (Gökböri) rehberliğinde Ergenekon'dan çıktılar ve atalarının intikamını alarak tüm bozkırlara yeniden hakim oldular."
+    },
+    "oghuz": {
+        "title": "OĞUZ KAĞAN DESTANI",
+        "subtitle": "Gök Yüzlü Kağan",
+        "p1": "Oğuz Kağan, göğün yüzü gibi mavi, ağzı ateş gibi kızıl, gözleri elmas gibi parlak bir çocuk olarak doğdu. Daha kırk günlükken konuşmaya, yürümeye ve çiğ et yemeye başladı. O, Tengri'nin yeryüzündeki gölgesi olarak her türlü silahı kullanmakta ustaydı.",
+        "p2": "Günün birinde halkını tehdit eden devasa bir canavarı (Kıyant) tek başına öldürdü. Bu zaferinden sonra, bir ışık süzmesi içinde beliren ilahi bir kadınla evlendi. Ondan Gün, Ay ve Yıldız adında üç oğlu oldu. Daha sonra bir ağaç kovuğunda bulduğu başka bir kadınla evlendi ve ondan da Gök, Dağ ve Deniz adında üç oğlu oldu.",
+        "h2": "Gökbörü'nün Rehberliği",
+        "p3": "Oğuz Kağan, bir gün ordusuyla seferdeyken karşısında gök yeleli, büyük bir erkek kurt belirdi. Kurt, 'Ey Oğuz, sen nereye gidersen ben de önünde yürüyeceğim' dedi. Türk ordusu bu ilahi rehberin peşinden giderek dünyanın dört bir yanını fethetti.",
+        "p4": "Oğuz Kağan yaşlandığında, altın yayını ve üç gümüş okunu oğulları arasında paylaştırdı. Ülkesini Bozoklar ve Üçoklar olarak ikiye ayırdı. Evlatlarına birlik ve beraberlik içinde kalmalarını öğütledi. Onun mirası, yüzyıllar boyunca hüküm sürecek olan büyük Türk hanedanlarının temeli oldu."
+    },
+    "asena": {
+        "title": "ASENA EFSANESİ VE BÜYÜK GÖÇ",
+        "subtitle": "Yeniden Doğuşun Kutsal Kurdu",
+        "p1": "Kadim zamanlarda, Türk boyları büyük bir düşman saldırısına uğradı. Tüm halk katledildi, geriye sadece kollar ve bacakları kesilmiş küçük bir çocuk bırakıldı. Düşmanlar onun öleceğini sanarak bir bataklığa terk ettiler.",
+        "p2": "Gökten inen dişi bir kurt olan Asena, çocuğu buldu ve yaralarını yalayıp iyileştirdi. Onu her gün etle besleyerek büyümesini sağladı. Çocuk büyüdüğünde kurdun eşi oldu. Düşmanlar çocuğun hayatta olduğunu öğrenip onu öldürmeye geldiklerinde, Asena uçarak Altay Dağları arasındaki gizli bir mağaraya sığındı.",
+        "h2": "On Boyun Doğuşu",
+        "p3": "Mağaranın arkasında cennet gibi bir vadi vardı. Asena orada on tane erkek çocuk doğurdu. Bu çocuklar büyüdüler ve dışarıdan kızlarla evlenerek on büyük Türk boyunu oluşturdular. Soyları o kadar çoğaldı ki artık vadiye sığmaz oldular.",
+        "p4": "İlahi Kurt'un rehberliğinde, vadiyi terk edip açık bozkırlara göç etmeye karar verdiler. Kurt bayrağını en önde taşıyarak, atalarının topraklarına geri döndüler. Bu büyük göç, Türklerin bozkırlardaki ebedi hakimiyetinin başlangıcı oldu."
+    }
+}
 }
