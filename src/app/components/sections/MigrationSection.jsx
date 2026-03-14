@@ -149,6 +149,7 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
                 {t("migration.heading")} <span className="gold">{t("migration.headingGold")}</span>
               </h2>
               <p>{t("migration.desc")}</p>
+
             </div>
           </div>
 
@@ -160,11 +161,7 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
               </h3>
               <h2 className="heading-xl">{t("migration.ergenekon.title")}</h2>
               <p>{t("migration.ergenekon.text")}</p>
-              <Link href="/sagas/ergenekon" passHref>
-                <button type="button" className="saga-link" style={{ marginTop: "20px", pointerEvents: "auto" }}>
-                  <span>{t("sagas.explore")}</span>
-                </button>
-              </Link>
+
             </div>
           </div>
 
@@ -176,11 +173,7 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
               </h3>
               <h2 className="heading-xl">{t("migration.goc.title")}</h2>
               <p>{t("migration.goc.text")}</p>
-              <Link href="/sagas/goc" passHref>
-                <button type="button" className="saga-link" style={{ marginTop: "20px", pointerEvents: "auto" }}>
-                  <span>{t("sagas.explore")}</span>
-                </button>
-              </Link>
+
             </div>
           </div>
 

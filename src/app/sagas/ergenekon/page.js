@@ -6,106 +6,58 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
+import "@/i18n";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function YeraltiVarliklariPage() {
+export default function ErgenekonEpic() {
     const { t } = useTranslation();
     const containerRef = useRef(null);
 
-    // Yaratık anahtarları
-    const creatureKeys = ["alkarisi", "abasi", "kamos"];
-
     useGSAP(() => {
-        // Header Animasyonu
-        gsap.from(".kulliyat-header", {
-            y: -50,
-            opacity: 0,
-            duration: 1.5,
-            ease: "power3.out"
-        });
-
-        // Kartların sırayla gelmesi
-        const articles = gsap.utils.toArray(".creature-article");
-        articles.forEach((art) => {
-            gsap.from(art, {
-                opacity: 0,
-                y: 50,
-                duration: 1.2,
-                scrollTrigger: {
-                    trigger: art,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse"
-                }
+        gsap.from(".epic-header", { y: -50, opacity: 0, duration: 1.5, ease: "power3.out" });
+        const paragraphs = gsap.utils.toArray(".epic-paragraph");
+        paragraphs.forEach((p) => {
+            gsap.from(p, {
+                opacity: 0, y: 40, duration: 1.2,
+                scrollTrigger: { trigger: p, start: "top 85%", toggleActions: "play none none reverse" }
             });
         });
     }, { scope: containerRef });
 
     return (
         <main ref={containerRef} style={{ background: "var(--bg-dark)", minHeight: "100vh", color: "var(--text-primary)", paddingBottom: "100px" }}>
-
-            {/* HERO SECTION */}
-            <div className="kulliyat-hero" style={{ position: "relative", height: "60vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-                <div
-                    style={{
-                        position: "absolute", inset: 0,
-                        backgroundImage: "url('/images/underworld-hero.jpg')", // Resim yolunu ayarla
-                        backgroundSize: "cover", backgroundPosition: "center",
-                        opacity: 0.3, filter: "grayscale(1) brightness(0.5)"
-                    }}
-                />
+            <div className="epic-hero" style={{ position: "relative", height: "60vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+                <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/migration-2.jpg')", backgroundSize: "cover", backgroundPosition: "center", opacity: 0.4, filter: "brightness(0.6)" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent, var(--bg-dark))" }} />
-
-                <div className="kulliyat-header" style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "0 20px" }}>
-                    <span style={{ color: "var(--abyss-crimson-bright)", letterSpacing: "4px", fontSize: "0.9rem", textTransform: "uppercase" }}>
-                        {t("kulliyat.subtitle", "Erlik Han'ın Gölge Ordusu")}
+                <div className="epic-header" style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "0 20px" }}>
+                    <span style={{ color: "var(--celestial-gold)", letterSpacing: "4px", fontSize: "0.9rem", textTransform: "uppercase" }}>
+                        {t("sagas.ergenekon.subtitle", "Demir Dağ Hapishanesi")}
                     </span>
-                    <h1 style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontFamily: "var(--font-display)", margin: "10px 0", color: "var(--text-primary)", textShadow: "0 4px 20px rgba(139,0,0,0.5)" }}>
-                        {t("kulliyat.title", "KARANLIK KÜLLİYAT")}
+                    <h1 style={{ fontSize: "clamp(3rem, 6vw, 5rem)", fontFamily: "var(--font-display)", margin: "10px 0", color: "var(--text-primary)", textShadow: "0 4px 20px rgba(0,0,0,0.8)" }}>
+                        ERGENEKON DESTANI
                     </h1>
                 </div>
             </div>
 
-            {/* GERİ DÖN BUTONU */}
             <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-                <Link href="/#shadow-realm" style={{ display: "inline-flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", textDecoration: "none", fontSize: "0.9rem", letterSpacing: "1px", transition: "color 0.3s" }} className="hover-gold">
-                    <span>←</span> {t("common.back", "Gölge Diyarına Dön")}
+                <Link href="/#sagas" style={{ display: "inline-flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", textDecoration: "none", fontSize: "0.9rem", transition: "color 0.3s" }} className="hover-gold">
+                    <span>←</span> {t("common.back", "Diyarlara Dön")}
                 </Link>
             </div>
 
-            {/* YARATIK LİSTESİ */}
-            <div style={{ maxWidth: "800px", margin: "40px auto", padding: "0 20px" }}>
-                {creatureKeys.map((key) => (
-                    <article key={key} className="creature-article" style={{ marginBottom: "80px", borderBottom: "1px solid rgba(139,0,0,0.1)", paddingBottom: "40px" }}>
-
-                        <span style={{ color: "var(--abyss-crimson)", fontSize: "0.8rem", fontWeight: "bold", tracking: "2px", textTransform: "uppercase" }}>
-                            {t(`kulliyat.creatures.${key}.cat`)}
-                        </span>
-
-                        <h2 style={{ fontSize: "2.5rem", fontFamily: "var(--font-display)", color: "var(--text-primary)", margin: "10px 0" }}>
-                            {t(`kulliyat.creatures.${key}.title`)}
-                        </h2>
-
-                        <h4 style={{ color: "var(--abyss-magma)", fontSize: "1rem", marginBottom: "20px", opacity: 0.8 }}>
-                            {t(`kulliyat.creatures.${key}.sub`)}
-                        </h4>
-
-                        <p style={{ fontSize: "1.1rem", lineHeight: "1.8", color: "var(--text-secondary)", marginBottom: "25px" }}>
-                            {t(`kulliyat.creatures.${key}.desc`)}
-                        </p>
-
-                        <div style={{ padding: "15px 20px", background: "rgba(139, 0, 0, 0.05)", borderLeft: "3px solid var(--abyss-crimson)" }}>
-                            <span style={{ color: "var(--abyss-crimson-bright)", fontWeight: "bold", fontSize: "0.8rem", textTransform: "uppercase", marginRight: "10px" }}>
-                                {t("kulliyat.weaknessLabel", "ZAFİYETİ:")}
-                            </span>
-                            <span style={{ color: "var(--text-primary)", fontStyle: "italic" }}>
-                                {t(`kulliyat.creatures.${key}.weak`)}
-                            </span>
-                        </div>
-                    </article>
-                ))}
-            </div>
-
+            <article style={{ maxWidth: "800px", margin: "40px auto", padding: "0 20px", fontSize: "1.15rem", lineHeight: "1.8", color: "var(--text-secondary)" }}>
+                <p className="epic-paragraph" style={{ marginBottom: "30px" }}>{t("epic.ergenekon.p1")}</p>
+                <p className="epic-paragraph" style={{ marginBottom: "30px" }}>{t("epic.ergenekon.p2")}</p>
+                <h3 className="epic-paragraph" style={{ color: "var(--steppe-emerald-light)", fontSize: "1.8rem", marginTop: "50px", marginBottom: "20px", fontFamily: "var(--font-display)" }}>
+                    {t("epic.ergenekon.h2", "Demir Dağın Erimesi")}
+                </h3>
+                <p className="epic-paragraph" style={{ marginBottom: "30px" }}>{t("epic.ergenekon.p3")}</p>
+                <p className="epic-paragraph" style={{ marginBottom: "30px" }}>{t("epic.ergenekon.p4")}</p>
+                <p className="epic-paragraph" style={{ marginBottom: "30px", padding: "20px", borderLeft: "3px solid var(--celestial-gold)", background: "rgba(212, 168, 67, 0.05)", color: "var(--text-primary)", fontStyle: "italic" }}>
+                    {t("epic.ergenekon.p5")}
+                </p>
+            </article>
         </main>
     );
 }

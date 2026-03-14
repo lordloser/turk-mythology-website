@@ -176,6 +176,24 @@
         "heading": "Bestiary of the",
         "headingGold": "Steppes",
         "desc": "Creatures and spirits that roam between the realms — companions of heroes, products of curses, and guardians of nature.",
+        "itbarak": {
+            "name": "Itbarak",
+            "type": "Dog-Headed Tribe",
+            "desc": "A legendary race of fierce warriors with human bodies and dog heads, mentioned in the Epic of Oghuz Khagan.",
+            "loreTitle": "Oghuz Khagan's Trial",
+            "lore1": "They were so savage and powerful that they defeated the great Oghuz Khagan's army in their first encounter.",
+            "lore2": "Later, Oghuz Khagan gathered his strength, returned, and vanquished this dark tribe, making them a terrifying steppe legend.",
+            "connection": "Sworn Enemies of Oghuz"
+        },
+        "bukre": {
+            "name": "Bukre",
+            "type": "The Winged Horse",
+            "desc": "Divine steed of legendary heroes, Bukre soars between the clouds on feathered wings of pure light.",
+            "loreTitle": "Lore of Bukre",
+            "lore1": "Bukre is a dragon-like creature in Turkic mythology, often depicted as a winged horse or a powerful steed with magical abilities. It is said to be the companion of heroes and a symbol of strength and courage.",
+            "lore2": "In the sagas of Manas and Oghuz, the Bukre carries its rider through impossible battles and across the boundaries between the living and the dead.",
+            "connection": "Companion of Heroes · Cursed by Erlik Khan"
+        },
         "tulpar": {
             "name": "Tulpar",
             "type": "The Winged Horse",
@@ -211,6 +229,13 @@
             "lore1": "When enemies slaughtered the entire Turkic tribe, a single wounded boy was left for dead. A celestial she-wolf, Asena, found the child and nursed him back to health in a hidden valley surrounded by mountains.",
             "lore2": "Asena is the most sacred symbol of Turkic identity — the divine wolf who ensured the survival and rebirth of an entire civilization. The wolf banner flies at the front of every great army.",
             "connection": "Mother of Tribes · Blessed by Tengri"
+        },
+        "alkarisi": {
+            "title": "Alkarisi",
+            "sub": "Hunter of Life Energy",
+            "desc": "One of Erlik Khan's oldest shadows on earth. Often depicted in red garments, targeting fresh life energy and carrying souls to the lord of the underworld.",
+            "weak": "Iron, the color red, and Syrian rue.",
+            "cat": "Soul Harvester"
         }
     },
     "shadow": {
@@ -221,7 +246,20 @@
         "erlikTitle": "Erlik Khan",
         "erlikP1": "Absolute ruler of the underworld in Turkic mythology. The first being exiled from the heavens and the lord of death.",
         "erlikP2": "Guardian of darkness and balance, sitting beneath the nine-branched black pine with his silver staff.",
-        "exploreCreatures": "Explore Underworld Creatures"
+        "exploreCreatures": "Explore Underworld Creatures",
+        "alkarisi": "Alkarisi",
+        "alkarisiType": "Demon of the Abyss",
+        "alkarisiDesc": "A malevolent spirit that haunts postpartum women, stealing their life energy (Kut).",
+        "alkarisiLore2": "Drawn to the vulnerable, particularly during childbirth.",
+        "alkarisiConnection": "Minion of Erlik Han",
+        "bukre": {
+            "name": "Bukre",
+            "type": "Ancient Dragon",
+            "desc": "A wise, wingless dragon representing goodness and balance, known for battling the evil dragon Sangal.",
+            "title": "Legend of Bukre",
+            "lore2": "A guardian of the underworld's deepest secrets, snaking through Tamag.",
+            "connection": "Guardian of the Depths"
+        }
     },
     "kulliyat": {
         "back": "← Back to Home",

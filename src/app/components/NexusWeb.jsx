@@ -2,28 +2,43 @@
 
 import { useState, useCallback } from "react";
 
+// Mitolojik hiyerarşiye göre yukarıdan aşağıya (y ekseni) dizilmiş koordinatlar
 const NODES = [
-  { id: "kayra", label: "Kayra Han", x: 400, y: 60, color: "#F5D16B" },
-  { id: "ulgen", label: "Ülgen", x: 250, y: 160, color: "#2E5FA1" },
-  { id: "erlik", label: "Erlik Han", x: 550, y: 160, color: "#DC143C" },
-  { id: "kyzagan", label: "Kyzagan", x: 130, y: 270, color: "#FF6347" },
-  { id: "karshyt", label: "Karşıt", x: 260, y: 290, color: "#4A9E61" },
-  { id: "bai-ulgen", label: "Bai Ülgen", x: 380, y: 280, color: "#DAA520" },
-  { id: "umay", label: "Umay Ana", x: 500, y: 290, color: "#DDA0DD" },
-  { id: "alkarisi", label: "Alkarısı", x: 620, y: 270, color: "#8B0000" },
-  { id: "tengri", label: "Tengri", x: 400, y: 370, color: "#87CEEB" },
+  // ZİRVE
+  { id: "tengri", label: "Tengri", x: 400, y: 40, color: "#87CEEB" },
+
+  // GÖK KATI 1
+  { id: "kayra", label: "Kayra Han", x: 400, y: 130, color: "#F5D16B" },
+
+  // GÖK KATI 2
+  { id: "ulgen", label: "Ülgen", x: 250, y: 220, color: "#2E5FA1" },
+  { id: "umay", label: "Umay Ana", x: 550, y: 220, color: "#DDA0DD" },
+
+  // GÖK KATI 3 (Ülgen'in Oğulları - Sola doğru kaydırıldı)
+  { id: "kyzagan", label: "Kyzagan", x: 100, y: 310, color: "#FF6347" },
+  { id: "karshyt", label: "Karşıt", x: 220, y: 310, color: "#4A9E61" },
+  { id: "bai-ulgen", label: "Bai Ülgen", x: 340, y: 310, color: "#DAA520" },
+
+  // YERALTI (Erlik ve Alkarısı - Sağa ve aşağıya doğru itildi)
+  { id: "erlik", label: "Erlik Han", x: 500, y: 370, color: "#DC143C" },
+  { id: "alkarisi", label: "Alkarısı", x: 620, y: 450, color: "#8B0000" },
 ];
 
 const LINKS = [
+  // Göklerin Bağlantıları
+  { source: "tengri", target: "kayra" },
+  { source: "tengri", target: "umay" },
   { source: "kayra", target: "ulgen" },
-  { source: "kayra", target: "erlik" },
+
+  // Ülgen'in Bağlantıları
   { source: "ulgen", target: "kyzagan" },
   { source: "ulgen", target: "karshyt" },
   { source: "ulgen", target: "bai-ulgen" },
-  { source: "ulgen", target: "umay" },
+  { source: "ulgen", target: "umay" }, // İyilik ağını güçlendirir
+
+  // Yeraltı Bağlantıları (Kayra Han Erlik'i yeraltına sürer)
+  { source: "kayra", target: "erlik" },
   { source: "erlik", target: "alkarisi" },
-  { source: "kayra", target: "tengri" },
-  { source: "tengri", target: "umay" },
 ];
 
 export default function NexusWeb() {
@@ -53,7 +68,8 @@ export default function NexusWeb() {
   const getNodeById = (id) => NODES.find((n) => n.id === id);
 
   return (
-    <svg className="nexus-svg" viewBox="0 0 800 400">
+    // viewBox yüksekliğini 400'den 500'e çıkardım ki Alkarısı sığsın
+    <svg className="nexus-svg" viewBox="0 0 800 500">
       <g>
         {LINKS.map((link) => {
           const src = getNodeById(link.source);

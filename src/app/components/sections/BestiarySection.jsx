@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CREATURES = [
   { id: "bukre", img: "bukre-dragon" },
+  { id: "itbarak", img: "itbarak" },
   { id: "tulpar", img: "tulpar" },
   { id: "tepegoz", img: "tepegoz" },
   { id: "arcura", img: "arcura" },
