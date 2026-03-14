@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, forwardRef } from "react";
+import { useRef, useState, forwardRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -64,27 +64,15 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
   const trackRef = useRef(null);
   const bukreBgRef = useRef(null);
 
+  // Kaydırma Takip State'leri
+  const currentScroll = useRef(0);
+  const [isAtStart, setIsAtStart] = useState(true);
+  const [isAtEnd, setIsAtEnd] = useState(false);
+
+  const { contextSafe } = useGSAP({ scope: containerRef });
+
   useGSAP(() => {
-    const wrapper = wrapperRef.current;
-    const track = trackRef.current;
-    if (!wrapper || !track) return;
-
-    const totalW = track.scrollWidth - wrapper.offsetWidth;
-
-    gsap.to(track, {
-      x: -totalW,
-      ease: "none",
-      scrollTrigger: {
-        trigger: wrapper,
-        start: "top 30%",
-        end: () => `+=${totalW}`,
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      },
-    });
-
+    // Bükre Ejderhası Arka Plan Animasyonu (Aynı kalıyor)
     if (bukreBgRef.current) {
       gsap.to(bukreBgRef.current, {
         xPercent: 30,
@@ -96,7 +84,7 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
       });
     }
 
-    // Reveal elements
+    // Görünür olma efektleri (Reveal)
     const reveals = containerRef.current?.querySelectorAll(".reveal");
     reveals?.forEach((el) => {
       gsap.to(el, {
@@ -112,6 +100,38 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
       });
     });
   }, { scope: containerRef });
+
+  // Ok butonlarına tıklandığında çalışacak akıllı kaydırma fonksiyonu
+  const scrollTrack = contextSafe((direction) => {
+    const track = trackRef.current;
+    const wrapper = wrapperRef.current;
+    if (!track || !wrapper) return;
+
+    // Bir kartın genişliği (380px) + Gap (30px CSS'den geliyor)
+    const cardWidth = track.children[0].offsetWidth + 30;
+
+    // Gidilebilecek maksimum mesafe
+    const maxScroll = track.scrollWidth - wrapper.offsetWidth;
+
+    let newScroll = currentScroll.current + (direction * cardWidth);
+
+    // Sınırları aşmayı engelle
+    if (newScroll < 0) newScroll = 0;
+    if (newScroll > maxScroll) newScroll = maxScroll;
+
+    currentScroll.current = newScroll;
+
+    // GSAP ile pürüzsüz kaydırma
+    gsap.to(track, {
+      x: -newScroll,
+      duration: 0.8,
+      ease: "power3.out"
+    });
+
+    // Butonların görünürlük durumlarını güncelle
+    setIsAtStart(newScroll <= 0);
+    setIsAtEnd(newScroll >= maxScroll - 5); // 5px tolerans payı
+  });
 
   return (
     <section id="bestiary" className="section" ref={(el) => {
@@ -130,10 +150,12 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
           </p>
         </div>
       </div>
+
+      {/* Kaydırma Çerçevesi */}
       <div
         className="bestiary-scroll-wrapper"
         ref={wrapperRef}
-        style={{ position: "relative", width: "100%", overflow: "hidden", marginTop: "20px" }}
+        style={{ position: "relative", width: "100%", overflow: "hidden", marginTop: "20px", padding: "0 20px" }}
       >
         <img
           src="/images/bukre-dragon.png"
@@ -154,10 +176,41 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
             transform: "rotate(-5deg)",
           }}
         />
+
+        {/* SOL OK (Geri) */}
+        <button
+          type="button"
+          onClick={() => scrollTrack(-1)}
+          disabled={isAtStart}
+          style={{
+            position: "absolute",
+            left: "1vw",
+            top: "50%",
+            transform: "translateY(-50%)",
+            width: "50px",
+            height: "50px",
+            borderRadius: "50%",
+            background: "rgba(10,10,10,0.8)",
+            border: "1px solid var(--celestial-gold)",
+            color: "var(--celestial-gold-bright)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: isAtStart ? "default" : "pointer",
+            opacity: isAtStart ? 0 : 1,
+            transition: "all 0.3s",
+            pointerEvents: isAtStart ? "none" : "auto",
+            zIndex: 20
+          }}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
+        </button>
+
+        {/* KARTLARIN OLDUĞU TREN */}
         <div
           className="bestiary-track"
           ref={trackRef}
-          style={{ position: "relative", zIndex: 1 }}
+          style={{ position: "relative", zIndex: 1, width: "max-content" }}
         >
           {CREATURES.map((c) => (
             <article className="creature-card" key={c.id}>
@@ -182,6 +235,36 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
             </article>
           ))}
         </div>
+
+        {/* SAĞ OK (İleri) */}
+        <button
+          type="button"
+          onClick={() => scrollTrack(1)}
+          disabled={isAtEnd}
+          style={{
+            position: "absolute",
+            right: "1vw",
+            top: "50%",
+            transform: "translateY(-50%)",
+            width: "50px",
+            height: "50px",
+            borderRadius: "50%",
+            background: "rgba(10,10,10,0.8)",
+            border: "1px solid var(--celestial-gold)",
+            color: "var(--celestial-gold-bright)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: isAtEnd ? "default" : "pointer",
+            opacity: isAtEnd ? 0 : 1,
+            transition: "all 0.3s",
+            pointerEvents: isAtEnd ? "none" : "auto",
+            zIndex: 20
+          }}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
+        </button>
+
       </div>
     </section>
   );
