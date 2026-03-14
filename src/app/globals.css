@@ -731,8 +731,10 @@ a:hover {
 
 .creature-image {
     width: 100%;
-    height: 320px;
+    height: 100%;
     object-fit: cover;
+    position: absolute;
+    inset: 0;
     transition: transform 0.6s var(--ease-smooth);
 }
 
@@ -741,7 +743,18 @@ a:hover {
 }
 
 .creature-info {
-    padding: 24px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 24px 24px;
+    background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.8) 50%, transparent 100%);
+    z-index: 2;
+    transition: opacity 0.4s var(--ease-smooth);
+}
+
+.creature-card:hover .creature-info {
+    opacity: 0;
 }
 
 .creature-name {
@@ -819,7 +832,7 @@ a:hover {
 
 /* ── Shadow Realm ───────────────────────────────────────── */
 #shadow-realm {
-    min-height: 100vh;
+    min-height: auto;
     background: radial-gradient(ellipse at 50% 80%, rgba(139, 0, 0, 0.12) 0%, var(--abyss-obsidian) 60%);
     position: relative;
 }
@@ -891,7 +904,7 @@ a:hover {
     position: relative;
 }
 
-.erlik-visual img {
+#erlikImage {
     width: 100%;
     border-radius: 12px;
     box-shadow: 0 0 60px rgba(139, 0, 0, 0.3), 0 0 120px rgba(255, 69, 0, 0.1);
@@ -1377,4 +1390,571 @@ a:hover {
 
 .lang-btn:hover:not(.active) {
     color: var(--celestial-gold);
+}
+
+/* ── Migration Section (Path of Survival) ──────────────── */
+#migration {
+    min-height: 100vh;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(90deg, #1A2B3C 0%, #3C4A3E 50%, #B8860B 100%);
+    position: relative;
+}
+
+.migration-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.migration-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300vw;
+    height: 100vh;
+    will-change: transform;
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: repeat-x;
+}
+
+.migration-bg-panel {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    filter: brightness(0.5) contrast(1.1);
+    z-index: 1;
+}
+
+.migration-bg-1 { 
+    background-image: url("/images/migration-1.png"); 
+}
+.migration-bg-2 { 
+    background-image: url("/images/migration-2.png"); 
+}
+.migration-bg-3 { 
+    background-image: url("/images/migration-3.png"); 
+}
+
+.migration-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    padding: 0 var(--side-pad);
+}
+
+.migration-block {
+    width: 100vw;
+    padding: 40px var(--side-pad);
+    max-width: 800px;
+    opacity: 0;
+}
+
+.migration-block .heading-xl {
+    color: var(--celestial-gold-bright);
+    margin-bottom: 20px;
+}
+
+.migration-block p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.wolf-path {
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+    width: 300vw;
+    height: 100px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.paw-print {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: radial-gradient(circle, var(--celestial-gold) 20%, transparent 60%);
+    border-radius: 50%;
+    opacity: 0;
+    filter: drop-shadow(0 0 10px var(--celestial-gold-bright));
+    transform: scale(0.5);
+    transition: all 0.5s var(--ease-smooth);
+}
+
+.paw-print.active {
+    opacity: 0.8;
+    transform: scale(1);
+}
+
+/* ── Ritual Nexus (Shamanic Drum) ──────────────────────── */
+#ritual {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #111 0%, #050505 100%);
+    position: relative;
+    overflow: hidden;
+    transition: filter 0.8s var(--ease-smooth);
+}
+
+#ritual.trance-state {
+    filter: saturate(1.5) hue-rotate(15deg);
+}
+
+.drum-container {
+    position: relative;
+    width: clamp(300px, 60vw, 600px);
+    aspect-ratio: 1;
+    z-index: 2;
+    animation: drumFloat 6s ease-in-out infinite;
+}
+
+@keyframes drumFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(2deg);
+    }
+}
+
+.drum-image-wrapper {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(212, 168, 67, 0.2), inset 0 0 40px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+.drum-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: screen;
+}
+
+.drum-layer {
+    position: absolute;
+    inset: -30px;
+    border-radius: 50%;
+    border: 2px dashed rgba(212, 168, 67, 0.3);
+    animation: spinSlow 30s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes spinSlow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.drum-layer::before,
+.drum-layer::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--celestial-gold);
+    border-radius: 50%;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px var(--celestial-gold-bright);
+}
+
+.drum-layer::after {
+    top: auto;
+    bottom: -6px;
+}
+
+.drum-symbol {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid var(--celestial-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.4s var(--ease-dramatic);
+    font-size: 1.5rem;
+    box-shadow: 0 0 15px rgba(212, 168, 67, 0.2);
+    transform: translate(-50%, -50%);
+}
+
+.drum-symbol:hover {
+    background: var(--celestial-gold);
+    color: var(--bg-dark);
+    box-shadow: 0 0 30px var(--celestial-gold-bright);
+    z-index: 4;
+}
+
+/* Position symbols using percentages to stay responsive */
+.symbol-sun {
+    top: 10%;
+    left: 50%;
+}
+
+.symbol-moon {
+    top: 25%;
+    left: 85%;
+}
+
+.symbol-eagle {
+    top: 75%;
+    left: 85%;
+}
+
+.symbol-tree {
+    top: 90%;
+    left: 50%;
+}
+
+.symbol-wolf {
+    top: 75%;
+    left: 15%;
+}
+
+.symbol-water {
+    top: 25%;
+    left: 15%;
+}
+
+.drum-symbol:hover.symbol-sun,
+.drum-symbol:hover.symbol-moon,
+.drum-symbol:hover.symbol-tree,
+.drum-symbol:hover.symbol-wolf,
+.drum-symbol:hover.symbol-eagle,
+.drum-symbol:hover.symbol-water {
+    transform: translate(-50%, -50%) scale(1.3);
+}
+
+/* Lore Portal Modal */
+.lore-portal {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s var(--ease-smooth);
+}
+
+.lore-portal.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lore-content {
+    max-width: 600px;
+    padding: 60px;
+    background: rgba(15, 15, 15, 0.9);
+    border: 1px solid var(--celestial-gold);
+    border-radius: 20px;
+    position: relative;
+    transform: translateY(40px) scale(0.95);
+    transition: all 0.5s var(--ease-dramatic);
+    text-align: center;
+    box-shadow: 0 0 80px rgba(212, 168, 67, 0.15);
+}
+
+.lore-portal.open .lore-content {
+    transform: translateY(0) scale(1);
+}
+
+.lore-content .heading-lg {
+    color: var(--celestial-gold-bright);
+    margin-bottom: 20px;
+}
+
+.lore-content p {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.lore-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.lore-close:hover {
+    color: var(--abyss-crimson-bright);
+}
+
+/* ── Shadow Realm Additions (Dark Folklore) ────────────── */
+.bukre-dragon {
+    position: absolute;
+    width: 150vw;
+    height: 150vh;
+    top: -25vh;
+    left: -25vw;
+    background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(139, 0, 0, 0.05) 10px, rgba(139, 0, 0, 0.05) 20px);
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+    animation: snakeMove 60s linear infinite;
+    mix-blend-mode: color-dodge;
+}
+
+@keyframes snakeMove {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(30deg) scale(1.1);
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+.arcura-shadow {
+    position: fixed;
+    top: 50%;
+    right: -100px;
+    width: 200px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(10, 10, 10, 0.95) 0%, transparent 70%);
+    filter: blur(20px);
+    z-index: 900;
+    pointer-events: none;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: right 0.8s var(--ease-smooth), opacity 0.8s;
+}
+
+.arcura-active .arcura-shadow {
+    right: -30px;
+    opacity: 0.8;
+}
+
+.albasti-section {
+    position: relative;
+    padding: 100px var(--side-pad);
+    margin-top: 60px;
+    border-top: 1px solid var(--abyss-crimson);
+}
+
+.albasti-smoke {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 100%, rgba(139, 0, 0, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+    animation: pulseAura 6s ease-in-out infinite alternate;
+}
+
+.albasti-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.albasti-content img {
+    border-radius: 12px;
+    box-shadow: 0 0 60px rgba(139, 0, 0, 0.4), 0 0 120px rgba(255, 69, 0, 0.2);
+    filter: contrast(1.2) saturate(1.2);
+}
+
+.albasti-text .heading-lg {
+    color: var(--abyss-crimson-bright);
+    margin-bottom: 20px;
+}
+
+.albasti-text p {
+    color: rgba(232, 226, 214, 0.8);
+}
+
+.cursed-rune-trigger {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(139, 0, 0, 0.1);
+    border: 1px dashed var(--abyss-crimson);
+    border-radius: 4px;
+    color: var(--abyss-crimson-bright);
+    cursor: help;
+    transition: all 0.3s;
+}
+
+.cursed-rune-trigger:hover {
+    background: var(--abyss-crimson);
+    color: #fff;
+    box-shadow: 0 0 20px var(--abyss-crimson);
+}
+
+/* ── Organic UI Elements ───────────────────────────────── */
+/* Water Ripple on Buttons */
+.btn-liquid {
+    overflow: hidden;
+}
+
+.btn-liquid::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-out, height 0.6s ease-out;
+}
+
+.btn-liquid:active::after {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+    transition: width 0.4s, height 0.4s, opacity 0.4s;
+}
+
+/* Breathing Elements */
+.breathing {
+    animation: breath 4s ease-in-out infinite;
+}
+
+@keyframes breath {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: scale(1.02);
+        opacity: 1;
+    }
+}
+
+/* Vine Borders */
+.vine-border {
+    position: relative;
+}
+
+.vine-border::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--steppe-emerald-light);
+    transition: width 0.6s var(--ease-smooth), left 0.6s var(--ease-smooth);
+}
+
+.vine-border:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Genesis Hero Changes */
+.hero-kut-glow {
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 168, 67, 0.3), transparent 70%);
+    animation: pulseAura 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ── Influence Map Footer ──────────────────────────────── */
+.influence-map {
+    position: relative;
+    padding: 100px var(--side-pad);
+    background: var(--abyss-obsidian-deep);
+    text-align: center;
+    border-top: 1px solid rgba(212, 168, 67, 0.1);
+    overflow: hidden;
+}
+
+.influence-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--celestial-gold-bright);
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.influence-desc {
+    color: var(--text-secondary);
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.influence-svg {
+    width: 100%;
+    height: 600px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.inf-node {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.inf-node:hover circle {
+    filter: brightness(1.3) drop-shadow(0 0 15px currentColor);
+}
+
+.inf-link {
+    stroke-width: 1.5;
+    opacity: 0.2;
+    transition: all 0.4s;
+}
+
+.inf-link.active {
+    stroke-width: 3;
+    opacity: 0.8;
+    filter: drop-shadow(0 0 8px currentColor);
 }

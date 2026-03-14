@@ -6,59 +6,167 @@
         "title": "Sonsuz Döngü"
     },
     "runeNav": {
-        "origin": "Yaratılış",
+        "origin": "Yaradılış",
+        "migration": "Göç Destanı",
         "worldTree": "Dünya Ağacı",
-        "pantheon": "Tanrılar Panteonu",
+        "ritual": "Şaman Kapısı",
+        "pantheon": "İlahi Panteon",
         "bestiary": "Yaratıklar",
-        "shadowRealm": "Karanlık Diyar",
+        "shadowRealm": "Gölge Diyarı",
         "sagas": "Destanlar"
     },
     "realms": {
-        "origin": "İlksel Boşluk",
+        "origin": "Kadim Boşluk",
+        "migration": "Hayatta Kalış Yolu",
         "worldTree": "Bayterek — Dünya Ağacı",
-        "pantheon": "Üst Dünya — Gök Alemi",
-        "bestiary": "Orta Dünya — Bozkırlar",
-        "shadowRealm": "Alt Dünya — Tamag",
+        "ritual": "Şamanik Köprü",
+        "pantheon": "Yukarı Dünya — Göksel Âlem",
+        "bestiary": "Orta Dünya — Bozkır",
+        "shadowRealm": "Aşağı Dünya — Tamag",
         "sagas": "Sonsuz Döngünün Efsaneleri"
     },
     "hero": {
-        "subtitle": "Yaratılışın İlksel Sularından",
+        "subtitle": "Yaradılışın Kadim Sularından",
         "title": "Sonsuz Döngü",
-        "lore": "Zamandan önce, topraktan önce, gökyüzü örülmeden önce — yalnızca sonsuz karanlık su vardı. Derinliklerinden <strong>Ak Ana</strong>, Beyaz Ana yükseldi; yaratılışın nefesini — <em>Kut</em>'u taşıyarak. Fısıldadı ve evren uyanışa geçti.",
+        "lore": "Zamandan önce, topraktan önce, gök dokunmadan önce — yalnızca sonsuz karanlık su vardı. Derinliklerinden <strong>Ak Ana</strong> yükseldi, yaradılışın nefesini taşıyarak — <em>Kut</em>. Fısıldadı ve evren var olmaya başladı.",
+        "createWord": "Yarat!",
         "btn": "Yolculuğa Başla",
         "scroll": "Aşağı Kaydır"
+    },
+    "migration": {
+        "tag": "Türeyiş ve Göç Destanları",
+        "heading": "Hayatta",
+        "headingGold": "Kalış Yolu",
+        "desc": "Gökbörü'yü demir dağların ve sonsuz bozkırların ötesine takip edin — esaretten kurtuluşa, kışın pençesinden baharın yeniden doğuşuna.",
+        "ergenekon": {
+            "title": "Ergenekon",
+            "subtitle": "Demir Dağ Hapishanesi",
+            "text": "Yıkıcı bir yenilginin ardından, hayatta kalan Türk boyları aşılmaz demir dağlarla çevrili gizli bir vadiye çekildi. Nesiller boyunca kimliklerini sabrın ateşinde dövdüler."
+        },
+        "goc": {
+            "title": "Büyük Göç",
+            "subtitle": "İmparatorlukların Doğuşu",
+            "text": "Bir demirci büyük bir körükle demir dağı erittiğinde, Türk halkı çelik bir nehir gibi dışarı aktı, yeniden doğmuş ve durdurulamaz. Gökbörü'nün rehberliğinde."
+        },
+        "steppes": {
+            "title": "Sonsuz Bozkırlar",
+            "subtitle": "Özgürlerin Yurdu",
+            "text": "Orta Asya'nın uçsuz bucaksız otlakları boyunca yayıldılar — atlı savaşçılar, gök tapıcıları, kurt bayrağının koruyucuları. Her boy Tengri'nin kutsal ateşini taşıyarak."
+        },
+        "wolfGuide": "Gökbörü yolu gösteriyor"
     },
     "worldTree": {
         "heading": "Bayterek",
         "sub": "Dünya Ağacı",
-        "p1": "Tüm varoluşun merkezinde <strong>Bayterek</strong> yükselir — kökleri <em>Tamag</em> Uçurumu'na inen, gövdesi Bozkırlar'ın ölümlü diyarını ayakta tutan ve dalları <em>Tengri</em>'nin gök sarayına uzanan kutsal Dünya Ağacı.",
-        "p2": "Dünya Ağacı tüm kozmolojinin eksenidir — tanrılar ile ölümlüler arasında, yaşam ile ölüm arasında bir köprü. Her ruh, her tin, her destan onun damarlarından akar.",
-        "upper": "☀ Üst Dünya — Gök Alemi",
+        "p1": "Tüm varoluşun merkezinde <strong>Bayterek</strong> durur — kökleri <em>Tamag</em>'ın uçurumuna inen, gövdesi Bozkır'ın ölümlü âlemini ayakta tutan, dalları <em>Tengri</em>'nin göksel sarayına uzanan kutsal Dünya Ağacı.",
+        "p2": "Dünya Ağacı tüm kozmolojinin eksenidir — tanrılar ile ölümlüler, yaşam ile ölüm arasında bir köprü. Her ruh, her tin, her destan onun damarlarından akar.",
+        "upper": "☀ Yukarı Dünya — Göksel",
         "middle": "🌿 Orta Dünya — Bozkır",
-        "lower": "🔥 Alt Dünya — Tamag"
+        "lower": "🔥 Aşağı Dünya — Tamag"
+    },
+    "ritual": {
+        "tag": "Şamanizm / Kamlık",
+        "heading": "Şaman",
+        "headingGold": "Kapısı",
+        "desc": "Şaman davulu dünyalar arasındaki köprüdür. Her sembol, doğayı, suyu ve unutulmuş diyarları koruyan ruhlara açılan bir kapıdır.",
+        "drumTitle": "Kutsal Davul — Tüngür",
+        "drumDesc": "Gizli koruyucuları ortaya çıkarmak için sembollere tıklayın",
+        "symbols": {
+            "sun": {
+                "name": "Kün — Güneş",
+                "lore": "Tengri'nin gözü, Sonsuz Gök. Güneş Yukarı Dünya'yı gözetler ve layık olanlara Kut — ilahi yaşam gücü — bahşeder. Şamanlar göksel yükselişleri sırasında güneşe doğru yolculuk eder."
+            },
+            "moon": {
+                "name": "Ay — Ay Ana",
+                "lore": "Gecenin koruyucusu ve rüyaların bekçisi. Ay, ruhlar dünyasının gelgitlerini yönetir. Onun ışığı altında dünyalar arasındaki perde incelir ve şamanlar ölülerle iletişim kurabilir."
+            },
+            "tree": {
+                "name": "Bayterek — Dünya Ağacı",
+                "lore": "Tüm kozmolojinin ekseni. Davul aracılığıyla şamanlar Dünya Ağacı'na tırmanır — on yedi dalını aşarak Ülgen'in diyarına ulaşır ya da köklerine inerek Erlik Han ile pazarlık eder."
+            },
+            "wolf": {
+                "name": "Börü — Kurt",
+                "lore": "Kutsal rehber ve ata ruhu. Davuldaki kurt, Türk halkını doğuran ilahi dişi kurt Asena'yı temsil eder. Şamanlar koruma ve rehberlik için onun ruhunu çağırır."
+            },
+            "eagle": {
+                "name": "Kartal — Kartal",
+                "lore": "Dünyalar arasındaki haberci. Kartal, duaları Orta Dünya'dan Tengri'nin tahtına taşır. İlk şamanın Bayterek'in tepesinde bir kartal tarafından yetiştirildiği söylenir."
+            },
+            "water": {
+                "name": "Su — Su Ana",
+                "lore": "Tüm yaradılışın ortaya çıktığı kadim element. Su İyesi, her nehirde, gölde ve pınarda yaşar. Süt ve ekmek sunuları onun bereketini sağlar."
+            }
+        },
+        "suIyesi": {
+            "name": "Su İyesi — Su Koruyucusu",
+            "desc": "Her nehirde, gölde ve pınarda yaşar. Güzel ve korkunç, bereketli hasatlar bahşedebilir ya da layık olmayanları derinliklere çekebilir. Balıkçılar ağlarını atmadan önce dualar fısıldar.",
+            "offering": "Sunular: Suyun kenarına süt, ekmek ve gümüş sikkeler"
+        },
+        "ormanIyesi": {
+            "name": "Orman İyesi — Orman Koruyucusu",
+            "desc": "Her ağacın, kökün ve vahşi yaratığın efendisi. Kabuk ve yosunla kaplı devasa bir figür ya da yapraklar arasında fısıldayan bir rüzgâr olarak görünür. Ormana saygı gösterenler onun korumasını alır.",
+            "warning": "Uyarı: Orman Ruhu'nun iznini almadan asla ağaç kesmeyin"
+        },
+        "portals": {
+            "sun": {
+                "title": "Gün Ana",
+                "desc": "Işığın ve sıcaklığın kaynağı, hayat veren güneş tanrıçası. Göğün en yüksek katında yaşar.",
+                "offering": "Sunular: Beyaz kurdele ve süt."
+            },
+            "moon": {
+                "title": "Ay Ata",
+                "desc": "Gecenin koruyucusu, göçebe yollarını aydınlatan ve gelgitleri yöneten ata ruhu.",
+                "offering": "Uyarı: Dolunaya asla parmakla işaret edilmez."
+            },
+            "eagle": {
+                "title": "Karakuş",
+                "desc": "Göklerin habercisi. Duaları Kayra Hana taşır ve kutsal dağları gözetler.",
+                "offering": "Sembol: Şamanların koruyucusu."
+            },
+            "tree": {
+                "title": "Bayterek — Hayat Ağacı",
+                "desc": "Yeraltını, yeryüzünü ve gökyüzünü birbirine bağlayan kozmik eksen. Boyutlar arası enerjiyi taşır.",
+                "offering": "Tüm alemlerin bağlantı noktası."
+            },
+            "wolf": {
+                "title": "Kökbörü — Gök Kurdu",
+                "desc": "Türk halklarının ilahi rehberi. Ergenekondan çıkışta onlara yol göstermiştir. Özgürlük sembolü.",
+                "offering": "Sürünün ebedi ruhu."
+            },
+            "water": {
+                "title": "Su İyesi",
+                "desc": "Her nehirde, gölde ve pınarda yaşar. Güzelliği kadar korkutucudur.",
+                "offering": "Sunular: Su kenarına bırakılan gümüş paralar."
+            },
+            "forest": {
+                "title": "Orman İyesi",
+                "desc": "Ormanın, her ağacın ve vahşi yaratığın efendisidir. Doğaya saygı duyanları korur.",
+                "offering": "Uyarı: İzin almadan asla ağaç kesmeyin."
+            }
+        }
     },
     "pantheon": {
-        "tag": "Üst Dünya",
+        "tag": "Yukarı Dünya",
         "heading": "İlahi",
         "headingGold": "Panteon",
-        "desc": "Evreni şekillendiren ve Sonsuz Mavi Göğün altındaki her ruhun kaderini yöneten tanrılar.",
+        "desc": "Evreni şekillendiren ve Sonsuz Gök Kubbe altındaki her ruhun kaderini yöneten tanrılar.",
         "kayra": {
             "name": "Kayra Han",
-            "role": "İlksel Tanrı",
-            "desc": "Her şeyden önce var olan yüce yaratıcı. Ülgen ve Erlik'in babası, iki kardeşi şekillendirip onları sonsuz yollarına — birini aydınlığa, diğerini karanlığa — gönderdi."
+            "role": "Kadim Tanrı",
+            "desc": "Her şeyden önce var olan yüce yaratıcı. Ülgen ve Erlik'in babası, iki kardeşi şekillendirdi ve onları sonsuz yollarına koydu — biri aydınlığa, biri karanlığa."
         },
         "ulgen": {
             "name": "Ülgen",
             "role": "İyilik Tanrısı",
-            "desc": "Doğanın unsurlarını temsil eden yedi oğluyla Üst Dünya'nın hükümdarı. Ülgen şamanları göğün on yedi katından geçirir ve layık olanlara kutsal Kut'u bahşeder."
+            "desc": "Doğanın unsurlarını somutlaştıran yedi oğlu ile Yukarı Dünya'nın hükümdarı. Ülgen, şamanları göğün on yedi katından geçirir ve layık olanlara kutsal Kut'u bahşeder."
         },
         "kyzagan": {
             "name": "Kızagan",
             "role": "Savaş Tanrısı",
-            "desc": "Ülgen'in oğlu ve savaşçıların koruyucusu. Kızıl fırtınaya binen Kızagan, yanan kılıcıyla göğü yarar. Orduları cesaretle kutsar ve düşmüş kahramanların yiğitliğini yargılar."
+            "desc": "Ülgen'in oğlu ve savaşçıların koruyucusu. Kızagan kızıl fırtınaya biner, alev kılıcı göğü yarar. Orduları cesaretle kutsar ve düşmüş kahramanların yiğitliğini yargılar."
         },
         "nexusTitle": "Göksel Bağlantı Ağı",
-        "nexusDesc": "Bir tanrının üzerine gelerek bağlantılarını ve diyarlar üzerindeki etkisini keşfedin"
+        "nexusDesc": "Bir tanrının üzerine gelin ve diyarlar üzerindeki bağlantılarını keşfedin"
     },
     "bestiary": {
         "tag": "Orta Dünya",
@@ -68,80 +176,106 @@
         "tulpar": {
             "name": "Tulpar",
             "type": "Kanatlı At",
-            "desc": "Efsanevi kahramanların ilahi bineği, Tulpar saf ışıktan tüylü kanatlarla bulutlar arasında süzülür.",
-            "loreTitle": "Tulpar'ın Hikayesi",
-            "lore1": "Ülgen sürgün kahramanlar için ağladığında döktüğü gözyaşlarından doğan Tulpar, bir savaşçının kazanabileceği en kutsal yoldaştır. Yalnızca Gök Tanrı tarafından layık görülenler onun sırtında göğün on yedi katından geçebilir.",
-            "lore2": "Manas ve Oğuz destanlarında Tulpar, süvarisini imkansız savaşlardan ve yaşayanlarla ölüler arasındaki sınırlardan geçirir.",
+            "desc": "Efsanevi kahramanların ilahi bineği, Tulpar saf ışıktan tüylü kanatlarıyla bulutlar arasında süzülür.",
+            "loreTitle": "Tulpar'ın Hikâyesi",
+            "lore1": "Ülgen sürgün edilmiş kahramanlar için ağladığında gözyaşlarından doğan Tulpar, bir savaşçının kazanabileceği en kutsal yoldaştır. Yalnızca Gök Tanrı tarafından layık görülenler göğün on yedi katından sırtında geçebilir.",
+            "lore2": "Manas ve Oğuz destanlarında Tulpar, süvarisini imkânsız savaşlardan ve yaşayanlar ile ölüler arasındaki sınırlardan geçirir.",
             "connection": "Kahramanların Yoldaşı · Ülgen'in Kutsaması"
         },
         "tepegoz": {
             "name": "Tepegöz",
             "type": "Tek Gözlü Dev",
-            "desc": "Bir lanetin sonucu doğan korkunç bir devdir; kahraman Basat tarafından yenilene kadar Oğuz boylarını dehşete düşürdü.",
-            "loreTitle": "Tepegöz'ün Hikayesi",
-            "lore1": "Tepegöz bir çoban ile bir Peri arasındaki doğa dışı birleşmeden doğdu. Yaratık durdurulamaz tek gözlü bir deve dönüştü ve günde altmış adam yutuyordu.",
-            "lore2": "Yalnızca bir aslan tarafından büyütülmüş ve ilahi cesaretle kutsanmış kahraman Basat, canavarla yüzleşip tek gözünü kızgın demir kazıkla delme cesaretini gösterebildi.",
-            "connection": "Bir Lanetin Ürünü · Basat Tarafından Yenildi"
+            "desc": "Bir lanetin sonucu doğan korkunç tek gözlü dev, kahraman Basat tarafından yenilene kadar Oğuz boylarını dehşete düşürdü.",
+            "loreTitle": "Tepegöz'ün Hikâyesi",
+            "lore1": "Tepegöz bir çoban ile Peri arasındaki doğadışı birliktelikten doğdu. Yaratık günde altmış adam yiyen durdurulamaz bir deve dönüştü.",
+            "lore2": "Yalnızca bir aslan tarafından büyütülen ve ilahi cesaretle kutsanan kahraman Basat, canavarla yüzleşebildi ve kızgın bir demir kazıkla tek gözünü deldi.",
+            "connection": "Lanetin Ürünü · Basat Tarafından Yenildi"
         },
         "arcura": {
             "name": "Arçura",
             "type": "Orman Ruhu",
-            "desc": "Vahşi doğanın koruyucusu Arçura, yolcuları derin ormana çeker ve bilgelik — ya da delilik bahşedebilir.",
-            "loreTitle": "Arçura'nın Hikayesi",
-            "lore1": "Arçura, Türk topraklarının en derin, en kadim ormanlarında yaşar. Pek çok biçimde görünür — bazen güzel bir bakire olarak, bazen kabuk ve yosunla kaplı devasa bir figür olarak.",
-            "lore2": "Şamanlar şifalı otlar ve doğa ruhları hakkında bilgi edinmek için Arçura ile iletişim kurarlardı.",
+            "desc": "Vahşi doğanın koruyucusu, Arçura gezginleri derin ormana çeker ve bilgelik — ya da delilik — bahşedebilir.",
+            "loreTitle": "Arçura'nın Hikâyesi",
+            "lore1": "Arçura, Türk topraklarının en derin ve en kadim ormanlarında yaşar. Bazen güzel bir bakire, bazen kabuk ve yosunla kaplı devasa bir figür olarak birçok formda görünür.",
+            "lore2": "Şamanlar, şifalı otlar ve doğa ruhları hakkında bilgi edinmek için Arçura ile iletişim kurardı.",
             "connection": "Doğa Koruyucusu · Şamanların Müttefiki"
         },
         "asena": {
             "name": "Asena",
             "type": "Bozkurt",
-            "desc": "Türk halklarının kutsal ana kurdu, hayatta kalan son çocuğu emzirdi ve on boyun doğuşuna vesile oldu.",
-            "loreTitle": "Asena'nın Hikayesi",
-            "lore1": "Düşmanlar tüm Türk boyunu katlettiklerinde, tek bir yaralı çocuk ölüme terk edilmişti. Göksel bir dişi kurt olan Asena, çocuğu bulup dağlarla çevrili gizli bir vadide sağlığına kavuşturdu.",
-            "lore2": "Asena, Türk kimliğinin en kutsal simgesidir — bütün bir medeniyetin hayatta kalmasını ve yeniden doğuşunu sağlayan ilahi kurt. Kurt sancağı her büyük ordunun önünde dalgalanır.",
+            "desc": "Türk halklarının kutsal ana kurdu, hayatta kalan son çocuğu emzirdi ve on boyun doğmasını sağladı.",
+            "loreTitle": "Asena'nın Hikâyesi",
+            "lore1": "Düşmanlar tüm Türk boyunu katlettiklerinde, tek bir yaralı çocuk ölüme terk edildi. Göksel bir dişi kurt, Asena, çocuğu buldu ve dağlarla çevrili gizli bir vadide sağlığına kavuşturdu.",
+            "lore2": "Asena, Türk kimliğinin en kutsal simgesidir — tüm bir medeniyetin hayatta kalmasını ve yeniden doğuşunu sağlayan ilahi kurt. Kurt bayrağı her büyük ordunun önünde dalgalanır.",
             "connection": "Boyların Anası · Tengri'nin Kutsaması"
         }
     },
     "shadow": {
-        "tag": "Alt Dünya — Tamag",
-        "heading": "Karanlık",
-        "headingAccent": "Diyar",
-        "desc": "Aydınlık ile karanlık arasındaki sınırın parçalandığı yer. Ölüm ve yargının efendisi Erlik Han'ın diyarına girin.",
+        "tag": "Aşağı Dünya — Tamag",
+        "heading": "Gölge",
+        "headingAccent": "Diyarı",
+        "desc": "Işık ile karanlık arasındaki sınırın kırıldığı yer. Ölüm ve yargının efendisi Erlik Han'ın hükümranlığına girin.",
         "erlikTitle": "Erlik Han",
-        "erlikP1": "<strong>Erlik Han</strong> — Ülgen'in kardeşi, gururu ve isyanı nedeniyle Kayra Han tarafından uçuruma atılmıştır. Kara demirden bir tahttan yeraltı dünyasının dokuz katını yönetir ve karanlık ruhlardan oluşan bir orduya komuta eder.",
-        "erlikP2": "Ölümlüler öldüğünde, ruhları Erlik'in diyarından geçmek zorundadır. Amellerini kemik terazilerde tartar — erdemliler Üst Dünya'ya yükselir, günahlılar ise kızıl ateş ruh ipleriyle bağlanarak Tamag'da kalır.",
+        "erlikP1": "<strong>Erlik Han</strong> — Ülgen'in kardeşi, gururu ve isyanı yüzünden Kayra Han tarafından uçuruma atılan. Yeraltının dokuz katını kara demirden bir tahttan yönetir, karanlık ruhlardan oluşan bir orduya komuta eder.",
+        "erlikP2": "Ölümlüler öldüğünde, ruhları Erlik'in hükümranlığından geçmek zorundadır. Kemikten terazide amellerini tartar — erdemliler Yukarı Dünya'ya yükselir, günahkârlar kızıl ateş ruh ipleriyle bağlanarak Tamag'da kalır.",
         "alkarisi": "Alkarısı",
-        "alkarisiDesc": "Annelere ve yeni doğanlara musallat olan şeytan — Erlik'in yaratılışa duyduğu kıskançlığın gölgesi.",
+        "alkarisiDesc": "Anneleri ve yeni doğanları rahatsız eden iblis — Erlik'in yaradılış kıskançlığının gölgesi.",
         "karabura": "Karabura",
         "karaburaDesc": "Kar fırtınaları ve kaos getiren karanlık fırtına ruhu — Erlik'in öfkesinin nefesi.",
         "judgment": "Ruhların Yargılanması",
-        "judgmentDesc": "Her ruh tartılır — erdem yükselir, günah Tamag'ın dokuz katına iner."
+        "judgmentDesc": "Her ruh tartılır — erdem yükselir, suç Tamag'ın dokuz katına iner.",
+        "bukre": {
+            "title": "Devasa Ejderha",
+            "name": "Bükre",
+            "type": "Sangallar Ejderhası",
+            "desc": "Gölge diyarında yılankavi hareket eden devasa, kanatsız bir ejderha. Pulları metalik, yanardöner bir parıltı yansıtır. Bükre, yeraltı dünyasının en derin sırlarının koruyucusudur."
+        },
+        "albasti": {
+            "title": "Kızıl İblis",
+            "name": "Albastı",
+            "type": "Uçurumun Ruhu",
+            "desc": "Kızıl duman ve boğucu karanlıkla gelir. Albastı savunmasızları avlar, varlığı kan kokusu ve tüm ışığın sönmesiyle duyurulur."
+        },
+        "cursedRunes": "Karanlıkta uyuyanı uyandırmak için runelerin üzerine gelin..."
     },
     "sagas": {
-        "tag": "Ölümsüz Efsaneler",
+        "tag": "Sonsuz Efsaneler",
         "heading": "Büyük",
         "headingGold": "Destanlar",
-        "desc": "Bozkırların dokusuna işlenmiş hikayeler — demir dağların, ilahi kurtların ve bir halkın kırılmaz ruhunun destanları.",
+        "desc": "Bozkırların dokusuna işlenmiş hikâyeler — demir dağların, ilahi kurtların ve bir halkın kırılmaz ruhunun.",
         "explore": "Efsaneyi Keşfet ⟶",
         "ergenekon": {
             "title": "Ergenekon Destanı",
-            "p1": "Yıkıcı bir yenilginin ardından hayatta kalan Türk boyları <strong>Ergenekon</strong>'a çekildi — aşılmaz demir dağlarla çevrili gizli bir vadi. Nesiller boyunca tecrit halinde yaşayıp güçlendiler ve çoğaldılar; kimliklerini sabrın ateşinde dövdüler.",
-            "p2": "Vadi artık onları barındıramaz hale geldiğinde, bir demirci büyük bir ocakla demir dağın kendisini eritti. Türk halkı çelik bir nehir gibi fışkırdı; yeniden doğmuş ve durdurulamazdı. Ortaya çıktıkları gün <em>Nevruz</em> — Yeni Gün — olarak kutlanır."
+            "p1": "Yıkıcı bir yenilginin ardından, hayatta kalan Türk boyları <strong>Ergenekon</strong>'a çekildi — aşılmaz demir dağlarla çevrili gizli bir vadi. Nesiller boyunca tecrit içinde yaşadılar, güçlendiler ve çoğaldılar, kimliklerini sabrın ateşinde dövdüler.",
+            "p2": "Vadi artık onları tutamaz hale geldiğinde, bir demirci demir dağın kendisini büyük bir körükle eritti. Türk halkı çelik bir nehir gibi dışarı aktı, yeniden doğmuş ve durdurulamaz. Ortaya çıkışlarının günü <em>Nevruz</em> — Yeni Gün olarak kutlanır."
         },
         "oghuz": {
             "title": "Oğuz Kağan Destanı",
-            "p1": "<strong>Oğuz Kağan</strong> gökyüzünün yüzü, dağın gücü ve kurdun yüreğiyle doğdu. Bebeklikten itibaren kartallarla konuşur, nehirlere hükmederdi. Dünyanın dört bir köşesini fethetti; ilahi bir bozkurt yol göstericisi olarak yanındaydı.",
-            "p2": "İmparatorluğunu altı oğlu arasında paylaştırdı — üçü Güneş'in (Bozok) ve üçü Ay'ın (Üçok) — binlerce yıl boyunca dünyayı şekillendirecek tüm büyük Türk hanedanlarının temelini oluşturdu."
+            "p1": "<strong>Oğuz Kağan</strong> göğün yüzü, dağın gücü ve kurdun kalbiyle doğdu. Bebekliğinden itibaren kartallarla konuştu ve nehirlere hükmetti. İlahi bir bozkurtun rehberliğinde dünyanın dört bir yanını fethetti.",
+            "p2": "İmparatorluğunu altı oğlu arasında böldü — Güneşin üçü (Bozok) ve Ay'ın üçü (Üçok) — dünyayı bin yıl boyunca şekillendirecek tüm büyük Türk hanedanlıklarının temelini attı."
         },
         "asena": {
             "title": "Asena Efsanesi ve Büyük Göç",
-            "p1": "Düşmanlar Türk halkını yok ettiğinde, yalnızca tek bir çocuk hayatta kaldı; ağır yaralıydı. Göksel bir dişi kurt olan <strong>Asena</strong>, ölmekte olan çocuğu bulup Altay Dağları'ndaki gizli bir mağarada emzirdi.",
-            "p2": "İlahi bağlarından on oğul doğdu — her biri büyük bir Türk boyunun atası. Nüfus kutsal vadiyi aştığında, kurt sancağını sonsuz simgeleri olarak taşıyarak Orta Asya'nın uçsuz bucaksız bozkırlarına göç ettiler."
+            "p1": "Düşmanlar Türk halkını yok ettiğinde, yalnızca tek bir child hayatta kaldı, ağır yaralı. Göksel bir dişi kurt, <strong>Asena</strong>, ölmekte olan çocuğu buldu ve Altay Dağları arasındaki gizli bir mağarada emzirdi.",
+            "p2": "İlahi bağlarından on oğul doğdu — her biri büyük bir Türk boyunun babası. Nüfus kutsal vadiyi aştığında, kurt bayrağını sonsuz sembolleri olarak taşıyarak Orta Asya'nın uçsuz bucaksız bozkırlarına göç ettiler."
         }
     },
     "footer": {
         "title": "Sonsuz Döngü",
-        "subtitle": "Türk Kozmolojisi Dijital Müzesi",
-        "copy": "© Sonsuz Döngü · Kadim Türk Mitolojisinden Esinlenilmiştir"
+        "subtitle": "Türk Kozmolojisinin Dijital Müzesi",
+        "copyright": "© Sonsuz Döngü · Kadim Türk Mitolojisinden İlhamla",
+        "source": "Kaynak: Orhun Yazıtları ve Türk Folkloru",
+        "influenceMap": {
+            "title": "Yaradılışın Ağı",
+            "desc": "Her ruh, yaratık ve efsane tek bir kaynaktan akar — Kadim Yaratıcı Kayra Han",
+            "hover": "Ruh ipliklerini ortaya çıkarmak için üzerine gelin",
+            "kayraHan": "Kayra Han",
+            "ulgen": "Ülgen",
+            "erlik": "Erlik Han",
+            "umay": "Umay Ana",
+            "earthSpirits": "Doğa Ruhları",
+            "darkEntities": "Karanlık Varlıklar",
+            "humanity": "İnsanlık"
+        }
     }
 }

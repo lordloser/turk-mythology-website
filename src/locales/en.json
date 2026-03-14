@@ -7,7 +7,9 @@
     },
     "runeNav": {
         "origin": "The Origin",
+        "migration": "The Migration",
         "worldTree": "World Tree",
+        "ritual": "Ritual Nexus",
         "pantheon": "Divine Pantheon",
         "bestiary": "Bestiary",
         "shadowRealm": "Shadow Realm",
@@ -15,7 +17,9 @@
     },
     "realms": {
         "origin": "The Primordial Void",
+        "migration": "The Path of Survival",
         "worldTree": "Bayterek — The World Tree",
+        "ritual": "The Shamanic Bridge",
         "pantheon": "The Upper World — Celestial Realm",
         "bestiary": "The Middle World — Steppes",
         "shadowRealm": "The Lower World — Tamag",
@@ -25,8 +29,31 @@
         "subtitle": "From the Primordial Waters of Creation",
         "title": "The Infinite Cycle",
         "lore": "Before time, before earth, before the sky was woven — there was only the endless dark water. From its depths rose <strong>Ak Ana</strong>, the White Mother, carrying the breath of creation — <em>Kut</em>. She whispered, and the cosmos stirred into being.",
+        "createWord": "Yarat!",
         "btn": "Begin the Journey",
         "scroll": "Scroll to Descend"
+    },
+    "migration": {
+        "tag": "Türeyiş ve Göç Destanları",
+        "heading": "The Path of",
+        "headingGold": "Survival",
+        "desc": "Follow the Celestial Grey Wolf across the iron mountains and endless steppes — from imprisonment to liberation, from winter's grip to spring's rebirth.",
+        "ergenekon": {
+            "title": "Ergenekon",
+            "subtitle": "The Iron Mountain Prison",
+            "text": "After a devastating defeat, the surviving Turkic tribes retreated into a hidden valley enclosed by impassable iron mountains. For generations they forged their identity in the fires of patience."
+        },
+        "goc": {
+            "title": "The Great Migration",
+            "subtitle": "Birth of Empires",
+            "text": "When a blacksmith melted the iron mountain with a great forge, the Turkic people poured forth like a river of steel, reborn and unstoppable. Guided by Gökbörü, the Celestial Wolf."
+        },
+        "steppes": {
+            "title": "The Endless Steppes",
+            "subtitle": "Home of the Free",
+            "text": "Across the vast grasslands of Central Asia they spread — horse-riders, sky-worshippers, keepers of the wolf banner. Each tribe carrying the sacred fire of Tengri."
+        },
+        "wolfGuide": "Gökbörü leads the way"
     },
     "worldTree": {
         "heading": "Bayterek",
@@ -36,6 +63,87 @@
         "upper": "☀ Upper World — Celestial",
         "middle": "🌿 Middle World — Steppe",
         "lower": "🔥 Lower World — Tamag"
+    },
+    "ritual": {
+        "tag": "Şamanizm / Kamlık",
+        "heading": "The Ritual",
+        "headingGold": "Nexus",
+        "desc": "The shamanic drum is the bridge between worlds. Each symbol opens a portal to the spirits that guard nature, water, and the forgotten realms.",
+        "drumTitle": "The Sacred Drum — Tüngür",
+        "drumDesc": "Click the symbols to reveal the hidden guardians",
+        "symbols": {
+            "sun": {
+                "name": "Kün — The Sun",
+                "lore": "The eye of Tengri, the Eternal Blue Sky. The sun watches over the Upper World and bestows Kut — divine life force — upon the worthy. Shamans journey toward the sun during their celestial ascent."
+            },
+            "moon": {
+                "name": "Ay — The Moon",
+                "lore": "Guardian of the night and keeper of dreams. The moon governs the tides of the spirit world. Under its light, the veil between worlds grows thin and shamans can commune with the dead."
+            },
+            "tree": {
+                "name": "Bayterek — World Tree",
+                "lore": "The axis of all cosmology. Through the drum, shamans climb the World Tree — ascending its seventeen branches to reach the realm of Ülgen, or descending its roots to negotiate with Erlik Han."
+            },
+            "wolf": {
+                "name": "Börü — The Wolf",
+                "lore": "Sacred guide and ancestor spirit. The wolf on the drum represents Asena, the divine she-wolf who birthed the Turkic people. Shamans call upon her spirit for protection and guidance."
+            },
+            "eagle": {
+                "name": "Kartal — The Eagle",
+                "lore": "Messenger between worlds. The eagle carries prayers from the Middle World to Tengri's throne. The first shaman was said to have been raised by an eagle in the crown of Bayterek."
+            },
+            "water": {
+                "name": "Su — The Water",
+                "lore": "The primordial element from which all creation emerged. Su İyesi, the Water Spirit, dwells in every river, lake, and spring. Offerings of milk and bread ensure her blessing."
+            }
+        },
+        "suIyesi": {
+            "name": "Su İyesi — Water Guardian",
+            "desc": "She dwells in every river, lake, and spring. Beautiful and terrifying, she can grant fertile harvests or drag the unworthy into the depths. Fishermen whisper prayers before casting their nets.",
+            "offering": "Offerings: Milk, bread, and silver coins at the water's edge"
+        },
+        "ormanIyesi": {
+            "name": "Orman İyesi — Forest Guardian",
+            "desc": "Master of every tree, root, and creature of the wild. He appears as a towering figure of bark and moss, or a whispering wind through the canopy. Those who respect the forest receive his protection.",
+            "warning": "Warning: Never cut a tree without asking the Forest Spirit's permission"
+        },
+        "portals": {
+            "sun": {
+                "title": "Gün Ana — Sun Mother",
+                "desc": "The life-giving solar deity, revered as the source of warmth and light. She dwells in the highest celestial layer.",
+                "offering": "Offerings: White ribbons and milk."
+            },
+            "moon": {
+                "title": "Ay Ata — Moon Father",
+                "desc": "The ancestral guardian of the night, guiding nomadic paths across the endless steppes and ruling the tides.",
+                "offering": "Warning: Never point at the full moon."
+            },
+            "eagle": {
+                "title": "Karakuş — Divine Eagle",
+                "desc": "The messenger of the heavens. It carries prayers to Kayra Han and watches over the sacred mountains.",
+                "offering": "Symbol: Protector of the shamans."
+            },
+            "tree": {
+                "title": "Bayterek — World Tree",
+                "desc": "The cosmic axis connecting the underworld, earth, and heavens. It channels energy across dimensions.",
+                "offering": "Connection to all realms."
+            },
+            "wolf": {
+                "title": "Kökbörü — Sky Wolf",
+                "desc": "The divine guide of the Turkic peoples, leading them out of Ergenekon. A symbol of resilience and freedom.",
+                "offering": "The eternal spirit of the pack."
+            },
+            "water": {
+                "title": "Su İyesi — Water Guardian",
+                "desc": "She dwells in every river, lake, and spring. Beautiful and terrifying, she can grant fertile harvests or drag the unworthy into the depths.",
+                "offering": "Offerings: Silver coins at the waters edge."
+            },
+            "forest": {
+                "title": "Orman İyesi — Forest Guardian",
+                "desc": "Master of every tree, root, and creature of the wild. He appears as a whispering wind through the canopy.",
+                "offering": "Warning: Never cut a tree without asking permission."
+            }
+        }
     },
     "pantheon": {
         "tag": "The Upper World",
@@ -115,7 +223,20 @@
         "karabura": "Karabura",
         "karaburaDesc": "Dark storm spirit that brings blizzards and chaos — the breath of Erlik's rage.",
         "judgment": "The Judgment of Souls",
-        "judgmentDesc": "Every soul is weighed — virtue ascends, guilt descends into the nine layers of Tamag."
+        "judgmentDesc": "Every soul is weighed — virtue ascends, guilt descends into the nine layers of Tamag.",
+        "bukre": {
+            "title": "The Colossal Dragon",
+            "name": "Bükre",
+            "type": "The Sangallar Dragon",
+            "desc": "A colossal, wingless dragon that snakes through the shadow realm. Its scales reflect a metallic, iridescent sheen. Bükre is a guardian of the underworld's deepest secrets."
+        },
+        "albasti": {
+            "title": "The Red Demon",
+            "name": "Albastı",
+            "type": "Spirit of the Abyss",
+            "desc": "She comes with crimson smoke and suffocating darkness. Albastı preys on the vulnerable, her presence announced by the smell of blood and the dimming of all light."
+        },
+        "cursedRunes": "Hover the runes to awaken what sleeps in the dark..."
     },
     "sagas": {
         "tag": "Legends Eternal",
@@ -142,6 +263,19 @@
     "footer": {
         "title": "The Infinite Cycle",
         "subtitle": "A Digital Museum of Turkic Cosmology",
-        "copy": "© The Infinite Cycle · Inspired by Ancient Turkic Mythology"
+        "copyright": "© The Infinite Cycle · Inspired by Ancient Turkic Mythology",
+        "source": "Source: Orkhon Inscriptions & Turkic Folklore",
+        "influenceMap": {
+            "title": "The Web of Creation",
+            "desc": "Every spirit, creature, and legend flows from a single source — Kayra Han, the Primordial Creator",
+            "hover": "Hover to reveal the spirit threads",
+            "kayraHan": "Kayra Han",
+            "ulgen": "Ülgen",
+            "erlik": "Erlik Han",
+            "umay": "Umay Ana",
+            "earthSpirits": "Common Spirits",
+            "darkEntities": "Dark Entities",
+            "humanity": "Humanity"
+        }
     }
 }
