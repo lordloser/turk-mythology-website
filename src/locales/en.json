@@ -5,6 +5,9 @@
     "topBar": {
         "title": "The Infinite Cycle"
     },
+    "common": {
+        "back": "Back to Realms"
+    },
     "runeNav": {
         "origin": "The Origin",
         "migration": "The Migration",
@@ -276,6 +279,34 @@
             "earthSpirits": "Common Spirits",
             "darkEntities": "Dark Entities",
             "humanity": "Humanity"
+        }
+    },
+    "epic": {
+        "ergenekon": {
+            "p1": "After a devastating defeat, only two persons from the Turkic tribes, Kiyan and Nukuz, and their wives remained. While fleeing from the enemies, they found a passage between steep mountains so narrow that only a deer could pass.",
+            "p2": "When they passed through this passage, they found a secret and paradise-like valley surrounded by impassable high mountains, where rivers, fruit trees, and game animals were abundant. They named this place Ergenekon, meaning 'mine place'.",
+            "h2": "Melting of the Iron Mountain",
+            "p3": "They lived in Ergenekon for four hundred years and multiplied so much that they could no longer fit in this valley. They could not find the narrow passage their ancestors used to come here. While exploring the surroundings of the mountains, they noticed that there was iron ore in only one place.",
+            "p4": "A blacksmith said that this mountain could be melted. They lined up a row of wood and a row of coal around the mountain. They made huge bellows from seventy hides. When they pulled the bellows together, the fire became so fierce that the iron mountain melted and a road large enough for a loaded camel to pass was opened.",
+            "p5": "That day became the day of rebirth for the Turks. They emerged from Ergenekon under the guidance of a celestial Grey Wolf (Gökböri) and dominated all the steppes again by taking revenge on their ancestors."
+        },
+        "oghuz": {
+            "title": "THE EPIC OF OGHUZ KHAGAN",
+            "subtitle": "The Sky-Faced Khagan",
+            "p1": "Oghuz Khagan was born as a child with a face blue like the sky, a mouth red like fire, and eyes bright like diamonds. He started to speak, walk, and eat raw meat when he was only forty days old. As the shadow of Tengri on earth, he was a master of using all kinds of weapons.",
+            "p2": "One day, he killed a huge monster (Kiyant) that threatened his people by himself. After this victory, he married a divine woman who appeared in a beam of light. He had three sons from her named Sun, Moon, and Star. Later, he married another woman he found in a tree hollow and had three sons from her named Sky, Mountain, and Sea.",
+            "h2": "Guidance of the Celestial Wolf",
+            "p3": "One day, while Oghuz Khagan was on a campaign with his army, a large male wolf with a celestial mane appeared before him. The wolf said, 'O Oghuz, wherever you go, I will walk before you.' The Turkic army followed this divine guide and conquered the four corners of the world.",
+            "p4": "When Oghuz Khagan grew old, he distributed his golden bow and three silver arrows among his sons. He divided his country into Bozoks and Uchoks. He advised his children to stay in unity and solidarity. His legacy became the foundation of the great Turkic dynasties that would rule for millennia."
+        },
+        "asena": {
+            "title": "THE LEGEND OF ASENA & THE GREAT MIGRATION",
+            "subtitle": "The Sacred Wolf of Rebirth",
+            "p1": "In ancient times, the Turkic tribes were subjected to a large enemy attack. All the people were slaughtered, only a small child with his arms and legs cut off was left behind. The enemies left him in a swamp, thinking he would die.",
+            "p2": "Asena, a she-wolf descended from the sky, found the child and healed his wounds by licking them. She ensured his growth by feeding him with meat every day. When the child grew up, he became the mate of the wolf. When the enemies found out that the child was alive and came to kill him, Asena flew and took refuge in a hidden cave among the Altai Mountains.",
+            "h2": "Birth of the Ten Tribes",
+            "p3": "Behind the cave was a paradise-like valley. Asena gave birth to ten boys there. These boys grew up and married girls from outside, forming the ten great Turkic tribes. Their lineage multiplied so much that they could no longer fit in the valley.",
+            "p4": "Under the guidance of the Divine Wolf, they decided to leave the valley and migrate to the open steppes. Carrying the wolf banner at the front, they returned to the lands of their ancestors. This great migration was the beginning of the eternal dominance of the Turks in the steppes."
         }
     }
 }

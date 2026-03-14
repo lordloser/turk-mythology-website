@@ -1,75 +1,27 @@
 "use client";
 
-import { useRef, forwardRef } from "react";
+import { useRef, useState, forwardRef } from "react";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const PAW_SVG = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="32" height="32">
-  <path d="M12 2C10.5 2 9 3.5 9 5.5C9 7.5 10.5 9 12 9C13.5 9 15 7.5 15 5.5C15 3.5 13.5 2 12 2Z" fill="var(--celestial-gold-bright)"/>
-  <path d="M6 6C4.5 6 3 7.5 3 9.5C3 11.5 4.5 13 6 13C7.5 13 9 11.5 9 9.5C9 7.5 7.5 6 6 6Z" fill="var(--celestial-gold-bright)"/>
-  <path d="M18 6C16.5 6 15 7.5 15 9.5C15 11.5 16.5 13 18 13C19.5 13 21 11.5 21 9.5C21 7.5 19.5 6 18 6Z" fill="var(--celestial-gold-bright)"/>
-  <path d="M12 11C8.5 11 5 13.5 5 17.5C5 21.5 8.5 22 12 22C15.5 22 19 21.5 19 17.5C19 13.5 15.5 11 12 11Z" fill="var(--celestial-gold-bright)"/>
-</svg>`;
-
 const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
   const containerRef = useRef(null);
-  const wrapperRef = useRef(null);
   const trackRef = useRef(null);
   const bgRef = useRef(null);
-  const pawRefs = useRef([]);
 
+  // Slider State (0, 1, 2)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const totalSlides = 3;
+
+  const { contextSafe } = useGSAP({ scope: containerRef });
+
+  // Sadece ekrana ilk giriş animasyonları (ScrollTrigger ile)
   useGSAP(() => {
-    const wrapper = wrapperRef.current;
-    const track = trackRef.current;
-    const bg = bgRef.current;
-    if (!wrapper || !track || !bg) return;
-
-    // Kaydırma mesafelerini dinamik olarak hesaplıyoruz
-    const trackScrollWidth = track.scrollWidth - window.innerWidth;
-    const bgScrollWidth = bg.scrollWidth - window.innerWidth;
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: wrapper,
-        start: "top top",
-        end: () => `+=${trackScrollWidth}`,
-        pin: true,
-        scrub: 1,
-        invalidateOnRefresh: true,
-        // İŞTE EKSİK OLAN SİHİR BURASI:
-        snap: {
-          snapTo: 1 / 2, // 3 vagonumuz (resmimiz) var, yani 2 aralık var. (1 / 2 = 0.5 yani %0, %50, %100 noktalarına yapışır)
-          duration: { min: 0.3, max: 0.8 }, // Hizalama animasyonunun süresi
-          delay: 0.1, // Kullanıcı scroll'u bıraktıktan 0.1 saniye sonra mıknatıs devreye girer
-          ease: "power2.inOut" // Kaymanın yağ gibi yumuşak olması için
-        }
-      },
-    });
-
-    // 1:1 Eşleşme Sırrı: Hem yazıyı hem arka planı aynı anda, tam olarak kendi sonlarına kadar kaydırıyoruz!
-    tl.to(track, { x: -trackScrollWidth, ease: "none" }, 0);
-    tl.to(bg, { x: -bgScrollWidth, ease: "none" }, 0);
-
-    // Patiler için animasyon
-    pawRefs.current.forEach((paw) => {
-      if (!paw) return;
-      gsap.to(paw, {
-        opacity: 0.8,
-        scale: 1,
-        duration: 0.5,
-        scrollTrigger: {
-          trigger: paw,
-          containerAnimation: tl,
-          start: "left center",
-          toggleActions: "play none none reverse",
-        },
-      });
-    });
-
-    // Metin bloklarının ekrana girince belirmesi (Fade In)
+    // Metinleri yukarıdan yumuşakça indir
     const blocks = containerRef.current?.querySelectorAll(".migration-block");
     blocks?.forEach((block) => {
       gsap.to(block, {
@@ -77,14 +29,27 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
         y: 0,
         duration: 1,
         scrollTrigger: {
-          trigger: block,
-          containerAnimation: tl,
-          start: "left 70%",
-          toggleActions: "play none none reverse",
+          trigger: containerRef.current,
+          start: "top 60%",
         },
       });
     });
   }, { scope: containerRef });
+
+  // Butonlara basıldığında çalışacak GSAP Slider Animasyonu
+  const goToSlide = contextSafe((index) => {
+    if (index < 0 || index >= totalSlides) return;
+    setCurrentIndex(index);
+
+    const xPos = `-${index * 100}vw`;
+
+    // Metni ve Arka Planı aynı anda kaydırıyoruz
+    gsap.to([trackRef.current, bgRef.current], {
+      x: xPos,
+      duration: 1.2,
+      ease: "power3.inOut",
+    });
+  });
 
   return (
     <section id="migration" ref={(el) => {
@@ -92,36 +57,89 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
       if (typeof ref === "function") ref(el);
       else if (ref) ref.current = el;
     }}>
-      <div className="migration-wrapper" ref={wrapperRef} style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
+      <div className="migration-wrapper" style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
 
         {/* ARKA PLAN TRENI */}
-        <div className="migration-layer" ref={bgRef} style={{ display: "flex", position: "absolute", top: 0, left: 0, height: "100vh" }}>
-          {/*object-fit: cover özelliği eklendi*/}
+        <div className="migration-layer" ref={bgRef} style={{ display: "flex", position: "absolute", top: 0, left: 0, height: "100vh", width: "300vw" }}>
           <div className="migration-bg-panel migration-bg-1" style={{ width: "100vw", height: "100vh", flexShrink: 0, backgroundSize: "cover", backgroundPosition: "center", objectFit: "cover" }} />
           <div className="migration-bg-panel migration-bg-2" style={{ width: "100vw", height: "100vh", flexShrink: 0, backgroundSize: "cover", backgroundPosition: "center", objectFit: "cover" }} />
           <div className="migration-bg-panel migration-bg-3" style={{ width: "100vw", height: "100vh", flexShrink: 0, backgroundSize: "cover", backgroundPosition: "center", objectFit: "cover" }} />
         </div>
-        <div className="wolf-path">
-          {Array.from({ length: 15 }, (_, i) => (
-            <div
-              key={i}
-              ref={(el) => { pawRefs.current[i] = el; }}
-              className="paw-print"
-              style={{
-                position: "absolute",
-                left: `${10 + i * 18}vw`,
-                bottom: i % 2 === 0 ? "5%" : "15%",
-                opacity: 0,
-                transform: "scale(0.5)",
-                zIndex: 5
-              }}
-              dangerouslySetInnerHTML={{ __html: PAW_SVG }}
-            />
-          ))}
+
+        {/* KONTROL BUTONLARI (Oklar ve Noktalar) */}
+        <div style={{ position: "absolute", inset: 0, zIndex: 20, pointerEvents: "none" }}>
+
+          {/* Sol Ok (Geri) */}
+          <button
+            type="button"
+            onClick={() => goToSlide(currentIndex - 1)}
+            disabled={currentIndex === 0}
+            style={{
+              position: "absolute",
+              left: "2vw",
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: "50px",
+              height: "50px",
+              borderRadius: "50%",
+              background: "rgba(10,10,10,0.6)",
+              border: "1px solid var(--celestial-gold)",
+              color: "var(--celestial-gold-bright)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: currentIndex === 0 ? "default" : "pointer",
+              opacity: currentIndex === 0 ? 0 : 1,
+              transition: "all 0.3s",
+              pointerEvents: currentIndex === 0 ? "none" : "auto"
+            }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
+          </button>
+
+          {/* Sağ Ok (İleri) */}
+          <button
+            type="button"
+            onClick={() => goToSlide(currentIndex + 1)}
+            disabled={currentIndex === 2}
+            style={{
+              position: "absolute",
+              right: "2vw",
+              top: "50%",
+              transform: "translateY(-50%)",
+              width: "50px",
+              height: "50px",
+              borderRadius: "50%",
+              background: "rgba(10,10,10,0.6)",
+              border: "1px solid var(--celestial-gold)",
+              color: "var(--celestial-gold-bright)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: currentIndex === 2 ? "default" : "pointer",
+              opacity: currentIndex === 2 ? 0 : 1,
+              transition: "all 0.3s",
+              pointerEvents: currentIndex === 2 ? "none" : "auto"
+            }}
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
+          </button>
+
+          {/* İndikatör Noktaları (Dots) */}
+          <div style={{ position: "absolute", bottom: "5%", left: "50%", transform: "translateX(-50%)", display: "flex", gap: "12px", pointerEvents: "auto" }}>
+            {[0, 1, 2].map((idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => goToSlide(idx)}
+                style={{ padding: 0, width: "12px", height: "12px", borderRadius: "50%", border: "1px solid var(--celestial-gold)", background: currentIndex === idx ? "var(--celestial-gold-bright)" : "transparent", cursor: "pointer", transition: "all 0.3s", boxShadow: currentIndex === idx ? "0 0 10px var(--celestial-gold)" : "none" }}
+              />
+            ))}
+          </div>
         </div>
 
         {/* METİN TRENİ */}
-        <div className="migration-content" ref={trackRef} style={{ display: "flex", height: "100vh", position: "relative", zIndex: 10 }}>
+        <div className="migration-content" ref={trackRef} style={{ display: "flex", width: "300vw", height: "100vh", position: "relative", zIndex: 10 }}>
 
           {/* VAGON 1 */}
           <div className="text-panel" style={{ width: "100vw", height: "100vh", display: "flex", alignItems: "center", paddingLeft: "10vw", flexShrink: 0 }}>
@@ -142,6 +160,11 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
               </h3>
               <h2 className="heading-xl">{t("migration.ergenekon.title")}</h2>
               <p>{t("migration.ergenekon.text")}</p>
+              <Link href="/sagas/ergenekon" passHref>
+                <button type="button" className="saga-link" style={{ marginTop: "20px", pointerEvents: "auto" }}>
+                  <span>{t("sagas.explore")}</span>
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -153,6 +176,11 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
               </h3>
               <h2 className="heading-xl">{t("migration.goc.title")}</h2>
               <p>{t("migration.goc.text")}</p>
+              <Link href="/sagas/goc" passHref>
+                <button type="button" className="saga-link" style={{ marginTop: "20px", pointerEvents: "auto" }}>
+                  <span>{t("sagas.explore")}</span>
+                </button>
+              </Link>
             </div>
           </div>
 

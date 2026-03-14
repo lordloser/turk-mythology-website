@@ -748,7 +748,7 @@ a:hover {
     left: 0;
     width: 100%;
     padding: 40px 24px 24px;
-    background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.8) 50%, transparent 100%);
+    background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.8) 50%, transparent 100%);
     z-index: 2;
     transition: opacity 0.4s var(--ease-smooth);
 }
@@ -1431,14 +1431,16 @@ a:hover {
     z-index: 1;
 }
 
-.migration-bg-1 { 
-    background-image: url("/images/migration-1.png"); 
+.migration-bg-1 {
+    background-image: url("/images/migration-1.png");
 }
-.migration-bg-2 { 
-    background-image: url("/images/migration-2.png"); 
+
+.migration-bg-2 {
+    background-image: url("/images/migration-2.png");
 }
-.migration-bg-3 { 
-    background-image: url("/images/migration-3.png"); 
+
+.migration-bg-3 {
+    background-image: url("/images/migration-3.png");
 }
 
 .migration-content {

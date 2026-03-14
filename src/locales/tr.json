@@ -5,6 +5,9 @@
     "topBar": {
         "title": "Sonsuz Döngü"
     },
+    "common": {
+        "back": "Diyarlara Dön"
+    },
     "runeNav": {
         "origin": "Yaradılış",
         "migration": "Göç Destanı",
@@ -276,6 +279,34 @@
             "earthSpirits": "Doğa Ruhları",
             "darkEntities": "Karanlık Varlıklar",
             "humanity": "İnsanlık"
+        }
+    },
+    "epic": {
+        "ergenekon": {
+            "p1": "Büyük bir yenilginin ardından, Türk boylarından geriye sadece Kıyan ve Nüküz adında iki kişi ve eşleri kalmıştı. Düşmanlardan kaçarken, sarp dağların arasında, sadece bir geyiğin geçebileceği kadar dar bir geçit buldular.",
+            "p2": "Bu geçitten geçtiklerinde, karşılarına akarsuların, meyve ağaçlarının ve av hayvanlarının bol olduğu, her tarafı aşılmaz yüksek dağlarla çevrili gizli ve cennet gibi bir vadi çıktı. Bu yere, 'maden yeri' anlamına gelen Ergenekon adını verdiler.",
+            "h2": "Demir Dağın Erimesi",
+            "p3": "Dört yüz yıl boyunca Ergenekon'da yaşadılar ve o kadar çoğaldılar ki artık bu vadiye sığmaz oldular. Atalarının buraya geldiği o dar geçidi bulamadılar. Dağların etrafını araştırırken, sadece bir yerde demir madeni olduğunu fark ettiler.",
+            "p4": "Bir demirci, bu dağın eritilebileceğini söyledi. Dağın etrafına bir sıra odun, a sıra kömür dizdiler. Yetmiş deriden devasa körükler yaptılar. Hep birlikte körükleri çektiklerinde ateş o kadar hiddetlendi ki, demir dağ eridi ve yüklü bir devenin geçebileceği kadar büyük bir yol açıldı.",
+            "p5": "O gün, Türklerin yeniden doğuş günü oldu. Gök yeleli, kutsal bir Bozkurt'un (Gökböri) rehberliğinde Ergenekon'dan çıktılar ve atalarının intikamını alarak tüm bozkırlara yeniden hakim oldular."
+        },
+        "oghuz": {
+            "title": "OĞUZ KAĞAN DESTANI",
+            "subtitle": "Gök Yüzlü Kağan",
+            "p1": "Oğuz Kağan, göğün yüzü gibi mavi, ağzı ateş gibi kızıl, gözleri elmas gibi parlak bir çocuk olarak doğdu. Daha kırk günlükken konuşmaya, yürümeye ve çiğ et yemeye başladı. O, Tengri'nin yeryüzündeki gölgesi olarak her türlü silahı kullanmakta ustaydı.",
+            "p2": "Günün birinde halkını tehdit eden devasa bir canavarı (Kıyant) tek başına öldürdü. Bu zaferinden sonra, bir ışık süzmesi içinde beliren ilahi bir kadınla evlendi. Ondan Gün, Ay ve Yıldız adında üç oğlu oldu. Daha sonra bir ağaç kovuğunda bulduğu başka bir kadınla evlendi ve ondan da Gök, Dağ ve Deniz adında üç oğlu oldu.",
+            "h2": "Gökbörü'nün Rehberliği",
+            "p3": "Oğuz Kağan, bir gün ordusuyla seferdeyken karşısında gök yeleli, büyük bir erkek kurt belirdi. Kurt, 'Ey Oğuz, sen nereye gidersen ben de önünde yürüyeceğim' dedi. Türk ordusu bu ilahi rehberin peşinden giderek dünyanın dört bir yanını fethetti.",
+            "p4": "Oğuz Kağan yaşlandığında, altın yayını ve üç gümüş okunu oğulları arasında paylaştırdı. Ülkesini Bozoklar ve Üçoklar olarak ikiye ayırdı. Evlatlarına birlik ve beraberlik içinde kalmalarını öğütledi. Onun mirası, yüzyıllar boyunca hüküm sürecek olan büyük Türk hanedanlarının temeli oldu."
+        },
+        "asena": {
+            "title": "ASENA EFSANESİ VE BÜYÜK GÖÇ",
+            "subtitle": "Yeniden Doğuşun Kutsal Kurdu",
+            "p1": "Kadim zamanlarda, Türk boyları büyük bir düşman saldırısına uğradı. Tüm halk katledildi, geriye sadece kollar ve bacakları kesilmiş küçük bir çocuk bırakıldı. Düşmanlar onun öleceğini sanarak bir bataklığa terk ettiler.",
+            "p2": "Gökten inen dişi bir kurt olan Asena, çocuğu buldu ve yaralarını yalayıp iyileştirdi. Onu her gün etle besleyerek büyümesini sağladı. Çocuk büyüdüğünde kurdun eşi oldu. Düşmanlar çocuğun hayatta olduğunu öğrenip onu öldürmeye geldiklerinde, Asena uçarak Altay Dağları arasındaki gizli bir mağaraya sığındı.",
+            "h2": "On Boyun Doğuşu",
+            "p3": "Mağaranın arkasında cennet gibi bir vadi vardı. Asena orada on tane erkek çocuk doğurdu. Bu çocuklar büyüdüler ve dışarıdan kızlarla evlenerek on büyük Türk boyunu oluşturdular. Soyları o kadar çoğaldı ki artık vadiye sığmaz oldular.",
+            "p4": "İlahi Kurt'un rehberliğinde, vadiyi terk edip açık bozkırlara göç etmeye karar verdiler. Kurt bayrağını en önde taşıyarak, atalarının topraklarına geri döndüler. Bu büyük göç, Türklerin bozkırlardaki ebedi hakimiyetinin başlangıcı oldu."
         }
     }
 }

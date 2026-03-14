@@ -5,11 +5,10 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
 import "../i18n";
-
+import { useGSAP } from "@gsap/react";
 /* ── Components ─────────────────────────────── */
 import Loader from "./components/Loader";
 import TopBar from "./components/TopBar";
-import RuneNav from "./components/RuneNav";
 import OriginSection from "./components/sections/OriginSection";
 import MigrationSection from "./components/sections/MigrationSection";
 import WorldTreeSection from "./components/sections/WorldTreeSection";
@@ -26,15 +25,18 @@ gsap.registerPlugin(ScrollTrigger);
 /* ================================================================
    THE INFINITE CYCLE — Main Page Orchestrator
    ================================================================ */
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Home() {
   const { t, i18n } = useTranslation();
-  const [lang, setLang] = useState("en");
+
+  // DÜZELTME 1: State artık "tr" ile başlıyor
+  const [lang, setLang] = useState("tr");
 
   /* ── Refs for cross-component communication ── */
   const topBarRef = useRef(null);
   const realmRef = useRef(null);
 
-  /* ── Section refs for RuneNav scrolling ──── */
   const sectionRefs = {
     origin: useRef(null),
     migration: useRef(null),
@@ -50,6 +52,21 @@ export default function Home() {
     i18n.changeLanguage(lng);
     setLang(lng);
   }
+  // DÜZELTME 2: Geri dönüşlerdeki GSAP kayma sorununun çözümü
+  useGSAP(() => {
+    // Tarayıcı ortamında mıyız ve URL'de bir "#" (hash) var mı?
+    if (typeof window !== "undefined" && window.location.hash) {
+      const hash = window.location.hash; // Örn: "#sagas"
+
+      // GSAP'in yatay kaydırma boşluklarını hesaplaması için yarım saniye süre veriyoruz
+      setTimeout(() => {
+        const target = document.querySelector(hash);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 500);
+    }
+  }, []);
 
   return (
     <>
@@ -63,7 +80,6 @@ export default function Home() {
         realmRef={realmRef}
       />
 
-      <RuneNav t={t} sectionRefs={sectionRefs} />
 
       <OriginSection
         ref={sectionRefs.origin}
