@@ -214,32 +214,50 @@
         }
     },
     "shadow": {
-        "tag": "Aşağı Dünya — Tamag",
-        "heading": "Gölge",
-        "headingAccent": "Diyarı",
-        "desc": "Işık ile karanlık arasındaki sınırın kırıldığı yer. Ölüm ve yargının efendisi Erlik Han'ın hükümranlığına girin.",
+        "tag": "Aşağı Dünya",
+        "heading": "GÖLGE",
+        "headingAccent": "DİYARI",
+        "desc": "Karanlığın ilk tohumunun atıldığı, sessizliğin ve yargının hüküm sürdüğü kadim derinlikler.",
         "erlikTitle": "Erlik Han",
-        "erlikP1": "<strong>Erlik Han</strong> — Ülgen'in kardeşi, gururu ve isyanı yüzünden Kayra Han tarafından uçuruma atılan. Yeraltının dokuz katını kara demirden bir tahttan yönetir, karanlık ruhlardan oluşan bir orduya komuta eder.",
-        "erlikP2": "Ölümlüler öldüğünde, ruhları Erlik'in hükümranlığından geçmek zorundadır. Kemikten terazide amellerini tartar — erdemliler Yukarı Dünya'ya yükselir, günahkârlar kızıl ateş ruh ipleriyle bağlanarak Tamag'da kalır.",
-        "alkarisi": "Alkarısı",
-        "alkarisiDesc": "Anneleri ve yeni doğanları rahatsız eden iblis — Erlik'in yaradılış kıskançlığının gölgesi.",
-        "karabura": "Karabura",
-        "karaburaDesc": "Kar fırtınaları ve kaos getiren karanlık fırtına ruhu — Erlik'in öfkesinin nefesi.",
-        "judgment": "Ruhların Yargılanması",
-        "judgmentDesc": "Her ruh tartılır — erdem yükselir, suç Tamag'ın dokuz katına iner.",
-        "bukre": {
-            "title": "Devasa Ejderha",
-            "name": "Bükre",
-            "type": "Sangallar Ejderhası",
-            "desc": "Gölge diyarında yılankavi hareket eden devasa, kanatsız bir ejderha. Pulları metalik, yanardöner bir parıltı yansıtır. Bükre, yeraltı dünyasının en derin sırlarının koruyucusudur."
-        },
-        "albasti": {
-            "title": "Kızıl İblis",
-            "name": "Albastı",
-            "type": "Uçurumun Ruhu",
-            "desc": "Kızıl duman ve boğucu karanlıkla gelir. Albastı savunmasızları avlar, varlığı kan kokusu ve tüm ışığın sönmesiyle duyurulur."
-        },
-        "cursedRunes": "Karanlıkta uyuyanı uyandırmak için runelerin üzerine gelin..."
+        "erlikP1": "Türk mitolojisinde yeraltı aleminin mutlak hakimi. Gökten sürgün edilen ilk varlık ve ölümün efendisi.",
+        "erlikP2": "Dokuz dallı kara çamın altında, gümüş asasıyla karanlığın ve dengenin muhafızıdır.",
+        "karabura": "Kara Bura",
+        "karaburaDesc": "Erlik Han'ın yeraltındaki demir ocaklarını koruyan ve karanlık enerjiyi taşıyan varlık.",
+        "judgment": "Büyük Yargı",
+        "judgmentDesc": "Ruhların Tamag'daki ebedi yolculuğuna karar veren yeraltı adaleti.",
+        "exploreCreatures": "Yeraltı Varlıklarını Keşfet"
+    },
+    "kulliyat": {
+        "back": "← Ana Sayfaya Dön",
+        "title": "KARANLIK",
+        "titleAccent": "KÜLLİYAT",
+        "subtitle": "Erlik Han'ın iradesiyle şekillenen habis ruhların ve kadim yaratıkların gizli tarihi.",
+        "weaknessLabel": "Zafiyeti:",
+        "categoryLabel": "Sınıf:",
+        "footer": "Bu bilgiler kadim Türk mitolojisi kaynaklarından derlenmiştir.",
+        "creatures": {
+            "alkarisi": {
+                "title": "Alkarısı",
+                "sub": "Lohusa ve Yaşam Enerjisi Avcısı",
+                "desc": "Erlik Han’ın yeryüzündeki en eski gölgelerinden biridir. Genellikle kırmızı kıyafetlerle tasvir edilir. Taze yaşam enerjisini hedef alır ve kurbanlarını yeraltı efendisine taşır.",
+                "weak": "Demir, al rengi ve üzerlik otu.",
+                "cat": "Ruh Hasatçısı"
+            },
+            "abasi": {
+                "title": "Abasılar",
+                "sub": "Yeraltı Dünyasının Piyadeleri",
+                "desc": "Erlik Han’ın en kalabalık ordusunu oluştururlar. Tek gözlü veya tek bacaklı formlarda olabilirler. İnsanlara hastalık bulaştırmak ve ruhları yeraltı zindanlarına çekmekle görevlidirler.",
+                "weak": "Güneş ışığı ve şaman duaları.",
+                "cat": "Hizmetkar/Savaşçı"
+            },
+            "kamos": {
+                "title": "Kamos",
+                "sub": "Kabusların ve Uykunun Efendisi",
+                "desc": "Geceleri insanların üzerine çöken karanlık bir enerjidir. Erlik Han’ın, insanların en savunmasız anı olan uykularını kontrol etmek için kullandığı bir varlıktır.",
+                "weak": "Uyanıklık ve metal nesneler.",
+                "cat": "Zihinsel Musibet"
+            }
+        }
     },
     "sagas": {
         "tag": "Sonsuz Efsaneler",

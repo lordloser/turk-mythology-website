@@ -1259,6 +1259,76 @@ a:hover {
     overflow: hidden;
 }
 
+:root {
+    /* Renk Paleti */
+    --abyss-black: #050505;
+    --abyss-crimson: #8b0000;
+    --abyss-crimson-bright: #ff4500;
+    --abyss-magma: #ff8c00;
+    --text-primary: #e8e2d6;
+    --text-secondary: rgba(232, 226, 214, 0.6);
+}
+
+/* Külliyat Sayfası Genel Stilleri */
+.kulliyat-container {
+    background-color: var(--abyss-black);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+/* Özel Başlık Tasarımı */
+.heading-ancient {
+    font-family: 'Playfair Display', serif;
+    /* Eğer serif font yüklü değilse standart serif */
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+/* Yaratık Kartları */
+.creature-card {
+    border-bottom: 1px solid rgba(139, 0, 0, 0.2);
+    padding-bottom: 3rem;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.creature-card:hover {
+    border-bottom-color: var(--abyss-crimson-bright);
+    transform: translateY(-5px);
+}
+
+/* Keşfet Butonu (Ana Sayfadaki) */
+.explore-button {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--abyss-crimson);
+    color: var(--abyss-crimson-bright);
+    background: transparent;
+    padding: 1rem 2.5rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.explore-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--abyss-crimson);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.explore-button:hover::before {
+    left: 0;
+}
+
+.explore-button:hover {
+    color: white;
+}
+
 .loader-bar-fill {
     height: 100%;
     background: var(--celestial-gold);

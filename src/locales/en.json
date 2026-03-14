@@ -214,32 +214,32 @@
         }
     },
     "shadow": {
-        "tag": "The Lower World — Tamag",
-        "heading": "The Shadow",
-        "headingAccent": "Realm",
-        "desc": "Where the boundary between light and darkness fractures. Enter the domain of Erlik Han, lord of death and judgment.",
-        "erlikTitle": "Erlik Han",
-        "erlikP1": "<strong>Erlik Han</strong> — brother of Ülgen, cast into the abyss by Kayra Han for his pride and defiance. He rules the nine layers of the underworld from a throne of black iron, commanding an army of dark spirits.",
-        "erlikP2": "When mortals die, their souls must pass through Erlik's domain. He weighs their deeds upon scales of bone — the righteous ascend to the Upper World, while the guilty remain in Tamag, bound by spirit threads of crimson fire.",
-        "alkarisi": "Alkarısı",
-        "alkarisiDesc": "Demon that haunts mothers and newborns — a shadow of Erlik's jealousy over creation.",
-        "karabura": "Karabura",
-        "karaburaDesc": "Dark storm spirit that brings blizzards and chaos — the breath of Erlik's rage.",
-        "judgment": "The Judgment of Souls",
-        "judgmentDesc": "Every soul is weighed — virtue ascends, guilt descends into the nine layers of Tamag.",
-        "bukre": {
-            "title": "The Colossal Dragon",
-            "name": "Bükre",
-            "type": "The Sangallar Dragon",
-            "desc": "A colossal, wingless dragon that snakes through the shadow realm. Its scales reflect a metallic, iridescent sheen. Bükre is a guardian of the underworld's deepest secrets."
-        },
-        "albasti": {
-            "title": "The Red Demon",
-            "name": "Albastı",
-            "type": "Spirit of the Abyss",
-            "desc": "She comes with crimson smoke and suffocating darkness. Albastı preys on the vulnerable, her presence announced by the smell of blood and the dimming of all light."
-        },
-        "cursedRunes": "Hover the runes to awaken what sleeps in the dark..."
+        "tag": "Underworld",
+        "heading": "SHADOW",
+        "headingAccent": "REALM",
+        "desc": "Ancient depths where the first seeds of darkness were sown, ruled by silence and judgment.",
+        "erlikTitle": "Erlik Khan",
+        "erlikP1": "Absolute ruler of the underworld in Turkic mythology. The first being exiled from the heavens and the lord of death.",
+        "erlikP2": "Guardian of darkness and balance, sitting beneath the nine-branched black pine with his silver staff.",
+        "exploreCreatures": "Explore Underworld Creatures"
+    },
+    "kulliyat": {
+        "back": "← Back to Home",
+        "title": "DARK",
+        "titleAccent": "COMPENDIUM",
+        "subtitle": "The secret history of malevolent spirits and ancient creatures shaped by the will of Erlik Khan.",
+        "weaknessLabel": "Weakness:",
+        "categoryLabel": "Class:",
+        "footer": "This information is compiled from ancient Turkic mythological sources.",
+        "creatures": {
+            "alkarisi": {
+                "title": "Alkarisi",
+                "sub": "Hunter of Life Energy",
+                "desc": "One of Erlik Khan's oldest shadows on earth. Often depicted in red garments, targeting fresh life energy and carrying souls to the lord of the underworld.",
+                "weak": "Iron, the color red, and Syrian rue.",
+                "cat": "Soul Harvester"
+            }
+        }
     },
     "sagas": {
         "tag": "Legends Eternal",
