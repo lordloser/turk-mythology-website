@@ -166,7 +166,12 @@
         "kyzagan": {
             "name": "Kızagan",
             "role": "Savaş Tanrısı",
-            "desc": "Ülgen'in oğlu ve savaşçıların koruyucusu. Kızagan kızıl fırtınaya biner, alev kılıcı göğü yarar. Orduları cesaretle kutsar ve düşmüş kahramanların yiğitliğini yargılar."
+            "desc": "Ülgen'in oğlu ve savaşçıların koruyucusu. Kızagan kızıl fırtınaya biner, alev kılıcı göğü yarar. Orduları cesaretle kutsar ve düşmüş kahramanların yiğitliğini yargilar."
+        },
+        "umay": {
+            "name": "Umay Ana",
+            "role": "Koruyucu Ana Tanrıça",
+            "desc": "Doğum, bereket, koruma ve yaşamın ilahi anası. Tengri'nin aşından tutan ve her yeni doğan ruhu koruyan göksel tanrıça."
         },
         "nexusTitle": "Göksel Bağlantı Ağı",
         "nexusDesc": "Bir tanrının üzerine gelin ve diyarlar üzerindeki bağlantılarını keşfedin"
@@ -407,5 +412,51 @@
             "p3": "Mağaranın arkasında cennet gibi bir vadi vardı. Asena orada on tane erkek çocuk doğurdu. Bu çocuklar büyüdüler ve dışarıdan kızlarla evlenerek on büyük Türk boyunu oluşturdular. Soyları o kadar çoğaldı ki artık vadiye sığmaz oldular.",
             "p4": "İlahi Kurt'un rehberliğinde, vadiyi terk edip açık bozkırlara göç etmeye karar verdiler. Kurt bayrağını en önde taşıyarak, atalarının topraklarına geri döndüler. Bu büyük göç, Türklerin bozkırlardaki ebedi hakimiyetinin başlangıcı oldu."
         }
+    },
+    "umaySection": {
+        "tag": "Göksel Koruyucu",
+        "heading": "Umay",
+        "headingGold": "Ana",
+        "desc": "Doğumun, bereğin ve korumanın ilahi anası. Tüm yaşayan ruhlara göksel koruma veren, Tengri'nin sır kalkanı.",
+        "lore1": "Umay Ana, gökün en parlak katmanında yaşar ve her yeni doğan ruhun doğumuyla birlikte görünmez bir koruma kalkanı örer. Beyaz giysili, gekümüfl saplı ve altın taclı bu göksel genç tanırça, Kayra Han'ın dostu ve bereketin daima kaynağıdır.",
+        "lore2": "Şamanlar ona çocuk hastalıklarında, doğumlarda ve koruma gerektiren her rituel sırasında yal varır. Sunuları arasında altın ipek, süt ve beyaz kürdeği bulunur. Onun koruduğu ruh, hibir yeraltı varlığının ulaşamıyacağı göksel bir zırh taşır.",
+        "connection1Title": "Tengri ile Bağı",
+        "connection1Desc": "Tengri'nin takdisi altında yaşar. Doğumlarda ve bereğin gelşmesinde Tengri'nin iradesini yerelde gösterir.",
+        "connection2Title": "Erlik Han'a Karşıtı",
+        "connection2Desc": "Alkarisi ve Abasailar'ın yeni doğanlara musallat olmasını engelleyen en güçlü göksel kalkanıdır.",
+        "offering": "Sunular: Beyaz ipek, süt ve altın dikimş."
+    },
+    "glossary": {
+        "title": "MİTOLOJİK SÖZLÜK",
+        "subtitle": "Kadim Terimler ve Anlamları",
+        "terms": [
+            { "term": "Kut", "def": "Gök Tanrı tarafından verilen ilahi yaşam gücü, bereket ve kutluluk." },
+            { "term": "Tamag", "def": "Yeraltı dünyası. Erlik Han'ın hüküm sürdüğü karanlık ve azap krallığı." },
+            { "term": "Üçgöl", "def": "Tengri'nin yaşadığına inanılan en üst gök katmanındaki ilahi bölge." },
+            { "term": "Bayterek", "def": "Yeraltını, yeryüzünü ve gökyüzünü birbirine bağlayan efsanevi Hayat Ağacı." },
+            { "term": "Tengri (Gök Tanrı)", "def": "Sonsuz mavi gök, evrenin yaratıcısı ve en ulu güç." },
+            { "term": "Kam (Şaman)", "def": "Ruhlar dünyası ile iletişim kurabilen, şifa veren ve ritüelleri yöneten ruhani lider." },
+            { "term": "İye", "def": "Doğadaki varlıkların (su, dağ, orman vb.) koruyucu ruhları. Sahip/Efendi." }
+        ]
+    },
+    "familyTree": {
+        "title": "KÖKEN AĞACI",
+        "subtitle": "Tanrılar ve Varlıkların Yaratılış Ağı",
+        "hint": "* Varlıkların üzerindeki bağları ve etkileşimleri görmek için fareyi üzerlerine getirin."
+    },
+    "audio": {
+        "play": "Sesi Aç",
+        "pause": "Sesi Kapat"
+    },
+    "nexusLabels": {
+        "tengri": "Tengri",
+        "kayra": "Kayra Han",
+        "ulgen": "Ülgen",
+        "umay": "Umay Ana",
+        "kyzagan": "Kızagan",
+        "karshyt": "Karşıt",
+        "bai-ulgen": "Bay Ülgen",
+        "erlik": "Erlik Han",
+        "alkarisi": "Alkarısı"
     }
 }

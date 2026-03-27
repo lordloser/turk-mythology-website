@@ -96,7 +96,7 @@ const ShadowRealmSection = forwardRef(function ShadowRealmSection({ t, topBarRef
     <section
       id="shadow-realm"
       className="section"
-      style={{ minHeight: "auto", paddingBottom: "60px" }} // Buton için padding'i biraz artırdım
+      style={{ minHeight: "auto", paddingBottom: "60px" }}
       ref={(el) => {
         containerRef.current = el;
         if (typeof ref === "function") ref(el);
@@ -113,42 +113,31 @@ const ShadowRealmSection = forwardRef(function ShadowRealmSection({ t, topBarRef
       <div className="decay-border" />
       <div className="section-inner">
         <div className="section-header reveal">
-          <span
-            className="section-tag"
-            style={{ borderColor: "var(--abyss-crimson)", color: "var(--abyss-crimson-bright)" }}
-          >
+          <span className="section-tag shadow-header-tag">
             {t("shadow.tag")}
           </span>
-          <h2 className="heading-xl" style={{ color: "var(--abyss-crimson-bright)" }}>
+          <h2 className="heading-xl shadow-heading-main">
             {t("shadow.heading")}{" "}
-            <span style={{ color: "var(--abyss-magma)" }}>{t("shadow.headingAccent")}</span>
+            <span className="shadow-heading-accent">{t("shadow.headingAccent")}</span>
           </h2>
         </div>
 
         <div className="shadow-realm-layout">
-          <div className="erlik-visual" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+          <div className="erlik-visual erlik-layout">
             <div style={{ position: "relative" }}>
               <div className="erlik-aura" />
               <img
                 src="/images/erlik-han.png"
                 alt="Erlik Han"
                 ref={erlikImageRef}
-                style={{
-                  width: "100%",
-                  borderRadius: "12px",
-                  position: "relative",
-                  zIndex: 1,
-                  filter: "contrast(1.1) saturate(1.2)",
-                  boxShadow: "0 0 60px rgba(139, 0, 0, 0.3)",
-                }}
+                className="erlik-image-style"
               />
             </div>
           </div>
 
           <div
-            className="shadow-info"
+            className="shadow-info shadow-info-container"
             ref={shadowInfoRef}
-            style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}
           >
             <h2 className="heading-xl">{t("shadow.erlikTitle")}</h2>
             <p dangerouslySetInnerHTML={{ __html: t("shadow.erlikP1") }} />
@@ -169,20 +158,7 @@ const ShadowRealmSection = forwardRef(function ShadowRealmSection({ t, topBarRef
             {/* Yeni eklenen detay butonu */}
             <div style={{ marginTop: "40px" }}>
               <Link href="/yeralti-varliklari" className="custom-link">
-                <button
-                  className="explore-button"
-                  style={{
-                    padding: "12px 32px",
-                    background: "transparent",
-                    border: "1px solid var(--abyss-crimson)",
-                    color: "var(--abyss-crimson-bright)",
-                    cursor: "pointer",
-                    textTransform: "uppercase",
-                    letterSpacing: "2px",
-                    fontSize: "0.9rem",
-                    transition: "all 0.3s ease"
-                  }}
-                >
+                <button className="shadow-realm-explore-btn">
                   {t("shadow.exploreCreatures")}
                 </button>
               </Link>

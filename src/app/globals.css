@@ -597,7 +597,7 @@ a:hover {
 .deity-card-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(0deg, rgba(8, 8, 8, 0.95) 0%, rgba(8, 8, 8, 0.4) 40%, transparent 60%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 35%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -610,6 +610,7 @@ a:hover {
     font-weight: 700;
     color: var(--celestial-gold-bright);
     margin-bottom: 4px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
 }
 
 .deity-card-role {
@@ -617,6 +618,12 @@ a:hover {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text-muted);
+    margin-bottom: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    transition: margin-bottom 0.4s var(--ease-smooth);
+}
+
+.deity-card:hover .deity-card-role {
     margin-bottom: 12px;
 }
 
@@ -625,12 +632,16 @@ a:hover {
     line-height: 1.6;
     color: var(--text-secondary);
     opacity: 0;
+    max-height: 0; /* Ensures it takes no space initially */
+    margin-top: 0;
+    overflow: hidden;
     transform: translateY(10px);
     transition: all 0.4s var(--ease-smooth);
 }
 
 .deity-card:hover .deity-card-desc {
     opacity: 1;
+    max-height: 200px; /* Big enough to fit the text */
     transform: translateY(0);
 }
 
@@ -2030,3 +2041,365 @@ a:hover {
     opacity: 0.8;
     filter: drop-shadow(0 0 8px currentColor);
 }
+
+/* ── Refactored Inline Styles ──────────────────────────── */
+.bestiary-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.bukre-bg-anim {
+    position: absolute;
+    top: 10%;
+    left: -20%;
+    width: 140%;
+    height: 80%;
+    object-fit: contain;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+    filter: grayscale(40%) blur(1px);
+    transform: rotate(-5deg);
+}
+
+.bestiary-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(10,10,10,0.8);
+    border: 1px solid var(--celestial-gold);
+    color: var(--celestial-gold-bright);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.bestiary-nav-btn.prev {
+    left: 1vw;
+}
+
+.bestiary-nav-btn.next {
+    right: 1vw;
+}
+
+.bestiary-nav-btn:disabled,
+.bestiary-nav-btn.disabled {
+    cursor: default;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.shadow-realm-explore-btn {
+    padding: 12px 32px;
+    background: transparent;
+    border: 1px solid var(--abyss-crimson);
+    color: var(--abyss-crimson-bright);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.shadow-realm-explore-btn:hover {
+    background: rgba(220, 20, 60, 0.1);
+    box-shadow: 0 0 15px rgba(220, 20, 60, 0.3);
+}
+
+.shadow-header-tag {
+    border-color: var(--abyss-crimson);
+    color: var(--abyss-crimson-bright);
+}
+
+.shadow-heading-main {
+    color: var(--abyss-crimson-bright);
+}
+
+.shadow-heading-accent {
+    color: var(--abyss-magma);
+}
+
+.erlik-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.erlik-image-style {
+    width: 100%;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+    filter: contrast(1.1) saturate(1.2);
+    box-shadow: 0 0 60px rgba(139, 0, 0, 0.3);
+}
+
+.shadow-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ── Umay Ana Section ──────────────────────────────────── */
+.umay-section {
+    background: radial-gradient(
+        ellipse at 50% 30%,
+        rgba(245, 209, 107, 0.07) 0%,
+        rgba(220, 190, 255, 0.05) 40%,
+        var(--bg-dark) 75%
+    );
+}
+
+.umay-bg-gradient {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 20% 80%, rgba(212, 168, 67, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(180, 140, 220, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.umay-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.umay-tag {
+    border-color: #DDA0DD;
+    color: #DDA0DD;
+}
+
+.umay-title {
+    background: linear-gradient(135deg, var(--celestial-gold-bright), #DDA0DD, var(--celestial-white));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.umay-gold {
+    background: linear-gradient(135deg, #DDA0DD, var(--celestial-gold-bright));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.umay-desc {
+    max-width: 620px;
+    margin: 16px auto 0;
+}
+
+.umay-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.umay-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.umay-aura {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    top: 15%;
+    left: 15%;
+    background: radial-gradient(ellipse, rgba(245, 209, 107, 0.25) 0%, rgba(220, 190, 255, 0.15) 50%, transparent 75%);
+    border-radius: 50%;
+    filter: blur(30px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.umay-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 60px rgba(212, 168, 67, 0.15), 0 0 120px rgba(220, 190, 255, 0.08);
+    transition: transform 0.6s var(--ease-smooth);
+}
+
+.umay-image:hover {
+    transform: scale(1.02);
+}
+
+.umay-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.umay-lore {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.umay-connections {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.umay-connection {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: rgba(212, 168, 67, 0.05);
+    border: 1px solid rgba(220, 190, 255, 0.15);
+    border-radius: 12px;
+    padding: 16px 20px;
+    transition: all 0.3s var(--ease-smooth);
+}
+
+.umay-connection:hover {
+    border-color: rgba(220, 190, 255, 0.4);
+    background: rgba(212, 168, 67, 0.08);
+    transform: translateX(4px);
+}
+
+.umay-connection-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.umay-connection-title {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: #DDA0DD;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.umay-connection-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.umay-offering {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid rgba(212, 168, 67, 0.3);
+    border-radius: 100px;
+    color: var(--celestial-gold);
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .umay-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .umay-image {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+}
+
+/* deity-grid 4-column when 4 deities */
+@media (min-width: 900px) {
+    .deity-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ── Mobile Hamburger Menu ────────────────────────────── */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--celestial-gold);
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1000;
+    line-height: 1;
+}
+
+.top-bar-links-desktop {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-left: 1px solid var(--border-glow);
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px 30px;
+    gap: 20px;
+    transition: right 0.4s var(--ease-smooth);
+    z-index: 999;
+}
+
+.mobile-menu-overlay.open {
+    right: 0;
+}
+
+.mobile-menu-overlay-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(3px);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s var(--ease-smooth);
+}
+.mobile-menu-overlay-bg.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-menu-overlay .custom-link {
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(212, 168, 67, 0.1);
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+.mobile-menu-overlay .realm-indicator {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* On mobile screens, hide desktop links and show hamburger */
+@media (max-width: 768px) {
+    .top-bar-links-desktop {
+        display: none !important;
+    }
+    .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+

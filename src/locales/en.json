@@ -168,6 +168,11 @@
             "role": "God of War",
             "desc": "Son of Ülgen and guardian of warriors. Kyzagan rides the crimson storm, his blazing sword cleaving the sky. He blesses armies with courage and judges the valor of fallen heroes."
         },
+        "umay": {
+            "name": "Umay Ana",
+            "role": "Guardian Mother Goddess",
+            "desc": "Divine mother of birth, fertility, protection, and life. The celestial goddess who holds the thread of Tengri and safeguards every newborn soul into the world."
+        },
         "nexusTitle": "The Celestial Nexus",
         "nexusDesc": "Hover over a deity to reveal their connections and influence over the realms"
     },
@@ -301,6 +306,19 @@
             "p2": "From their divine bond came ten sons — each the father of a great Turkic tribe. When the population outgrew the sacred valley, they migrated across the vast steppes of Central Asia, carrying the wolf banner as their eternal symbol."
         }
     },
+    "umaySection": {
+        "tag": "Celestial Guardian",
+        "heading": "Umay",
+        "headingGold": "Ana",
+        "desc": "Divine mother of birth, fertility, and protection. The invisible celestial shield that Tengri bestows upon every living soul.",
+        "lore1": "Umay Ana dwells in the brightest layer of the sky and weaves an invisible shield of protection around every newborn soul at the moment of birth. This celestial young goddess, dressed in white with a silver-handled staff and a golden crown, is the companion of Kayra Han and the eternal source of abundance.",
+        "lore2": "Shamans call upon her during child illnesses, births, and any ritual requiring protection. Her offerings include golden silk, milk, and white fur. The soul under her protection carries a celestial armor unreachable by any underworld entity.",
+        "connection1Title": "Bond with Tengri",
+        "connection1Desc": "She lives under Tengri's blessing. During births and the growth of abundance she embodies Tengri's will on earth.",
+        "connection2Title": "Counter to Erlik Han",
+        "connection2Desc": "She is the most powerful celestial shield that prevents Alkarisi and Abasailers from haunting the newborn.",
+        "offering": "Offerings: White silk, milk, and golden embroidery."
+    },
     "footer": {
         "title": "The Infinite Cycle",
         "subtitle": "A Digital Museum of Turkic Cosmology",
@@ -346,5 +364,38 @@
             "p3": "Behind the cave was a paradise-like valley. Asena gave birth to ten boys there. These boys grew up and married girls from outside, forming the ten great Turkic tribes. Their lineage multiplied so much that they could no longer fit in the valley.",
             "p4": "Under the guidance of the Divine Wolf, they decided to leave the valley and migrate to the open steppes. Carrying the wolf banner at the front, they returned to the lands of their ancestors. This great migration was the beginning of the eternal dominance of the Turks in the steppes."
         }
+    },
+    "glossary": {
+        "title": "MYTHOLOGICAL GLOSSARY",
+        "subtitle": "Ancient Terms and Meanings",
+        "terms": [
+            { "term": "Kut", "def": "The divine life force, abundance, and blessing bestowed by Tengri." },
+            { "term": "Tamag", "def": "The Underworld. The dark realm of torment ruled by Erlik Khan." },
+            { "term": "Üçgöl", "def": "The divine region in the highest heavenly layer where Tengri resides." },
+            { "term": "Bayterek", "def": "The legendary World Tree connecting the underworld, earth, and sky." },
+            { "term": "Tengri (Sky God)", "def": "The eternal blue sky, creator of the universe and the supreme power." },
+            { "term": "Kam (Shaman)", "def": "Spiritual leader who communicates with the spirit world, heals, and leads rituals." },
+            { "term": "İye", "def": "Guardian spirits of entities in nature (water, mountain, forest, etc.). The Master/Owner." }
+        ]
+    },
+    "familyTree": {
+        "title": "THE ORIGIN TREE",
+        "subtitle": "Web of Creation: Gods and Entities",
+        "hint": "* Hover over the entities to see their connections and interactions."
+    },
+    "audio": {
+        "play": "Play Sound",
+        "pause": "Pause Sound"
+    },
+    "nexusLabels": {
+        "tengri": "Tengri",
+        "kayra": "Kayra Han",
+        "ulgen": "Ülgen",
+        "umay": "Umay Ana",
+        "kyzagan": "Kyzagan",
+        "karshyt": "Karşıt",
+        "bai-ulgen": "Bai Ülgen",
+        "erlik": "Erlik Han",
+        "alkarisi": "Alkarısı"
     }
 }

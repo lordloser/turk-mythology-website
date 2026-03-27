@@ -10,21 +10,7 @@ import "../../i18n"; // i18n dosyanın yolunu bağıl yol olarak güncelledik
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Yaratık verilerini ve metinlerini yöneten merkezi obje
-const CREATURE_DATA = {
-    alkarisi: {
-        title: "ALKARISI",
-        desc: "Türk mitolojisindeki en eski habis ruhlardan biridir. Erlik Han'ın taze yaşam enerjisi 'Kut'u hasat etmek için yeryüzüne gönderdiği bir avcıdır. Genellikle lohusa kadınlara ve yenidoğanlara musallat olmasıyla bilinir; ciğer çalan ve su kenarlarında yaşayan korkunç bir figürdür.",
-    },
-    abasi: {
-        title: "ABASILAR",
-        desc: "Erlik Han'ın yeraltı ordusunun temelini oluşturan şer ruhlardır. Tek gözlü, tek bacaklı veya dişsiz olarak tasvir edilirler. İnsanlara hastalık yaymak, talihsizlik getirmek ve kurbanlarını yeraltı zindanlarına sürüklemekle görevli, Erlik'in sadık piyadeleridir.",
-    },
-    kamos: {
-        title: "KAMOS",
-        desc: "Uykunun ve kabusların karanlık efendisidir. Geceleri insanların göğsüne çökerek nefeslerini kesen, onları hareket edemez hale getiren duman formunda bir varlıktır. Erlik Han'ın zihinsel baskı kurmak ve korku yaymak için kullandığı en etkili gölgelerden biridir.",
-    },
-};
+const CREATURE_KEYS = ["alkarisi", "abasi", "kamos"];
 
 export default function YeraltiVarliklariPage() {
     const { t } = useTranslation();
@@ -78,19 +64,18 @@ export default function YeraltiVarliklariPage() {
                 </div>
 
                 {/* YARATIK LİSTESİ */}
-                {Object.keys(CREATURE_DATA).map((key) => {
-                    const creature = CREATURE_DATA[key];
+                {CREATURE_KEYS.map((key) => {
                     return (
                         <article key={key} className="creature-article" style={{ marginBottom: "80px" }}>
                             <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontFamily: "var(--font-display)", color: "var(--celestial-gold)", margin: "0 0 30px", borderBottom: "1px solid var(--celestial-gold)", paddingBottom: "10px" }}>
-                                {creature.title}
+                                {t(`kulliyat.creatures.${key}.title`)}
                             </h2>
 
                             {/* Resim Alanı */}
                             <div style={createCreatureImageStyle(key)} className="creature-image-container" />
 
                             <p style={{ fontSize: "1.15rem", lineHeight: "1.8", color: "var(--text-secondary)", marginBottom: "30px" }}>
-                                {creature.desc}
+                                {t(`kulliyat.creatures.${key}.desc`)}
                             </p>
                         </article>
                     );

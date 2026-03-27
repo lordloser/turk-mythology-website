@@ -11,8 +11,9 @@ import NexusWeb from "../NexusWeb";
 gsap.registerPlugin(ScrollTrigger);
 
 const DEITIES = [
-  { key: "ulgen", img: "ulgen" },
   { key: "kayra", img: "kayra-han" },
+  { key: "ulgen", img: "ulgen" },
+  { key: "umay", img: "umay-ana" },
   { key: "kyzagan", img: "kyzagan" },
 ];
 

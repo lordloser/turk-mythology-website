@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 
 // Mitolojik hiyerarşiye göre yukarıdan aşağıya (y ekseni) dizilmiş koordinatlar
 const NODES = [
@@ -42,6 +43,7 @@ const LINKS = [
 ];
 
 export default function NexusWeb() {
+  const { t } = useTranslation();
   const [hoveredId, setHoveredId] = useState(null);
 
   const isConnected = useCallback(
@@ -119,7 +121,7 @@ export default function NexusWeb() {
                 fontSize="14"
                 fontWeight="700"
               >
-                {node.label[0]}
+                {t(`nexusLabels.${node.id}`)?.[0] || node.label[0]}
               </text>
               <text
                 x={node.x}
@@ -129,7 +131,7 @@ export default function NexusWeb() {
                 fontFamily="Cinzel, serif"
                 fontSize="10"
               >
-                {node.label}
+                {t(`nexusLabels.${node.id}`) || node.label}
               </text>
             </g>
           );

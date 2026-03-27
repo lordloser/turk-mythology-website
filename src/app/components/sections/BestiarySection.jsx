@@ -18,44 +18,30 @@ const CREATURES = [
 ];
 
 function getCreatureName(id, t) {
-  if (id === "alkarisi") return t("shadow.alkarisi");
-  if (id === "bukre") return t("shadow.bukre.name");
   return t(`bestiary.${id}.name`);
 }
 
 function getCreatureType(id, t) {
-  if (id === "alkarisi") return "Demon of the Abyss";
-  if (id === "bukre") return t("shadow.bukre.type");
   return t(`bestiary.${id}.type`);
 }
 
 function getCreatureDesc(id, t) {
-  if (id === "alkarisi") return t("shadow.alkarisiDesc");
-  if (id === "bukre") return t("shadow.bukre.desc");
   return t(`bestiary.${id}.desc`);
 }
 
 function getCreatureLoreTitle(id, t) {
-  if (id === "alkarisi") return t("shadow.alkarisi");
-  if (id === "bukre") return t("shadow.bukre.title");
   return t(`bestiary.${id}.loreTitle`);
 }
 
 function getCreatureLore1(id, t) {
-  if (id === "alkarisi") return t("shadow.alkarisiDesc");
-  if (id === "bukre") return t("shadow.bukre.desc");
   return t(`bestiary.${id}.lore1`);
 }
 
 function getCreatureLore2(id, t) {
-  if (id === "alkarisi") return "Drawn to the vulnerable, particularly during childbirth.";
-  if (id === "bukre") return "A guardian of the underworld's deepest secrets, snaking through Tamag.";
   return t(`bestiary.${id}.lore2`);
 }
 
 function getCreatureConnection(id, t) {
-  if (id === "alkarisi") return "Minion of Erlik Han";
-  if (id === "bukre") return "Guardian of the Deep";
   return t(`bestiary.${id}.connection`);
 }
 
@@ -154,55 +140,23 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
 
       {/* Kaydırma Çerçevesi */}
       <div
-        className="bestiary-scroll-wrapper"
+        className="bestiary-wrapper"
         ref={wrapperRef}
-        style={{ position: "relative", width: "100%", overflow: "hidden", marginTop: "20px", padding: "0 20px" }}
       >
         <img
           src="/images/bukre-dragon.png"
           className="bukre-bg-anim"
           ref={bukreBgRef}
           alt="Bükre Dragon Background"
-          style={{
-            position: "absolute",
-            top: "10%",
-            left: "-20%",
-            width: "140%",
-            height: "80%",
-            objectFit: "contain",
-            opacity: 0.15,
-            pointerEvents: "none",
-            zIndex: 0,
-            filter: "grayscale(40%) blur(1px)",
-            transform: "rotate(-5deg)",
-          }}
         />
 
         {/* SOL OK (Geri) */}
         <button
           type="button"
+          aria-label={t("common.prev", "Önceki")}
           onClick={() => scrollTrack(-1)}
           disabled={isAtStart}
-          style={{
-            position: "absolute",
-            left: "1vw",
-            top: "50%",
-            transform: "translateY(-50%)",
-            width: "50px",
-            height: "50px",
-            borderRadius: "50%",
-            background: "rgba(10,10,10,0.8)",
-            border: "1px solid var(--celestial-gold)",
-            color: "var(--celestial-gold-bright)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: isAtStart ? "default" : "pointer",
-            opacity: isAtStart ? 0 : 1,
-            transition: "all 0.3s",
-            pointerEvents: isAtStart ? "none" : "auto",
-            zIndex: 20
-          }}
+          className={`bestiary-nav-btn prev ${isAtStart ? "disabled" : ""}`}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
         </button>
@@ -240,28 +194,10 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
         {/* SAĞ OK (İleri) */}
         <button
           type="button"
+          aria-label={t("common.next", "Sonraki")}
           onClick={() => scrollTrack(1)}
           disabled={isAtEnd}
-          style={{
-            position: "absolute",
-            right: "1vw",
-            top: "50%",
-            transform: "translateY(-50%)",
-            width: "50px",
-            height: "50px",
-            borderRadius: "50%",
-            background: "rgba(10,10,10,0.8)",
-            border: "1px solid var(--celestial-gold)",
-            color: "var(--celestial-gold-bright)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: isAtEnd ? "default" : "pointer",
-            opacity: isAtEnd ? 0 : 1,
-            transition: "all 0.3s",
-            pointerEvents: isAtEnd ? "none" : "auto",
-            zIndex: 20
-          }}
+          className={`bestiary-nav-btn next ${isAtEnd ? "disabled" : ""}`}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
         </button>

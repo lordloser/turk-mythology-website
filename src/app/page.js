@@ -15,6 +15,7 @@ import WorldTreeSection from "./components/sections/WorldTreeSection";
 import RitualSection from "./components/sections/RitualSection";
 import PantheonSection from "./components/sections/PantheonSection";
 import BestiarySection from "./components/sections/BestiarySection";
+import UmaySection from "./components/sections/UmaySection";
 import ShadowRealmSection from "./components/sections/ShadowRealmSection";
 import SagasSection from "./components/sections/SagasSection";
 import FooterSection from "./components/sections/FooterSection";
@@ -25,7 +26,6 @@ gsap.registerPlugin(ScrollTrigger);
 /* ================================================================
    THE INFINITE CYCLE — Main Page Orchestrator
    ================================================================ */
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -94,6 +94,8 @@ export default function Home() {
       <RitualSection t={t} />
 
       <PantheonSection ref={sectionRefs.pantheon} t={t} />
+
+      <UmaySection t={t} />
 
       <BestiarySection ref={sectionRefs.bestiary} t={t} />
 
