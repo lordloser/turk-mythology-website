@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import "@/i18n";
 
 const IYELER = [
   { key: "kayberen", img: "kayberen", symbol: "🏔️" },
@@ -9,7 +11,8 @@ const IYELER = [
   { key: "ormanIyesi", img: "orman-iyesi", symbol: "🌳" },
 ];
 
-export default function RitualSection({ t }) {
+export default function RitualSection({ t: tProp }) {
+  const { t } = useTranslation();
   const [activePortal, setActivePortal] = useState(null);
   const [activeIye, setActiveIye] = useState(null);
 
@@ -154,7 +157,6 @@ export default function RitualSection({ t }) {
                 onClick={() => setActiveIye(prev => prev === key ? null : key)}
               >
                 <div className="iye-card-img-wrap">
-                  <span className="iye-symbol">{symbol}</span>
                   <img
                     src={`/images/${img}.png`}
                     alt={t(`ritual.iyeler.${key}.name`)}

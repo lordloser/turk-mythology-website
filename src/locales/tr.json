@@ -407,8 +407,13 @@
         },
         "asena": {
             "title": "Asena Efsanesi ve Büyük Göç",
-            "p1": "Düşmanlar Türk halkını yok ettiğinde, yalnızca tek bir child hayatta kaldı, ağır yaralı. Göksel bir dişi kurt, <strong>Asena</strong>, ölmekte olan çocuğu buldu ve Altay Dağları arasındaki gizli bir mağarada emzirdi.",
+            "p1": "Düşmanlar Türk halkını yok ettiğinde, yalnızca tek bir çocuk hayatta kaldı, ağır yaralı. Göksel bir dişi kurt, <strong>Asena</strong>, ölmekte olan çocuğu buldu ve Altay Dağları arasındaki gizli bir mağarada emzirdi.",
             "p2": "İlahi bağlarından on oğul doğdu — her biri büyük bir Türk boyunun babası. Nüfus kutsal vadiyi aştığında, kurt bayrağını sonsuz sembolleri olarak taşıyarak Orta Asya'nın uçsuz bucaksız bozkırlarına göç ettiler."
+        },
+        "manas": {
+            "title": "Manas Destanı",
+            "p1": "Tarihin en büyük sözlü destanı — bin yılı aşkın süredir Kırgız bozkırlarında ezgilerle yaşatılan bu dev eser, <strong>Manas</strong>'ın hikâyesidir. Tengri tarafından seçilen bu ilahi savaşçı, dağılmış kırk Kırgız boyunu düşmanlarına karşı birleştirmek için dünyaya gönderilmiştir.",
+            "p2": "Manas, oğlu Semetey ve torunu Seytek'i kapsayan bu üç kuşaklık destan, Homeros'un İliada'sından yirmi kat daha uzundur. Bu yalnızca bir masal değil; <em>Manasçı</em> adı verilen kutsal ozanlar tarafından trans haline girerek dile getirilen, bir halkın yaşayan ruhudur."
         }
     },
     "footer": {
@@ -455,6 +460,16 @@
             "h2": "On Boyun Doğuşu",
             "p3": "Mağaranın arkasında cennet gibi bir vadi vardı. Asena orada on tane erkek çocuk doğurdu. Bu çocuklar büyüdüler ve dışarıdan kızlarla evlenerek on büyük Türk boyunu oluşturdular. Soyları o kadar çoğaldı ki artık vadiye sığmaz oldular.",
             "p4": "İlahi Kurt'un rehberliğinde, vadiyi terk edip açık bozkırlara göç etmeye karar verdiler. Kurt bayrağını en önde taşıyarak, atalarının topraklarına geri döndüler. Bu büyük göç, Türklerin bozkırlardaki ebedi hakimiyetinin başlangıcı oldu."
+        },
+        "manas": {
+            "title": "MANAS DESTANI",
+            "subtitle": "Bozkırların Ebedi Kahramanı",
+            "p1": "Manas doğmadı — dövüldü. Doğumundan önce babası Cakıp, gökten büyük bir kartal inerek ellerine kızıl ateşten bir kılıç bıraktığını hayal etti. Şamanlar kehaneti dile getirdi: Kırgız boylarını birleştirecek ve yerin temellerini sarsacak bir kahraman gelecek.",
+            "p2": "Çocukken Manas'ı hiçbir şey zaptedemezdi. Yetişkin erkekleri dövüşte yenerdi, yabani atları tek bir kükreyişle ehlileştirdi ve Tengri ile doğrudan rüyalarında konuştu. Ruh dünyasının bağışları olan efsanevi savaş atları Ak Kula ve Gülayım'a ve kırk deriden yapılmış kutsal zırhına kavuştu.",
+            "h2": "Kırk Kahramanlar — Kırk Çoro",
+            "p3": "Manas yalnız yükselmedi. Çevresinde efsanevi gücün savaşçıları, her biri ilahi bir armağan taşıyan Kırk Çoro toplandı. Hiçbir müneccimin adını koyamadığı bir yıldızın altında doğan Almambet, hava olaylarına hükmeder, kasırgaların üzerinde atlı gibi süzerdi. Çubak'ın savaş çığlığı, tek bir kılıç çekilmeden önce orduları dağıtabilirdi.",
+            "p4": "Birlikte Kalmıklar'a, Hitaylılar'a ve Kırgız halkını ortadan kaldırmaya çalışan her güce karşı savaştılar. Manas, büyük surlu Beyin şehrini fethetti, demir kapıları çıplak elleriyle kırdı ve kırk krallığın hazineleriyle geri döndü. Ama büyüklük kıskançlığı beraberinde getirir — kimi zaman içeriden.",
+            "p5": "Manas, savaş alanında değil, ihanetten gelen zehirli yaralar yüzünden hayatını kaybetti. Ama ölümde bile bitmedi. Eşi Kanıkey gerçek mezarını gizledi; efsanesi destanın can damarı oldu — Manasçı ozanlar tarafından bin yılı aşkın süre kutsal trans halinde söylenerek kahraman, halkının sesinde sonsuza dek yaşamaya devam etti."
         }
     },
     "umaySection": {

@@ -98,10 +98,13 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
     // Bir kartın genişliği (380px) + Gap (30px CSS'den geliyor)
     const cardWidth = track.children[0].offsetWidth + 30;
 
+    // 3 kart birden atla (sayfalı kaydırma)
+    const groupWidth = cardWidth * 3;
+
     // Gidilebilecek maksimum mesafe
     const maxScroll = track.scrollWidth - wrapper.offsetWidth;
 
-    let newScroll = currentScroll.current + (direction * cardWidth);
+    let newScroll = currentScroll.current + (direction * groupWidth);
 
     // Sınırları aşmayı engelle
     if (newScroll < 0) newScroll = 0;
@@ -112,8 +115,8 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
     // GSAP ile pürüzsüz kaydırma
     gsap.to(track, {
       x: -newScroll,
-      duration: 0.8,
-      ease: "power3.out"
+      duration: 0.9,
+      ease: "power3.inOut"
     });
 
     // Butonların görünürlük durumlarını güncelle

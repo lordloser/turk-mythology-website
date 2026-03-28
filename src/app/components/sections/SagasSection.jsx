@@ -13,6 +13,7 @@ const SAGAS = [
   { key: "ergenekon", img: "ergenekon", index: "I", textId: "sagaText1" },
   { key: "oghuz", img: "oghuz-khagan", index: "II", textId: "sagaText2", reversed: true },
   { key: "asena", img: "asena", index: "III", textId: "sagaText3" },
+  { key: "manas", img: "manas", index: "IV", textId: "sagaText4", reversed: true },
 ];
 
 const SagasSection = forwardRef(function SagasSection({ t }, ref) {

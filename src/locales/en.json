@@ -153,7 +153,7 @@
         "iyelerDesc": "The invisible but ever-present masters of mountains, rivers, and forests. Show them respect, and they will protect you.",
         "iyeler": {
             "kayberen": {
-                "name": "Kayberenler",
+                "name": "The Lost Saints",
                 "type": "Mountain Guardians",
                 "desc": "Sacred, invisible spirits dwelling on the highest mountain peaks. They protect wildlife and the innocent. Those who disrespect their mountains will lose their way."
             },
@@ -163,12 +163,12 @@
                 "desc": "A mythical spirit born from fragments of the Sun and Moon. With horse-like eyes, an eagle's beak, and serpentine hair, it carries humanity's prayers to the divine."
             },
             "suIyesi": {
-                "name": "Su İyesi",
+                "name": "Water Spirit",
                 "type": "Water Guardian",
                 "desc": "She dwells in every river, lake, and spring. Beautiful and terrifying; she can grant fertile harvests or drag the unworthy into the depths."
             },
             "ormanIyesi": {
-                "name": "Orman İyesi",
+                "name": "Forest Spirit",
                 "type": "Forest Guardian",
                 "desc": "Master of every tree, root, and wild creature. He appears as a towering figure covered in bark and moss, or as a whisper through the canopy."
             }
@@ -350,6 +350,11 @@
             "title": "The Legend of Asena & The Great Migration",
             "p1": "When enemies destroyed the Turkic people, only a single boy survived, grievously wounded. A celestial she-wolf, <strong>Asena</strong>, found the dying child and nursed him in a secret cave among the Altai Mountains.",
             "p2": "From their divine bond came ten sons — each the father of a great Turkic tribe. When the population outgrew the sacred valley, they migrated across the vast steppes of Central Asia, carrying the wolf banner as their eternal symbol."
+        },
+        "manas": {
+            "title": "The Epic of Manas",
+            "p1": "The greatest oral epic in history, sung across the Kyrgyz steppes for over a thousand years. <strong>Manas</strong> was chosen by Tengri himself — a warrior-hero of divine fury, destined to unite the forty scattered Kyrgyz tribes against the armies that sought to erase them from the earth.",
+            "p2": "Spanning three generations — Manas, his son Semetey, and grandson Seytek — this monumental cycle is twenty times longer than Homer's Iliad. It is not merely a story; it is the living soul of a people, chanted by sacred bards called <em>Manaschi</em> who enter a trance state to summon the hero's spirit."
         }
     },
     "umaySection": {
@@ -409,6 +414,16 @@
             "h2": "Birth of the Ten Tribes",
             "p3": "Behind the cave was a paradise-like valley. Asena gave birth to ten boys there. These boys grew up and married girls from outside, forming the ten great Turkic tribes. Their lineage multiplied so much that they could no longer fit in the valley.",
             "p4": "Under the guidance of the Divine Wolf, they decided to leave the valley and migrate to the open steppes. Carrying the wolf banner at the front, they returned to the lands of their ancestors. This great migration was the beginning of the eternal dominance of the Turks in the steppes."
+        },
+        "manas": {
+            "title": "THE EPIC OF MANAS",
+            "subtitle": "The Eternal Champion of the Steppes",
+            "p1": "Manas was not merely born — he was forged. Before his birth, his father Jakıp dreamed of a great eagle descending from the sky, dropping a sword of crimson fire into his hands. The shamans declared: a champion would come who would unite all scattered Kyrgyz tribes and shake the very foundations of the earth.",
+            "p2": "As a child Manas could not be contained. He defeated grown men in combat, tamed wild horses with a single roar, and spoke to Tengri directly in his dreams. He was given the sacred armor — the great coat of forty skins — and the legendary warhorses Ak Kula and Gülayım, companions gifted by the spirit world.",
+            "h2": "The Forty Heroes — Kyrk Choro",
+            "p3": "Manas did not rise alone. Around him gathered the Kyrk Choro — the Forty Heroes — warriors of mythic power, each carrying a divine gift. Almambet, born under a star that no astrologer could name, mastered the weather and rode storms like cavalry. Chubak's war cry could scatter armies before a single sword was drawn.",
+            "p4": "Together they fought the Kalmyks, the Khitans, and every force that sought to erase the Kyrgyz people. Manas stormed the great fortified city of Bejin, broke its iron gates with his bare hands, and returned with the treasures of forty kingdoms. But greatness draws envy — even from within.",
+            "p5": "Manas died not on the battlefield but from poisoned wounds dealt by betrayal. Yet even in death he did not end. His wife Kanıkey hid his true tomb, and his legend became the epic's lifeblood — sung by Manaschi bards in a sacred trance for over a thousand years, ensuring the hero lives forever in the voice of his people."
         }
     },
     "glossary": {

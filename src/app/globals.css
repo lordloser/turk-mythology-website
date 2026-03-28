@@ -2439,19 +2439,10 @@ a:hover {
     }
 }
 
-/* ─── İYELER — Guardian Spirits Section ─────────────────────── */
 .iyeler-section {
     margin-top: 80px;
     padding-top: 60px;
     border-top: 1px solid rgba(212, 168, 67, 0.15);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.iyeler-section.reveal-done {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .iyeler-grid {
@@ -2483,6 +2474,17 @@ a:hover {
     width: 100%;
     aspect-ratio: 3/4;
     overflow: hidden;
+    background: linear-gradient(145deg, rgba(10, 15, 30, 0.95), rgba(5, 8, 18, 1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iye-card-img-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(212, 168, 67, 0.08), transparent 70%);
 }
 
 .iye-img {
@@ -2502,16 +2504,24 @@ a:hover {
 .iye-glow {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 40%, transparent 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
 }
 
 .iye-symbol {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    font-size: 1.6rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    font-size: 4rem;
     z-index: 2;
-    filter: drop-shadow(0 0 8px rgba(212, 168, 67, 0.6));
+    filter: drop-shadow(0 0 20px rgba(212, 168, 67, 0.5));
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.iye-card:hover .iye-symbol,
+.iye-card.active .iye-symbol {
+    transform: translate(-50%, -60%) scale(1.15);
+    filter: drop-shadow(0 0 30px rgba(212, 168, 67, 0.8));
 }
 
 .iye-info {
