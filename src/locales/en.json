@@ -146,6 +146,32 @@
                 "desc": "Master of every tree, root, and creature of the wild. He appears as a whispering wind through the canopy.",
                 "offering": "Warning: Never cut a tree without asking permission."
             }
+        },
+        "iyelerTag": "Spirits of Nature",
+        "iyelerTitle": "The Guardian",
+        "iyelerTitleGold": "Spirits",
+        "iyelerDesc": "The invisible but ever-present masters of mountains, rivers, and forests. Show them respect, and they will protect you.",
+        "iyeler": {
+            "kayberen": {
+                "name": "Kayberenler",
+                "type": "Mountain Guardians",
+                "desc": "Sacred, invisible spirits dwelling on the highest mountain peaks. They protect wildlife and the innocent. Those who disrespect their mountains will lose their way."
+            },
+            "suyla": {
+                "name": "Suyla",
+                "type": "Celestial Spirit",
+                "desc": "A mythical spirit born from fragments of the Sun and Moon. With horse-like eyes, an eagle's beak, and serpentine hair, it carries humanity's prayers to the divine."
+            },
+            "suIyesi": {
+                "name": "Su İyesi",
+                "type": "Water Guardian",
+                "desc": "She dwells in every river, lake, and spring. Beautiful and terrifying; she can grant fertile harvests or drag the unworthy into the depths."
+            },
+            "ormanIyesi": {
+                "name": "Orman İyesi",
+                "type": "Forest Guardian",
+                "desc": "Master of every tree, root, and wild creature. He appears as a towering figure covered in bark and moss, or as a whisper through the canopy."
+            }
         }
     },
     "pantheon": {
@@ -153,6 +179,15 @@
         "heading": "The Divine",
         "headingGold": "Pantheon",
         "desc": "The gods who shaped the cosmos and govern the fate of every soul beneath the Eternal Blue Sky.",
+        "tabs": {
+            "sky": "Sky Gods",
+            "earth": "Earth & Nature"
+        },
+        "mergen": {
+            "name": "Mergen",
+            "role": "God of Wisdom & Archery",
+            "desc": "Dwelling in the 7th layer of heaven, he is the all-knowing deity whose sacred arrow never misses its mark. He grants wisdom and intellect to humanity."
+        },
         "kayra": {
             "name": "Kayra Han",
             "role": "The Primordial God",
@@ -236,11 +271,22 @@
             "connection": "Mother of Tribes · Blessed by Tengri"
         },
         "alkarisi": {
-            "title": "Alkarisi",
-            "sub": "Hunter of Life Energy",
+            "name": "Alkarisi",
+            "type": "Soul Harvester",
             "desc": "One of Erlik Khan's oldest shadows on earth. Often depicted in red garments, targeting fresh life energy and carrying souls to the lord of the underworld.",
-            "weak": "Iron, the color red, and Syrian rue.",
-            "cat": "Soul Harvester"
+            "loreTitle": "Lore of Alkarisi",
+            "lore1": "Alkarisi is a malicious spirit sent to earth by Erlik Khan. She primarily haunts women in childbirth and newborns. She is known for her red garments and long hair, though her face is often terrifying.",
+            "lore2": "She works to harvest human life energy. She drags her victims to underground dungeons to strengthen Erlik Khan's army. Shamans keep her away using iron, Syrian rue, and the color red.",
+            "connection": "Erlik's Hunter · Life Energy Thief"
+        },
+        "kayberen": {
+            "name": "Kayberenler",
+            "type": "Missing Saints",
+            "desc": "Invisible guardian spirits of the mountains and forests. They protect nature, wildlife, and the innocent.",
+            "loreTitle": "Secret Masters of the Mountains",
+            "lore1": "Kayberenler (Missing Saints) are invisible, sacred, and radiant beings. According to Kyrgyz and Kazakh legends, they live on the highest peaks of mountains, protect wild animal herds, and bring abundance.",
+            "lore2": "They extent a helping hand to the innocent in distress. Those who disrespect the mountains where they reside will lose their way. In Anatolian beliefs, they are equated with saints in human form.",
+            "connection": "Guardians of Nature · Benevolent Spirits"
         }
     },
     "shadow": {
@@ -375,7 +421,8 @@
             { "term": "Bayterek", "def": "The legendary World Tree connecting the underworld, earth, and sky." },
             { "term": "Tengri (Sky God)", "def": "The eternal blue sky, creator of the universe and the supreme power." },
             { "term": "Kam (Shaman)", "def": "Spiritual leader who communicates with the spirit world, heals, and leads rituals." },
-            { "term": "İye", "def": "Guardian spirits of entities in nature (water, mountain, forest, etc.). The Master/Owner." }
+            { "term": "İye", "def": "Guardian spirits of entities in nature (water, mountain, forest, etc.). The Master/Owner." },
+            { "term": "Kayberenler", "def": "Invisible 'Missing Saints' dwelling in the mountains who protect the innocent." }
         ]
     },
     "familyTree": {

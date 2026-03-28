@@ -2,8 +2,16 @@
 
 import { useState } from "react";
 
+const IYELER = [
+  { key: "kayberen", img: "kayberen", symbol: "🏔️" },
+  { key: "suyla", img: "suyla", symbol: "✨" },
+  { key: "suIyesi", img: "su-iyesi", symbol: "💧" },
+  { key: "ormanIyesi", img: "orman-iyesi", symbol: "🌳" },
+];
+
 export default function RitualSection({ t }) {
   const [activePortal, setActivePortal] = useState(null);
+  const [activeIye, setActiveIye] = useState(null);
 
   const togglePortal = (key) => {
     setActivePortal((prev) => (prev === key ? null : key));
@@ -83,7 +91,7 @@ export default function RitualSection({ t }) {
             minHeight: "220px",
             justifyContent: "center",
             marginTop: "40px",
-            paddingBottom: "40px",
+            paddingBottom: "20px",
           }}
         >
           {activePortal && (
@@ -125,6 +133,48 @@ export default function RitualSection({ t }) {
             </div>
           )}
         </div>
+
+        {/* ── İYELER — Guardian Spirits ────────────────────── */}
+        <div className="iyeler-section reveal">
+          <div className="iyeler-header">
+            <span className="section-tag">{t("ritual.iyelerTag")}</span>
+            <h3 className="heading-lg" style={{ margin: "12px 0" }}>
+              {t("ritual.iyelerTitle")} <span className="gold">{t("ritual.iyelerTitleGold")}</span>
+            </h3>
+            <p className="body-lg" style={{ maxWidth: 560, margin: "0 auto 40px" }}>
+              {t("ritual.iyelerDesc")}
+            </p>
+          </div>
+
+          <div className="iyeler-grid">
+            {IYELER.map(({ key, img, symbol }) => (
+              <div
+                key={key}
+                className={`iye-card ${activeIye === key ? "active" : ""}`}
+                onClick={() => setActiveIye(prev => prev === key ? null : key)}
+              >
+                <div className="iye-card-img-wrap">
+                  <span className="iye-symbol">{symbol}</span>
+                  <img
+                    src={`/images/${img}.png`}
+                    alt={t(`ritual.iyeler.${key}.name`)}
+                    className="iye-img"
+                    onError={(e) => { e.target.style.opacity = "0.3"; }}
+                  />
+                  <div className="iye-glow" />
+                </div>
+                <div className="iye-info">
+                  <h4 className="iye-name">{t(`ritual.iyeler.${key}.name`)}</h4>
+                  <span className="iye-type">{t(`ritual.iyeler.${key}.type`)}</span>
+                  <p className={`iye-desc ${activeIye === key ? "visible" : ""}`}>
+                    {t(`ritual.iyeler.${key}.desc`)}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

@@ -15,6 +15,7 @@ const CREATURES = [
   { id: "arcura", img: "arcura" },
   { id: "asena", img: "asena" },
   { id: "alkarisi", img: "alkarisi" },
+  { id: "kayberen", img: "kayberen" },
 ];
 
 function getCreatureName(id, t) {

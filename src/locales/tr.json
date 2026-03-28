@@ -146,6 +146,32 @@
                 "desc": "Ormanın, her ağacın ve vahşi yaratığın efendisidir. Doğaya saygı duyanları korur.",
                 "offering": "Uyarı: İzin almadan asla ağaç kesmeyin."
             }
+        },
+        "iyelerTag": "Doğanın Ruhları",
+        "iyelerTitle": "Koruyucu",
+        "iyelerTitleGold": "İyeler",
+        "iyelerDesc": "Dağlar, nehirler ve ormanların görünmez ama hissedilir sahipleri. Onlara saygı gösterin, onlar sizi korur.",
+        "iyeler": {
+            "kayberen": {
+                "name": "Kayberenler",
+                "type": "Dağ Koruyucuları",
+                "desc": "Dağların en yüksek zirvelerinde yaşayan, göze görünmeyen kutsal ruhlar. Yabani hayvanları ve masumları korurlar; onlara saygısızlık edenler yollarını kaybeder."
+            },
+            "suyla": {
+                "name": "Suyla",
+                "type": "Göksel Ruh",
+                "desc": "Güneş ve Ay kırıntılarından yaratılmış efsanevi ruh. At gözlü, kartal gagasın dan yılan saçlı bu varlık insanın dualarını yüce tanrılara taşır."
+            },
+            "suIyesi": {
+                "name": "Su İyesi",
+                "type": "Su Koruyucusu",
+                "desc": "Her nehirde, gölde ve pınarda yaşar. Güzel ve korkutucu; bereketli hasatlar bahşedebilir ya da layık olmayanları derinliklere çekebilir."
+            },
+            "ormanIyesi": {
+                "name": "Orman İyesi",
+                "type": "Orman Koruyucusu",
+                "desc": "Her ağacın, kökün ve vahşi yaratığın efendisi. Kabuk ve yosunla kaplı devasa bir figür ya da yapraklar arasında fısıldayan bir rüzâr olarak görünür."
+            }
         }
     },
     "pantheon": {
@@ -153,6 +179,15 @@
         "heading": "İlahi",
         "headingGold": "Panteon",
         "desc": "Evreni şekillendiren ve Sonsuz Gök Kubbe altındaki her ruhun kaderini yöneten tanrılar.",
+        "tabs": {
+            "sky": "Gök Tanrıları",
+            "earth": "Yer ve Doğa"
+        },
+        "mergen": {
+            "name": "Mergen Han",
+            "role": "Akıl ve Bilgelik Tanrısı",
+            "desc": "Göğün yedinci katında oturan, her şeyi bilen ve attığı kutsal ok asla şaşmayan efsanevi tanrı. İnsanlığa bilgeliği ve zekayı o bahşeder."
+        },
         "kayra": {
             "name": "Kayra Han",
             "role": "Kadim Tanrı",
@@ -243,6 +278,15 @@
             "lore1": "Alkarısı, Erlik Han tarafından yeryüzüne gönderilen habis ruhlardan biridir. En çok lohusa kadınlara ve yeni doğan bebeklere musallat olur. Kırmızı giysileri ve uzun saçlarıyla bilinir, ancak yüzü genellikle korkunç bir maske şeklindedir.",
             "lore2": "İnsanların yaşam enerjisini, özellikle de 'kut'u hasat etmek için çalışır. Kurbanlarını yeraltı zindanlarına sürükler ve Erlik Han'ın ordusunu güçlendirir. Şamanlar ve bilge kadınlar, onu demir, üzerlik otu ve al rengiyle uzak tutmaya çalışır.",
             "connection": "Erlik'in Avcısı · Yaşam Enerjisi Hırsızı"
+        },
+        "kayberen": {
+            "name": "Kayberenler",
+            "type": "Kayıp Erenler",
+            "desc": "Dağların ve ormanların görünmez muhafızları olan şeffaf ruhlar. Doğayı, hayvanları ve masumları korurlar.",
+            "loreTitle": "Dağların Gizli Sahipleri",
+            "lore1": "Kayberenler (Kayıp Erenler), insan gözüne görünmeyen, kutsal ve nur yüzlü varlıklardır. Kırgız ve Kazak efsanelerine göre dağların en yüksek zirvelerinde yaşar, yabani hayvan sürülerini korur ve bereket getirirler.",
+            "lore2": "Zor duruma düşen masum masallara yardım eli uzatırlar. Onların bulunduğu dağlara saygısızlık edenler ise yollarını kaybeder. Anadolu inançlarında ise insan kılığına girmiş evliyalarla bir tutulurlar.",
+            "connection": "Doğanın Muhafızları · İyiliksever Ruhlar"
         },
         "abasi": {
             "name": "Abasılar",
@@ -436,7 +480,8 @@
             { "term": "Bayterek", "def": "Yeraltını, yeryüzünü ve gökyüzünü birbirine bağlayan efsanevi Hayat Ağacı." },
             { "term": "Tengri (Gök Tanrı)", "def": "Sonsuz mavi gök, evrenin yaratıcısı ve en ulu güç." },
             { "term": "Kam (Şaman)", "def": "Ruhlar dünyası ile iletişim kurabilen, şifa veren ve ritüelleri yöneten ruhani lider." },
-            { "term": "İye", "def": "Doğadaki varlıkların (su, dağ, orman vb.) koruyucu ruhları. Sahip/Efendi." }
+            { "term": "İye", "def": "Doğadaki varlıkların (su, dağ, orman vb.) koruyucu ruhları. Sahip/Efendi." },
+            { "term": "Kayberenler", "def": "Dağlarda yaşayan, gözle görülmeyen ve masumları koruyan 'Kayıp Erenler'." }
         ]
     },
     "familyTree": {

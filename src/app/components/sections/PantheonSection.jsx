@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, forwardRef } from "react";
+import { useRef, useState, forwardRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -10,32 +10,60 @@ import NexusWeb from "../NexusWeb";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const TABS = [
+  { id: "sky", labelKey: "pantheon.tabs.sky" },
+  { id: "earth", labelKey: "pantheon.tabs.earth" }
+];
+
 const DEITIES = [
-  { key: "kayra", img: "kayra-han" },
-  { key: "ulgen", img: "ulgen" },
-  { key: "umay", img: "umay-ana" },
-  { key: "kyzagan", img: "kyzagan" },
+  { key: "kayra", img: "kayra-han", tab: "sky" },
+  { key: "ulgen", img: "ulgen", tab: "sky" },
+  { key: "mergen", img: "mergen", tab: "sky" },
+  { key: "umay", img: "umay-ana", tab: "earth" },
+  { key: "kyzagan", img: "kyzagan", tab: "earth" },
 ];
 
 const PantheonSection = forwardRef(function PantheonSection({ t }, ref) {
   const containerRef = useRef(null);
+  const [activeTab, setActiveTab] = useState("sky");
+
+  const { contextSafe } = useGSAP({ scope: containerRef });
+
+  const handleTabClick = contextSafe((tabId) => {
+    if (tabId === activeTab) return;
+    
+    // Animate out current cards
+    gsap.to(".deity-card", {
+      opacity: 0,
+      y: 20,
+      duration: 0.3,
+      stagger: 0.05,
+      ease: "power2.in",
+      onComplete: () => {
+        setActiveTab(tabId);
+      }
+    });
+  });
+
+  // Animate in new cards when tab changes
+  useEffect(() => {
+    gsap.fromTo(".deity-card",
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: "power2.out" }
+    );
+  }, [activeTab]);
 
   useGSAP(() => {
-    // Deity cards stagger in
-    const cards = containerRef.current?.querySelectorAll(".deity-card");
-    cards?.forEach((card, i) => {
-      gsap.to(card, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        delay: i * 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      });
+    // Initial reveal trigger for the grid container so it fades in when scrolled
+    gsap.to(".deity-grid-wrapper", {
+      opacity: 1,
+      duration: 0.8,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".deity-grid-wrapper",
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+      },
     });
 
     // Reveal elements
@@ -77,21 +105,38 @@ const PantheonSection = forwardRef(function PantheonSection({ t }, ref) {
             {t("pantheon.desc")}
           </p>
         </div>
-        <div className="deity-grid">
-          {DEITIES.map(({ key, img }) => (
-            <article className="deity-card" key={key}>
-              <img
-                className="deity-card-image"
-                src={`/images/${img}.png`}
-                alt={t(`pantheon.${key}.name`)}
-              />
-              <div className="deity-card-overlay">
-                <h3 className="deity-card-title">{t(`pantheon.${key}.name`)}</h3>
-                <span className="deity-card-role">{t(`pantheon.${key}.role`)}</span>
-                <p className="deity-card-desc">{t(`pantheon.${key}.desc`)}</p>
-              </div>
-            </article>
+
+        {/* Pantheon Tabs */}
+        <div className="pantheon-tabs reveal">
+          {TABS.map(tab => (
+            <button
+              key={tab.id}
+              className={`pantheon-tab ${activeTab === tab.id ? "active" : ""}`}
+              onClick={() => handleTabClick(tab.id)}
+            >
+              {t(tab.labelKey)}
+            </button>
           ))}
+        </div>
+
+        {/* Cards Wrapper */}
+        <div className="deity-grid-wrapper" style={{ opacity: 0 }}>
+          <div className="deity-grid">
+            {DEITIES.filter(d => d.tab === activeTab).map(({ key, img }) => (
+              <article className="deity-card" key={key}>
+                <img
+                  className="deity-card-image"
+                  src={`/images/${img}.png`}
+                  alt={t(`pantheon.${key}.name`)}
+                />
+                <div className="deity-card-overlay">
+                  <h3 className="deity-card-title">{t(`pantheon.${key}.name`)}</h3>
+                  <span className="deity-card-role">{t(`pantheon.${key}.role`)}</span>
+                  <p className="deity-card-desc">{t(`pantheon.${key}.desc`)}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
         <div className="nexus-container reveal">
           <div className="nexus-title">
