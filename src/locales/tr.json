@@ -477,8 +477,8 @@
         "heading": "Umay",
         "headingGold": "Ana",
         "desc": "Doğumun, bereğin ve korumanın ilahi anası. Tüm yaşayan ruhlara göksel koruma veren, Tengri'nin sır kalkanı.",
-        "lore1": "Umay Ana, gökün en parlak katmanında yaşar ve her yeni doğan ruhun doğumuyla birlikte görünmez bir koruma kalkanı örer. Beyaz giysili, gekümüfl saplı ve altın taclı bu göksel genç tanırça, Kayra Han'ın dostu ve bereketin daima kaynağıdır.",
-        "lore2": "Şamanlar ona çocuk hastalıklarında, doğumlarda ve koruma gerektiren her rituel sırasında yal varır. Sunuları arasında altın ipek, süt ve beyaz kürdeği bulunur. Onun koruduğu ruh, hibir yeraltı varlığının ulaşamıyacağı göksel bir zırh taşır.",
+        "lore1": "Umay Ana, gökün en parlak katmanında yaşar ve her yeni doğan ruhun doğumuyla birlikte görünmez bir koruma kalkanı örer. Beyaz giysili, gümüş saplı ve altın taclı bu göksel genç tanrıça, Kayra Han'ın dostu ve bereketin daima kaynağıdır.",
+        "lore2": "Şamanlar ona çocuk hastalıklarında, doğumlarda ve koruma gerektiren her rituel sırasında yal varır. Sunuları arasında altın ipek, süt ve beyaz kürdeği bulunur. Onun koruduğu ruh, hiçbir yeraltı varlığının ulaşamıyacağı göksel bir zırh taşır.",
         "connection1Title": "Tengri ile Bağı",
         "connection1Desc": "Tengri'nin takdisi altında yaşar. Doğumlarda ve bereğin gelşmesinde Tengri'nin iradesini yerelde gösterir.",
         "connection2Title": "Erlik Han'a Karşıtı",
@@ -489,14 +489,38 @@
         "title": "MİTOLOJİK SÖZLÜK",
         "subtitle": "Kadim Terimler ve Anlamları",
         "terms": [
-            { "term": "Kut", "def": "Gök Tanrı tarafından verilen ilahi yaşam gücü, bereket ve kutluluk." },
-            { "term": "Tamag", "def": "Yeraltı dünyası. Erlik Han'ın hüküm sürdüğü karanlık ve azap krallığı." },
-            { "term": "Üçgöl", "def": "Tengri'nin yaşadığına inanılan en üst gök katmanındaki ilahi bölge." },
-            { "term": "Bayterek", "def": "Yeraltını, yeryüzünü ve gökyüzünü birbirine bağlayan efsanevi Hayat Ağacı." },
-            { "term": "Tengri (Gök Tanrı)", "def": "Sonsuz mavi gök, evrenin yaratıcısı ve en ulu güç." },
-            { "term": "Kam (Şaman)", "def": "Ruhlar dünyası ile iletişim kurabilen, şifa veren ve ritüelleri yöneten ruhani lider." },
-            { "term": "İye", "def": "Doğadaki varlıkların (su, dağ, orman vb.) koruyucu ruhları. Sahip/Efendi." },
-            { "term": "Kayberenler", "def": "Dağlarda yaşayan, gözle görülmeyen ve masumları koruyan 'Kayıp Erenler'." }
+            {
+                "term": "Kut",
+                "def": "Gök Tanrı tarafından verilen ilahi yaşam gücü, bereket ve kutluluk."
+            },
+            {
+                "term": "Tamag",
+                "def": "Yeraltı dünyası. Erlik Han'ın hüküm sürdüğü karanlık ve azap krallığı."
+            },
+            {
+                "term": "Üçgöl",
+                "def": "Tengri'nin yaşadığına inanılan en üst gök katmanındaki ilahi bölge."
+            },
+            {
+                "term": "Bayterek",
+                "def": "Yeraltını, yeryüzünü ve gökyüzünü birbirine bağlayan efsanevi Hayat Ağacı."
+            },
+            {
+                "term": "Tengri (Gök Tanrı)",
+                "def": "Sonsuz mavi gök, evrenin yaratıcısı ve en ulu güç."
+            },
+            {
+                "term": "Kam (Şaman)",
+                "def": "Ruhlar dünyası ile iletişim kurabilen, şifa veren ve ritüelleri yöneten ruhani lider."
+            },
+            {
+                "term": "İye",
+                "def": "Doğadaki varlıkların (su, dağ, orman vb.) koruyucu ruhları. Sahip/Efendi."
+            },
+            {
+                "term": "Kayberenler",
+                "def": "Dağlarda yaşayan, gözle görülmeyen ve masumları koruyan 'Kayıp Erenler'."
+            }
         ]
     },
     "familyTree": {
