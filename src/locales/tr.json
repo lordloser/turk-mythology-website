@@ -186,27 +186,47 @@
         "mergen": {
             "name": "Mergen Han",
             "role": "Akıl ve Bilgelik Tanrısı",
-            "desc": "Göğün yedinci katında oturan, her şeyi bilen ve attığı kutsal ok asla şaşmayan efsanevi tanrı. İnsanlığa bilgeliği ve zekayı o bahşeder."
+            "desc": "Göğün yedinci katında oturan, her şeyi bilen ve attığı kutsal ok asla şaşmayan efsanevi tanrı. İnsanlığa bilgeliği ve zekayı o bahşeder.",
+            "loreTitle": "Sonsuz Hikmetin Oku",
+            "lore1": "Türk mitolojisinde Mergen Han, aklın, bilincin ve isabetli kararların sembolüdür. Gökyüzünün yedinci katında yaşar ve insanların kaderlerine yön veren en büyük bilgelerden biri kabul edilir. Elindeki kutsal yay ve ok, sadece hedefleri değil, doğruluk ve adaleti simgeler.",
+            "lore2": "Kayra Han'ın oğullarından biridir. Savaş alanalarından ziyade, insanlara düşünceyi, zorlukları zekayla aşmayı ve medeniyet kurmayı öğrettiğine inanılır. Şamanlar, zor bir karar vermeden önce ruhani yolculuklarında Mergen Han'dan yol göstermesini dilerler.",
+            "connection": "Kayra Han'ın Oğlu · Zekanın Işığı"
         },
         "kayra": {
             "name": "Kayra Han",
             "role": "Kadim Tanrı",
-            "desc": "Her şeyden önce var olan yüce yaratıcı. Ülgen ve Erlik'in babası, iki kardeşi şekillendirdi ve onları sonsuz yollarına koydu — biri aydınlığa, biri karanlığa."
+            "desc": "Her şeyden önce var olan yüce yaratıcı. Ülgen ve Erlik'in babası, iki kardeşi şekillendirdi ve onları sonsuz yollarına koydu — biri aydınlığa, biri karanlığa.",
+            "loreTitle": "Sonsuzluğun Başlangıcı",
+            "lore1": "Altay yaratılış destanlarında Kayra Han, henüz evren, dünya ve gök yokken 'Sonsuz Su' üzerinde uçan ve var olan yegane güçtü. İlk düşüncesiyle evreni, nefesiyle ise ruhları şekillendirdiği kabul edilir.",
+            "lore2": "Tüm panteonun en üstünde, Göğün onyedinci katında, ulaşılamaz bir ihtişam içerisinde yaşar. Evrenin mutlak dengesini kendi korumaz; bunun yerine oğulları Ülgen'i iyiliğe, Erlik'i ise kötülüğe ve sınamaya yönlendirerek karanlık ile aydınlığın ebedi dansını başlatmıştır.",
+            "connection": "Panteonun Zirvesi · Yaratılışın Kaynağı"
         },
         "ulgen": {
             "name": "Ülgen",
             "role": "İyilik Tanrısı",
-            "desc": "Doğanın unsurlarını somutlaştıran yedi oğlu ile Yukarı Dünya'nın hükümdarı. Ülgen, şamanları göğün on yedi katından geçirir ve layık olanlara kutsal Kut'u bahşeder."
+            "desc": "Doğanın unsurlarını somutlaştıran yedi oğlu ile Yukarı Dünya'nın hükümdarı. Ülgen, şamanları göğün on altı katından geçirir ve layık olanlara kutsal Kut'u bahşeder.",
+            "loreTitle": "Altın Dağın Hükümdarı",
+            "lore1": "Tengricilik inancında iyiliğin, rahmetin ve bereketin ana kaynağı Ülgen'dir. Gökyüzünün on altıncı katında, Altın Dağ (Altın Tuğ) üzerinde altın bir tahtta oturur. İnsanlara ateşi, aklı, tarımı ve sanatı öğreten tanrı olarak bilinir.",
+            "lore2": "Kötülüğün efendisi Erlik Han ile sürekli bir kozmik denge savaşı içindedir. Ülgen, yalnız başına hareket etmez; gök cisimlerini ve hava olaylarını yöneten yedi oğlu ve insanları koruyan dokuz kızı (Ak Kızlar / Kıyanlar) ile birlikte yeryüzüne merhamet dağıtır.",
+            "connection": "Erlik'in Ebedi Rakibi · Ateşin Bahşedicisi"
         },
         "kyzagan": {
             "name": "Kızagan",
             "role": "Savaş Tanrısı",
-            "desc": "Ülgen'in oğlu ve savaşçıların koruyucusu. Kızagan kızıl fırtınaya biner, alev kılıcı göğü yarar. Orduları cesaretle kutsar ve düşmüş kahramanların yiğitliğini yargilar."
+            "desc": "Kızıl fırtınaya binen, alev kılıcı göğü yaran savaşçıların koruyucusu. Orduları cesaretle kutsar ve düşmüş kahramanların yiğitliğini yargılar.",
+            "loreTitle": "Kızıl Göğün Öfkesi",
+            "lore1": "Kızagan, adından anlaşılacağı üzere öfkenin, hiddetin ve amansız savaşın ilahi temsiliyetidir. Kırmızı bulutların üzerinde, devasa kızıl bir devenin sırtında savaş meydanlarına iner. Orduların en ön saflarında parlayan alevli bir aura olarak belirdiği anlatılır.",
+            "lore2": "Eski Türk savaşçıları, sefere çıkmadan önce güç ve cesaret bulmak için ona ve onun nezdinde Tengri'ye yönelirler. Kızagan merhamet tanımaz, yalnızca güce ve onura saygı duyar. Düşmana karşı acımasızken, vatanları için can veren yiğitlerin ruhlarını savaşçılar diyarında şereflendirir.",
+            "connection": "Ülgen'in Oğlu · Savaşın Kut'u"
         },
         "umay": {
             "name": "Umay Ana",
             "role": "Koruyucu Ana Tanrıça",
-            "desc": "Doğum, bereket, koruma ve yaşamın ilahi anası. Tengri'nin aşından tutan ve her yeni doğan ruhu koruyan göksel tanrıça."
+            "desc": "Doğum, bereket, koruma ve yaşamın ilahi anası. Tengri'nin aşağısında yer alan ve her yeni doğan bebeğin ruhunu koruyan göksel tanrıça.",
+            "loreTitle": "Yaşam Ağacının Ruhu",
+            "lore1": "Türk ve Altay mitolojisinde Umay Ana, yaşamın sürmesini sağlayan en önemli ve sevgi dolu kutsal kuvvettir. Görünümü sıklıkla bembeyaz elbiseli, gümüş saçlı ve boynuzlu bir başlık takan zarif bir kadın olarak tasvir edilir. Göksel kutsaması sayesinde yeryüzü nefes alır ve bereket bulur.",
+            "lore2": "Özellikle çocukları, anneleri ve hayvan yavrularını kötü ruhlardan yeraltının karanlık etkilerinden korur. Hunlar, Göktürkler ve Uygurlar döneminden bu yana Gök Tengri'den sonra adı okunan, en çok saygı duyulan varlıktır. Bir bebeğin uykusunda gülümsemesi, Umay Ana'nın onunla konuştuğunun işareti sayılır.",
+            "connection": "Karanlığın Düşmanı · Hayatın Koruyucusu"
         },
         "nexusTitle": "Göksel Bağlantı Ağı",
         "nexusDesc": "Bir tanrının üzerine gelin ve diyarlar üzerindeki bağlantılarını keşfedin"
