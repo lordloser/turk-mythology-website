@@ -25,6 +25,23 @@ export default function CodexModal({ isOpen, onClose, data, t }) {
 
   if (!isOpen || !data) return null;
 
+  const category = data.type === 'creature' ? 'bestiary' : 'pantheon';
+  
+  // Safe translate function to avoid rendering raw keys
+  const safeT = (key) => {
+    const res = t(key);
+    // return null if result falls back to key
+    return res && typeof res === 'string' && res !== key ? res : null;
+  };
+
+  const name = safeT(`${category}.${data.id}.name`);
+  const typeOrRole = safeT(`${category}.${data.id}.type`) || safeT(`${category}.${data.id}.role`);
+  const desc = safeT(`${category}.${data.id}.desc`);
+  const loreTitle = safeT(`${category}.${data.id}.loreTitle`) || t('common.loreTitle', 'Kadim Hikaye');
+  const lore1 = safeT(`${category}.${data.id}.lore1`);
+  const lore2 = safeT(`${category}.${data.id}.lore2`);
+  const connection = safeT(`${category}.${data.id}.connection`);
+
   return (
     <div className="codex-modal-overlay" ref={modalRef} onClick={onClose}>
       <div 
@@ -38,27 +55,31 @@ export default function CodexModal({ isOpen, onClose, data, t }) {
         
         <div className="modal-header">
           <div className="modal-header-visual">
-            <img src={`/images/${data.img}.png`} alt={t(`${data.type === 'creature' ? 'bestiary' : 'pantheon'}.${data.id}.name`)} />
+            <img src={`/images/${data.img}.png`} alt={name} />
           </div>
           <div className="modal-header-info">
-            <span className="modal-tag">{t(`${data.type === 'creature' ? 'bestiary' : 'pantheon'}.${data.id}.type`) || t(`${data.type === 'creature' ? 'bestiary' : 'pantheon'}.${data.id}.role`)}</span>
-            <h2 className="modal-title">{t(`${data.type === 'creature' ? 'bestiary' : 'pantheon'}.${data.id}.name`)}</h2>
-            <p className="modal-brief">{t(`${data.type === 'creature' ? 'bestiary' : 'pantheon'}.${data.id}.desc`)}</p>
+            {typeOrRole && <span className="modal-tag">{typeOrRole}</span>}
+            <h2 className="modal-title">{name}</h2>
+            <p className="modal-brief">{desc}</p>
           </div>
         </div>
 
         <div className="modal-body">
-          <div className="lore-section">
-            <h3>{t(`${data.type === 'creature' ? 'bestiary' : 'pantheon'}.${data.id}.loreTitle`) || t('common.loreTitle', 'Kadim Hikaye')}</h3>
-            <p>{t(`${data.type === 'creature' ? 'bestiary' : 'pantheon'}.${data.id}.lore1`)}</p>
-            <p>{t(`${data.type === 'creature' ? 'bestiary' : 'pantheon'}.${data.id}.lore2`)}</p>
-          </div>
+          {(lore1 || lore2) && (
+            <div className="lore-section">
+              <h3>{loreTitle}</h3>
+              {lore1 && <p>{lore1}</p>}
+              {lore2 && <p>{lore2}</p>}
+            </div>
+          )}
           
-          <div className="modal-footer-info">
-            <span className="connection-info">
-              <strong>{t('common.connection', 'Bağlantı')}:</strong> {t(`${data.type === 'creature' ? 'bestiary' : 'pantheon'}.${data.id}.connection`)}
-            </span>
-          </div>
+          {connection && (
+            <div className="modal-footer-info">
+              <span className="connection-info">
+                <strong>{t('common.connection', 'Bağlantı')}:</strong> {connection}
+              </span>
+            </div>
+          )}
         </div>
       </div>
     </div>
