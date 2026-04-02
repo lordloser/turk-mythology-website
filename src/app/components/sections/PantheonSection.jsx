@@ -7,6 +7,8 @@ import { useGSAP } from "@gsap/react";
 import ParticleCanvas from "../ParticleCanvas";
 import { PantheonStar } from "../../utils/particles";
 import NexusWeb from "../NexusWeb";
+import { DEITIES } from "../../../data/mythology";
+import CodexModal from "../CodexModal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,17 +17,16 @@ const TABS = [
   { id: "earth", labelKey: "pantheon.tabs.earth" }
 ];
 
-const DEITIES = [
-  { key: "kayra", img: "kayra-han", tab: "sky" },
-  { key: "ulgen", img: "ulgen", tab: "sky" },
-  { key: "mergen", img: "mergen", tab: "sky" },
-  { key: "umay", img: "umay-ana", tab: "earth" },
-  { key: "kyzagan", img: "kyzagan", tab: "earth" },
-];
+// Helper to get translated values safely
+const safeTranslate = (id, field, t) => {
+  const result = t(`pantheon.${id}.${field}`);
+  return result && !result.includes(`pantheon.${id}`) ? result : "";
+};
 
 const PantheonSection = forwardRef(function PantheonSection({ t }, ref) {
   const containerRef = useRef(null);
   const [activeTab, setActiveTab] = useState("sky");
+  const [selectedDeity, setSelectedDeity] = useState(null);
 
   const { contextSafe } = useGSAP({ scope: containerRef });
 
@@ -83,6 +84,10 @@ const PantheonSection = forwardRef(function PantheonSection({ t }, ref) {
     });
   }, { scope: containerRef });
 
+  const openModal = (deity) => {
+      setSelectedDeity({ ...deity, type: 'god' });
+  };
+
   return (
     <section id="pantheon" className="section texture-noise" ref={(el) => {
       containerRef.current = el;
@@ -122,17 +127,17 @@ const PantheonSection = forwardRef(function PantheonSection({ t }, ref) {
         {/* Cards Wrapper */}
         <div className="deity-grid-wrapper" style={{ opacity: 0 }}>
           <div className="deity-grid">
-            {DEITIES.filter(d => d.tab === activeTab).map(({ key, img }) => (
-              <article className="deity-card" key={key}>
+            {DEITIES.filter(d => d.realm === activeTab).map((deity) => (
+              <article className="deity-card" key={deity.id} onClick={() => openModal(deity)}>
                 <img
                   className="deity-card-image"
-                  src={`/images/${img}.png`}
-                  alt={t(`pantheon.${key}.name`)}
+                  src={`/images/${deity.img}.png`}
+                  alt={safeTranslate(deity.id, "name", t)}
                 />
                 <div className="deity-card-overlay">
-                  <h3 className="deity-card-title">{t(`pantheon.${key}.name`)}</h3>
-                  <span className="deity-card-role">{t(`pantheon.${key}.role`)}</span>
-                  <p className="deity-card-desc">{t(`pantheon.${key}.desc`)}</p>
+                  <h3 className="deity-card-title">{safeTranslate(deity.id, "name", t)}</h3>
+                  <span className="deity-card-role">{safeTranslate(deity.id, "role", t)}</span>
+                  <p className="deity-card-desc">{safeTranslate(deity.id, "desc", t)}</p>
                 </div>
               </article>
             ))}
@@ -146,6 +151,13 @@ const PantheonSection = forwardRef(function PantheonSection({ t }, ref) {
           <NexusWeb />
         </div>
       </div>
+      
+      <CodexModal 
+        isOpen={!!selectedDeity} 
+        onClose={() => setSelectedDeity(null)} 
+        data={selectedDeity} 
+        t={t} 
+      />
     </section>
   );
 });
