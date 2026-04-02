@@ -154,6 +154,9 @@ const SagasSection = forwardRef(function SagasSection({ t }, ref) {
               <h3 className="heading-lg">{t(`sagas.${saga.key}.title`)}</h3>
               <p dangerouslySetInnerHTML={{ __html: t(`sagas.${saga.key}.p1`) }} />
               <p dangerouslySetInnerHTML={{ __html: t(`sagas.${saga.key}.p2`) }} />
+              {t(`sagas.${saga.key}.p3`) && t(`sagas.${saga.key}.p3`) !== `sagas.${saga.key}.p3` && (
+                <p dangerouslySetInnerHTML={{ __html: t(`sagas.${saga.key}.p3`) }} />
+              )}
               <Link href={`/sagas/${saga.key}`} passHref>
                 <button className="saga-link">
                   <span>{t("sagas.explore")}</span>

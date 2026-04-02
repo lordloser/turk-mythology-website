@@ -155,22 +155,38 @@
             "kayberen": {
                 "name": "Kayberenler",
                 "type": "Dağ Koruyucuları",
-                "desc": "Dağların en yüksek zirvelerinde yaşayan, göze görünmeyen kutsal ruhlar. Yabani hayvanları ve masumları korurlar; onlara saygısızlık edenler yollarını kaybeder."
+                "desc": "Dağların en yüksek zirvelerinde yaşayan, göze görünmeyen kutsal ruhlar. Yabani hayvanları ve masumları korurlar; onlara saygısızlık edenler yollarını kaybeder.",
+                "loreTitle": "Zirvelerin Sessiz Bekçileri",
+                "lore1": "Kayberenler (Kayıp Erenler), insan gözüne görünmeyen, kutsal ve nur yüzlü varlıklardır. Kırgız ve Kazak efsanelerine göre dağların en yüksek zirvelerinde yaşar, yabani hayvan sürülerini korur ve bereket getirirler. Kalbi temiz olan göçebelere kış aylarında hayvanların yolunu gösterirler.",
+                "lore2": "Zor duruma düşen masum insanlara yardım eli uzatırlar. Onların koruduğu dağlara saygısızlık edenler, yavru bir hayvanı zevk için öldürenler veya ormanı lekeleyenler aniden inen büyülü bir sisin içinde yollarını ve akıllarını sonsuza dek kaybederler.",
+                "connection": "Doğanın Muhafızları · İyiliksever Ruhlar"
             },
             "suyla": {
                 "name": "Suyla",
                 "type": "Göksel Ruh",
-                "desc": "Güneş ve Ay kırıntılarından yaratılmış efsanevi ruh. At gözlü, kartal gagasın dan yılan saçlı bu varlık insanın dualarını yüce tanrılara taşır."
+                "desc": "Güneş ve Ay kırıntılarından yaratılmış efsanevi ruh. At gözlü, kartal gagalı ve yılan saçlı bu varlık, insanların dualarını yüce tanrılara taşır.",
+                "loreTitle": "Işığın Ulakları",
+                "lore1": "Suyla, Şaman ayinlerinin en kritik bağlayıcı figürlerinden biridir. Tengri, Güneş ve Ay'ın ilk ışık kırıntılarını alarak onu yaratmıştır. Bir atın pürüzsüz gözlerine, kartalın kesici gagasına ve yılana benzeyen dalgalı altın saçlara sahiptir.",
+                "lore2": "İnsanlar büyük kurban ayinleri düzenlediklerinde veya şamanlar transa geçtiğinde, ulaştırılan kanı, duayı ve adağı göğün en yüksek yüzeylerine taşıyan kanatlı varlık Suyla'dır. Suyla olmadan hiçbir dilek Ülgen'e ulaşamaz.",
+                "connection": "Şamanların Elçisi · Göğün Sesi"
             },
             "suIyesi": {
                 "name": "Su İyesi",
                 "type": "Su Koruyucusu",
-                "desc": "Her nehirde, gölde ve pınarda yaşar. Güzel ve korkutucu; bereketli hasatlar bahşedebilir ya da layık olmayanları derinliklere çekebilir."
+                "desc": "Her nehirde, gölde ve pınarda yaşar. Güzel ve korkutucu; bereketli hasatlar bahşedebilir ya da layık olmayanları derinliklere çekebilir.",
+                "loreTitle": "Mavi Derinliklerin Ecesi",
+                "lore1": "Türk kültüründe su, yalnızca bir element değil, yaşayan, nefes alan ve hafızası olan kutsal bir varlıktır. Su İyesi, bu yaşam pınarının somutlaşmış halidir. Genellikle su yüzeyinde yıkanan, uzun saçlı büyüleyici bir aydınlık silüet halinde belirir.",
+                "lore2": "Nehirlere taş atan, suları kirleten ya da gece yansımasına saygısızca bakanlar Su İyesi'nin gazabına uğrar ve dipsiz girdaplara çekilir. Onu memnun etmek isteyen gezginler, sulara gümüş paralar veya kırmızı kurdeleler bırakırlar.",
+                "connection": "Bozkırın Kanı · Derinliklerin Hakimi"
             },
             "ormanIyesi": {
                 "name": "Orman İyesi",
                 "type": "Orman Koruyucusu",
-                "desc": "Her ağacın, kökün ve vahşi yaratığın efendisi. Kabuk ve yosunla kaplı devasa bir figür ya da yapraklar arasında fısıldayan bir rüzâr olarak görünür."
+                "desc": "Her ağacın, kökün ve vahşi yaratığın efendisi. Kabuk ve yosunla kaplı devasa bir figür ya da yapraklar arasında fısıldayan bir rüzgâr olarak görünür.",
+                "loreTitle": "Yeşil Soluğun Efendisi",
+                "lore1": "Orman İyesi, doğadaki her yaprağın, her ulu kayın ağacının ve orman zeminindeki devrili kütüğün canlı ruhudur. Bozkır halkları için orman karanlık ve tehlikelidir, ancak Orman İyesi'nden izin alarak kestiği tek bir ağaç evlerine kut ve sıcaklık getirir.",
+                "lore2": "Hayvanlara boş yere zarar veren avcıları şaşırtıp ormanın en dipsiz karanlıklarına çeker. Bazı efsanelerde şekil değiştiren geyikler veya devasa tüylü ayılar olarak tasvir edilir. Ormanın kalbi olan Bayterek ağacının da yeryüzündeki gövdesini o korur.",
+                "connection": "Doğanın Anahtarı · Bayterek'in Bekçisi"
             }
         }
     },
@@ -227,6 +243,15 @@
             "lore1": "Türk ve Altay mitolojisinde Umay Ana, yaşamın sürmesini sağlayan en önemli ve sevgi dolu kutsal kuvvettir. Görünümü sıklıkla bembeyaz elbiseli, gümüş saçlı ve boynuzlu bir başlık takan zarif bir kadın olarak tasvir edilir. Göksel kutsaması sayesinde yeryüzü nefes alır ve bereket bulur.",
             "lore2": "Özellikle çocukları, anneleri ve hayvan yavrularını kötü ruhlardan yeraltının karanlık etkilerinden korur. Hunlar, Göktürkler ve Uygurlar döneminden bu yana Gök Tengri'den sonra adı okunan, en çok saygı duyulan varlıktır. Bir bebeğin uykusunda gülümsemesi, Umay Ana'nın onunla konuştuğunun işareti sayılır.",
             "connection": "Karanlığın Düşmanı · Hayatın Koruyucusu"
+        },
+        "erlik": {
+            "name": "Erlik Han",
+            "role": "Yeraltı Efendisi",
+            "desc": "Karanlığın ve kötülüğün ulu hakimi. Gökten sürgün edilen ilk varlık olup, insanları sınamak, hastalık yaymak ve yeraltındaki ruhları yönetmekle görevlidir.",
+            "loreTitle": "Karanlığın İlk Tohumu",
+            "lore1": "Yaradılışın başında Kayra Han'ın yanında olan Erlik, kibiri ve kendine ait dünyalar yaratma arzusu nedeniyle cezalandırılarak yeraltı dünyasına  (Tamag) sürgün edildi. Işıktan yoksun bu boyutta, dokuz dallı köksüz bir kara çamın altında gümüş tahtında oturarak gölgeleri ve hastalıkları yönetir.",
+            "lore2": "Ülgen insanlara ateşi ve iyiliği öğretirken, Erlik Han ölümü, günahı ve zanaatkârlığı öğretmiştir. Kara binekli ulakları, şeytani şamanları ve 'Abası' adı verilen devasa ruh ordusu ile yeryüzünde sürekli bir sınama halindedir. Gücü reddedilemez bir kozmik gerekliliktir.",
+            "connection": "Kayra Han'ın Asisi · Mutlak Adaletin Gölgesi"
         },
         "nexusTitle": "Göksel Bağlantı Ağı",
         "nexusDesc": "Bir tanrının üzerine gelin ve diyarlar üzerindeki bağlantılarını keşfedin"
@@ -333,12 +358,12 @@
         "headingAccent": "DİYARI",
         "desc": "Karanlığın ilk tohumunun atıldığı, sessizliğin ve yargının hüküm sürdüğü kadim derinlikler.",
         "erlikTitle": "Erlik Han",
-        "erlikP1": "Türk mitolojisinde yeraltı aleminin mutlak hakimi. Gökten sürgün edilen ilk varlık ve ölümün efendisi.",
-        "erlikP2": "Dokuz dallı kara çamın altında, gümüş asasıyla karanlığın ve dengenin muhafızıdır.",
+        "erlikP1": "Türk mitolojisinde yeraltı aleminin (Tamag) mutlak hakimi. Kayra Han'ın ışığına gölge düşürmek isteyen hırsı yüzünden gökten sürgün edilen ilk varlıktır. O sadece ölümün ve karanlığın efendisi değil, aynı zamanda ihtirasın, zanaatkârlığın ve insani hataların aynasıdır.",
+        "erlikP2": "Işıksız aleminin derinliklerinde, yaprakları olmayan dokuz dallı köksüz bir kara çamın altında, domuz başlı yılan yeleli bineklerin arasında oturur. Gümüş asasıyla, yeryüzüne felaket yayar; ancak bu kötülük rastgele değil, Ülgen'in iyiliğini anlamlandırmak için sürdürülen kozmik bir dengedir.",
         "karabura": "Kara Bura",
-        "karaburaDesc": "Erlik Han'ın yeraltındaki demir ocaklarını koruyan ve karanlık enerjiyi taşıyan varlık.",
+        "karaburaDesc": "Erlik Han'ın yeraltındaki demir ocaklarını koruyan ve karanlık enerjiyi taşıyan, alev püskürten dev gölge varlık.",
         "judgment": "Büyük Yargı",
-        "judgmentDesc": "Ruhların Tamag'daki ebedi yolculuğuna karar veren yeraltı adaleti.",
+        "judgmentDesc": "Ruhların Tamag'daki ebedi yolculuğuna karar veren ve hataları cezalandıran acımasız yeraltı adaleti.",
         "exploreCreatures": "Yeraltı Varlıklarını Keşfet",
         "alkarisi": "Alkarısı",
         "alkarisiDesc": "Lohusa kadınlara musallat olan, yaşam enerjisi (Kut) çalan habis bir ruh.",
@@ -418,22 +443,26 @@
         "ergenekon": {
             "title": "Ergenekon Destanı",
             "p1": "Yıkıcı bir yenilginin ardından, hayatta kalan Türk boyları <strong>Ergenekon</strong>'a çekildi — aşılmaz demir dağlarla çevrili gizli bir vadi. Nesiller boyunca tecrit içinde yaşadılar, güçlendiler ve çoğaldılar, kimliklerini sabrın ateşinde dövdüler.",
-            "p2": "Vadi artık onları tutamaz hale geldiğinde, bir demirci demir dağın kendisini büyük bir körükle eritti. Türk halkı çelik bir nehir gibi dışarı aktı, yeniden doğmuş ve durdurulamaz. Ortaya çıkışlarının günü <em>Nevruz</em> — Yeni Gün olarak kutlanır."
+            "p2": "Vadi artık onları tutamaz hale geldiğinde, bir demirci demir dağın kendisini büyük bir körükle eritti. Türk halkı çelik bir nehir gibi dışarı aktı, yeniden doğmuş ve durdurulamaz. Ortaya çıkışlarının günü <em>Nevruz</em> — Yeni Gün olarak kutlanır.",
+            "p3": "Dağlardan vadilere inen bu yeni nesil, geçmişin bilgeliği ve kılıcın keskinliğiyle donanmıştı. Ergenekon'dan çıkış, yalnızca fiziksel bir kurtuluş değil; küllerinden doğan bir medeniyetin tüm cihana şanlı dönüşünün destanıdır. Düşmanların yüreklerine korku, dostların kalplerine umut eken bu silkiniş, sonsuza dek hürriyetin sembolü oldu."
         },
         "oghuz": {
             "title": "Oğuz Kağan Destanı",
             "p1": "<strong>Oğuz Kağan</strong> göğün yüzü, dağın gücü ve kurdun kalbiyle doğdu. Bebekliğinden itibaren kartallarla konuştu ve nehirlere hükmetti. İlahi bir bozkurtun rehberliğinde dünyanın dört bir yanını fethetti.",
-            "p2": "İmparatorluğunu altı oğlu arasında böldü — Güneşin üçü (Bozok) ve Ay'ın üçü (Üçok) — dünyayı bin yıl boyunca şekillendirecek tüm büyük Türk hanedanlıklarının temelini attı."
+            "p2": "İmparatorluğunu altı oğlu arasında böldü — Güneşin üçü (Bozok) ve Ay'ın üçü (Üçok) — dünyayı bin yıl boyunca şekillendirecek tüm büyük Türk hanedanlıklarının temelini attı.",
+            "p3": "Gökten inen ulu bir ışığın içinden beliren ilahi eşi ve yerdeki ulu ağaçtan doğan ikinci eşi ile Oğuz, yeri ve göğü birleştirdi. Oğlu Gün Han'dan yayılan soy, bozkırın en merhametli ama en bükülmez kanını taşıdı. Oğuz'un buyruğu: 'Gökyüzü çadırımız, Güneş bayrağımız olsun' diyerek cihan hakimiyeti mefkuresini başlattı."
         },
         "asena": {
             "title": "Asena Efsanesi ve Büyük Göç",
             "p1": "Düşmanlar Türk halkını yok ettiğinde, yalnızca tek bir çocuk hayatta kaldı, ağır yaralı. Göksel bir dişi kurt, <strong>Asena</strong>, ölmekte olan çocuğu buldu ve Altay Dağları arasındaki gizli bir mağarada emzirdi.",
-            "p2": "İlahi bağlarından on oğul doğdu — her biri büyük bir Türk boyunun babası. Nüfus kutsal vadiyi aştığında, kurt bayrağını sonsuz sembolleri olarak taşıyarak Orta Asya'nın uçsuz bucaksız bozkırlarına göç ettiler."
+            "p2": "İlahi bağlarından on oğul doğdu — her biri büyük bir Türk boyunun babası. Nüfus kutsal vadiyi aştığında, kurt bayrağını sonsuz sembolleri olarak taşıyarak Orta Asya'nın uçsuz bucaksız bozkırlarına göç ettiler.",
+            "p3": "Bu göç, alelade bir yürüyüş değil; bir soyun kökleriyle yeniden buluşma çabasıydı. Asena'nın kutsal sütü, Türk kanına sadece kurtuluşu değil, aynı zamanda kurtların özgür ruhunu aşıladı. O günden sonra, ufuktaki ilk ay ışığı ne zaman kana bulansa, bozkurdun ulu uluması dağların zirvesinden ovalara bir marş gibi yankılandı."
         },
         "manas": {
             "title": "Manas Destanı",
             "p1": "Tarihin en büyük sözlü destanı — bin yılı aşkın süredir Kırgız bozkırlarında ezgilerle yaşatılan bu dev eser, <strong>Manas</strong>'ın hikâyesidir. Tengri tarafından seçilen bu ilahi savaşçı, dağılmış kırk Kırgız boyunu düşmanlarına karşı birleştirmek için dünyaya gönderilmiştir.",
-            "p2": "Manas, oğlu Semetey ve torunu Seytek'i kapsayan bu üç kuşaklık destan, Homeros'un İliada'sından yirmi kat daha uzundur. Bu yalnızca bir masal değil; <em>Manasçı</em> adı verilen kutsal ozanlar tarafından trans haline girerek dile getirilen, bir halkın yaşayan ruhudur."
+            "p2": "Manas, oğlu Semetey ve torunu Seytek'i kapsayan bu üç kuşaklık destan, Homeros'un İliada'sından yirmi kat daha uzundur. Bu yalnızca bir masal değil; <em>Manasçı</em> adı verilen kutsal ozanlar tarafından trans haline girerek dile getirilen, bir halkın yaşayan ruhudur.",
+            "p3": "Manas'ın doğuşu, gökte kızıl bir parlamaya, yeryüzünde ise büyük fırtınalara sebep olmuştu. Onun sadık atı Akkula ile rüzgâra karşı dörtnala kalkışı, mazlumların koruyucusu olacağının müjdesiydi. Savaş meydanlarında kırk çerisiyle devleşen Manas, adaleti kılıcıyla sağlar, töreyi adaletiyle yüceltirdi."
         }
     },
     "footer": {
