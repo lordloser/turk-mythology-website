@@ -9,6 +9,7 @@ import { PantheonStar } from "../../utils/particles";
 import NexusWeb from "../NexusWeb";
 import { DEITIES } from "../../../data/mythology";
 import CodexModal from "../CodexModal";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -138,6 +139,19 @@ const PantheonSection = forwardRef(function PantheonSection({ t }, ref) {
                   <h3 className="deity-card-title">{safeTranslate(deity.id, "name", t)}</h3>
                   <span className="deity-card-role">{safeTranslate(deity.id, "role", t)}</span>
                   <p className="deity-card-desc">{safeTranslate(deity.id, "desc", t)}</p>
+                  <Link 
+                    href={`/ansiklopedi/tanrilar/${deity.id}`} 
+                    className="deity-read-more"
+                    onClick={(e) => { 
+                      if(e.button === 0 && !e.ctrlKey && !e.metaKey) {
+                         e.preventDefault(); 
+                         openModal(deity); 
+                      }
+                    }}
+                    style={{ marginTop: '15px', display: 'inline-block', fontSize: '0.85rem', color: 'var(--celestial-gold-bright)' }}
+                  >
+                    Detayları Görüntüle ⟶
+                  </Link>
                 </div>
               </article>
             ))}

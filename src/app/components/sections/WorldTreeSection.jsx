@@ -11,6 +11,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TREE_COLORS = ["74,158,97", "45,107,63", "218,165,32", "212,168,67"];
 
+const REALM_CARDS = [
+  { id: "upper", hash: "#pantheon", tone: "upper" },
+  { id: "middle", hash: "#bestiary", tone: "middle" },
+  { id: "lower", hash: "#shadow-realm", tone: "lower" },
+];
+
+function scrollToRealm(hash, e) {
+  if (e?.metaKey || e?.ctrlKey) return;
+  e?.preventDefault();
+  document.querySelector(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 const WorldTreeSection = forwardRef(function WorldTreeSection({ t }, ref) {
   const containerRef = useRef(null);
   const treeImageRef = useRef(null);
@@ -83,10 +95,29 @@ const WorldTreeSection = forwardRef(function WorldTreeSection({ t }, ref) {
             </h2>
             <p dangerouslySetInnerHTML={{ __html: t("worldTree.p1") }} />
             <p>{t("worldTree.p2")}</p>
-            <div className="realm-tags">
-              <span className="realm-tag upper">{t("worldTree.upper")}</span>
-              <span className="realm-tag middle">{t("worldTree.middle")}</span>
-              <span className="realm-tag lower">{t("worldTree.lower")}</span>
+            <p className="tree-axis-note">{t("worldTree.axisNote")}</p>
+            <p
+              className="tree-visitor-blurb"
+              dangerouslySetInnerHTML={{ __html: t("worldTree.visitorBlurb") }}
+            />
+            <div className="tree-realm-cards" role="list">
+              {REALM_CARDS.map((card) => (
+                <div
+                  key={card.id}
+                  className={`tree-realm-card tree-realm-card--${card.tone}`}
+                  role="listitem"
+                >
+                  <div className="tree-realm-card__head">{t(`worldTree.${card.id}`)}</div>
+                  <p className="tree-realm-card__desc">{t(`worldTree.${card.id}Desc`)}</p>
+                  <a
+                    href={card.hash}
+                    className="tree-realm-card__link"
+                    onClick={(e) => scrollToRealm(card.hash, e)}
+                  >
+                    {t("worldTree.realmCta")} <span aria-hidden>→</span>
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
         </div>

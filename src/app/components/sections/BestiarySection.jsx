@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef, useState, forwardRef, useMemo, useCallback, useEffect } from "react";
+import { useRef, useState, forwardRef, useMemo, useCallback, useEffect, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import debounce from "lodash.debounce";
+import Link from "next/link";
 import { CREATURES } from "../../../data/mythology";
 import CodexModal from "../CodexModal";
 
@@ -27,12 +28,22 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCreature, setSelectedCreature] = useState(null);
   
-  // Scroller tracking
+  // Scroller tracking (per tab so "Tümü" sonu diğer sekmeleri etkilemez)
   const currentScroll = useRef(0);
+  const scrollOffsetByTabRef = useRef({ all: 0, sky: 0, earth: 0, underworld: 0 });
+  const activeTabRef = useRef(activeTab);
+  activeTabRef.current = activeTab;
+  const suppressCardClickRef = useRef(false);
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
 
   const { contextSafe } = useGSAP({ scope: containerRef });
+
+  const selectTab = useCallback((tab) => {
+    if (tab === activeTabRef.current) return;
+    scrollOffsetByTabRef.current[activeTabRef.current] = currentScroll.current;
+    setActiveTab(tab);
+  }, []);
 
   // Filtering Logic
   const filteredCreatures = useMemo(() => {
@@ -52,7 +63,8 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
   const handleSearch = useCallback(
     debounce((query) => {
       setSearchQuery(query);
-      // Reset scroll position when filtering
+      const tab = activeTabRef.current;
+      scrollOffsetByTabRef.current[tab] = 0;
       if (trackRef.current) {
          currentScroll.current = 0;
          gsap.to(trackRef.current, { x: 0, duration: 0.5 });
@@ -63,6 +75,19 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
     []
   );
 
+  const getBestiaryGapPx = () => {
+    if (typeof window === "undefined") return 30;
+    return window.innerWidth <= 768 ? 16 : 30;
+  };
+
+  const cardsPerScrollGroup = () => {
+    if (typeof window === "undefined") return 3;
+    const w = window.innerWidth;
+    if (w <= 640) return 1;
+    if (w <= 1024) return 2;
+    return 3;
+  };
+
   const checkScrollBounds = () => {
      if(!trackRef.current || !wrapperRef.current) return;
      const trackWidth = trackRef.current.scrollWidth;
@@ -72,6 +97,23 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
      setIsAtStart(currentScroll.current <= 0);
      setIsAtEnd(currentScroll.current >= maxScroll - 5);
   };
+
+  useEffect(() => {
+    const onResize = debounce(() => {
+      const track = trackRef.current;
+      const wrapper = wrapperRef.current;
+      if (!track || !wrapper) return;
+      const maxScroll = Math.max(0, track.scrollWidth - wrapper.offsetWidth);
+      if (currentScroll.current > maxScroll) {
+        currentScroll.current = maxScroll;
+        gsap.set(track, { x: -maxScroll });
+      }
+      scrollOffsetByTabRef.current[activeTabRef.current] = currentScroll.current;
+      checkScrollBounds();
+    }, 120);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   useGSAP(() => {
     // Background Animation
@@ -103,6 +145,21 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
     });
   }, { scope: containerRef });
 
+  useLayoutEffect(() => {
+    const track = trackRef.current;
+    const wrapper = wrapperRef.current;
+    if (!track || !wrapper) return;
+
+    let saved = scrollOffsetByTabRef.current[activeTab] ?? 0;
+    const maxScroll = Math.max(0, track.scrollWidth - wrapper.offsetWidth);
+    saved = Math.min(Math.max(0, saved), maxScroll);
+    currentScroll.current = saved;
+    scrollOffsetByTabRef.current[activeTab] = saved;
+    gsap.set(track, { x: -saved });
+    setIsAtStart(saved <= 0);
+    setIsAtEnd(saved >= maxScroll - 5);
+  }, [activeTab]);
+
   // Update cards when filter changes
   useEffect(() => {
     gsap.fromTo(".creature-card", 
@@ -120,11 +177,9 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
     const cards = track.children;
     if(cards.length === 0) return;
 
-    // Bir kartın genişliği (380px) + Gap (30px CSS'den geliyor)
-    const cardWidth = cards[0].offsetWidth + 30;
-
-    // 3 kart birden atla (sayfalı kaydırma)
-    const groupWidth = cardWidth * 3;
+    const gap = getBestiaryGapPx();
+    const cardWidth = cards[0].offsetWidth + gap;
+    const groupWidth = cardWidth * cardsPerScrollGroup();
 
     // Gidilebilecek maksimum mesafe
     const maxScroll = Math.max(0, track.scrollWidth - wrapper.offsetWidth);
@@ -134,6 +189,7 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
     // Sınırları aşmayı engelle
     newScroll = Math.max(0, Math.min(newScroll, maxScroll));
     currentScroll.current = newScroll;
+    scrollOffsetByTabRef.current[activeTabRef.current] = newScroll;
 
     gsap.to(track, {
       x: -newScroll,
@@ -144,6 +200,78 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
     setIsAtStart(newScroll <= 0);
     setIsAtEnd(newScroll >= maxScroll - 5);
   });
+
+  const scrollTrackRef = useRef(scrollTrack);
+  scrollTrackRef.current = scrollTrack;
+
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+
+    const SWIPE_MIN_DX = 50;
+    const LOCK_HORIZ = 14;
+    let startX = 0;
+    let startY = 0;
+    let tracking = false;
+    let lockedHorizontal = false;
+
+    const isMobileCarousel = () =>
+      typeof window !== "undefined" && window.matchMedia("(max-width: 1024px)").matches;
+
+    const onTouchStart = (e) => {
+      if (!isMobileCarousel() || e.touches.length !== 1) return;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      tracking = true;
+      lockedHorizontal = false;
+      suppressCardClickRef.current = false;
+    };
+
+    const onTouchMove = (e) => {
+      if (!tracking || !isMobileCarousel() || e.touches.length !== 1) return;
+      const x = e.touches[0].clientX;
+      const y = e.touches[0].clientY;
+      const dx = x - startX;
+      const dy = y - startY;
+      if (!lockedHorizontal && (Math.abs(dx) > LOCK_HORIZ || Math.abs(dy) > LOCK_HORIZ)) {
+        lockedHorizontal = Math.abs(dx) > Math.abs(dy);
+      }
+      if (lockedHorizontal) {
+        e.preventDefault();
+      }
+    };
+
+    const onTouchEnd = (e) => {
+      if (!tracking || !isMobileCarousel()) {
+        tracking = false;
+        return;
+      }
+      tracking = false;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - startX;
+      const dy = t.clientY - startY;
+      lockedHorizontal = false;
+      if (Math.abs(dx) < SWIPE_MIN_DX || Math.abs(dx) < Math.abs(dy)) return;
+      suppressCardClickRef.current = true;
+      if (dx < 0) scrollTrackRef.current(1);
+      else scrollTrackRef.current(-1);
+      window.setTimeout(() => {
+        suppressCardClickRef.current = false;
+      }, 320);
+    };
+
+    el.addEventListener("touchstart", onTouchStart, { passive: true });
+    el.addEventListener("touchmove", onTouchMove, { passive: false });
+    el.addEventListener("touchend", onTouchEnd, { passive: true });
+    el.addEventListener("touchcancel", onTouchEnd, { passive: true });
+
+    return () => {
+      el.removeEventListener("touchstart", onTouchStart);
+      el.removeEventListener("touchmove", onTouchMove);
+      el.removeEventListener("touchend", onTouchEnd);
+      el.removeEventListener("touchcancel", onTouchEnd);
+    };
+  }, []);
 
   const openModal = (creature) => {
     setSelectedCreature({ ...creature, type: 'creature' });
@@ -169,10 +297,10 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
         {/* Filters and Search - NEW ADDITION */}
         <div className="bestiary-controls reveal">
           <div className="pantheon-tabs bestiary-tabs">
-            <button className={`pantheon-tab ${activeTab === 'all' ? 'active' : ''}`} onClick={() => setActiveTab('all')}>Tümü</button>
-            <button className={`pantheon-tab ${activeTab === 'sky' ? 'active' : ''}`} onClick={() => setActiveTab('sky')}>Gök Varlıkları</button>
-            <button className={`pantheon-tab ${activeTab === 'earth' ? 'active' : ''}`} onClick={() => setActiveTab('earth')}>Doğa İyeleri</button>
-            <button className={`pantheon-tab ${activeTab === 'underworld' ? 'active' : ''}`} onClick={() => setActiveTab('underworld')}>Karanlık Ruhlar</button>
+            <button type="button" className={`pantheon-tab ${activeTab === 'all' ? 'active' : ''}`} onClick={() => selectTab('all')}>Tümü</button>
+            <button type="button" className={`pantheon-tab ${activeTab === 'sky' ? 'active' : ''}`} onClick={() => selectTab('sky')}>Gök Varlıkları</button>
+            <button type="button" className={`pantheon-tab ${activeTab === 'earth' ? 'active' : ''}`} onClick={() => selectTab('earth')}>Doğa İyeleri</button>
+            <button type="button" className={`pantheon-tab ${activeTab === 'underworld' ? 'active' : ''}`} onClick={() => selectTab('underworld')}>Karanlık Ruhlar</button>
           </div>
           <div className="search-wrapper">
              <input 
@@ -202,7 +330,14 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
         <div className="bestiary-track" ref={trackRef} style={{ position: "relative", zIndex: 1, width: "max-content" }}>
           {filteredCreatures.length > 0 ? (
             filteredCreatures.map((c) => (
-              <article className="creature-card" key={c.id} onClick={() => openModal(c)}>
+              <article
+                className="creature-card"
+                key={c.id}
+                onClick={() => {
+                  if (suppressCardClickRef.current) return;
+                  openModal(c);
+                }}
+              >
                 <div className="creature-card-inner">
                   <img
                     className="creature-image"
@@ -216,7 +351,20 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
                   </div>
                   <div className="lore-overlay">
                     <h4>{t("common.clickToRead", "Kadim Kitabı Aç")}</h4>
-                    <span className="read-more-btn">Sırları Keşfet ⟶</span>
+                    <Link 
+                       href={`/ansiklopedi/yaratiklar/${c.id}`} 
+                       className="read-more-btn"
+                       onClick={(e) => { 
+                         // For normal left clicks, open modal for better UX.
+                         // Middle clicks or "Open in new tab" will use the actual href.
+                         if(e.button === 0 && !e.ctrlKey && !e.metaKey) {
+                            e.preventDefault(); 
+                            openModal(c); 
+                         }
+                       }}
+                    >
+                      Sırları Keşfet ⟶
+                    </Link>
                   </div>
                 </div>
               </article>

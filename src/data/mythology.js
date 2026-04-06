@@ -16,7 +16,10 @@ export const CREATURES = [
   { id: "asena", img: "asena", realm: "earth", type: "divine" },
   { id: "alkarisi", img: "alkarisi", realm: "underworld", type: "malevolent" },
   { id: "kayberen", img: "kayberen", realm: "earth", type: "spirit" },
+  { id: "azmic", img: "azmic", realm: "earth", type: "malevolent" },
+  { id: "jeztirnak", img: "jeztirnak", realm: "earth", type: "malevolent" },
   { id: "abasi", img: "abasi", realm: "underworld", type: "malevolent" },
+  { id: "yegi", img: "yegi", realm: "underworld", type: "malevolent" },
   { id: "kamos", img: "kamos", realm: "underworld", type: "malevolent" },
 ];
 

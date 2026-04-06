@@ -18,6 +18,8 @@ const SPIRIT_THREADS = [
   { icon: "⚖️", nameKey: "shadow.judgment", descKey: "shadow.judgmentDesc" },
 ];
 
+const UNDERWORLD_ENTITY_KEYS = ["alkarisi", "abasi", "kamos"];
+
 const ShadowRealmSection = forwardRef(function ShadowRealmSection({ t, topBarRef }, ref) {
   const containerRef = useRef(null);
   const erlikImageRef = useRef(null);
@@ -80,6 +82,44 @@ const ShadowRealmSection = forwardRef(function ShadowRealmSection({ t, topBarRef
         }
       );
     });
+
+    const previews = container.querySelectorAll(".shadow-explore-preview-link");
+    previews.forEach((item, i) => {
+      gsap.fromTo(
+        item,
+        { opacity: 0, y: 14 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          delay: 0.2 + i * 0.08,
+          scrollTrigger: {
+            trigger: shadowInfoRef.current,
+            start: "top 70%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    const mainCta = container.querySelector(".shadow-explore-main-cta");
+    if (mainCta) {
+      gsap.fromTo(
+        mainCta,
+        { opacity: 0, y: 12 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.55,
+          delay: 0.35,
+          scrollTrigger: {
+            trigger: shadowInfoRef.current,
+            start: "top 68%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }
 
     // Decay flash effect
     ScrollTrigger.create({
@@ -155,12 +195,38 @@ const ShadowRealmSection = forwardRef(function ShadowRealmSection({ t, topBarRef
               ))}
             </div>
 
-            {/* Yeni eklenen detay butonu */}
-            <div style={{ marginTop: "40px" }}>
-              <Link href="/yeralti-varliklari" className="custom-link">
-                <button className="shadow-realm-explore-btn">
-                  {t("shadow.exploreCreatures")}
-                </button>
+            <div className="shadow-explore-block">
+              <p className="shadow-explore-intro">{t("shadow.exploreIntro")}</p>
+              <div className="shadow-explore-preview-grid" role="list">
+                {UNDERWORLD_ENTITY_KEYS.map((key) => (
+                  <Link
+                    key={key}
+                    href={`/yeralti-varliklari#${key}`}
+                    className={`shadow-explore-preview-link shadow-explore-preview-link--${key}`}
+                    role="listitem"
+                  >
+                    <span
+                      className="shadow-explore-preview-thumb"
+                      style={{ backgroundImage: `url('/images/${key}.png')` }}
+                      aria-hidden
+                    />
+                    <span className="shadow-explore-preview-text">
+                      <span className="shadow-explore-preview-name">
+                        {t(`kulliyat.creatures.${key}.title`)}
+                      </span>
+                      <span className="shadow-explore-preview-sub">
+                        {t(`kulliyat.creatures.${key}.sub`)}
+                      </span>
+                    </span>
+                  </Link>
+                ))}
+              </div>
+              <Link
+                href="/yeralti-varliklari"
+                className="shadow-realm-explore-btn shadow-explore-main-cta"
+              >
+                <span className="shadow-explore-cta-label">{t("shadow.exploreCreatures")}</span>
+                <span className="shadow-explore-cta-hint">{t("shadow.exploreCtaHint")}</span>
               </Link>
             </div>
           </div>
