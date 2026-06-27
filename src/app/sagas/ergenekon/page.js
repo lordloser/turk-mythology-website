@@ -28,7 +28,7 @@ export default function ErgenekonEpic() {
     return (
         <main ref={containerRef} style={{ background: "var(--bg-dark)", minHeight: "100vh", color: "var(--text-primary)", paddingBottom: "100px" }}>
             <div className="epic-hero" style={{ position: "relative", height: "60vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-                <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/migration-2.jpg')", backgroundSize: "cover", backgroundPosition: "center", opacity: 0.4, filter: "brightness(0.6)" }} />
+                <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/migration-2.webp')", backgroundSize: "cover", backgroundPosition: "center", opacity: 0.4, filter: "brightness(0.6)" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent, var(--bg-dark))" }} />
                 <div className="epic-header" style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "0 20px" }}>
                     <span style={{ color: "var(--celestial-gold)", letterSpacing: "4px", fontSize: "0.9rem", textTransform: "uppercase" }}>

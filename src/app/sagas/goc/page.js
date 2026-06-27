@@ -49,7 +49,7 @@ export default function MigrationEpic() {
         <div
           style={{
             position: "absolute", inset: 0,
-            backgroundImage: "url('/images/migration-1.png')",
+            backgroundImage: "url('/images/migration-1.webp')",
             backgroundSize: "cover", backgroundPosition: "center",
             opacity: 0.4, filter: "brightness(0.6)"
           }}

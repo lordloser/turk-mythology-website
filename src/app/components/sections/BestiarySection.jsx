@@ -89,7 +89,10 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
     });
   }, { scope: containerRef });
 
-  // Ok butonlarına tıklandığında çalışacak akıllı kaydırma fonksiyonu
+  // Ok butonlarına tıklandığında çalışacak akıllı kaydırma fonksiyonu.
+  // contextSafe yalnızca event-handler üretir; ref'ler render'da değil,
+  // tıklama anında okunur. react-hooks/refs burada false positive verir.
+  // eslint-disable-next-line react-hooks/refs
   const scrollTrack = contextSafe((direction) => {
     const track = trackRef.current;
     const wrapper = wrapperRef.current;
@@ -148,10 +151,12 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
         ref={wrapperRef}
       >
         <img
-          src="/images/bukre-dragon.png"
+          src="/images/bukre-dragon.webp"
           className="bukre-bg-anim"
           ref={bukreBgRef}
           alt="Bükre Dragon Background"
+          loading="lazy"
+          decoding="async"
         />
 
         {/* SOL OK (Geri) */}
@@ -176,8 +181,10 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
               <div className="creature-card-inner">
                 <img
                   className="creature-image"
-                  src={`/images/${c.img}.png`}
+                  src={`/images/${c.img}.webp`}
                   alt={getCreatureName(c.id, t)}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="creature-info">
                   <h3 className="creature-name">{getCreatureName(c.id, t)}</h3>

@@ -49,7 +49,7 @@ export default function OghuzEpic() {
         <div
           style={{
             position: "absolute", inset: 0,
-            backgroundImage: "url('/images/oghuz-khagan.png')",
+            backgroundImage: "url('/images/oghuz-khagan.webp')",
             backgroundSize: "cover", backgroundPosition: "center",
             opacity: 0.4, filter: "brightness(0.6)"
           }}

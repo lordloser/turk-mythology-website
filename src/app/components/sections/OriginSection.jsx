@@ -78,7 +78,7 @@ const OriginSection = forwardRef(function OriginSection({ t, migrationRef }, ref
         mouseInteractive={true}
       />
       <div className="hero-image-wrapper">
-        <img src="/images/ak-ana.png" alt="Ak Ana" ref={heroImageRef} />
+        <img src="/images/ak-ana.webp" alt="Ak Ana" ref={heroImageRef} fetchPriority="high" decoding="async" />
       </div>
       <div className="hero-content" ref={heroContentRef}>
         <p className="hero-subtitle" ref={heroSubRef}>{t("hero.subtitle")}</p>

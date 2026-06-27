@@ -126,8 +126,10 @@ const PantheonSection = forwardRef(function PantheonSection({ t }, ref) {
               <article className="deity-card" key={key}>
                 <img
                   className="deity-card-image"
-                  src={`/images/${img}.png`}
+                  src={`/images/${img}.webp`}
                   alt={t(`pantheon.${key}.name`)}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="deity-card-overlay">
                   <h3 className="deity-card-title">{t(`pantheon.${key}.name`)}</h3>

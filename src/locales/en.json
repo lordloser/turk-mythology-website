@@ -287,6 +287,24 @@
             "lore1": "Kayberenler (Missing Saints) are invisible, sacred, and radiant beings. According to Kyrgyz and Kazakh legends, they live on the highest peaks of mountains, protect wild animal herds, and bring abundance.",
             "lore2": "They extent a helping hand to the innocent in distress. Those who disrespect the mountains where they reside will lose their way. In Anatolian beliefs, they are equated with saints in human form.",
             "connection": "Guardians of Nature · Benevolent Spirits"
+        },
+        "abasi": {
+            "name": "The Abasy",
+            "type": "Underworld Army",
+            "desc": "The evil spirits that make up Erlik Han’s most numerous army. They are depicted as one-eyed, one-legged, or toothless. They are tasked with spreading disease among humans, bringing misfortune, and dragging their victims into the underground dungeons.",
+            "loreTitle": "The Tale of the Abasy",
+            "lore1": "The Abasy are Erlik Han’s most loyal servants in the underworld. Each is a source of a different evil and disease. Some are one-eyed, some one-legged, and others possess terrifying teeth.",
+            "lore2": "They labor to steal the life energy of humans and imprison them in the underground dungeons. Shamans use iron objects and recite powerful prayers to keep the Abasy at bay.",
+            "connection": "Erlik’s Army · Carriers of Disease"
+        },
+        "kamos": {
+            "name": "Kamos",
+            "type": "Mental Affliction",
+            "desc": "A dark energy that descends upon people at night. It is a being Erlik Han uses to control sleep — the most vulnerable moment of humankind.",
+            "loreTitle": "The Tale of Kamos",
+            "lore1": "Kamos is a dark entity sent to the earth by Erlik Han. At night it descends upon people and renders them unable to move. It cuts off its victims’ breath and makes them suffer terrible nightmares.",
+            "lore2": "Shamans use metal objects and recite powerful prayers to keep Kamos away. They try to ward it off by keeping its victims awake.",
+            "connection": "Erlik’s Shadow · Lord of Nightmares"
         }
     },
     "shadow": {
@@ -310,7 +328,11 @@
             "title": "Legend of Bukre",
             "lore2": "A guardian of the underworld's deepest secrets, snaking through Tamag.",
             "connection": "Guardian of the Depths"
-        }
+        },
+        "karabura": "Kara Bura",
+        "karaburaDesc": "The being that guards Erlik Han’s iron forges in the underworld and carries the dark energy.",
+        "judgment": "The Great Judgment",
+        "judgmentDesc": "The underworld justice that decides the eternal journey of souls within Tamag."
     },
     "kulliyat": {
         "back": "← Back to Home",
@@ -327,6 +349,27 @@
                 "desc": "One of Erlik Khan's oldest shadows on earth. Often depicted in red garments, targeting fresh life energy and carrying souls to the lord of the underworld.",
                 "weak": "Iron, the color red, and Syrian rue.",
                 "cat": "Soul Harvester"
+            },
+            "abasi": {
+                "title": "The Abasy",
+                "sub": "Infantry of the Underworld",
+                "desc": "They form Erlik Han’s most numerous army. They may take one-eyed or one-legged forms. They are tasked with spreading disease among humans and dragging souls into the underground dungeons.",
+                "weak": "Sunlight and the prayers of shamans.",
+                "cat": "Servant / Warrior"
+            },
+            "kamos": {
+                "title": "Kamos",
+                "sub": "Lord of Nightmares and Sleep",
+                "desc": "A dark energy that descends upon people at night. It is a being Erlik Han uses to control sleep — the most vulnerable moment of humankind.",
+                "weak": "Wakefulness and metal objects.",
+                "cat": "Mental Affliction"
+            },
+            "bukre": {
+                "title": "BÜKRE",
+                "sub": "Ancient Dragon and Guardian Spirit",
+                "cat": "Mythic Power / Keeper of Balance",
+                "desc": "One of the most powerful and wise dragon figures in Turkic mythology. Renowned for its legendary battles with the evil dragon Sangal. It is depicted as a colossal, legless serpent. It embodies goodness and power; every nine years it descends to the earth to restore order and balance.",
+                "weak": "The absolute dominion of evil and Sangal’s dark magic."
             }
         }
     },
@@ -430,24 +473,44 @@
         "title": "MYTHOLOGICAL GLOSSARY",
         "subtitle": "Ancient Terms and Meanings",
         "terms": [
-            { "term": "Kut", "def": "The divine life force, abundance, and blessing bestowed by Tengri." },
-            { "term": "Tamag", "def": "The Underworld. The dark realm of torment ruled by Erlik Khan." },
-            { "term": "Üçgöl", "def": "The divine region in the highest heavenly layer where Tengri resides." },
-            { "term": "Bayterek", "def": "The legendary World Tree connecting the underworld, earth, and sky." },
-            { "term": "Tengri (Sky God)", "def": "The eternal blue sky, creator of the universe and the supreme power." },
-            { "term": "Kam (Shaman)", "def": "Spiritual leader who communicates with the spirit world, heals, and leads rituals." },
-            { "term": "İye", "def": "Guardian spirits of entities in nature (water, mountain, forest, etc.). The Master/Owner." },
-            { "term": "Kayberenler", "def": "Invisible 'Missing Saints' dwelling in the mountains who protect the innocent." }
+            {
+                "term": "Kut",
+                "def": "The divine life force, abundance, and blessing bestowed by Tengri."
+            },
+            {
+                "term": "Tamag",
+                "def": "The Underworld. The dark realm of torment ruled by Erlik Khan."
+            },
+            {
+                "term": "Üçgöl",
+                "def": "The divine region in the highest heavenly layer where Tengri resides."
+            },
+            {
+                "term": "Bayterek",
+                "def": "The legendary World Tree connecting the underworld, earth, and sky."
+            },
+            {
+                "term": "Tengri (Sky God)",
+                "def": "The eternal blue sky, creator of the universe and the supreme power."
+            },
+            {
+                "term": "Kam (Shaman)",
+                "def": "Spiritual leader who communicates with the spirit world, heals, and leads rituals."
+            },
+            {
+                "term": "İye",
+                "def": "Guardian spirits of entities in nature (water, mountain, forest, etc.). The Master/Owner."
+            },
+            {
+                "term": "Kayberenler",
+                "def": "Invisible 'Missing Saints' dwelling in the mountains who protect the innocent."
+            }
         ]
     },
     "familyTree": {
         "title": "THE ORIGIN TREE",
         "subtitle": "Web of Creation: Gods and Entities",
         "hint": "* Hover over the entities to see their connections and interactions."
-    },
-    "audio": {
-        "play": "Play Sound",
-        "pause": "Pause Sound"
     },
     "nexusLabels": {
         "tengri": "Tengri",
@@ -459,5 +522,25 @@
         "bai-ulgen": "Bai Ülgen",
         "erlik": "Erlik Han",
         "alkarisi": "Alkarısı"
+    },
+    "creatures": {
+        "abasi": {
+            "name": "The Abasy",
+            "type": "Underworld Army",
+            "desc": "The evil spirits that make up Erlik Han’s most numerous army. They are depicted as one-eyed, one-legged, or toothless. They are tasked with spreading disease among humans, bringing misfortune, and dragging their victims into the underground dungeons.",
+            "loreTitle": "The Tale of the Abasy",
+            "lore1": "The Abasy are Erlik Han’s most loyal servants in the underworld. Each is a source of a different evil and disease. Some are one-eyed, some one-legged, and others possess terrifying teeth.",
+            "lore2": "They labor to steal the life energy of humans and imprison them in the underground dungeons. Shamans use iron objects and recite powerful prayers to keep the Abasy at bay.",
+            "connection": "Erlik’s Army · Carriers of Disease"
+        },
+        "kamos": {
+            "name": "Kamos",
+            "type": "Mental Affliction",
+            "desc": "A dark energy that descends upon people at night. It is a being Erlik Han uses to control sleep — the most vulnerable moment of humankind.",
+            "loreTitle": "The Tale of Kamos",
+            "lore1": "Kamos is a dark entity sent to the earth by Erlik Han. At night it descends upon people and renders them unable to move. It cuts off its victims’ breath and makes them suffer terrible nightmares.",
+            "lore2": "Shamans use metal objects and recite powerful prayers to keep Kamos away. They try to ward it off by keeping its victims awake.",
+            "connection": "Erlik’s Shadow · Lord of Nightmares"
+        }
     }
 }

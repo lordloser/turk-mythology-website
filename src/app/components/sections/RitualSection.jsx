@@ -47,9 +47,11 @@ export default function RitualSection({ t: tProp }) {
           }}
         >
           <img
-            src="/images/shamanic-drum.png"
+            src="/images/shamanic-drum.webp"
             alt="Shamanic Drum"
             className="shamanic-drum pulse-hover"
+            loading="lazy"
+            decoding="async"
             style={{
               position: "absolute",
               width: "100%",
@@ -158,9 +160,11 @@ export default function RitualSection({ t: tProp }) {
               >
                 <div className="iye-card-img-wrap">
                   <img
-                    src={`/images/${img}.png`}
+                    src={`/images/${img}.webp`}
                     alt={t(`ritual.iyeler.${key}.name`)}
                     className="iye-img"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => { e.target.style.opacity = "0.3"; }}
                   />
                   <div className="iye-glow" />

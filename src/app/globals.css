@@ -3,7 +3,9 @@
    A Cinematic Journey into Turkic Mythology
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=MedievalSharp&display=swap');
+/* Fonts are loaded via next/font/google in layout.js (self-hosted,
+   no render-blocking @import, no layout shift). They expose the
+   variables --font-cinzel, --font-inter and --font-medievalsharp. */
 
 /* ── CSS Custom Properties ──────────────────────────────── */
 :root {
@@ -40,9 +42,9 @@
     --border-glow: rgba(212, 168, 67, 0.15);
 
     /* Typography */
-    --font-display: 'Cinzel', serif;
-    --font-body: 'Inter', sans-serif;
-    --font-rune: 'MedievalSharp', cursive;
+    --font-display: var(--font-cinzel), serif;
+    --font-body: var(--font-inter), sans-serif;
+    --font-rune: var(--font-medievalsharp), cursive;
 
     /* Spacing */
     --section-padding: clamp(60px, 10vh, 120px);
@@ -1325,8 +1327,7 @@ a:hover {
 
 /* Özel Başlık Tasarımı */
 .heading-ancient {
-    font-family: 'Playfair Display', serif;
-    /* Eğer serif font yüklü değilse standart serif */
+    font-family: var(--font-display), serif;
     letter-spacing: -0.02em;
     text-transform: uppercase;
     font-style: italic;
@@ -1549,15 +1550,15 @@ a:hover {
 }
 
 .migration-bg-1 {
-    background-image: url("/images/migration-1.png");
+    background-image: url("/images/migration-1.webp");
 }
 
 .migration-bg-2 {
-    background-image: url("/images/migration-2.png");
+    background-image: url("/images/migration-2.webp");
 }
 
 .migration-bg-3 {
-    background-image: url("/images/migration-3.png");
+    background-image: url("/images/migration-3.webp");
 }
 
 .migration-content {
@@ -2572,6 +2573,27 @@ a:hover {
     .iyeler-grid {
         grid-template-columns: 1fr 1fr;
         gap: 12px;
+    }
+}
+
+/* ── Reduced Motion ─────────────────────────────────────────
+   Honour the user's OS-level "reduce motion" preference: stop
+   looping CSS animations, make transitions near-instant, and
+   disable smooth scrolling. GSAP-driven reveals are left intact
+   (they set the final opacity/position) so content stays visible. */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    html {
+        scroll-behavior: auto;
     }
 }
 

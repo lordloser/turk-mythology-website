@@ -89,7 +89,7 @@ export default function YeraltiVarliklariPage() {
 const createCreatureImageStyle = (creatureKey) => ({
     width: "90%", // Kapsayıcı genişliği
     aspectRatio: "1/1", // Kare formatını zorunlu kılar
-    backgroundImage: `url('/images/${creatureKey}.png')`, // Resim yolu / ile başlamalıdır
+    backgroundImage: `url('/images/${creatureKey}.webp')`, // Resim yolu / ile başlamalıdır
     backgroundSize: "cover", // Resmi sığdırmak için
     backgroundPosition: "center",
     borderRadius: "12px", // Kenar yuvarlama

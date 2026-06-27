@@ -49,7 +49,7 @@ export default function AsenaEpic() {
         <div
           style={{
             position: "absolute", inset: 0,
-            backgroundImage: "url('/images/asena.png')",
+            backgroundImage: "url('/images/asena.webp')",
             backgroundSize: "cover", backgroundPosition: "center",
             opacity: 0.4, filter: "brightness(0.6)"
           }}
