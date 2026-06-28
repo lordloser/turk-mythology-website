@@ -3,43 +3,44 @@
 import { useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
-// Mitolojik hiyerarşiye göre yukarıdan aşağıya (y ekseni) dizilmiş koordinatlar
+// Göksel bağlantı ağı — yalnızca tanrı düzeyindeki varlıklar
+// Hiyerarşi: Tengri → Kayra Han → Ülgen / Erlik / Mergen Han → Umay ve Ülgen oğulları (Mergen, Umay sütununda üstte)
+
 const NODES = [
-  // ZİRVE
-  { id: "tengri", label: "Tengri", x: 400, y: 40, color: "#87CEEB" },
+  // ZİRVE - Üst Dunya
+  { id: "tengri", label: "Tengri", x: 400, y: 30, color: "#87CEEB", realm: "sky", type: "supreme" },
 
   // GÖK KATI 1
-  { id: "kayra", label: "Kayra Han", x: 400, y: 130, color: "#F5D16B" },
+  { id: "kayra", label: "Kayra Han", x: 400, y: 100, color: "#F5D16B", realm: "sky", type: "creator" },
+
+  // Kayra oğlu — Umay ile aynı x ekseninde, üstte (merkez / sol kuşakla çakışmasın)
+  { id: "mergen", label: "Mergen Han", x: 600, y: 138, color: "#5DADE2", realm: "sky", type: "wisdom" },
 
   // GÖK KATI 2
-  { id: "ulgen", label: "Ülgen", x: 250, y: 220, color: "#2E5FA1" },
-  { id: "umay", label: "Umay Ana", x: 550, y: 220, color: "#DDA0DD" },
+  { id: "ulgen", label: "Ülgen", x: 200, y: 212, color: "#2E5FA1", realm: "sky", type: "good" },
+  { id: "umay", label: "Umay Ana", x: 600, y: 212, color: "#DDA0DD", realm: "earth", type: "protector" },
 
-  // GÖK KATI 3 (Ülgen'in Oğulları - Sola doğru kaydırıldı)
-  { id: "kyzagan", label: "Kyzagan", x: 100, y: 310, color: "#FF6347" },
-  { id: "karshyt", label: "Karşıt", x: 220, y: 310, color: "#4A9E61" },
-  { id: "bai-ulgen", label: "Bai Ülgen", x: 340, y: 310, color: "#DAA520" },
+  // GÖK KATI 3 - Ülgen'in Oğulları
+  { id: "kyzagan", label: "Kyzagan", x: 100, y: 292, color: "#FF6347", realm: "earth", type: "war" },
+  { id: "bai-ulgen", label: "Bai Ülgen", x: 500, y: 292, color: "#DAA520", realm: "earth", type: "nature" },
 
-  // YERALTI (Erlik ve Alkarısı - Sağa ve aşağıya doğru itildi)
-  { id: "erlik", label: "Erlik Han", x: 500, y: 370, color: "#DC143C" },
-  { id: "alkarisi", label: "Alkarısı", x: 620, y: 450, color: "#8B0000" },
+  // YERALTI — Yeraltı hükümdarı (tanrı düzeyi)
+  { id: "erlik", label: "Erlik Han", x: 400, y: 372, color: "#DC143C", realm: "underworld", type: "ruler" },
 ];
 
 const LINKS = [
-  // Göklerin Bağlantıları
-  { source: "tengri", target: "kayra" },
-  { source: "tengri", target: "umay" },
-  { source: "kayra", target: "ulgen" },
+  // Tengri'den kayra'ya
+  { source: "tengri", target: "kayra", type: "primary" },
 
-  // Ülgen'in Bağlantıları
-  { source: "ulgen", target: "kyzagan" },
-  { source: "ulgen", target: "karshyt" },
-  { source: "ulgen", target: "bai-ulgen" },
-  { source: "ulgen", target: "umay" }, // İyilik ağını güçlendirir
+  // Kayra Han oğulları
+  { source: "kayra", target: "ulgen", type: "good" },
+  { source: "kayra", target: "erlik", type: "exile" },
+  { source: "kayra", target: "mergen", type: "offspring" },
 
-  // Yeraltı Bağlantıları (Kayra Han Erlik'i yeraltına sürer)
-  { source: "kayra", target: "erlik" },
-  { source: "erlik", target: "alkarisi" },
+  // Ülgen'in dallanması
+  { source: "ulgen", target: "umay", type: "support" },
+  { source: "ulgen", target: "kyzagan", type: "offspring" },
+  { source: "ulgen", target: "bai-ulgen", type: "offspring" },
 ];
 
 export default function NexusWeb() {
@@ -70,8 +71,7 @@ export default function NexusWeb() {
   const getNodeById = (id) => NODES.find((n) => n.id === id);
 
   return (
-    // viewBox yüksekliğini 400'den 500'e çıkardım ki Alkarısı sığsın
-    <svg className="nexus-svg" viewBox="0 0 800 500">
+    <svg className="nexus-svg" viewBox="0 0 800 440">
       <g>
         {LINKS.map((link) => {
           const src = getNodeById(link.source);

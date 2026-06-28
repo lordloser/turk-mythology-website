@@ -23,35 +23,52 @@ const medievalSharp = MedievalSharp({
 });
 
 export const metadata = {
-  title: "The Infinite Cycle — A Cinematic Journey into Turkic Mythology",
+  title: "Sonsuz Döngü — Türk Mitolojisi Dijital Ansiklopedisi",
   description:
-    "Explore the living tapestry of Turkic Cosmology. Travel through the Celestial Heavens, the Steppes of Humanity, and the Abyss of Tamag. Discover deities, creatures, and legendary sagas.",
-  keywords:
-    "Turkic mythology, Tengri, Türk mitolojisi, Bayterek, Erlik Han, Ülgen, Kayra Han, Turkic gods, steppes mythology",
+    "Türk Kozmolojisinin yaşayan dokusuna yolculuk edin. Gökyüzü panteonu, Orta Dünya bozkırları ve Tamag'ın derinliklerini keşfedin. Tanrılar, yaratıklar ve destanların dijital müzesi.",
+  keywords: "Türk mitolojisi, Tengri, Bayterek, Erlik Han, Ülgen, Kayra Han, Türk destanları, mitolojik yaratıklar",
   openGraph: {
-    title: "The Infinite Cycle — A Cinematic Journey into Turkic Mythology",
-    description:
-      "Explore the living tapestry of Turkic Cosmology — deities, creatures, and legendary sagas of the eternal steppe.",
-    type: "website",
+    title: "Sonsuz Döngü — Türk Mitolojisi Dijital Ansiklopedisi",
+    description: "Orta Asya'nın kadim mitolojisini ve kozmolojisini keşfedin.",
+    url: "https://turkmitolojisi.com",
+    siteName: "Sonsuz Döngü",
+    images: [
+      {
+        url: "/images/hero-social.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sonsuz Döngü - Türk Mitolojisi",
+      },
+    ],
     locale: "tr_TR",
-    siteName: "The Infinite Cycle",
-    images: [{ url: "/images/ak-ana.webp", width: 640, height: 640, alt: "Ak Ana" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "The Infinite Cycle — Turkic Mythology",
-    description:
-      "A cinematic journey through Turkic Cosmology — deities, creatures, and legendary sagas.",
-    images: ["/images/ak-ana.webp"],
+    type: "website",
   },
 };
 
 export default function RootLayout({ children }) {
+  // Schema.org JSON-LD structured data for Encyclopedia/VisualArtwork
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Sonsuz Döngü — Türk Mitolojisi",
+    "alternateName": "Turkic Mythology Digital Encyclopedia",
+    "url": "https://turkmitolojisi.com",
+    "description": "A comprehensive digital museum dedicated to Turkic mythology, deities, creatures, and sagas.",
+    "genre": "Mythology, Folklore, History",
+    "inLanguage": "tr"
+  };
+
   return (
     <html
       lang="tr"
       className={`${cinzel.variable} ${inter.variable} ${medievalSharp.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
