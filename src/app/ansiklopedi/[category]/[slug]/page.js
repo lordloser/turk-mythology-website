@@ -43,7 +43,7 @@ export async function generateMetadata({ params }) {
       url: `https://turkmitolojisi.com/ansiklopedi/${category}/${slug}`,
       images: [
         {
-          url: `/images/${slug}.png`, // Assuming image name matches slug logic. Actually it matches data.img but we don't have the object here unless we find it.
+          url: `/images/${slug}.webp`, // Assuming image name matches slug logic. Actually it matches data.img but we don't have the object here unless we find it.
           width: 800,
           height: 600,
           alt: entityData.name,
@@ -54,7 +54,7 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title,
       description,
-      images: [`/images/${slug}.png`],
+      images: [`/images/${slug}.webp`],
     }
   };
 }

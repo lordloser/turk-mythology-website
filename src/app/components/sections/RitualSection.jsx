@@ -64,8 +64,8 @@ export default function RitualSection({ t: tProp }) {
 
           <div className="drum-symbols" style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
             {[
-              { key: "sun", symbol: "☼", className: "symbol-sun" },
-              { key: "moon", symbol: "☽", className: "symbol-moon" },
+              { key: "sun", symbol: "☀️", className: "symbol-sun" },
+              { key: "moon", symbol: "🌙", className: "symbol-moon" },
               { key: "eagle", symbol: "🦅", className: "symbol-eagle" },
               { key: "forest", symbol: "🌳", className: "symbol-tree" },
               { key: "wolf", symbol: "🐺", className: "symbol-wolf" },

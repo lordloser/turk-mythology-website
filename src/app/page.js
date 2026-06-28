@@ -51,6 +51,9 @@ export default function Home() {
   function switchLang(lng) {
     i18n.changeLanguage(lng);
     setLang(lng);
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = lng;
+    }
   }
   // DÜZELTME 2: Geri dönüşlerdeki GSAP kayma sorununun çözümü
   useGSAP(() => {

@@ -3,7 +3,8 @@
         "text": "Entering the Eternal Cycle"
     },
     "topBar": {
-        "title": "The Infinite Cycle"
+        "title": "The Infinite Cycle",
+        "currentRealm": "Now in"
     },
     "common": {
         "back": "Back to Realms",

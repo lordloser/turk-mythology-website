@@ -132,7 +132,7 @@ const PantheonSection = forwardRef(function PantheonSection({ t }, ref) {
               <article className="deity-card" key={deity.id} onClick={() => openModal(deity)}>
                 <img
                   className="deity-card-image"
-                  src={`/images/${deity.img}.png`}
+                  src={`/images/${deity.img}.webp`}
                   alt={safeTranslate(deity.id, "name", t)}
                   loading="lazy"
                   decoding="async"

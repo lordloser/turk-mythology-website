@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef } from "react";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -231,6 +232,15 @@ export default function FooterSection({ t }) {
           })}
         </g>
       </svg>
+
+      <nav className="footer-nav" aria-label={t("footer.navAria", "Site haritası")}>
+        <Link href="/sozluk">{t("glossary.title")}</Link>
+        <Link href="/soy-agaci">{t("familyTree.title")}</Link>
+        <Link href="/yeralti-varliklari">
+          {t("kulliyat.title")} {t("kulliyat.titleAccent")}
+        </Link>
+        <a href="#sagas" onClick={(e) => scrollToHash("#sagas", e)}>{t("runeNav.sagas")}</a>
+      </nav>
 
       <div className="influence-footer-meta">
         {t("footer.copyright")} •{" "}

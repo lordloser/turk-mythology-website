@@ -11,10 +11,9 @@ function normalizeLang(code) {
 
 export default function FloatingLangToggle({ className = "" }) {
   const { t, i18n } = useTranslation();
-  const [lang, setLang] = useState("tr");
+  const [lang, setLang] = useState(() => normalizeLang(i18n.language));
 
   useEffect(() => {
-    setLang(normalizeLang(i18n.language));
     const onChange = (lng) => setLang(normalizeLang(lng));
     i18n.on("languageChanged", onChange);
     return () => i18n.off("languageChanged", onChange);

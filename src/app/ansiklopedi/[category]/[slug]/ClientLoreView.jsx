@@ -36,7 +36,7 @@ export default function ClientLoreView({ data, category, slug }) {
     <div className="lore-page-container" ref={containerRef}>
       {/* Background Visual Element */}
       <div className="lore-page-visual-wrap" ref={visualRef}>
-        <img src={`/images/${data.img}.png`} alt={data.name} className="lore-page-visual" />
+        <img src={`/images/${data.img}.webp`} alt={data.name} className="lore-page-visual" />
         <div className="lore-page-vignette" />
       </div>
 

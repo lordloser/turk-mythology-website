@@ -209,7 +209,7 @@ const ShadowRealmSection = forwardRef(function ShadowRealmSection({ t, topBarRef
                   >
                     <span
                       className="shadow-explore-preview-thumb"
-                      style={{ backgroundImage: `url('/images/${key}.png')` }}
+                      style={{ backgroundImage: `url('/images/${key}.webp')` }}
                       aria-hidden
                     />
                     <span className="shadow-explore-preview-text">

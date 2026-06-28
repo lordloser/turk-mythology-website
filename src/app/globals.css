@@ -302,7 +302,26 @@ a:hover {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-muted);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
     transition: color 0.6s var(--ease-smooth);
+}
+
+/* Bright-background bölümlerde (Migration vb.) okunabilirlik için
+   gölge; arka plan koyu olduğunda görünmez kalır, etkisi yoktur. */
+.top-bar-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+    transition: color 0.3s var(--ease-smooth);
+}
+
+.top-bar-link:hover,
+.top-bar-link:focus-visible {
+    color: var(--celestial-gold-bright);
 }
 
 /* ── Hero Section — The Origin ──────────────────────────── */
@@ -458,7 +477,7 @@ a:hover {
 #world-tree {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: safe center;
     background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(45, 107, 63, 0.08) 50%, var(--bg-dark) 100%);
 }
 
@@ -1781,7 +1800,7 @@ a:hover {
 #ritual {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: safe center;
     justify-content: center;
     background: radial-gradient(circle at center, #111 0%, #050505 100%);
     position: relative;
@@ -2229,12 +2248,37 @@ a:hover {
     z-index: 2;
 }
 
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-nav a {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s var(--ease-smooth);
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus-visible {
+    color: var(--celestial-gold-bright);
+}
+
 .influence-footer-meta {
-    margin-top: 48px;
+    margin-top: 24px;
     font-size: 0.82rem;
     color: var(--text-muted);
     letter-spacing: 0.06em;
     line-height: 1.6;
+    text-align: center;
 }
 
 .influence-source {
@@ -2918,14 +2962,36 @@ a:hover {
 
 .mobile-menu-overlay .custom-link {
     font-size: 1.1rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
     border-bottom: 1px solid rgba(212, 168, 67, 0.1);
     padding-bottom: 15px;
     width: 100%;
 }
 
-.mobile-menu-overlay .realm-indicator {
-    align-self: flex-start;
-    margin-top: auto;
+/* Tıklanabilir bir link değil, salt bilgi rozeti — bu yüzden menü
+   linklerinden görsel olarak ayrıştırılır (küçük, etiketli, üstte). */
+.mobile-menu-realm {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 4px;
+}
+
+.mobile-menu-realm-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.mobile-menu-realm-value {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--celestial-gold);
 }
 
 /* On mobile screens, hide desktop links and show hamburger */
@@ -3635,4 +3701,37 @@ body.modal-open {
     html {
         scroll-behavior: auto;
     }
+}
+
+/* ── Keyboard focus indicators ──
+   Visible only for keyboard navigation (:focus-visible), so mouse/touch
+   users don't see a ring on every click. Falls back to a plain :focus
+   ring on browsers without :focus-visible support. */
+a,
+button,
+input,
+textarea,
+select,
+[tabindex] {
+    outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--celestial-gold-bright);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+[tabindex]:focus:not(:focus-visible) {
+    outline: none;
 }

@@ -146,7 +146,7 @@ export default function YeraltiVarliklariPage() {
 
               <figure className="creature-figure">
                 <img
-                  src={`/images/${key}.png`}
+                  src={`/images/${key}.webp`}
                   alt={imgAlt}
                   className="creature-figure__img"
                   width={800}

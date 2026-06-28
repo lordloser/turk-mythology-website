@@ -32,6 +32,9 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
   const currentScroll = useRef(0);
   const scrollOffsetByTabRef = useRef({ all: 0, sky: 0, earth: 0, underworld: 0 });
   const activeTabRef = useRef(activeTab);
+  // "Latest ref" senkronizasyonu; ref'ler render çıktısını etkilemez,
+  // react-hooks/refs burada false positive verir.
+  // eslint-disable-next-line react-hooks/refs
   activeTabRef.current = activeTab;
   const suppressCardClickRef = useRef(false);
   const [isAtStart, setIsAtStart] = useState(true);
@@ -59,19 +62,23 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
     });
   }, [activeTab, searchQuery, t]);
 
-  // Debounced search handler for performance
-  const handleSearch = useCallback(
-    debounce((query) => {
-      setSearchQuery(query);
-      const tab = activeTabRef.current;
-      scrollOffsetByTabRef.current[tab] = 0;
-      if (trackRef.current) {
-         currentScroll.current = 0;
-         gsap.to(trackRef.current, { x: 0, duration: 0.5 });
-         setIsAtStart(true);
-         setTimeout(checkScrollBounds, 600);
-      }
-    }, 300),
+  // Debounced search handler for performance.
+  // Bu callback yalnızca kullanıcı girişiyle (debounce sonrası) çalışır,
+  // render anında değil; react-hooks/refs burada false positive verir.
+  const handleSearch = useMemo(
+    () =>
+      // eslint-disable-next-line react-hooks/refs
+      debounce((query) => {
+        setSearchQuery(query);
+        const tab = activeTabRef.current;
+        scrollOffsetByTabRef.current[tab] = 0;
+        if (trackRef.current) {
+          currentScroll.current = 0;
+          gsap.to(trackRef.current, { x: 0, duration: 0.5 });
+          setIsAtStart(true);
+          setTimeout(checkScrollBounds, 600);
+        }
+      }, 300),
     []
   );
 
@@ -206,6 +213,9 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
   });
 
   const scrollTrackRef = useRef(scrollTrack);
+  // "Latest ref" senkronizasyonu; ref'ler render çıktısını etkilemez,
+  // react-hooks/refs burada false positive verir.
+  // eslint-disable-next-line react-hooks/refs
   scrollTrackRef.current = scrollTrack;
 
   useEffect(() => {
@@ -357,7 +367,7 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
                 <div className="creature-card-inner">
                   <img
                     className="creature-image"
-                    src={`/images/${c.img}.png`}
+                    src={`/images/${c.img}.webp`}
                     alt={safeTranslate(c.id, "name", t)}
                     loading="lazy"
                     decoding="async"

@@ -3,7 +3,8 @@
         "text": "Sonsuz Döngüye Giriliyor"
     },
     "topBar": {
-        "title": "Sonsuz Döngü"
+        "title": "Sonsuz Döngü",
+        "currentRealm": "Şu an"
     },
     "common": {
         "back": "Diyarlara Dön",

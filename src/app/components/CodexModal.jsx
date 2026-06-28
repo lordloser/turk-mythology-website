@@ -55,7 +55,7 @@ export default function CodexModal({ isOpen, onClose, data, t }) {
         
         <div className="modal-header">
           <div className="modal-header-visual">
-            <img src={`/images/${data.img}.png`} alt={name} />
+            <img src={`/images/${data.img}.webp`} alt={name} />
           </div>
           <div className="modal-header-info">
             {typeOrRole && <span className="modal-tag">{typeOrRole}</span>}
