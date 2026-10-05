@@ -5,6 +5,15 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import "@/i18n";
 
+const DRUM_SYMBOLS = [
+  { key: "sun", symbol: "☀️", className: "symbol-sun" },
+  { key: "moon", symbol: "🌙", className: "symbol-moon" },
+  { key: "eagle", symbol: "🦅", className: "symbol-eagle" },
+  { key: "forest", symbol: "🌳", className: "symbol-tree" },
+  { key: "wolf", symbol: "🐺", className: "symbol-wolf" },
+  { key: "water", symbol: "💧", className: "symbol-water" },
+];
+
 const IYELER = [
   { key: "kayberen", img: "kayberen", symbol: "🏔️" },
   { key: "suyla", img: "suyla", symbol: "✨" },
@@ -15,10 +24,13 @@ const IYELER = [
 export default function RitualSection({ t: tProp }) {
   const { t } = useTranslation();
   const [activePortal, setActivePortal] = useState(null);
+  const [visitedPortals, setVisitedPortals] = useState([]);
   const [activeIye, setActiveIye] = useState(null);
 
+  // Seçilen sembol yanık kalır; daha önce açılanlar da işaretli kalır
   const togglePortal = (key) => {
     setActivePortal((prev) => (prev === key ? null : key));
+    setVisitedPortals((prev) => (prev.includes(key) ? prev : [...prev, key]));
   };
 
   return (
@@ -64,31 +76,32 @@ export default function RitualSection({ t: tProp }) {
           />
 
           <div className="drum-symbols" style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
-            {[
-              { key: "sun", symbol: "☀️", className: "symbol-sun" },
-              { key: "moon", symbol: "🌙", className: "symbol-moon" },
-              { key: "eagle", symbol: "🦅", className: "symbol-eagle" },
-              { key: "forest", symbol: "🌳", className: "symbol-tree" },
-              { key: "wolf", symbol: "🐺", className: "symbol-wolf" },
-              { key: "water", symbol: "💧", className: "symbol-water" },
-            ].map((s) => (
-              <div
-                key={s.key}
-                className={`drum-symbol ${s.className}`}
-                onClick={() => togglePortal(s.key)}
-                style={{
-                  pointerEvents: "auto",
-                  position: "absolute",
-                  cursor: "pointer",
-                  fontSize: "1.5rem",
-                }}
-                title={t(`ritual.symbols.${s.key}`)}
-              >
-                {s.symbol}
-              </div>
-            ))}
+            {DRUM_SYMBOLS.map((s) => {
+              const isActive = activePortal === s.key;
+              const isVisited = visitedPortals.includes(s.key);
+              return (
+                <button
+                  type="button"
+                  key={s.key}
+                  className={`drum-symbol ${s.className}${isActive ? " is-active" : ""}${isVisited ? " is-visited" : ""}`}
+                  onClick={() => togglePortal(s.key)}
+                  aria-pressed={isActive}
+                  aria-label={t(`ritual.portals.${s.key}.title`)}
+                  title={t(`ritual.portals.${s.key}.title`)}
+                  style={{ pointerEvents: "auto" }}
+                >
+                  <span aria-hidden="true">{s.symbol}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
+
+        <p className="drum-progress" aria-live="polite">
+          {visitedPortals.length === 0
+            ? t("ritual.drumDesc")
+            : t("ritual.drumProgress", { count: visitedPortals.length, total: DRUM_SYMBOLS.length })}
+        </p>
 
         <div
           className="ritual-lore-cards"

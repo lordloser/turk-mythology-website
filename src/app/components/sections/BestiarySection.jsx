@@ -22,7 +22,6 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
   const containerRef = useRef(null);
   const wrapperRef = useRef(null);
   const trackRef = useRef(null);
-  const bukreBgRef = useRef(null);
 
   // States
   const [activeTab, setActiveTab] = useState("all");
@@ -125,17 +124,6 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
 
   useGSAP(() => {
     // Background Animation
-    if (bukreBgRef.current) {
-      gsap.to(bukreBgRef.current, {
-        xPercent: 30,
-        y: -20,
-        yoyo: true,
-        repeat: -1,
-        duration: 25,
-        ease: "sine.inOut",
-      });
-    }
-
     // Reveal Elements
     const reveals = containerRef.current?.querySelectorAll(".reveal");
     reveals?.forEach((el) => {
@@ -292,6 +280,8 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
     setSelectedCreature({ ...creature, type: 'creature' });
   };
 
+  const closeModal = useCallback(() => setSelectedCreature(null), []);
+
   return (
     <section id="bestiary" className="section" ref={(el) => {
       containerRef.current = el;
@@ -335,15 +325,6 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
         className="bestiary-wrapper"
         ref={wrapperRef}
       >
-        <img
-          src="/images/bukre-dragon.webp"
-          className="bukre-bg-anim"
-          ref={bukreBgRef}
-          alt="Bükre Dragon Background"
-          loading="lazy"
-          decoding="async"
-        />
-
         <button
           type="button"
           aria-label={t("common.prev", "Önceki")}
@@ -420,7 +401,7 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
 
       <CodexModal 
         isOpen={!!selectedCreature} 
-        onClose={() => setSelectedCreature(null)} 
+        onClose={closeModal}
         data={selectedCreature} 
         t={t} 
       />

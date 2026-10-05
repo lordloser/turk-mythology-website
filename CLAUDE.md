@@ -46,6 +46,8 @@ Test altyapısı yok. Değişiklikten sonra en azından `npm run lint` ve `npm r
 - Ana sayfada ilk ekran dışındaki bölümler `next/dynamic` ile ayrı parçalara bölünür (`page.js`).
 - Metin renkleri: `--text-muted` küçük metinlerde de okunur (≈5:1 kontrast). Daha koyu gri kullanma; küçük metinleri 0.9rem altına indirme.
 - İlk ekrandaki görsel hariç `<img>` etiketlerine `loading="lazy" decoding="async"` ekle.
+- Giriş ekranı (`Loader.jsx`) oturum başına bir kez görünür (`sessionStorage.introSeen` + `layout.js`'teki küçük betik `<html data-intro-seen>` koyar). Hero animasyonu `isIntroSeen()` ile buna göre gecikir.
+- Sürekli dönen arka plan animasyonları ve `backdrop-filter: blur` ekleme: Bestiary'de kare hızını yarıya düşürüyordu (kaldırıldı). Pencere/menü açılış animasyonlarını 0.3 sn civarında tut.
 - `prefers-reduced-motion` desteği: `MotionPreferences.jsx` (GSAP hızlandırma), `ParticleCanvas` (parçacıkları kapatır) ve `globals.css` sonundaki media query.
 
 ## Çeviri (i18n)

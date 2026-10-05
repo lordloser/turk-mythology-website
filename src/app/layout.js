@@ -92,6 +92,9 @@ const jsonLd = {
   inLanguage: ["tr", "en"],
 };
 
+const INTRO_SCRIPT =
+  "try{if(sessionStorage.getItem('introSeen'))document.documentElement.setAttribute('data-intro-seen','')}catch(e){}";
+
 export default function RootLayout({ children }) {
   return (
     <html
@@ -100,6 +103,8 @@ export default function RootLayout({ children }) {
       className={`${cinzel.variable} ${inter.variable} ${medievalSharp.variable} ${oldTurkic.variable}`}
     >
       <head>
+        {/* Giriş ekranı oturumda görüldüyse sayfa çizilmeden işaretle (Loader.jsx) */}
+        <script dangerouslySetInnerHTML={{ __html: INTRO_SCRIPT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
