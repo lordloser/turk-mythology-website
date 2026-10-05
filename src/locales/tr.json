@@ -43,7 +43,7 @@
         "youAreHere": "Sen, bu anlatının tam ortasındasın: <strong>Orta Dünya</strong> — bozkır, yurt ve ölümlü yaşam. Yukarıda gök ve merhamet, aşağıda sınav ve yeraltı; Bayterek ise hepsini birbirine bağlayan eksen.",
         "createWord": "Yarat!",
         "btn": "Yolculuğa Başla",
-        "scroll": "Aşağı Kaydır"
+        "scroll": "Keşfetmek için aşağı kaydır"
     },
     "migration": {
         "tag": "Türeyiş ve Göç Destanları",
@@ -88,7 +88,7 @@
         "headingGold": "Kapısı",
         "desc": "Şaman davulu dünyalar arasındaki köprüdür. Her sembol, doğayı, suyu ve unutulmuş diyarları koruyan ruhlara açılan bir kapıdır.",
         "drumTitle": "Kutsal Davul — Tüngür",
-        "drumDesc": "Gizli koruyucuları ortaya çıkarmak için sembollere tıklayın",
+        "drumDesc": "Gizli koruyucuları ortaya çıkarmak için davuldaki sembollere dokun",
         "symbols": {
             "sun": {
                 "name": "Kün — Güneş",
@@ -203,7 +203,8 @@
                 "lore2": "Hayvanlara boş yere zarar veren avcıları şaşırtıp ormanın en dipsiz karanlıklarına çeker. Bazı efsanelerde şekil değiştiren geyikler veya devasa tüylü ayılar olarak tasvir edilir. Ormanın kalbi olan Bayterek ağacının da yeryüzündeki gövdesini o korur.",
                 "connection": "Doğanın Anahtarı · Bayterek'in Bekçisi"
             }
-        }
+        },
+        "drumProgress": "{{count}} / {{total}} sembol açıldı · yanan sembol şu an okuduğun"
     },
     "pantheon": {
         "tag": "Yukarı Dünya",

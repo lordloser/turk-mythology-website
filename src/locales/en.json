@@ -43,7 +43,7 @@
         "youAreHere": "You stand at the heart of this story: the <strong>Middle World</strong> — the steppe, the hearth, mortal life. Above lies the sky and mercy; below, trial and the underworld; Bayterek is the axis that binds them all.",
         "createWord": "Yarat!",
         "btn": "Begin the Journey",
-        "scroll": "Scroll to Descend"
+        "scroll": "Scroll down to explore"
     },
     "migration": {
         "tag": "Türeyiş ve Göç Destanları",
@@ -88,7 +88,7 @@
         "headingGold": "Nexus",
         "desc": "The shamanic drum is the bridge between worlds. Each symbol opens a portal to the spirits that guard nature, water, and the forgotten realms.",
         "drumTitle": "The Sacred Drum — Tüngür",
-        "drumDesc": "Click the symbols to reveal the hidden guardians",
+        "drumDesc": "Tap the symbols on the drum to reveal the hidden guardians",
         "symbols": {
             "sun": {
                 "name": "Kün — The Sun",
@@ -203,7 +203,8 @@
                 "lore2": "It confuses hunters who harm animals needlessly and lures them into the deepest darkness of the woods. Some legends describe it as a shape-shifting stag or a giant shaggy bear. It also guards the earthly trunk of Bayterek, the heart of the forest.",
                 "connection": "Key of Nature · Warden of Bayterek"
             }
-        }
+        },
+        "drumProgress": "{{count}} / {{total}} symbols revealed · the glowing one is what you are reading"
     },
     "pantheon": {
         "tag": "The Upper World",

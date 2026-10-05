@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import ParticleCanvas from "../ParticleCanvas";
+import { isIntroSeen } from "../Loader";
 import { HeroParticle } from "../../utils/particles";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -19,12 +20,15 @@ const OriginSection = forwardRef(function OriginSection({ t, migrationRef }, ref
   const heroYouRef = useRef(null);
   const heroBtnRef = useRef(null);
   const scrollIndRef = useRef(null);
+  const scrollCueWrapRef = useRef(null);
   const heroImageRef = useRef(null);
   const heroContentRef = useRef(null);
 
   useGSAP(() => {
     // Hero entrance timeline
-    const tl = gsap.timeline({ delay: 2.6 }); // delay accounts for loader
+    // Giriş ekranı bu oturumda görüldüyse beklemeden başla
+    const startDelay = isIntroSeen() ? 0.2 : 2.6;
+    const tl = gsap.timeline({ delay: startDelay });
     tl.to(heroSubRef.current, { opacity: 1, y: 0, duration: 1, ease: "power3.out" })
       .to(heroTitleRef.current, { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }, "-=0.6")
       .to(heroLoreRef.current, { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=0.6")
@@ -33,8 +37,22 @@ const OriginSection = forwardRef(function OriginSection({ t, migrationRef }, ref
         { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" },
         "-=0.45"
       )
-      .to(heroBtnRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.35")
-      .to(scrollIndRef.current, { opacity: 0.6, duration: 1, ease: "power2.out" }, "-=0.4");
+      .to(heroBtnRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.35");
+
+    // Kaydırma ipucu, giriş animasyonunun bitmesini beklemeden erkenden görünür
+    gsap.to(scrollIndRef.current, { opacity: 1, duration: 0.8, delay: startDelay + 1, ease: "power2.out" });
+
+    // Kullanıcı kaydırmaya başlayınca ipucu kaybolsun
+    gsap.to(scrollCueWrapRef.current, {
+      autoAlpha: 0, // görünmezken tıklamaları da engellemesin (visibility: hidden)
+      ease: "none",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: "15% top",
+        scrub: true,
+      },
+    });
 
     // Hero image parallax
     gsap.to(heroImageRef.current, {
@@ -99,9 +117,23 @@ const OriginSection = forwardRef(function OriginSection({ t, migrationRef }, ref
           <span>{t("hero.btn")}</span><span>↓</span>
         </button>
       </div>
-      <div className="scroll-indicator" ref={scrollIndRef}>
-        <span>{t("hero.scroll")}</span>
-        <div className="scroll-arrow" />
+      <div className="scroll-cue-wrap" ref={scrollCueWrapRef}>
+        <button
+          type="button"
+          className="scroll-indicator"
+          ref={scrollIndRef}
+          onClick={handleScroll}
+          aria-label={t("hero.scroll")}
+        >
+          <span className="scroll-mouse" aria-hidden="true">
+            <span className="scroll-mouse-wheel" />
+          </span>
+          <span className="scroll-indicator-text">{t("hero.scroll")}</span>
+          <span className="scroll-chevrons" aria-hidden="true">
+            <span />
+            <span />
+          </span>
+        </button>
       </div>
     </section>
   );

@@ -26,13 +26,14 @@ export default function CodexModal({ isOpen, onClose, data, t }) {
 
   useEffect(() => {
     if (isOpen) {
-      gsap.fromTo(modalRef.current, 
-        { opacity: 0 }, 
-        { opacity: 1, duration: 0.4, ease: "power2.out" }
+      // Kısa ve hafif açılış: tıklamaya anında tepki versin
+      gsap.fromTo(modalRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.18, ease: "power1.out" }
       );
-      gsap.fromTo(contentRef.current, 
-        { scale: 0.9, y: 30, opacity: 0 }, 
-        { scale: 1, y: 0, opacity: 1, duration: 0.6, delay: 0.1, ease: "power3.out" }
+      gsap.fromTo(contentRef.current,
+        { scale: 0.97, y: 12, opacity: 0 },
+        { scale: 1, y: 0, opacity: 1, duration: 0.28, ease: "power2.out" }
       );
     }
   }, [isOpen]);

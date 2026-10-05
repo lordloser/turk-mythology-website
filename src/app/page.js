@@ -12,6 +12,7 @@ import { useGSAP } from "@gsap/react";
    for its scroll-down action), so both stay in the initial bundle. */
 import Loader from "./components/Loader";
 import TopBar from "./components/TopBar";
+import ScrollProgress from "./components/ScrollProgress";
 import OriginSection from "./components/sections/OriginSection";
 import MigrationSection from "./components/sections/MigrationSection";
 
@@ -68,6 +69,7 @@ export default function Home() {
   return (
     <>
       <Loader t={t} />
+      <ScrollProgress />
 
       <TopBar
         ref={topBarRef}
