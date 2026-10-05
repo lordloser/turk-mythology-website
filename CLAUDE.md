@@ -32,6 +32,7 @@ Test altyapısı yok. Değişiklikten sonra en azından `npm run lint` ve `npm r
 
 ## SEO
 
+- Site Netlify'da yayında (https://turkmitoloji.netlify.app), GitHub'dan otomatik deploy edilir.
 - Site adresi `src/site.js` içindeki `SITE_URL` (veya build'de `NEXT_PUBLIC_SITE_URL`). Yayındaki alan adı farklıysa burayı güncelle; sitemap, robots ve canonical adresleri buradan üretilir.
 - Sayfalar `"use client"` olduğu için metadata, aynı klasördeki `layout.js` (veya sunucu `page.js`) içinde `pageMetadata()` ile verilir. Yeni sayfa eklerken hem metadata ekle hem de `src/app/sitemap.js` listesine yaz.
 - Paylaşım görseli: `public/og.jpg` (1200x630).

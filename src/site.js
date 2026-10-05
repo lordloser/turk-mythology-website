@@ -1,7 +1,7 @@
 /* Sitenin genel ayarları. Yayındaki alan adı değişirse sadece SITE_URL'i güncelle
    (veya build sırasında NEXT_PUBLIC_SITE_URL ortam değişkenini ver). */
 export const SITE_URL = (
-    process.env.NEXT_PUBLIC_SITE_URL || "https://turk-mythology-website.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://turkmitoloji.netlify.app"
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "Sonsuz Döngü — Türk Mitolojisi";
