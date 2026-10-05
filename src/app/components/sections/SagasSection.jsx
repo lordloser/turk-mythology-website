@@ -134,7 +134,7 @@ const SagasSection = forwardRef(function SagasSection({ t }, ref) {
             key={saga.key}
           >
             <div className="saga-visual">
-              <img
+              <img loading="lazy" decoding="async"
                 src={`/images/${saga.img}.webp`}
                 alt={t(`sagas.${saga.key}.title`)}
                 ref={(el) => { sagaImgRefs.current[i] = el; }}

@@ -126,7 +126,7 @@ const ShadowRealmSection = forwardRef(function ShadowRealmSection({ t, topBarRef
           <div className="erlik-visual erlik-layout">
             <div style={{ position: "relative" }}>
               <div className="erlik-aura" />
-              <img
+              <img loading="lazy" decoding="async"
                 src="/images/erlik-han.webp"
                 alt="Erlik Han"
                 ref={erlikImageRef}
@@ -142,6 +142,7 @@ const ShadowRealmSection = forwardRef(function ShadowRealmSection({ t, topBarRef
             <h2 className="heading-xl">{t("shadow.erlikTitle")}</h2>
             <p dangerouslySetInnerHTML={{ __html: t("shadow.erlikP1") }} />
             <p dangerouslySetInnerHTML={{ __html: t("shadow.erlikP2") }} />
+            <Link href="/varlik/erlik-han" className="detail-link">{t("entity.detail")}</Link>
 
             <div className="spirit-threads">
               {SPIRIT_THREADS.map((st) => (

@@ -526,5 +526,99 @@
         "bai-ulgen": "Bai Ülgen",
         "erlik": "Erlik Han",
         "alkarisi": "Alkarısı"
-    }
+    },
+    "nav": {
+        "cosmos": "Cosmology",
+        "sources": "Sources",
+        "home": "Home"
+    },
+    "entities": {
+        "akAna": {
+            "name": "Ak Ana",
+            "type": "Mother of Creation",
+            "desc": "In the Altai creation story, the radiant White Mother who rises from the endless waters that covered everything before time. She calls out \"Create!\" to Kayra Khan, who was alone and uncertain, and so begins the creation of the universe before sinking back into the depths."
+        },
+        "erlik": {
+            "type": "Lord of the Underworld",
+            "connection": "Son of Kayra Khan · Brother and Rival of Ülgen · Master of Tamag"
+        }
+    },
+    "entity": {
+        "realm": {
+            "sky": "Sky · Upper World",
+            "middle": "Earth · Middle World",
+            "under": "Underworld · Tamag"
+        },
+        "kind": {
+            "god": "Deity",
+            "creature": "Creature",
+            "spirit": "Guardian Spirit"
+        },
+        "lore": "Legend",
+        "related": "Related Beings",
+        "sources": "Sources",
+        "allSources": "Full bibliography →",
+        "share": "Share",
+        "copied": "Link copied",
+        "backHome": "← Home",
+        "exploreCosmos": "See it on the cosmology map →",
+        "detail": "Read more →",
+        "notFound": "Being not found"
+    },
+    "cosmos": {
+        "tag": "Three Worlds · One Tree",
+        "title": "Cosmology",
+        "titleGold": "Map",
+        "desc": "In old Turkic belief the universe is made of three layers bound together by Bayterek. Tap a layer to discover the beings who dwell there.",
+        "hint": "Tap a layer",
+        "tree": "Bayterek",
+        "polaris": "Iron Stake",
+        "beings": "Beings of this realm",
+        "layers": {
+            "sky": {
+                "title": "Sky",
+                "sub": "Upper World · Uçmağ",
+                "desc": "The realm of light and goodness. In Altai tradition the heavens rise layer upon layer; Ülgen sits in his golden palace on the sixteenth layer and Kayra Khan dwells at the very top. At the centre of the sky stands the Iron Stake (the Pole Star), around which the heavens turn.",
+                "facts": [
+                    "17 layers of heaven (Altai tradition)",
+                    "Ülgen's golden palace",
+                    "The Iron Stake: nail of the sky",
+                    "The shaman's ascent to the heavens"
+                ]
+            },
+            "middle": {
+                "title": "Earth",
+                "sub": "Middle World · Yer-Sub",
+                "desc": "Home of humans, animals and guardian spirits. The sacred Yer-Sub (land and water) honoured in the Orkhon Inscriptions is filled with the spirits of mountains, rivers and forests. Humankind is charged with keeping the balance between sky and underworld.",
+                "facts": [
+                    "The sacred Yer-Sub",
+                    "Spirits of mountain, water and forest",
+                    "Wolf, horse and eagle: blessed animals",
+                    "Bayterek's trunk rises from this world"
+                ]
+            },
+            "under": {
+                "title": "Underworld",
+                "sub": "Lower World · Tamag",
+                "desc": "The dark land of Erlik Khan. In the underworld, which descends layer by layer, the souls of the dead are judged; Erlik's servants and dark spirits carry sickness and nightmares to the surface. Shamans descend here only at great peril.",
+                "facts": [
+                    "9 layers of the underworld (Altai tradition)",
+                    "Erlik Khan's iron palace",
+                    "Where souls are judged",
+                    "Abasy and dark spirits"
+                ]
+            }
+        }
+    },
+    "sourcesPage": {
+        "tag": "Foundations",
+        "title": "Sources",
+        "titleGold": "& Reading",
+        "desc": "The stories on this site draw on inscriptions, epic manuscripts, historical chronicles and scholarly research on Turkic mythology. For those who want to go deeper, here are the main sources:",
+        "primary": "Primary Sources",
+        "research": "Research",
+        "usedBy": "Beings based on this source:",
+        "disclaimer": "The texts on this site are interpretive retellings compiled from these sources; the same being may be described differently among different Turkic peoples."
+    },
+    "worldTreeCta": "Explore the cosmology map →"
 }

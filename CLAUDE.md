@@ -23,8 +23,24 @@ Test altyapısı yok. Değişiklikten sonra en azından `npm run lint` ve `npm r
 - `src/app/page.js`: ana sayfa orkestratörü; bölümleri sırayla render eder (`components/sections/*Section.jsx`).
   Sıra: Origin → Migration → WorldTree → Ritual → Pantheon → Umay → Bestiary → ShadowRealm → Sagas → Footer.
 - Alt sayfalar: `sagas/{ergenekon,oghuz,asena,manas,goc}`, `sozluk` (sözlük), `soy-agaci` (soy ağacı, `NexusWeb`), `yeralti-varliklari` (Karanlık Külliyat).
+- `varlik/[slug]`: her tanrı/yaratık/iye için statik detay sayfası (`generateStaticParams`). Veri `src/data/entities.js` içinde; metin alanları çeviri anahtarıdır. Yeni varlık eklemek = `ENTITIES` dizisine bir kayıt + görsel + gerekirse çeviri anahtarları.
+- `kozmoloji`: etkileşimli üç dünya haritası (SVG). Seçili katman URL hash'inde (`#sky`, `#middle`, `#under`).
+- `kaynakca`: kaynakça; veri `src/data/sources.js`. Varlıkların `sources` alanı bu id'lere bağlanır.
+- Yeni alt sayfalarda üst bar için `components/SubPageTopBar.jsx` kullan.
 - Arka plan parçacıkları: `components/ParticleCanvas.jsx` + `utils/particles.js`.
 - Stil: tek dosya `src/app/globals.css`. Renkler `:root` değişkenleri olarak tanımlı (`--celestial-*` gök, `--steppe-*` yer, `--abyss-*` yeraltı). Yeni renk eklemek yerine bunları kullan.
+
+## SEO
+
+- Site adresi `src/site.js` içindeki `SITE_URL` (veya build'de `NEXT_PUBLIC_SITE_URL`). Yayındaki alan adı farklıysa burayı güncelle; sitemap, robots ve canonical adresleri buradan üretilir.
+- Sayfalar `"use client"` olduğu için metadata, aynı klasördeki `layout.js` (veya sunucu `page.js`) içinde `pageMetadata()` ile verilir. Yeni sayfa eklerken hem metadata ekle hem de `src/app/sitemap.js` listesine yaz.
+- Paylaşım görseli: `public/og.jpg` (1200x630).
+
+## Performans
+
+- Fontlar `next/font/google` ile `layout.js`'te yüklenir (`--font-cinzel`, `--font-inter`, `--font-medieval`); CSS'e `@import` ile font ekleme.
+- İlk ekrandaki görsel hariç `<img>` etiketlerine `loading="lazy" decoding="async"` ekle.
+- `prefers-reduced-motion` desteği: `MotionPreferences.jsx` (GSAP hızlandırma), `ParticleCanvas` (parçacıkları kapatır) ve `globals.css` sonundaki media query.
 
 ## Çeviri (i18n)
 
@@ -49,3 +65,4 @@ Test altyapısı yok. Değişiklikten sonra en azından `npm run lint` ve `npm r
 - Yatay kaydırmalı bölümler (Migration, Bestiary) GSAP transform kullanır; `#hash` ile geri dönüşte `page.js` 500 ms bekleyip kaydırır.
 - Yorumlar ve commit mesajları Türkçe yazılabilir; mevcut koddaki stile uy.
 - Kullanılmayan bileşenler: `RuneNav.jsx`, `AudioToggle.jsx` (`/audio/ambient.mp3` henüz yok).
+- `out/` klasörünü yerelde test etmek için `.html` uzantısız adresleri çözen bir statik sunucu kullan (ör. `npx serve out`).

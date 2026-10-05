@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, forwardRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -71,7 +72,7 @@ const WorldTreeSection = forwardRef(function WorldTreeSection({ t }, ref) {
       <div className="section-inner">
         <div className="tree-container">
           <div className="tree-visual">
-            <img src="/images/bayterek.webp" alt="Bayterek" ref={treeImageRef} />
+            <img loading="lazy" decoding="async" src="/images/bayterek.webp" alt="Bayterek" ref={treeImageRef} />
           </div>
           <div className="tree-info" id="treeInfo" ref={treeInfoRef}>
             <h2 className="heading-xl">
@@ -88,6 +89,9 @@ const WorldTreeSection = forwardRef(function WorldTreeSection({ t }, ref) {
               <span className="realm-tag middle">{t("worldTree.middle")}</span>
               <span className="realm-tag lower">{t("worldTree.lower")}</span>
             </div>
+            <Link href="/kozmoloji" className="detail-link" style={{ marginTop: 28 }}>
+              {t("worldTreeCta")}
+            </Link>
           </div>
         </div>
       </div>

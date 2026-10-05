@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "@/i18n";
@@ -46,7 +47,7 @@ export default function RitualSection({ t: tProp }) {
             justifyContent: "center",
           }}
         >
-          <img
+          <img loading="lazy" decoding="async"
             src="/images/shamanic-drum.webp"
             alt="Shamanic Drum"
             className="shamanic-drum pulse-hover"
@@ -157,7 +158,7 @@ export default function RitualSection({ t: tProp }) {
                 onClick={() => setActiveIye(prev => prev === key ? null : key)}
               >
                 <div className="iye-card-img-wrap">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={`/images/${img}.webp`}
                     alt={t(`ritual.iyeler.${key}.name`)}
                     className="iye-img"
@@ -171,6 +172,11 @@ export default function RitualSection({ t: tProp }) {
                   <p className={`iye-desc ${activeIye === key ? "visible" : ""}`}>
                     {t(`ritual.iyeler.${key}.desc`)}
                   </p>
+                  {activeIye === key && (
+                    <Link href={`/varlik/${img}`} className="detail-link" onClick={(e) => e.stopPropagation()}>
+                      {t("entity.detail")}
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}

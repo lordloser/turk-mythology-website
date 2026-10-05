@@ -22,10 +22,10 @@ const TopBar = forwardRef(function TopBar({ t, lang, onSwitchLang, realmRef }, r
   return (
     <>
       <header className="top-bar" ref={ref}>
-        <div className="top-bar-logo">
+        <Link href="/" className="top-bar-logo" style={{ textDecoration: 'none', color: 'inherit' }} aria-label={t("nav.home")}>
           <div className="logo-icon">𐱅</div>
           <span>{t("topBar.title")}</span>
-        </div>
+        </Link>
         
         <div className="top-bar-right" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
           
@@ -36,6 +36,12 @@ const TopBar = forwardRef(function TopBar({ t, lang, onSwitchLang, realmRef }, r
             </Link>
             <Link href="/soy-agaci" className="custom-link" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
               {t("familyTree.title")}
+            </Link>
+            <Link href="/kozmoloji" className="custom-link" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
+              {t("nav.cosmos")}
+            </Link>
+            <Link href="/kaynakca" className="custom-link" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
+              {t("nav.sources")}
             </Link>
             <div className="realm-indicator" ref={realmRef}>
               {t("realms.origin")}
@@ -82,6 +88,12 @@ const TopBar = forwardRef(function TopBar({ t, lang, onSwitchLang, realmRef }, r
         </Link>
         <Link href="/soy-agaci" className="custom-link" onClick={closeMenu} style={{ color: 'var(--text-primary)', textDecoration: 'none' }}>
           {t("familyTree.title")}
+        </Link>
+        <Link href="/kozmoloji" className="custom-link" onClick={closeMenu} style={{ color: 'var(--text-primary)', textDecoration: 'none' }}>
+          {t("nav.cosmos")}
+        </Link>
+        <Link href="/kaynakca" className="custom-link" onClick={closeMenu} style={{ color: 'var(--text-primary)', textDecoration: 'none' }}>
+          {t("nav.sources")}
         </Link>
         <div className="realm-indicator" style={{ marginTop: 'auto', alignSelf: 'flex-start', color: 'var(--celestial-gold)' }}>
           {t("realms.origin")}

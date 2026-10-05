@@ -129,6 +129,9 @@ export default function ParticleCanvas({
 
   // ScrollTrigger visibility gating via useGSAP
   useGSAP(() => {
+    // "Hareketi azalt" açıksa parçacıkları hiç çalıştırma
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     if (!sectionId) {
       // No gating — start immediately
       animateRef.current?.();

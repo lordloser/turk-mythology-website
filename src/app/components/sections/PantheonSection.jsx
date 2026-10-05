@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState, forwardRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -16,11 +17,11 @@ const TABS = [
 ];
 
 const DEITIES = [
-  { key: "kayra", img: "kayra-han", tab: "sky" },
-  { key: "ulgen", img: "ulgen", tab: "sky" },
-  { key: "mergen", img: "mergen", tab: "sky" },
-  { key: "umay", img: "umay-ana", tab: "earth" },
-  { key: "kyzagan", img: "kyzagan", tab: "earth" },
+  { key: "kayra", img: "kayra-han", slug: "kayra-han", tab: "sky" },
+  { key: "ulgen", img: "ulgen", slug: "ulgen", tab: "sky" },
+  { key: "mergen", img: "mergen", slug: "mergen", tab: "sky" },
+  { key: "umay", img: "umay-ana", slug: "umay-ana", tab: "earth" },
+  { key: "kyzagan", img: "kyzagan", slug: "kyzagan", tab: "earth" },
 ];
 
 const PantheonSection = forwardRef(function PantheonSection({ t }, ref) {
@@ -122,9 +123,9 @@ const PantheonSection = forwardRef(function PantheonSection({ t }, ref) {
         {/* Cards Wrapper */}
         <div className="deity-grid-wrapper" style={{ opacity: 0 }}>
           <div className="deity-grid">
-            {DEITIES.filter(d => d.tab === activeTab).map(({ key, img }) => (
+            {DEITIES.filter(d => d.tab === activeTab).map(({ key, img, slug }) => (
               <article className="deity-card" key={key}>
-                <img
+                <img loading="lazy" decoding="async"
                   className="deity-card-image"
                   src={`/images/${img}.webp`}
                   alt={t(`pantheon.${key}.name`)}
@@ -133,6 +134,7 @@ const PantheonSection = forwardRef(function PantheonSection({ t }, ref) {
                   <h3 className="deity-card-title">{t(`pantheon.${key}.name`)}</h3>
                   <span className="deity-card-role">{t(`pantheon.${key}.role`)}</span>
                   <p className="deity-card-desc">{t(`pantheon.${key}.desc`)}</p>
+                  <Link href={`/varlik/${slug}`} className="detail-link">{t("entity.detail")}</Link>
                 </div>
               </article>
             ))}

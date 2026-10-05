@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function FooterSection({ t }) {
   return (
     <footer
@@ -95,7 +97,7 @@ export default function FooterSection({ t }) {
         }}
       >
         {t("footer.copyright", "© 2026 The Infinite Cycle. All realms reserved.")} •{" "}
-        <a href="#">{t("footer.source", "Mythological Sources")}</a>
+        <Link href="/kaynakca">{t("footer.source", "Mythological Sources")}</Link>
       </div>
     </footer>
   );

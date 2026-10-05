@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState, forwardRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -148,7 +149,7 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
         className="bestiary-wrapper"
         ref={wrapperRef}
       >
-        <img
+        <img loading="lazy" decoding="async"
           src="/images/bukre-dragon.webp"
           className="bukre-bg-anim"
           ref={bukreBgRef}
@@ -175,7 +176,7 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
           {CREATURES.map((c) => (
             <article className="creature-card" key={c.id}>
               <div className="creature-card-inner">
-                <img
+                <img loading="lazy" decoding="async"
                   className="creature-image"
                   src={`/images/${c.img}.webp`}
                   alt={getCreatureName(c.id, t)}
@@ -190,6 +191,7 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
                   <p>{getCreatureLore1(c.id, t)}</p>
                   <p>{getCreatureLore2(c.id, t)}</p>
                   <span className="lore-connection">{getCreatureConnection(c.id, t)}</span>
+                  <Link href={`/varlik/${c.id}`} className="detail-link">{t("entity.detail")}</Link>
                 </div>
               </div>
             </article>

@@ -522,5 +522,99 @@
         "bai-ulgen": "Bay Ülgen",
         "erlik": "Erlik Han",
         "alkarisi": "Alkarısı"
-    }
+    },
+    "nav": {
+        "cosmos": "Kozmoloji",
+        "sources": "Kaynakça",
+        "home": "Ana Sayfa"
+    },
+    "entities": {
+        "akAna": {
+            "name": "Ak Ana",
+            "type": "Yaratılışın Anası",
+            "desc": "Altay yaratılış anlatısında, zamandan önce her yeri kaplayan sonsuz sulardan yükselen ak ışıklı ana. Yalnız ve ne yapacağını bilmeyen Kayra Han'a \"Yarat!\" diye seslenir ve evrenin yaratılışını başlatır; ardından yeniden suların derinliğine çekilir."
+        },
+        "erlik": {
+            "type": "Yeraltı Hükümdarı",
+            "connection": "Kayra Han'ın Oğlu · Ülgen'in Kardeşi ve Karşıtı · Tamag'ın Efendisi"
+        }
+    },
+    "entity": {
+        "realm": {
+            "sky": "Gök · Yukarı Dünya",
+            "middle": "Yer · Orta Dünya",
+            "under": "Yeraltı · Tamag"
+        },
+        "kind": {
+            "god": "İlah",
+            "creature": "Yaratık",
+            "spirit": "İye / Ruh"
+        },
+        "lore": "Efsane",
+        "related": "İlişkili Varlıklar",
+        "sources": "Kaynaklar",
+        "allSources": "Tüm kaynakça →",
+        "share": "Paylaş",
+        "copied": "Bağlantı kopyalandı",
+        "backHome": "← Ana Sayfa",
+        "exploreCosmos": "Kozmoloji haritasında gör →",
+        "detail": "Detaylı incele →",
+        "notFound": "Varlık bulunamadı"
+    },
+    "cosmos": {
+        "tag": "Üç Dünya · Tek Ağaç",
+        "title": "Kozmoloji",
+        "titleGold": "Haritası",
+        "desc": "Eski Türk inancında evren, Bayterek'in birbirine bağladığı üç katmandan oluşur. Bir katmana dokunarak orada yaşayan varlıkları keşfet.",
+        "hint": "Bir katmana dokun",
+        "tree": "Bayterek",
+        "polaris": "Demir Kazık",
+        "beings": "Bu diyarın varlıkları",
+        "layers": {
+            "sky": {
+                "title": "Gök",
+                "sub": "Yukarı Dünya · Uçmağ",
+                "desc": "Işığın ve iyiliğin diyarı. Altay anlatılarında gök kat kat yükselir; Ülgen göğün on altıncı katında altın sarayında oturur, en üstte ise Kayra Han bulunur. Göğün tam ortasında Demir Kazık (Kutup Yıldızı) çakılıdır; gök onun etrafında döner.",
+                "facts": [
+                    "17 kat gök (Altay geleneği)",
+                    "Ülgen'in altın sarayı",
+                    "Demir Kazık: göğün çivisi",
+                    "Kamlarda göğe yükseliş yolculuğu"
+                ]
+            },
+            "middle": {
+                "title": "Yer",
+                "sub": "Orta Dünya · Yer-Sub",
+                "desc": "İnsanların, hayvanların ve iyelerin yurdu. Orhun Yazıtları'nda kutsal sayılan Yer-Sub (yer ve su), dağların, ırmakların ve ormanların koruyucu ruhlarıyla doludur. İnsan, gök ile yeraltı arasındaki dengeyi korumakla yükümlüdür.",
+                "facts": [
+                    "Kutsal Yer-Sub",
+                    "Dağ, su ve orman iyeleri",
+                    "Kurt, at ve kartal: kutlu hayvanlar",
+                    "Bayterek'in gövdesi bu dünyadan yükselir"
+                ]
+            },
+            "under": {
+                "title": "Yeraltı",
+                "sub": "Aşağı Dünya · Tamag",
+                "desc": "Erlik Han'ın karanlık ülkesi. Kat kat aşağı inen yeraltında ölülerin ruhları yargılanır; Erlik'in yardımcıları ve kara ruhları yeryüzüne hastalık ve kâbus taşır. Kamlar yalnızca büyük tehlikeleri göze alarak buraya iner.",
+                "facts": [
+                    "9 kat yeraltı (Altay geleneği)",
+                    "Erlik Han'ın demir sarayı",
+                    "Ruhların yargılandığı yer",
+                    "Abasılar ve kara ruhlar"
+                ]
+            }
+        }
+    },
+    "sourcesPage": {
+        "tag": "Bilgi Temeli",
+        "title": "Kaynakça",
+        "titleGold": "ve Okumalar",
+        "desc": "Bu sitedeki anlatılar; yazıtlara, destan nüshalarına, tarihî kroniklere ve Türk mitolojisi üzerine yapılmış bilimsel araştırmalara dayanır. Daha derine inmek isteyenler için başlıca kaynaklar:",
+        "primary": "Birincil Kaynaklar",
+        "research": "Araştırmalar",
+        "usedBy": "Bu kaynağa dayanan varlıklar:",
+        "disclaimer": "Sitedeki metinler bu kaynaklardan derlenmiş yorumlayıcı anlatılardır; aynı varlık farklı Türk topluluklarında farklı biçimlerde anlatılabilir."
+    },
+    "worldTreeCta": "Kozmoloji haritasını keşfet →"
 }
