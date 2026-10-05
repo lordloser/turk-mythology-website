@@ -79,18 +79,28 @@ export default function ParticleCanvas({
     }
     particlesRef.current = particles;
 
+    // Respect the user's "reduce motion" preference: render one
+    // static frame instead of running a continuous rAF loop.
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     // Animation loop
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw connections if enabled
+      // Draw connections if enabled. Compare squared distances so we
+      // only pay for Math.sqrt on the pairs that are actually close.
       if (drawConnections) {
+        const maxDistSq = connectionDistance * connectionDistance;
         for (let i = 0; i < particles.length; i++) {
           for (let j = i + 1; j < particles.length; j++) {
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
-            const d = Math.sqrt(dx * dx + dy * dy);
-            if (d < connectionDistance) {
+            const distSq = dx * dx + dy * dy;
+            if (distSq < maxDistSq) {
+              const d = Math.sqrt(distSq);
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
@@ -112,6 +122,8 @@ export default function ParticleCanvas({
         }
       });
 
+      // Skip scheduling the next frame when motion is reduced.
+      if (prefersReducedMotion) return;
       animIdRef.current = requestAnimationFrame(animate);
     };
     animateRef.current = animate;
@@ -129,6 +141,9 @@ export default function ParticleCanvas({
 
   // ScrollTrigger visibility gating via useGSAP
   useGSAP(() => {
+    // "Hareketi azalt" açıksa parçacıkları hiç çalıştırma
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     if (!sectionId) {
       // No gating — start immediately
       animateRef.current?.();

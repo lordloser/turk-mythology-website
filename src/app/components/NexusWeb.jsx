@@ -1,82 +1,84 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
+import { entityHref } from "@/data/entities";
 
-// Mitolojik hiyerarşiye göre yukarıdan aşağıya (y ekseni) dizilmiş koordinatlar
+// Göksel bağlantı ağı — tanrı düzeyindeki varlıklar.
+// Hiyerarşi: Tengri → Kayra Han → Ülgen / Erlik → Umay ve Ülgen'in oğulları (Kızagan, Mergen, Bay Ülgen).
+// `slug` olan düğümler varlık görselini gösterir ve tıklanınca varlık sayfasına gider.
 const NODES = [
   // ZİRVE
-  { id: "tengri", label: "Tengri", x: 400, y: 40, color: "#87CEEB" },
+  { id: "tengri", x: 400, y: 56, color: "#87CEEB" },
 
-  // GÖK KATI 1
-  { id: "kayra", label: "Kayra Han", x: 400, y: 130, color: "#F5D16B" },
+  // Kayra Han
+  { id: "kayra", slug: "kayra-han", img: "kayra-han", x: 400, y: 170, color: "#F5D16B" },
 
-  // GÖK KATI 2
-  { id: "ulgen", label: "Ülgen", x: 250, y: 220, color: "#2E5FA1" },
-  { id: "umay", label: "Umay Ana", x: 550, y: 220, color: "#DDA0DD" },
+  // Ülgen ve Umay
+  { id: "ulgen", slug: "ulgen", img: "ulgen", x: 190, y: 290, color: "#2E5FA1" },
+  { id: "umay", slug: "umay-ana", img: "umay-ana", x: 640, y: 300, color: "#DDA0DD" },
 
-  // GÖK KATI 3 (Ülgen'in Oğulları - Sola doğru kaydırıldı)
-  { id: "kyzagan", label: "Kyzagan", x: 100, y: 310, color: "#FF6347" },
-  { id: "karshyt", label: "Karşıt", x: 220, y: 310, color: "#4A9E61" },
-  { id: "bai-ulgen", label: "Bai Ülgen", x: 340, y: 310, color: "#DAA520" },
+  // Ülgen'in oğulları
+  { id: "kyzagan", slug: "kyzagan", img: "kyzagan", x: 70, y: 430, color: "#FF6347" },
+  { id: "mergen", slug: "mergen", img: "mergen", x: 180, y: 430, color: "#5DADE2" },
+  { id: "bai-ulgen", x: 290, y: 430, color: "#DAA520" },
 
-  // YERALTI (Erlik ve Alkarısı - Sağa ve aşağıya doğru itildi)
-  { id: "erlik", label: "Erlik Han", x: 500, y: 370, color: "#DC143C" },
-  { id: "alkarisi", label: "Alkarısı", x: 620, y: 450, color: "#8B0000" },
+  // YERALTI — Kayra Han'ın sürgün ettiği Erlik
+  { id: "erlik", slug: "erlik-han", img: "erlik-han", x: 460, y: 430, color: "#DC143C" },
 ];
+
+const NODES_BY_ID = Object.fromEntries(NODES.map((n) => [n.id, n]));
 
 const LINKS = [
-  // Göklerin Bağlantıları
   { source: "tengri", target: "kayra" },
-  { source: "tengri", target: "umay" },
+
+  // Kayra Han'ın oğulları
   { source: "kayra", target: "ulgen" },
-
-  // Ülgen'in Bağlantıları
-  { source: "ulgen", target: "kyzagan" },
-  { source: "ulgen", target: "karshyt" },
-  { source: "ulgen", target: "bai-ulgen" },
-  { source: "ulgen", target: "umay" }, // İyilik ağını güçlendirir
-
-  // Yeraltı Bağlantıları (Kayra Han Erlik'i yeraltına sürer)
   { source: "kayra", target: "erlik" },
-  { source: "erlik", target: "alkarisi" },
+
+  // Ülgen'in dallanması
+  { source: "ulgen", target: "umay" },
+  { source: "ulgen", target: "kyzagan" },
+  { source: "ulgen", target: "mergen" },
+  { source: "ulgen", target: "bai-ulgen" },
 ];
+
+const R = 34;
 
 export default function NexusWeb() {
   const { t } = useTranslation();
+  const router = useRouter();
   const [hoveredId, setHoveredId] = useState(null);
 
-  const isConnected = useCallback(
-    (nodeId) => {
-      if (!hoveredId) return true;
-      if (nodeId === hoveredId) return true;
-      return LINKS.some(
-        (l) =>
-          (l.source === hoveredId && l.target === nodeId) ||
-          (l.target === hoveredId && l.source === nodeId)
-      );
-    },
-    [hoveredId]
-  );
+  const isLinkActive = (link) => hoveredId && (link.source === hoveredId || link.target === hoveredId);
 
-  const isLinkActive = useCallback(
-    (link) => {
-      if (!hoveredId) return false;
-      return link.source === hoveredId || link.target === hoveredId;
-    },
-    [hoveredId]
-  );
+  const isConnected = (nodeId) =>
+    !hoveredId ||
+    nodeId === hoveredId ||
+    LINKS.some(
+      (l) =>
+        (l.source === hoveredId && l.target === nodeId) ||
+        (l.target === hoveredId && l.source === nodeId)
+    );
 
-  const getNodeById = (id) => NODES.find((n) => n.id === id);
+  const open = (node) => {
+    if (node.slug) router.push(entityHref(node.slug));
+  };
 
   return (
-    // viewBox yüksekliğini 400'den 500'e çıkardım ki Alkarısı sığsın
-    <svg className="nexus-svg" viewBox="0 0 800 500">
+    <svg className="nexus-svg" viewBox="0 0 760 520" role="img" aria-label={t("familyTree.title")}>
+      <defs>
+        {NODES.filter((n) => n.img).map((n) => (
+          <clipPath key={n.id} id={`nexus-clip-${n.id}`}>
+            <circle cx={n.x} cy={n.y} r={R - 3} />
+          </clipPath>
+        ))}
+      </defs>
       <g>
         {LINKS.map((link) => {
-          const src = getNodeById(link.source);
-          const tgt = getNodeById(link.target);
-          if (!src || !tgt) return null;
+          const src = NODES_BY_ID[link.source];
+          const tgt = NODES_BY_ID[link.target];
           const active = isLinkActive(link);
           return (
             <line
@@ -93,45 +95,56 @@ export default function NexusWeb() {
       </g>
       <g>
         {NODES.map((node) => {
-          const connected = isConnected(node.id);
+          const label = t(`nexusLabels.${node.id}`);
           return (
             <g
               key={node.id}
-              className="nexus-node"
-              style={hoveredId ? { opacity: connected ? 1 : 0.2 } : {}}
+              className={`nexus-node${node.slug ? " has-link" : ""}`}
+              style={hoveredId ? { opacity: isConnected(node.id) ? 1 : 0.2 } : {}}
               onMouseEnter={() => setHoveredId(node.id)}
               onMouseLeave={() => setHoveredId(null)}
+              onFocus={() => setHoveredId(node.id)}
+              onBlur={() => setHoveredId(null)}
+              onClick={() => open(node)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") open(node);
+              }}
+              role={node.slug ? "link" : undefined}
+              tabIndex={node.slug ? 0 : undefined}
+              aria-label={label}
             >
-              <circle
-                cx={node.x}
-                cy={node.y}
-                r={28}
-                fill="none"
-                stroke={node.color}
-                strokeWidth="1"
-                opacity="0.3"
-              />
-              <circle cx={node.x} cy={node.y} r={24} fill={node.color} opacity="0.8" />
+              <circle cx={node.x} cy={node.y} r={R + 5} fill="none" stroke={node.color} strokeWidth="1.5" opacity="0.45" />
+              <circle cx={node.x} cy={node.y} r={R} fill={node.color} opacity="0.85" />
+              {node.img ? (
+                <image
+                  href={`/images/${node.img}.webp`}
+                  x={node.x - R}
+                  y={node.y - R}
+                  width={R * 2}
+                  height={R * 2}
+                  preserveAspectRatio="xMidYMid slice"
+                  clipPath={`url(#nexus-clip-${node.id})`}
+                />
+              ) : (
+                <text
+                  x={node.x}
+                  y={node.y + 7}
+                  textAnchor="middle"
+                  fill="#080808"
+                  fontFamily="var(--font-display)"
+                  fontSize="20"
+                  fontWeight="700"
+                >
+                  {label[0]}
+                </text>
+              )}
               <text
+                className="nexus-label"
                 x={node.x}
-                y={node.y + 5}
+                y={node.y + R + 24}
                 textAnchor="middle"
-                fill="#080808"
-                fontFamily="Cinzel, serif"
-                fontSize="14"
-                fontWeight="700"
               >
-                {t(`nexusLabels.${node.id}`)?.[0] || node.label[0]}
-              </text>
-              <text
-                x={node.x}
-                y={node.y + 42}
-                textAnchor="middle"
-                fill="#A09882"
-                fontFamily="Cinzel, serif"
-                fontSize="10"
-              >
-                {t(`nexusLabels.${node.id}`) || node.label}
+                {label}
               </text>
             </g>
           );

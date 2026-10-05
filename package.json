@@ -1,5 +1,5 @@
 {
-  "name": "turk-myth-temp",
+  "name": "turk-mythology-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,10 +10,9 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
-    "acorn": "^8.16.0",
-    "acorn-jsx": "^5.3.2",
     "gsap": "^3.14.2",
     "i18next": "^25.8.17",
+    "lodash.debounce": "^4.0.8",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",

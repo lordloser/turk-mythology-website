@@ -5,6 +5,7 @@ import Link from "next/link";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useTranslation } from "react-i18next";
+import SubPageTopBar from "@/app/components/SubPageTopBar";
 import "../../i18n";
 import NexusWeb from "../components/NexusWeb";
 
@@ -32,7 +33,8 @@ export default function SoyAgaciPage() {
 
     return (
         <main ref={containerRef} style={{ background: "var(--bg-dark)", minHeight: "100vh", color: "var(--text-primary)", paddingBottom: "100px" }}>
-            <div className="section-inner" style={{ maxWidth: "1000px", margin: "0 auto", padding: "60px 20px" }}>
+            <SubPageTopBar />
+            <div className="section-inner" style={{ maxWidth: "1000px", margin: "0 auto", padding: "120px 20px 60px" }}>
                 
                 <header className="tree-header" style={{ textAlign: "center", marginBottom: "40px" }}>
                     <span style={{ color: "var(--celestial-gold)", letterSpacing: "4px", fontSize: "0.9rem", textTransform: "uppercase" }}>
@@ -44,7 +46,7 @@ export default function SoyAgaciPage() {
                 </header>
 
                 <div className="tree-header" style={{ marginBottom: "50px", textAlign: "center" }}>
-                    <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", textDecoration: "none", transition: "color 0.3s" }} className="hover-gold">
+                    <Link href="/" className="back-link">
                         <span>←</span> {t("common.back", "Ana Sayfaya Dön")}
                     </Link>
                 </div>

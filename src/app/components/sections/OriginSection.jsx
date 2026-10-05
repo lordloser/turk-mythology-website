@@ -16,6 +16,7 @@ const OriginSection = forwardRef(function OriginSection({ t, migrationRef }, ref
   const heroSubRef = useRef(null);
   const heroTitleRef = useRef(null);
   const heroLoreRef = useRef(null);
+  const heroYouRef = useRef(null);
   const heroBtnRef = useRef(null);
   const scrollIndRef = useRef(null);
   const heroImageRef = useRef(null);
@@ -27,7 +28,12 @@ const OriginSection = forwardRef(function OriginSection({ t, migrationRef }, ref
     tl.to(heroSubRef.current, { opacity: 1, y: 0, duration: 1, ease: "power3.out" })
       .to(heroTitleRef.current, { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }, "-=0.6")
       .to(heroLoreRef.current, { opacity: 1, y: 0, duration: 1, ease: "power3.out" }, "-=0.6")
-      .to(heroBtnRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.4")
+      .to(
+        heroYouRef.current,
+        { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" },
+        "-=0.45"
+      )
+      .to(heroBtnRef.current, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, "-=0.35")
       .to(scrollIndRef.current, { opacity: 0.6, duration: 1, ease: "power2.out" }, "-=0.4");
 
     // Hero image parallax
@@ -78,12 +84,17 @@ const OriginSection = forwardRef(function OriginSection({ t, migrationRef }, ref
         mouseInteractive={true}
       />
       <div className="hero-image-wrapper">
-        <img src="/images/ak-ana.png" alt="Ak Ana" ref={heroImageRef} />
+        <img src="/images/ak-ana.webp" alt="Ak Ana" ref={heroImageRef} fetchPriority="high" decoding="async" />
       </div>
       <div className="hero-content" ref={heroContentRef}>
         <p className="hero-subtitle" ref={heroSubRef}>{t("hero.subtitle")}</p>
         <h1 className="hero-title" ref={heroTitleRef}>{t("hero.title")}</h1>
         <p className="hero-lore" ref={heroLoreRef} dangerouslySetInnerHTML={{ __html: t("hero.lore") }} />
+        <p
+          className="hero-you-are-here"
+          ref={heroYouRef}
+          dangerouslySetInnerHTML={{ __html: t("hero.youAreHere") }}
+        />
         <button className="btn-liquid" ref={heroBtnRef} onClick={handleScroll}>
           <span>{t("hero.btn")}</span><span>↓</span>
         </button>
