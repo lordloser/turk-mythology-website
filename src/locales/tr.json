@@ -221,8 +221,8 @@
             "desc": "Göğün yedinci katında oturan, her şeyi bilen ve attığı kutsal ok asla şaşmayan efsanevi tanrı. İnsanlığa bilgeliği ve zekayı o bahşeder.",
             "loreTitle": "Sonsuz Hikmetin Oku",
             "lore1": "Türk mitolojisinde Mergen Han, aklın, bilincin ve isabetli kararların sembolüdür. Gökyüzünün yedinci katında yaşar ve insanların kaderlerine yön veren en büyük bilgelerden biri kabul edilir. Elindeki kutsal yay ve ok, sadece hedefleri değil, doğruluk ve adaleti simgeler.",
-            "lore2": "Kayra Han'ın oğullarından biridir. Savaş alanlarından ziyade, insanlara düşünceyi, zorlukları zekayla aşmayı ve medeniyet kurmayı öğrettiğine inanılır. Şamanlar, zor bir karar vermeden önce ruhani yolculuklarında Mergen Han'dan yol göstermesini dilerler.",
-            "connection": "Kayra Han'ın Oğlu · Zekanın Işığı"
+            "lore2": "Ülgen'in yedi oğlundan biridir. Savaş alanlarından ziyade, insanlara düşünceyi, zorlukları zekayla aşmayı ve medeniyet kurmayı öğrettiğine inanılır. Şamanlar, zor bir karar vermeden önce ruhani yolculuklarında Mergen Han'dan yol göstermesini dilerler.",
+            "connection": "Ülgen'in Oğlu · Zekanın Işığı"
         },
         "kayra": {
             "name": "Kayra Han",

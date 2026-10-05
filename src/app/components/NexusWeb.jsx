@@ -6,22 +6,22 @@ import { useTranslation } from "react-i18next";
 import { entityHref } from "@/data/entities";
 
 // Göksel bağlantı ağı — tanrı düzeyindeki varlıklar.
-// Hiyerarşi: Tengri → Kayra Han → Ülgen / Erlik / Mergen → Umay ve Ülgen'in oğulları.
+// Hiyerarşi: Tengri → Kayra Han → Ülgen / Erlik → Umay ve Ülgen'in oğulları (Kızagan, Mergen, Bay Ülgen).
 // `slug` olan düğümler varlık görselini gösterir ve tıklanınca varlık sayfasına gider.
 const NODES = [
   // ZİRVE
   { id: "tengri", x: 400, y: 56, color: "#87CEEB" },
 
-  // Kayra Han ve oğlu Mergen
+  // Kayra Han
   { id: "kayra", slug: "kayra-han", img: "kayra-han", x: 400, y: 170, color: "#F5D16B" },
-  { id: "mergen", slug: "mergen", img: "mergen", x: 640, y: 170, color: "#5DADE2" },
 
   // Ülgen ve Umay
   { id: "ulgen", slug: "ulgen", img: "ulgen", x: 190, y: 290, color: "#2E5FA1" },
   { id: "umay", slug: "umay-ana", img: "umay-ana", x: 640, y: 300, color: "#DDA0DD" },
 
   // Ülgen'in oğulları
-  { id: "kyzagan", slug: "kyzagan", img: "kyzagan", x: 80, y: 430, color: "#FF6347" },
+  { id: "kyzagan", slug: "kyzagan", img: "kyzagan", x: 70, y: 430, color: "#FF6347" },
+  { id: "mergen", slug: "mergen", img: "mergen", x: 180, y: 430, color: "#5DADE2" },
   { id: "bai-ulgen", x: 290, y: 430, color: "#DAA520" },
 
   // YERALTI — Kayra Han'ın sürgün ettiği Erlik
@@ -36,11 +36,11 @@ const LINKS = [
   // Kayra Han'ın oğulları
   { source: "kayra", target: "ulgen" },
   { source: "kayra", target: "erlik" },
-  { source: "kayra", target: "mergen" },
 
   // Ülgen'in dallanması
   { source: "ulgen", target: "umay" },
   { source: "ulgen", target: "kyzagan" },
+  { source: "ulgen", target: "mergen" },
   { source: "ulgen", target: "bai-ulgen" },
 ];
 
