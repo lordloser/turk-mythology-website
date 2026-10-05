@@ -1,4 +1,5 @@
 import "./globals.css";
+import LanguageSync from "./components/LanguageSync";
 
 export const metadata = {
   title: "The Infinite Cycle — A Cinematic Journey into Turkic Mythology",
@@ -10,8 +11,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="tr">
-      <body>{children}</body>
+    <html lang="tr" suppressHydrationWarning>
+      <body>
+        <LanguageSync />
+        {children}
+      </body>
     </html>
   );
 }

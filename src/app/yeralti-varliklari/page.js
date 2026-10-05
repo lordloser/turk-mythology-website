@@ -49,17 +49,17 @@ export default function YeraltiVarliklariPage() {
                 {/* ÜST KISIM (HERO) */}
                 <header className="kulliyat-header" style={{ textAlign: "center", padding: "60px 0 40px" }}>
                     <span style={{ color: "var(--celestial-gold)", letterSpacing: "4px", fontSize: "0.9rem", textTransform: "uppercase" }}>
-                        {t("sagas.ergenekon.subtitle", "Demir Dağ Hapishanesi")}
+                        {t("kulliyat.subtitle")}
                     </span>
                     <h1 style={{ fontSize: "clamp(3rem, 6vw, 5rem)", fontFamily: "var(--font-display)", margin: "10px 0", color: "var(--text-primary)", textShadow: "0 4px 20px rgba(0,0,0,0.8)" }}>
-                        {t("common.kulliyat", "KARANLIK KÜLLİYAT")}
+                        {t("kulliyat.title")} {t("kulliyat.titleAccent")}
                     </h1>
                 </header>
 
                 {/* GERİ DÖN BUTONU */}
                 <div style={{ marginBottom: "60px" }}>
                     <Link href="/#shadow-realm" style={{ display: "inline-flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", textDecoration: "none", fontSize: "0.9rem", letterSpacing: "1px", transition: "color 0.3s" }} className="hover-gold">
-                        <span>←</span> {t("common.back", "Shadow Realm'e Dön")}
+                        <span>←</span> {t("common.back")}
                     </Link>
                 </div>
 
@@ -77,6 +77,13 @@ export default function YeraltiVarliklariPage() {
                             <p style={{ fontSize: "1.15rem", lineHeight: "1.8", color: "var(--text-secondary)", marginBottom: "30px" }}>
                                 {t(`kulliyat.creatures.${key}.desc`)}
                             </p>
+
+                            <p style={{ fontSize: "1rem", lineHeight: "1.7", color: "var(--text-muted)", margin: "0 0 8px" }}>
+                                <strong style={{ color: "var(--celestial-gold)" }}>{t("kulliyat.categoryLabel")}</strong> {t(`kulliyat.creatures.${key}.cat`)}
+                            </p>
+                            <p style={{ fontSize: "1rem", lineHeight: "1.7", color: "var(--text-muted)", margin: 0 }}>
+                                <strong style={{ color: "var(--celestial-gold)" }}>{t("kulliyat.weaknessLabel")}</strong> {t(`kulliyat.creatures.${key}.weak`)}
+                            </p>
                         </article>
                     );
                 })}
@@ -89,7 +96,7 @@ export default function YeraltiVarliklariPage() {
 const createCreatureImageStyle = (creatureKey) => ({
     width: "90%", // Kapsayıcı genişliği
     aspectRatio: "1/1", // Kare formatını zorunlu kılar
-    backgroundImage: `url('/images/${creatureKey}.png')`, // Resim yolu / ile başlamalıdır
+    backgroundImage: `url('/images/${creatureKey}.webp')`, // Resim yolu / ile başlamalıdır
     backgroundSize: "cover", // Resmi sığdırmak için
     backgroundPosition: "center",
     borderRadius: "12px", // Kenar yuvarlama

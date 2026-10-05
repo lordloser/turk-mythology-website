@@ -71,7 +71,7 @@ const WorldTreeSection = forwardRef(function WorldTreeSection({ t }, ref) {
       <div className="section-inner">
         <div className="tree-container">
           <div className="tree-visual">
-            <img src="/images/bayterek.png" alt="Bayterek" ref={treeImageRef} />
+            <img src="/images/bayterek.webp" alt="Bayterek" ref={treeImageRef} />
           </div>
           <div className="tree-info" id="treeInfo" ref={treeInfoRef}>
             <h2 className="heading-xl">

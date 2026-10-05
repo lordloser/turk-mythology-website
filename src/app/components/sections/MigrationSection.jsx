@@ -37,7 +37,7 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
   }, { scope: containerRef });
 
   // Butonlara basıldığında çalışacak GSAP Slider Animasyonu
-  const goToSlide = contextSafe((index) => {
+  const goToSlide = (index) => contextSafe(() => {
     if (index < 0 || index >= totalSlides) return;
     setCurrentIndex(index);
 
@@ -49,7 +49,7 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
       duration: 1.2,
       ease: "power3.inOut",
     });
-  });
+  })();
 
   return (
     <section id="migration" ref={(el) => {

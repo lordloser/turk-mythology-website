@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
@@ -30,27 +30,21 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Home() {
   const { t, i18n } = useTranslation();
 
-  // DÜZELTME 1: State artık "tr" ile başlıyor
-  const [lang, setLang] = useState("tr");
-
   /* ── Refs for cross-component communication ── */
   const topBarRef = useRef(null);
   const realmRef = useRef(null);
 
-  const sectionRefs = {
-    origin: useRef(null),
-    migration: useRef(null),
-    "world-tree": useRef(null),
-    pantheon: useRef(null),
-    bestiary: useRef(null),
-    "shadow-realm": useRef(null),
-    sagas: useRef(null),
-  };
+  const originRef = useRef(null);
+  const migrationRef = useRef(null);
+  const worldTreeRef = useRef(null);
+  const pantheonRef = useRef(null);
+  const bestiaryRef = useRef(null);
+  const shadowRealmRef = useRef(null);
+  const sagasRef = useRef(null);
 
   /* ── Language Switch ─────────────────────── */
   function switchLang(lng) {
     i18n.changeLanguage(lng);
-    setLang(lng);
   }
   // DÜZELTME 2: Geri dönüşlerdeki GSAP kayma sorununun çözümü
   useGSAP(() => {
@@ -75,37 +69,37 @@ export default function Home() {
       <TopBar
         ref={topBarRef}
         t={t}
-        lang={lang}
+        lang={i18n.language}
         onSwitchLang={switchLang}
         realmRef={realmRef}
       />
 
 
       <OriginSection
-        ref={sectionRefs.origin}
+        ref={originRef}
         t={t}
-        migrationRef={sectionRefs.migration}
+        migrationRef={migrationRef}
       />
 
-      <MigrationSection ref={sectionRefs.migration} t={t} />
+      <MigrationSection ref={migrationRef} t={t} />
 
-      <WorldTreeSection ref={sectionRefs["world-tree"]} t={t} />
+      <WorldTreeSection ref={worldTreeRef} t={t} />
 
       <RitualSection t={t} />
 
-      <PantheonSection ref={sectionRefs.pantheon} t={t} />
+      <PantheonSection ref={pantheonRef} t={t} />
 
       <UmaySection t={t} />
 
-      <BestiarySection ref={sectionRefs.bestiary} t={t} />
+      <BestiarySection ref={bestiaryRef} t={t} />
 
       <ShadowRealmSection
-        ref={sectionRefs["shadow-realm"]}
+        ref={shadowRealmRef}
         t={t}
         topBarRef={topBarRef}
       />
 
-      <SagasSection ref={sectionRefs.sagas} t={t} />
+      <SagasSection ref={sagasRef} t={t} />
 
       <FooterSection t={t} />
     </>

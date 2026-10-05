@@ -1549,15 +1549,15 @@ a:hover {
 }
 
 .migration-bg-1 {
-    background-image: url("/images/migration-1.png");
+    background-image: url("/images/migration-1.webp");
 }
 
 .migration-bg-2 {
-    background-image: url("/images/migration-2.png");
+    background-image: url("/images/migration-2.webp");
 }
 
 .migration-bg-3 {
-    background-image: url("/images/migration-3.png");
+    background-image: url("/images/migration-3.webp");
 }
 
 .migration-content {

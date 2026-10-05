@@ -90,7 +90,8 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
   }, { scope: containerRef });
 
   // Ok butonlarına tıklandığında çalışacak akıllı kaydırma fonksiyonu
-  const scrollTrack = contextSafe((direction) => {
+  // contextSafe her çağrıda sarılır; render sırasında ref erişimi yapılmaz (React Compiler kuralı)
+  const scrollTrack = (direction) => contextSafe(() => {
     const track = trackRef.current;
     const wrapper = wrapperRef.current;
     if (!track || !wrapper) return;
@@ -122,7 +123,7 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
     // Butonların görünürlük durumlarını güncelle
     setIsAtStart(newScroll <= 0);
     setIsAtEnd(newScroll >= maxScroll - 5); // 5px tolerans payı
-  });
+  })();
 
   return (
     <section id="bestiary" className="section" ref={(el) => {
@@ -148,7 +149,7 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
         ref={wrapperRef}
       >
         <img
-          src="/images/bukre-dragon.png"
+          src="/images/bukre-dragon.webp"
           className="bukre-bg-anim"
           ref={bukreBgRef}
           alt="Bükre Dragon Background"
@@ -176,7 +177,7 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
               <div className="creature-card-inner">
                 <img
                   className="creature-image"
-                  src={`/images/${c.img}.png`}
+                  src={`/images/${c.img}.webp`}
                   alt={getCreatureName(c.id, t)}
                 />
                 <div className="creature-info">

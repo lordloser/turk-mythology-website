@@ -127,7 +127,7 @@ const ShadowRealmSection = forwardRef(function ShadowRealmSection({ t, topBarRef
             <div style={{ position: "relative" }}>
               <div className="erlik-aura" />
               <img
-                src="/images/erlik-han.png"
+                src="/images/erlik-han.webp"
                 alt="Erlik Han"
                 ref={erlikImageRef}
                 className="erlik-image-style"

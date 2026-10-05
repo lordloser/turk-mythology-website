@@ -287,6 +287,24 @@
             "lore1": "Kayberenler (Missing Saints) are invisible, sacred, and radiant beings. According to Kyrgyz and Kazakh legends, they live on the highest peaks of mountains, protect wild animal herds, and bring abundance.",
             "lore2": "They extent a helping hand to the innocent in distress. Those who disrespect the mountains where they reside will lose their way. In Anatolian beliefs, they are equated with saints in human form.",
             "connection": "Guardians of Nature · Benevolent Spirits"
+        },
+        "abasi": {
+            "name": "Abasy",
+            "type": "Underworld Army",
+            "desc": "Malevolent spirits that make up Erlik Khan's largest army. They are depicted as one-eyed, one-legged or toothless. Their task is to spread disease, bring misfortune and drag their victims into the dungeons of the underworld.",
+            "loreTitle": "The Tale of the Abasy",
+            "lore1": "The Abasy are Erlik Khan's most loyal servants in the underworld. Each is a source of a different evil or illness. Some have a single eye, some a single leg, and others bear terrifying fangs.",
+            "lore2": "They work to steal the life energy of people and imprison them in the dungeons below. Shamans keep the Abasy away with iron objects and powerful prayers.",
+            "connection": "Erlik's Army · Bearers of Disease"
+        },
+        "kamos": {
+            "name": "Kamos",
+            "type": "Mental Affliction",
+            "desc": "A dark energy that falls upon people at night. Erlik Khan uses this being to control people in their most vulnerable moment: sleep.",
+            "loreTitle": "The Tale of Kamos",
+            "lore1": "Kamos is a dark being sent to the earth by Erlik Khan. It descends on people at night and leaves them unable to move, cutting off their breath and filling their sleep with terrible nightmares.",
+            "lore2": "Shamans keep Kamos away with metal objects and powerful prayers, and by helping its victims stay awake.",
+            "connection": "Erlik's Shadow · Lord of Nightmares"
         }
     },
     "shadow": {
@@ -310,7 +328,11 @@
             "title": "Legend of Bukre",
             "lore2": "A guardian of the underworld's deepest secrets, snaking through Tamag.",
             "connection": "Guardian of the Depths"
-        }
+        },
+        "karabura": "Kara Bura",
+        "karaburaDesc": "The being that guards Erlik Khan's underground iron forges and carries dark energy.",
+        "judgment": "The Great Judgment",
+        "judgmentDesc": "The justice of the underworld that decides each soul's eternal journey in Tamag."
     },
     "kulliyat": {
         "back": "← Back to Home",
@@ -327,6 +349,27 @@
                 "desc": "One of Erlik Khan's oldest shadows on earth. Often depicted in red garments, targeting fresh life energy and carrying souls to the lord of the underworld.",
                 "weak": "Iron, the color red, and Syrian rue.",
                 "cat": "Soul Harvester"
+            },
+            "abasi": {
+                "title": "Abasy",
+                "sub": "Foot Soldiers of the Underworld",
+                "desc": "They form Erlik Khan's largest army and may take one-eyed or one-legged forms. Their task is to spread disease and pull souls down into the dungeons of the underworld.",
+                "weak": "Sunlight and shamanic prayers.",
+                "cat": "Servant / Warrior"
+            },
+            "kamos": {
+                "title": "Kamos",
+                "sub": "Lord of Nightmares and Sleep",
+                "desc": "A dark energy that falls upon people at night. Erlik Khan uses this being to control people in their most vulnerable moment: sleep.",
+                "weak": "Wakefulness and metal objects.",
+                "cat": "Mental Affliction"
+            },
+            "bukre": {
+                "title": "BÜKRE",
+                "sub": "Ancient Dragon and Guardian Spirit",
+                "cat": "Mythic Power / Balancer",
+                "desc": "One of the mightiest and wisest dragon figures in Turkic mythology, known for its legendary battles with Sangal, the evil dragon. It is depicted as a giant, legless serpent. Bükre stands for goodness and strength, descending to the earth every nine years to restore order and balance.",
+                "weak": "The absolute dominion of evil and Sangal's dark magic."
             }
         }
     },
@@ -430,14 +473,38 @@
         "title": "MYTHOLOGICAL GLOSSARY",
         "subtitle": "Ancient Terms and Meanings",
         "terms": [
-            { "term": "Kut", "def": "The divine life force, abundance, and blessing bestowed by Tengri." },
-            { "term": "Tamag", "def": "The Underworld. The dark realm of torment ruled by Erlik Khan." },
-            { "term": "Üçgöl", "def": "The divine region in the highest heavenly layer where Tengri resides." },
-            { "term": "Bayterek", "def": "The legendary World Tree connecting the underworld, earth, and sky." },
-            { "term": "Tengri (Sky God)", "def": "The eternal blue sky, creator of the universe and the supreme power." },
-            { "term": "Kam (Shaman)", "def": "Spiritual leader who communicates with the spirit world, heals, and leads rituals." },
-            { "term": "İye", "def": "Guardian spirits of entities in nature (water, mountain, forest, etc.). The Master/Owner." },
-            { "term": "Kayberenler", "def": "Invisible 'Missing Saints' dwelling in the mountains who protect the innocent." }
+            {
+                "term": "Kut",
+                "def": "The divine life force, abundance, and blessing bestowed by Tengri."
+            },
+            {
+                "term": "Tamag",
+                "def": "The Underworld. The dark realm of torment ruled by Erlik Khan."
+            },
+            {
+                "term": "Üçgöl",
+                "def": "The divine region in the highest heavenly layer where Tengri resides."
+            },
+            {
+                "term": "Bayterek",
+                "def": "The legendary World Tree connecting the underworld, earth, and sky."
+            },
+            {
+                "term": "Tengri (Sky God)",
+                "def": "The eternal blue sky, creator of the universe and the supreme power."
+            },
+            {
+                "term": "Kam (Shaman)",
+                "def": "Spiritual leader who communicates with the spirit world, heals, and leads rituals."
+            },
+            {
+                "term": "İye",
+                "def": "Guardian spirits of entities in nature (water, mountain, forest, etc.). The Master/Owner."
+            },
+            {
+                "term": "Kayberenler",
+                "def": "Invisible 'Missing Saints' dwelling in the mountains who protect the innocent."
+            }
         ]
     },
     "familyTree": {

@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
+import "@/i18n";
 import TopBar from "../../components/TopBar";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -49,7 +50,7 @@ export default function MigrationEpic() {
         <div
           style={{
             position: "absolute", inset: 0,
-            backgroundImage: "url('/images/migration-1.png')",
+            backgroundImage: "url('/images/migration-1.webp')",
             backgroundSize: "cover", backgroundPosition: "center",
             opacity: 0.4, filter: "brightness(0.6)"
           }}

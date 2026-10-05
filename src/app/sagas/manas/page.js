@@ -45,7 +45,7 @@ export default function ManasEpic() {
         <div
           style={{
             position: "absolute", inset: 0,
-            backgroundImage: "url('/images/manas.png')",
+            backgroundImage: "url('/images/manas.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center top",
             opacity: 0.5,

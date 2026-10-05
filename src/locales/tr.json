@@ -330,26 +330,6 @@
             "connection": "Derinliklerin Muhafızı"
         }
     },
-    "creatures": {
-        "abasi": {
-            "name": "Abasılar",
-            "type": "Yeraltı Ordusu",
-            "desc": "Erlik Han’ın en kalabalık ordusunu oluşturan şer ruhlardır. Tek gözlü, tek bacaklı veya dişsiz olarak tasvir edilirler. İnsanlara hastalık bulaştırmak, talihsizlik getirmek ve kurbanlarını yeraltı zindanlarına sürüklemekle görevlidirler.",
-            "loreTitle": "Abasılar'ın Hikâyesi",
-            "lore1": "Abasılar, Erlik Han’ın yeraltı dünyasındaki en sadık hizmetkârlarıdır. Her biri farklı bir kötülük ve hastalık kaynağıdır. Bazıları tek gözlüdür, bazıları tek bacaklıdır, bazıları ise korkunç dişlere sahiptir.",
-            "lore2": "İnsanların yaşam enerjisini çalmak ve onları yeraltı zindanlarına hapsetmek için çalışırlar. Şamanlar, Abasılar'ı uzak tutmak için demir nesneler kullanır ve güçlü dualar okur.",
-            "connection": "Erlik'in Ordusu · Hastalık Taşıyıcıları"
-        },
-        "kamos": {
-            "name": "Kamos",
-            "type": "Zihinsel Musibet",
-            "desc": "Geceleri insanların üzerine çöken karanlık bir enerjidir. Erlik Han’ın, insanların en savunmasız anı olan uykularını kontrol etmek için kullandığı bir varlıktır.",
-            "loreTitle": "Kamos'un Hikâyesi",
-            "lore1": "Kamos, Erlik Han tarafından yeryüzüne gönderilen karanlık bir varlıktır. Geceleri insanların üzerine çöker ve onları hareket edemez hale getirir. Kurbanlarının nefesini keser ve korkunç kabuslar görmelerine neden olur.",
-            "lore2": "Şamanlar, Kamos'u uzak tutmak için metal nesneler kullanır ve güçlü dualar okur. Kurbanlarının uyanık kalmasını sağlayarak onu uzak tutmaya çalışırlar.",
-            "connection": "Erlik'in Gölgesi · Kabusların Efendisi"
-        }
-    },
     "kulliyat": {
         "back": "← Ana Sayfaya Dön",
         "title": "KARANLIK",
@@ -489,14 +469,38 @@
         "title": "MİTOLOJİK SÖZLÜK",
         "subtitle": "Kadim Terimler ve Anlamları",
         "terms": [
-            { "term": "Kut", "def": "Gök Tanrı tarafından verilen ilahi yaşam gücü, bereket ve kutluluk." },
-            { "term": "Tamag", "def": "Yeraltı dünyası. Erlik Han'ın hüküm sürdüğü karanlık ve azap krallığı." },
-            { "term": "Üçgöl", "def": "Tengri'nin yaşadığına inanılan en üst gök katmanındaki ilahi bölge." },
-            { "term": "Bayterek", "def": "Yeraltını, yeryüzünü ve gökyüzünü birbirine bağlayan efsanevi Hayat Ağacı." },
-            { "term": "Tengri (Gök Tanrı)", "def": "Sonsuz mavi gök, evrenin yaratıcısı ve en ulu güç." },
-            { "term": "Kam (Şaman)", "def": "Ruhlar dünyası ile iletişim kurabilen, şifa veren ve ritüelleri yöneten ruhani lider." },
-            { "term": "İye", "def": "Doğadaki varlıkların (su, dağ, orman vb.) koruyucu ruhları. Sahip/Efendi." },
-            { "term": "Kayberenler", "def": "Dağlarda yaşayan, gözle görülmeyen ve masumları koruyan 'Kayıp Erenler'." }
+            {
+                "term": "Kut",
+                "def": "Gök Tanrı tarafından verilen ilahi yaşam gücü, bereket ve kutluluk."
+            },
+            {
+                "term": "Tamag",
+                "def": "Yeraltı dünyası. Erlik Han'ın hüküm sürdüğü karanlık ve azap krallığı."
+            },
+            {
+                "term": "Üçgöl",
+                "def": "Tengri'nin yaşadığına inanılan en üst gök katmanındaki ilahi bölge."
+            },
+            {
+                "term": "Bayterek",
+                "def": "Yeraltını, yeryüzünü ve gökyüzünü birbirine bağlayan efsanevi Hayat Ağacı."
+            },
+            {
+                "term": "Tengri (Gök Tanrı)",
+                "def": "Sonsuz mavi gök, evrenin yaratıcısı ve en ulu güç."
+            },
+            {
+                "term": "Kam (Şaman)",
+                "def": "Ruhlar dünyası ile iletişim kurabilen, şifa veren ve ritüelleri yöneten ruhani lider."
+            },
+            {
+                "term": "İye",
+                "def": "Doğadaki varlıkların (su, dağ, orman vb.) koruyucu ruhları. Sahip/Efendi."
+            },
+            {
+                "term": "Kayberenler",
+                "def": "Dağlarda yaşayan, gözle görülmeyen ve masumları koruyan 'Kayıp Erenler'."
+            }
         ]
     },
     "familyTree": {

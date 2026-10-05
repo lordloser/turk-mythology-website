@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Infinite Cycle: Türk Mitolojisi
 
-## Getting Started
+Türk mitolojisini (Gök Tengri kozmolojisi, Bayterek, tanrılar, yaratıklar ve destanlar) sinematik scroll animasyonlarıyla anlatan iki dilli (TR / EN) bir web sitesi.
 
-First, run the development server:
+## Teknolojiler
+
+- [Next.js 16](https://nextjs.org) (App Router, statik export)
+- React 19 + React Compiler
+- [GSAP](https://gsap.com) + ScrollTrigger
+- i18next / react-i18next
+
+## Başlangıç
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # statik site -> out/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`out/` klasörü herhangi bir statik barındırma servisine (Vercel, Netlify, GitHub Pages, Cloudflare Pages) yüklenebilir.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Yapı
 
-## Learn More
+```
+src/
+  app/
+    page.js                 # Ana sayfa (bölümleri sıralar)
+    components/sections/    # Origin, Migration, WorldTree, Pantheon, Bestiary, ShadowRealm, Sagas...
+    sagas/                  # Ergenekon, Oğuz Kağan, Asena, Manas, Göç destan sayfaları
+    sozluk/                 # Sözlük
+    soy-agaci/              # Tanrılar soy ağacı
+    yeralti-varliklari/     # Karanlık Külliyat
+  locales/                  # tr.json, en.json
+public/images/              # WebP görseller
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Katkı ve geliştirme notları için [CLAUDE.md](./CLAUDE.md) dosyasına bakın.
