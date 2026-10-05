@@ -179,7 +179,6 @@ export default function CosmosView() {
             <div className="entity-grid compact">
               {beings.map((e) => (
                 <Link key={e.slug} href={entityHref(e.slug)} className={`entity-card realm-${e.realm}`}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`/images/${e.img}.webp`} alt="" loading="lazy" decoding="async" />
                   <span className="entity-card-name">{t(e.name)}</span>
                   <span className="entity-card-type">{t(e.type)}</span>

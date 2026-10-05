@@ -37,8 +37,11 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
     });
   }, { scope: containerRef });
 
-  // Butonlara basıldığında çalışacak GSAP Slider Animasyonu
-  const goToSlide = (index) => contextSafe(() => {
+  // Butonlara basıldığında çalışacak GSAP Slider Animasyonu.
+  // contextSafe yalnızca event-handler üretir; ref'ler render'da değil,
+  // tıklama anında okunur. react-hooks/refs burada false positive verir.
+  // eslint-disable-next-line react-hooks/refs
+  const goToSlide = contextSafe((index) => {
     if (index < 0 || index >= totalSlides) return;
     setCurrentIndex(index);
 
@@ -50,7 +53,7 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
       duration: 1.2,
       ease: "power3.inOut",
     });
-  })();
+  });
 
   return (
     <section id="migration" ref={(el) => {

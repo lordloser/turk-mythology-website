@@ -134,10 +134,12 @@ const SagasSection = forwardRef(function SagasSection({ t }, ref) {
             key={saga.key}
           >
             <div className="saga-visual">
-              <img loading="lazy" decoding="async"
+              <img
                 src={`/images/${saga.img}.webp`}
                 alt={t(`sagas.${saga.key}.title`)}
                 ref={(el) => { sagaImgRefs.current[i] = el; }}
+                loading="lazy"
+                decoding="async"
               />
               <div className="saga-visual-overlay" />
             </div>
@@ -154,6 +156,9 @@ const SagasSection = forwardRef(function SagasSection({ t }, ref) {
               <h3 className="heading-lg">{t(`sagas.${saga.key}.title`)}</h3>
               <p dangerouslySetInnerHTML={{ __html: t(`sagas.${saga.key}.p1`) }} />
               <p dangerouslySetInnerHTML={{ __html: t(`sagas.${saga.key}.p2`) }} />
+              {t(`sagas.${saga.key}.p3`) && t(`sagas.${saga.key}.p3`) !== `sagas.${saga.key}.p3` && (
+                <p dangerouslySetInnerHTML={{ __html: t(`sagas.${saga.key}.p3`) }} />
+              )}
               <Link href={`/sagas/${saga.key}`} passHref>
                 <button className="saga-link">
                   <span>{t("sagas.explore")}</span>

@@ -5,48 +5,43 @@ import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { entityHref } from "@/data/entities";
 
-// Mitolojik hiyerarşiye göre yukarıdan aşağıya (y ekseni) dizilmiş koordinatlar.
+// Göksel bağlantı ağı — tanrı düzeyindeki varlıklar.
+// Hiyerarşi: Tengri → Kayra Han → Ülgen / Erlik / Mergen → Umay ve Ülgen'in oğulları.
 // `slug` olan düğümler varlık görselini gösterir ve tıklanınca varlık sayfasına gider.
 const NODES = [
   // ZİRVE
   { id: "tengri", x: 400, y: 56, color: "#87CEEB" },
 
-  // GÖK KATI 1
-  { id: "kayra", slug: "kayra-han", img: "kayra-han", x: 400, y: 160, color: "#F5D16B" },
+  // Kayra Han ve oğlu Mergen
+  { id: "kayra", slug: "kayra-han", img: "kayra-han", x: 400, y: 170, color: "#F5D16B" },
+  { id: "mergen", slug: "mergen", img: "mergen", x: 640, y: 170, color: "#5DADE2" },
 
-  // GÖK KATI 2
-  { id: "ulgen", slug: "ulgen", img: "ulgen", x: 230, y: 270, color: "#2E5FA1" },
-  { id: "umay", slug: "umay-ana", img: "umay-ana", x: 570, y: 270, color: "#DDA0DD" },
+  // Ülgen ve Umay
+  { id: "ulgen", slug: "ulgen", img: "ulgen", x: 190, y: 290, color: "#2E5FA1" },
+  { id: "umay", slug: "umay-ana", img: "umay-ana", x: 640, y: 300, color: "#DDA0DD" },
 
-  // GÖK KATI 3 (Ülgen'in Oğulları)
-  { id: "kyzagan", slug: "kyzagan", img: "kyzagan", x: 70, y: 390, color: "#FF6347" },
-  { id: "mergen", slug: "mergen", img: "mergen", x: 175, y: 390, color: "#6CA6C1" },
-  { id: "karshyt", x: 280, y: 390, color: "#4A9E61" },
-  { id: "bai-ulgen", x: 385, y: 390, color: "#DAA520" },
+  // Ülgen'in oğulları
+  { id: "kyzagan", slug: "kyzagan", img: "kyzagan", x: 80, y: 430, color: "#FF6347" },
+  { id: "bai-ulgen", x: 290, y: 430, color: "#DAA520" },
 
-  // YERALTI
-  { id: "erlik", slug: "erlik-han", img: "erlik-han", x: 600, y: 390, color: "#DC143C" },
-  { id: "alkarisi", slug: "alkarisi", img: "alkarisi", x: 720, y: 470, color: "#8B0000" },
+  // YERALTI — Kayra Han'ın sürgün ettiği Erlik
+  { id: "erlik", slug: "erlik-han", img: "erlik-han", x: 460, y: 430, color: "#DC143C" },
 ];
 
 const NODES_BY_ID = Object.fromEntries(NODES.map((n) => [n.id, n]));
 
 const LINKS = [
-  // Göklerin Bağlantıları
   { source: "tengri", target: "kayra" },
-  { source: "tengri", target: "umay" },
+
+  // Kayra Han'ın oğulları
   { source: "kayra", target: "ulgen" },
-
-  // Ülgen'in Bağlantıları
-  { source: "ulgen", target: "kyzagan" },
-  { source: "ulgen", target: "mergen" },
-  { source: "ulgen", target: "karshyt" },
-  { source: "ulgen", target: "bai-ulgen" },
-  { source: "ulgen", target: "umay" }, // İyilik ağını güçlendirir
-
-  // Yeraltı Bağlantıları (Kayra Han Erlik'i yeraltına sürer)
   { source: "kayra", target: "erlik" },
-  { source: "erlik", target: "alkarisi" },
+  { source: "kayra", target: "mergen" },
+
+  // Ülgen'in dallanması
+  { source: "ulgen", target: "umay" },
+  { source: "ulgen", target: "kyzagan" },
+  { source: "ulgen", target: "bai-ulgen" },
 ];
 
 const R = 34;
@@ -72,7 +67,7 @@ export default function NexusWeb() {
   };
 
   return (
-    <svg className="nexus-svg" viewBox="0 0 800 540" role="img" aria-label={t("familyTree.title")}>
+    <svg className="nexus-svg" viewBox="0 0 760 520" role="img" aria-label={t("familyTree.title")}>
       <defs>
         {NODES.filter((n) => n.img).map((n) => (
           <clipPath key={n.id} id={`nexus-clip-${n.id}`}>

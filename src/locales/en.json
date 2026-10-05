@@ -3,12 +3,18 @@
         "text": "Entering the Eternal Cycle"
     },
     "topBar": {
-        "title": "The Infinite Cycle"
+        "title": "The Infinite Cycle",
+        "currentRealm": "Now in"
     },
     "common": {
         "back": "Back to Realms",
+        "langToolbarAria": "Language: Turkish or English",
         "prev": "Previous",
-        "next": "Next"
+        "next": "Next",
+        "clickToRead": "Open the Ancient Book",
+        "close": "Close",
+        "connection": "Connection",
+        "loreTitle": "Ancient Tale"
     },
     "runeNav": {
         "origin": "The Origin",
@@ -34,6 +40,7 @@
         "subtitle": "From the Primordial Waters of Creation",
         "title": "The Infinite Cycle",
         "lore": "Before time, before earth, before the sky was woven — there was only the endless dark water. From its depths rose <strong>Ak Ana</strong>, the White Mother, carrying the breath of creation — <em>Kut</em>. She whispered, and the cosmos stirred into being.",
+        "youAreHere": "You stand at the heart of this story: the <strong>Middle World</strong> — the steppe, the hearth, mortal life. Above lies the sky and mercy; below, trial and the underworld; Bayterek is the axis that binds them all.",
         "createWord": "Yarat!",
         "btn": "Begin the Journey",
         "scroll": "Scroll to Descend"
@@ -65,9 +72,15 @@
         "sub": "The World Tree",
         "p1": "At the center of all existence stands <strong>Bayterek</strong> — the sacred World Tree whose roots descend into the Abyss of <em>Tamag</em>, whose trunk sustains the mortal realm of the Steppes, and whose branches reach into the celestial palace of <em>Tengri</em>.",
         "p2": "The World Tree is the axis of all cosmology — a bridge between gods and mortals, between life and death. Every soul, every spirit, every saga flows through its veins.",
+        "axisNote": "The trunk stands in the middle world; branches reach the sky, roots sink into Tamag.",
+        "visitorBlurb": "As you scroll, you move from sky to steppe to depth — yet you always begin from <strong>the human world</strong>; the mythology turns around that vantage point.",
         "upper": "☀ Upper World — Celestial",
         "middle": "🌿 Middle World — Steppe",
-        "lower": "🔥 Lower World — Tamag"
+        "lower": "🔥 Lower World — Tamag",
+        "upperDesc": "Ülgen and the sky layers. Kut and mercy flow from this realm toward earth.",
+        "middleDesc": "The steppe, creatures, and mortal life — the breath at the center of the cosmos.",
+        "lowerDesc": "Erlik Khan's realm — where trial, death, and the paths of return meet.",
+        "realmCta": "Open this realm"
     },
     "ritual": {
         "tag": "Şamanizm / Kamlık",
@@ -157,22 +170,38 @@
             "kayberen": {
                 "name": "The Lost Saints",
                 "type": "Mountain Guardians",
-                "desc": "Sacred, invisible spirits dwelling on the highest mountain peaks. They protect wildlife and the innocent. Those who disrespect their mountains will lose their way."
+                "desc": "Sacred, invisible spirits dwelling on the highest mountain peaks. They protect wildlife and the innocent. Those who disrespect their mountains will lose their way.",
+                "loreTitle": "Silent Wardens of the Peaks",
+                "lore1": "The Kayberens (the \"Lost Saints\") are holy, radiant beings invisible to human eyes. In Kyrgyz and Kazakh legend they dwell on the highest mountain peaks, protect herds of wild animals and bring abundance. In winter they show the way through the mountains to nomads whose hearts are pure.",
+                "lore2": "They lend a helping hand to innocent people in trouble. Those who disrespect the mountains they guard, kill a young animal for sport or defile the forest are swallowed by a sudden enchanted mist and lose their way, and their minds, forever.",
+                "connection": "Guardians of Nature · Benevolent Spirits"
             },
             "suyla": {
                 "name": "Suyla",
                 "type": "Celestial Spirit",
-                "desc": "A mythical spirit born from fragments of the Sun and Moon. With horse-like eyes, an eagle's beak, and serpentine hair, it carries humanity's prayers to the divine."
+                "desc": "A mythical spirit born from fragments of the Sun and Moon. With horse-like eyes, an eagle's beak, and serpentine hair, it carries humanity's prayers to the divine.",
+                "loreTitle": "Messengers of Light",
+                "lore1": "Suyla is one of the most important binding figures of shamanic ritual. Tengri created it from the first crumbs of light of the Sun and the Moon. It has the smooth eyes of a horse, the sharp beak of an eagle and wavy golden hair like serpents.",
+                "lore2": "When people hold great sacrificial rites or shamans fall into trance, it is the winged Suyla that carries the blood, the prayer and the offering to the highest reaches of the sky. Without Suyla, no wish can reach Ülgen.",
+                "connection": "Envoy of the Shamans · Voice of the Sky"
             },
             "suIyesi": {
                 "name": "Water Spirit",
                 "type": "Water Guardian",
-                "desc": "She dwells in every river, lake, and spring. Beautiful and terrifying; she can grant fertile harvests or drag the unworthy into the depths."
+                "desc": "She dwells in every river, lake, and spring. Beautiful and terrifying; she can grant fertile harvests or drag the unworthy into the depths.",
+                "loreTitle": "Lady of the Blue Depths",
+                "lore1": "In Turkic culture water is not merely an element but a sacred being that lives, breathes and remembers. The Water Spirit is the embodiment of this spring of life. It usually appears as an enchanting, luminous long-haired figure bathing on the surface of the water.",
+                "lore2": "Those who throw stones into rivers, pollute the waters or gaze disrespectfully at their reflection at night suffer the Water Spirit's wrath and are dragged into bottomless whirlpools. Travellers who wish to please it leave silver coins or red ribbons in the water.",
+                "connection": "Blood of the Steppe · Ruler of the Depths"
             },
             "ormanIyesi": {
                 "name": "Forest Spirit",
                 "type": "Forest Guardian",
-                "desc": "Master of every tree, root, and wild creature. He appears as a towering figure covered in bark and moss, or as a whisper through the canopy."
+                "desc": "Master of every tree, root, and wild creature. He appears as a towering figure covered in bark and moss, or as a whisper through the canopy.",
+                "loreTitle": "Lord of the Green Breath",
+                "lore1": "The Forest Spirit is the living soul of every leaf, every great beech and every fallen log on the forest floor. For the steppe peoples the forest is dark and dangerous, yet a single tree felled with the Forest Spirit's permission brings kut and warmth to the home.",
+                "lore2": "It confuses hunters who harm animals needlessly and lures them into the deepest darkness of the woods. Some legends describe it as a shape-shifting stag or a giant shaggy bear. It also guards the earthly trunk of Bayterek, the heart of the forest.",
+                "connection": "Key of Nature · Warden of Bayterek"
             }
         }
     },
@@ -189,27 +218,47 @@
         "mergen": {
             "name": "Mergen",
             "role": "God of Wisdom & Archery",
-            "desc": "Dwelling in the 7th layer of heaven, he is the all-knowing deity whose sacred arrow never misses its mark. He grants wisdom and intellect to humanity."
+            "desc": "Dwelling in the 7th layer of heaven, he is the all-knowing deity whose sacred arrow never misses its mark. He grants wisdom and intellect to humanity.",
+            "loreTitle": "The Arrow of Endless Wisdom",
+            "lore1": "In Turkic mythology Mergen Khan is the symbol of reason, awareness and sound judgement. He dwells on the seventh layer of the sky and is held to be one of the greatest sages guiding human fate. His sacred bow and arrow stand not only for hitting the mark but for truth and justice.",
+            "lore2": "He is one of Kayra Khan's sons. Rather than the battlefield, he is believed to have taught people to think, to overcome hardship with wit and to build civilisation. Before making a difficult decision, shamans ask Mergen Khan for guidance on their spirit journeys.",
+            "connection": "Son of Kayra Khan · Light of Intellect"
         },
         "kayra": {
             "name": "Kayra Han",
             "role": "The Primordial God",
-            "desc": "The supreme creator who existed before all. Father of Ülgen and Erlik, he shaped the two brothers and set them upon their eternal paths — one to light, one to darkness."
+            "desc": "The supreme creator who existed before all. Father of Ülgen and Erlik, he shaped the two brothers and set them upon their eternal paths — one to light, one to darkness.",
+            "loreTitle": "The Beginning of Eternity",
+            "lore1": "In the Altai creation epics, when there was not yet a universe, an earth or a sky, Kayra Khan was the only power, flying over the 'Endless Water'. He is said to have shaped the universe with his first thought and the souls with his breath.",
+            "lore2": "Above the whole pantheon, on the seventeenth layer of the sky, he dwells in unreachable splendour. He does not keep the balance of the universe himself; instead, by setting his sons Ülgen on the path of good and Erlik on the path of evil and trial, he began the eternal dance of darkness and light.",
+            "connection": "Summit of the Pantheon · Source of Creation"
         },
         "ulgen": {
             "name": "Ülgen",
             "role": "God of Benevolence",
-            "desc": "Ruler of the Upper World with seven sons who embody the elements of nature. Ülgen guides shamans through the sky's seventeen layers and bestows the sacred Kut upon the worthy."
+            "desc": "Ruler of the Upper World with seven sons who embody the elements of nature. Ülgen guides shamans through the sky's seventeen layers and bestows the sacred Kut upon the worthy.",
+            "loreTitle": "Ruler of the Golden Mountain",
+            "lore1": "In Tengrism, Ülgen is the main source of goodness, mercy and abundance. He sits on a golden throne atop the Golden Mountain on the sixteenth layer of the sky. He is known as the god who taught people fire, reason, farming and the arts.",
+            "lore2": "He is locked in an endless cosmic struggle for balance with Erlik Khan, lord of evil. Ülgen does not act alone: together with his seven sons, who rule the heavenly bodies and the weather, and his nine daughters (the White Maidens) who protect people, he spreads mercy over the earth.",
+            "connection": "Erlik's Eternal Rival · Giver of Fire"
         },
         "kyzagan": {
             "name": "Kyzagan",
             "role": "God of War",
-            "desc": "Son of Ülgen and guardian of warriors. Kyzagan rides the crimson storm, his blazing sword cleaving the sky. He blesses armies with courage and judges the valor of fallen heroes."
+            "desc": "Son of Ülgen and guardian of warriors. Kyzagan rides the crimson storm, his blazing sword cleaving the sky. He blesses armies with courage and judges the valor of fallen heroes.",
+            "loreTitle": "Wrath of the Crimson Sky",
+            "lore1": "As his name suggests, Kızagan is the divine embodiment of anger, fury and relentless war. He descends upon battlefields above red clouds, riding a giant crimson camel. He is said to appear as a blazing aura at the very front of armies.",
+            "lore2": "Before setting out on campaign, old Turkic warriors turned to him, and through him to Tengri, for strength and courage. Kızagan knows no mercy and respects only strength and honour. Ruthless towards the enemy, he honours the souls of heroes who died for their homeland in the realm of warriors.",
+            "connection": "Son of Ülgen · Kut of War"
         },
         "umay": {
             "name": "Umay Ana",
             "role": "Guardian Mother Goddess",
-            "desc": "Divine mother of birth, fertility, protection, and life. The celestial goddess who holds the thread of Tengri and safeguards every newborn soul into the world."
+            "desc": "Divine mother of birth, fertility, protection, and life. The celestial goddess who holds the thread of Tengri and safeguards every newborn soul into the world.",
+            "loreTitle": "Spirit of the Tree of Life",
+            "lore1": "In Turkic and Altai mythology Umay Ana is the most important and most loving sacred force that keeps life going. She is often depicted as a graceful woman in a pure white dress, with silver hair and a horned headdress. Through her heavenly blessing the earth breathes and flourishes.",
+            "lore2": "She protects children, mothers and young animals in particular from evil spirits and the dark influence of the underworld. Since the time of the Huns, Göktürks and Uyghurs she has been the most revered being, named right after Gök Tengri. When a baby smiles in its sleep, it is said that Umay Ana is speaking to it.",
+            "connection": "Enemy of Darkness · Protector of Life"
         },
         "nexusTitle": "The Celestial Nexus",
         "nexusDesc": "Hover over a deity to reveal their connections and influence over the realms",
@@ -221,7 +270,11 @@
         "erlik": {
             "name": "Erlik Khan",
             "role": "Lord of the Underworld",
-            "desc": "The first being exiled from the sky, master of death and of Tamag. Beneath the nine-branched black pine he judges the souls of the dead."
+            "desc": "The first being exiled from the sky, master of death and of Tamag. Beneath the nine-branched black pine he judges the souls of the dead.",
+            "loreTitle": "The First Seed of Darkness",
+            "lore1": "At the dawn of creation Erlik stood beside Kayra Khan, but for his pride and his desire to create worlds of his own he was punished and exiled to the underworld (Tamag). In this lightless realm he sits on a silver throne beneath a rootless, nine-branched black pine, ruling shadows and sickness.",
+            "lore2": "While Ülgen taught people fire and goodness, Erlik Khan taught them death, sin and craftsmanship. With his dark-mounted messengers, demonic shamans and the vast spirit army known as the Abasi, he keeps the earth under constant trial. His power is an undeniable cosmic necessity.",
+            "connection": "Kayra Khan's Rebel · Shadow of Absolute Justice"
         }
     },
     "bestiary": {
@@ -292,6 +345,24 @@
             "lore2": "She works to harvest human life energy. She drags her victims to underground dungeons to strengthen Erlik Khan's army. Shamans keep her away using iron, Syrian rue, and the color red.",
             "connection": "Erlik's Hunter · Life Energy Thief"
         },
+        "abasi": {
+            "name": "Abasi",
+            "type": "Underworld Host",
+            "desc": "They form Erlik Khan’s vast host of evil spirits — one-eyed, one-legged, or toothless. They spread illness and drag souls toward Tamag’s dungeons.",
+            "loreTitle": "Lore of the Abasi",
+            "lore1": "The Abasi are among Erlik Khan’s most faithful servants in the underworld. Each embodies a different kind of harm or sickness. Some have a single eye, some a single leg, some terrible teeth.",
+            "lore2": "They steal life energy and trap souls in underworld prisons. Shamans use iron objects and powerful prayers to drive them back.",
+            "connection": "Erlik's Host · Bearers of Illness"
+        },
+        "kamos": {
+            "name": "Kamos",
+            "type": "Mental Affliction",
+            "desc": "A dark force that presses upon sleepers at night. Erlik Khan uses it to seize people in their most vulnerable hour.",
+            "loreTitle": "Lore of Kamos",
+            "lore1": "Kamos is a dark being sent to earth by Erlik Khan. At night it settles on sleepers, paralyzes them, steals their breath, and fills their minds with nightmares.",
+            "lore2": "Shamans use metal objects and strong prayers to keep Kamos away, and try to keep victims awake until the danger passes.",
+            "connection": "Erlik's Shadow · Lord of Nightmares"
+        },
         "kayberen": {
             "name": "Kayberenler",
             "type": "Missing Saints",
@@ -301,24 +372,43 @@
             "lore2": "They extent a helping hand to the innocent in distress. Those who disrespect the mountains where they reside will lose their way. In Anatolian beliefs, they are equated with saints in human form.",
             "connection": "Guardians of Nature · Benevolent Spirits"
         },
-        "abasi": {
-            "name": "Abasy",
-            "type": "Underworld Army",
-            "desc": "Malevolent spirits that make up Erlik Khan's largest army. They are depicted as one-eyed, one-legged or toothless. Their task is to spread disease, bring misfortune and drag their victims into the dungeons of the underworld.",
-            "loreTitle": "The Tale of the Abasy",
-            "lore1": "The Abasy are Erlik Khan's most loyal servants in the underworld. Each is a source of a different evil or illness. Some have a single eye, some a single leg, and others bear terrifying fangs.",
-            "lore2": "They work to steal the life energy of people and imprison them in the dungeons below. Shamans keep the Abasy away with iron objects and powerful prayers.",
-            "connection": "Erlik's Army · Bearers of Disease"
+        "azmic": {
+            "name": "Azmıç",
+            "type": "Road Spirit",
+            "desc": "In Turkic and Balkar tradition, an evil spirit that preys on lone travelers. It has no fixed form; it calls in a familiar voice. Turning back to answer leads the victim astray.",
+            "loreTitle": "Lore of Azmıç",
+            "lore1": "Azmıç (also named Aznıç, Azıtkı) is known as a road spirit or lost soul. It shifts shape and may appear as someone the victim loves. It chooses those who walk alone.",
+            "lore2": "Whoever turns to answer the call falls under its power; it leads them over cliffs, into ravines, or rivers. The name echoes the root 'az-' — to lead astray. In speech it is sometimes confused with similar-sounding words.",
+            "connection": "Peril of the Lonely Road · Shape-Shifting Spirit"
         },
-        "kamos": {
-            "name": "Kamos",
-            "type": "Mental Affliction",
-            "desc": "A dark energy that falls upon people at night. Erlik Khan uses this being to control people in their most vulnerable moment: sleep.",
-            "loreTitle": "The Tale of Kamos",
-            "lore1": "Kamos is a dark being sent to the earth by Erlik Khan. It descends on people at night and leaves them unable to move, cutting off their breath and filling their sleep with terrible nightmares.",
-            "lore2": "Shamans keep Kamos away with metal objects and powerful prayers, and by helping its victims stay awake.",
-            "connection": "Erlik's Shadow · Lord of Nightmares"
-        }
+        "jeztirnak": {
+            "name": "Jeztırnak",
+            "type": "Clawed Malice",
+            "desc": "In Turkic and Caucasus oral tradition, an evil spirit known for long, iron-like nails. It scratches at doors in the dead of night, preying on lone households and travelers; those who heed its sounds are filled with dread.",
+            "loreTitle": "Lore of Jeztırnak",
+            "lore1": "Jeztırnak is tied to claw and nail imagery. Tales place it on a roof or beside a lonely road; victims hear a metallic tapping or scraping as it draws near.",
+            "lore2": "Iron, salt, prayers, and shamanic practice are said to keep it at bay. Some stories link it to Erlik Khan’s shadows; its true leverage is fear and solitude.",
+            "connection": "Night Visitor · Legend of the Iron Claw"
+        },
+        "yegi": {
+            "name": "Yegi",
+            "type": "Underworld Harrower",
+            "desc": "A dark being associated with the underworld. It is felt at the edge of sleep or in moments of sharp fear — tightening the breath and clouding the mind.",
+            "loreTitle": "Lore of Yegi",
+            "lore1": "Narratives describe Yegi as a spirit from Tamag’s gloom or among Erlik Khan’s host. It may have no fixed form: sometimes mist, sometimes a shadow in the corner of a ceiling.",
+            "lore2": "Traditional protection — iron, cleansing prayers, sleeping among others — is said to blunt its reach. It is thought to choose those who are alone or weakened.",
+            "connection": "Shadow of Tamag · Foe of Rest"
+        },
+        "filters": {
+            "all": "All",
+            "sky": "Sky Beings",
+            "earth": "Middle World",
+            "underworld": "Dark Spirits"
+        },
+        "searchPlaceholder": "Search beings…",
+        "readMore": "Uncover the Secrets ⟶",
+        "noResultsTitle": "No Being Found",
+        "noResultsDesc": "No such spirit is known in the depths of the ancient forests and realms."
     },
     "shadow": {
         "tag": "Underworld",
@@ -329,6 +419,8 @@
         "erlikP1": "Absolute ruler of the underworld in Turkic mythology. The first being exiled from the heavens and the lord of death.",
         "erlikP2": "Guardian of darkness and balance, sitting beneath the nine-branched black pine with his silver staff.",
         "exploreCreatures": "Explore Underworld Creatures",
+        "exploreIntro": "Erlik Khan’s most often told emissaries of Tamag — jump straight to their entry.",
+        "exploreCtaHint": "Dark Compendium · Full articles",
         "alkarisi": "Alkarisi",
         "alkarisiType": "Demon of the Abyss",
         "alkarisiDesc": "A malevolent spirit that haunts postpartum women, stealing their life energy (Kut).",
@@ -343,17 +435,20 @@
             "connection": "Guardian of the Depths"
         },
         "karabura": "Kara Bura",
-        "karaburaDesc": "The being that guards Erlik Khan's underground iron forges and carries dark energy.",
+        "karaburaDesc": "The being that guards Erlik Han’s iron forges in the underworld and carries the dark energy.",
         "judgment": "The Great Judgment",
-        "judgmentDesc": "The justice of the underworld that decides each soul's eternal journey in Tamag."
+        "judgmentDesc": "The underworld justice that decides the eternal journey of souls within Tamag."
     },
     "kulliyat": {
         "back": "← Back to Home",
         "title": "DARK",
         "titleAccent": "COMPENDIUM",
         "subtitle": "The secret history of malevolent spirits and ancient creatures shaped by the will of Erlik Khan.",
-        "weaknessLabel": "Weakness:",
-        "categoryLabel": "Class:",
+        "tocTitle": "On this page",
+        "connectionLabel": "Bond with Erlik Khan",
+        "backToRealm": "Back to Shadow Realm",
+        "weaknessLabel": "Weakness",
+        "categoryLabel": "Class",
         "footer": "This information is compiled from ancient Turkic mythological sources.",
         "creatures": {
             "alkarisi": {
@@ -361,21 +456,24 @@
                 "sub": "Hunter of Life Energy",
                 "desc": "One of Erlik Khan's oldest shadows on earth. Often depicted in red garments, targeting fresh life energy and carrying souls to the lord of the underworld.",
                 "weak": "Iron, the color red, and Syrian rue.",
-                "cat": "Soul Harvester"
+                "cat": "Soul Harvester",
+                "connection": "Erlik's Hunter · Life Energy Thief"
             },
             "abasi": {
-                "title": "Abasy",
-                "sub": "Foot Soldiers of the Underworld",
-                "desc": "They form Erlik Khan's largest army and may take one-eyed or one-legged forms. Their task is to spread disease and pull souls down into the dungeons of the underworld.",
-                "weak": "Sunlight and shamanic prayers.",
-                "cat": "Servant / Warrior"
+                "title": "Abasi",
+                "sub": "Foot soldiers of the underworld",
+                "desc": "They form Erlik Khan’s vast host of evil spirits — one-eyed, one-legged, or toothless. They spread illness and drag souls toward Tamag’s dungeons.",
+                "weak": "Sunlight and shamanic prayer.",
+                "cat": "Servant / warrior",
+                "connection": "Erlik's Host · Bearers of Illness"
             },
             "kamos": {
                 "title": "Kamos",
-                "sub": "Lord of Nightmares and Sleep",
-                "desc": "A dark energy that falls upon people at night. Erlik Khan uses this being to control people in their most vulnerable moment: sleep.",
-                "weak": "Wakefulness and metal objects.",
-                "cat": "Mental Affliction"
+                "sub": "Lord of nightmares and sleep",
+                "desc": "A dark force that presses upon sleepers at night. Erlik Khan uses it to seize people in their most vulnerable hour.",
+                "weak": "Wakefulness and iron objects.",
+                "cat": "Mental affliction",
+                "connection": "Erlik's Shadow · Lord of Nightmares"
             },
             "bukre": {
                 "title": "BÜKRE",
@@ -395,22 +493,26 @@
         "ergenekon": {
             "title": "The Saga of Ergenekon",
             "p1": "After a devastating defeat, the surviving Turkic tribes retreated into <strong>Ergenekon</strong> — a hidden valley enclosed by impassable iron mountains. For generations they lived in isolation, growing strong and numerous, forging their identity in the fires of patience.",
-            "p2": "When the valley could no longer hold them, a blacksmith melted the iron mountain itself with a great forge. The Turkic people poured forth like a river of steel, reborn and unstoppable. The day of their emergence is celebrated as <em>Nevruz</em> — the New Day."
+            "p2": "When the valley could no longer hold them, a blacksmith melted the iron mountain itself with a great forge. The Turkic people poured forth like a river of steel, reborn and unstoppable. The day of their emergence is celebrated as <em>Nevruz</em> — the New Day.",
+            "p3": "This new generation that came down from the mountains into the valleys was armed with the wisdom of the past and the sharpness of the sword. The exodus from Ergenekon was not just a physical escape; it is the epic of a civilisation reborn from its ashes and returning in glory to the world. This awakening, which struck fear into enemies and hope into friends, became a lasting symbol of freedom."
         },
         "oghuz": {
             "title": "The Epic of Oghuz Khagan",
             "p1": "<strong>Oghuz Khagan</strong> was born with the face of the sky, the strength of the mountain, and the heart of the wolf. From infancy, he spoke to eagles and commanded rivers. He conquered the four corners of the world, guided by a divine grey wolf.",
-            "p2": "He divided his empire among his six sons — three of the Sun (Bozok) and three of the Moon (Üçok) — creating the foundation of all great Turkic dynasties that would shape the world for millennia."
+            "p2": "He divided his empire among his six sons — three of the Sun (Bozok) and three of the Moon (Üçok) — creating the foundation of all great Turkic dynasties that would shape the world for millennia.",
+            "p3": "With his divine first wife, who appeared within a great light descending from the sky, and his second wife, born of a great tree on the earth, Oghuz united earth and sky. The line that spread from his son Gün Khan carried the most merciful yet most unbending blood of the steppe. With the command \"Let the sky be our tent and the sun our banner\", Oghuz began the ideal of world dominion."
         },
         "asena": {
             "title": "The Legend of Asena & The Great Migration",
             "p1": "When enemies destroyed the Turkic people, only a single boy survived, grievously wounded. A celestial she-wolf, <strong>Asena</strong>, found the dying child and nursed him in a secret cave among the Altai Mountains.",
-            "p2": "From their divine bond came ten sons — each the father of a great Turkic tribe. When the population outgrew the sacred valley, they migrated across the vast steppes of Central Asia, carrying the wolf banner as their eternal symbol."
+            "p2": "From their divine bond came ten sons — each the father of a great Turkic tribe. When the population outgrew the sacred valley, they migrated across the vast steppes of Central Asia, carrying the wolf banner as their eternal symbol.",
+            "p3": "This migration was no ordinary march; it was a people's effort to reunite with its roots. Asena's sacred milk instilled in Turkic blood not only salvation but also the free spirit of the wolves. From that day on, whenever the first moonlight on the horizon turned blood-red, the great howl of the grey wolf echoed like an anthem from the mountain peaks to the plains."
         },
         "manas": {
             "title": "The Epic of Manas",
             "p1": "The greatest oral epic in history, sung across the Kyrgyz steppes for over a thousand years. <strong>Manas</strong> was chosen by Tengri himself — a warrior-hero of divine fury, destined to unite the forty scattered Kyrgyz tribes against the armies that sought to erase them from the earth.",
-            "p2": "Spanning three generations — Manas, his son Semetey, and grandson Seytek — this monumental cycle is twenty times longer than Homer's Iliad. It is not merely a story; it is the living soul of a people, chanted by sacred bards called <em>Manaschi</em> who enter a trance state to summon the hero's spirit."
+            "p2": "Spanning three generations — Manas, his son Semetey, and grandson Seytek — this monumental cycle is twenty times longer than Homer's Iliad. It is not merely a story; it is the living soul of a people, chanted by sacred bards called <em>Manaschi</em> who enter a trance state to summon the hero's spirit.",
+            "p3": "Manas's birth caused a red glow in the sky and great storms on the earth. His gallop against the wind on his faithful horse Akkula heralded that he would become the protector of the oppressed. Growing into a giant on the battlefield with his forty warriors, Manas upheld justice with his sword and exalted custom with his fairness."
         }
     },
     "umaySection": {
@@ -431,6 +533,21 @@
         "subtitle": "A Digital Museum of Turkic Cosmology",
         "copyright": "© The Infinite Cycle · Inspired by Ancient Turkic Mythology",
         "source": "Source: Orkhon Inscriptions & Turkic Folklore",
+        "influenceMap": {
+            "title": "The Web of Creation",
+            "desc": "Sky, underworld, and middle earth — the cosmic flow from Tengri and Kayra through Ülgen and Erlik to the steppe.",
+            "hover": "Hover to reveal the spirit threads",
+            "interactHint": "Hover a node to highlight its threads; click to smooth-scroll to that realm on this page.",
+            "svgAria": "Diagram of the web of creation: links between sky gods, the underworld lord, and the middle world",
+            "middleWorld": "Middle World · Bayterek",
+            "kayraHan": "Kayra Han",
+            "ulgen": "Ülgen",
+            "erlik": "Erlik Han",
+            "umay": "Umay Ana",
+            "earthSpirits": "Common Spirits",
+            "darkEntities": "Dark Entities",
+            "humanity": "Humanity"
+        },
         "cosmosCta": "Explore the three worlds on the map",
         "cosmosCtaDesc": "Sky, Earth and Underworld: see the gods, guardian spirits and creatures of every layer bound by Bayterek on a single map.",
         "explore": "Explore",
@@ -498,6 +615,18 @@
                 "def": "The legendary World Tree connecting the underworld, earth, and sky."
             },
             {
+                "term": "Middle World",
+                "def": "The realm of mortals — steppe, camp, and hearth. It rests at Bayterek's trunk between the upper and lower worlds."
+            },
+            {
+                "term": "Mortals",
+                "def": "Human beings seeking Kut — living between grace from above and trial from below."
+            },
+            {
+                "term": "Azmıç",
+                "def": "A malevolent road spirit in Turkic and Balkar lore. It calls to lone travelers in a familiar voice; turning back to answer means being led astray. Also known as Aznıç or Azıtkı."
+            },
+            {
                 "term": "Tengri (Sky God)",
                 "def": "The eternal blue sky, creator of the universe and the supreme power."
             },
@@ -520,21 +649,16 @@
         "subtitle": "Web of Creation: Gods and Entities",
         "hint": "* Hover over a being to see its connections; click a being with a portrait to open its page."
     },
-    "audio": {
-        "play": "Play Sound",
-        "pause": "Pause Sound"
-    },
     "nexusLabels": {
         "tengri": "Tengri",
         "kayra": "Kayra Han",
         "ulgen": "Ülgen",
         "umay": "Umay Ana",
         "kyzagan": "Kyzagan",
-        "karshyt": "Karşıt",
+        "mergen": "Mergen Han",
         "bai-ulgen": "Bai Ülgen",
         "erlik": "Erlik Han",
-        "alkarisi": "Alkarısı",
-        "mergen": "Mergen"
+        "alkarisi": "Alkarısı"
     },
     "nav": {
         "cosmos": "Cosmology",

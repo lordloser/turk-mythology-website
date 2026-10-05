@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import "@/i18n";
 
@@ -47,10 +47,12 @@ export default function RitualSection({ t: tProp }) {
             justifyContent: "center",
           }}
         >
-          <img loading="lazy" decoding="async"
+          <img
             src="/images/shamanic-drum.webp"
             alt="Shamanic Drum"
             className="shamanic-drum pulse-hover"
+            loading="lazy"
+            decoding="async"
             style={{
               position: "absolute",
               width: "100%",
@@ -63,8 +65,8 @@ export default function RitualSection({ t: tProp }) {
 
           <div className="drum-symbols" style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
             {[
-              { key: "sun", symbol: "☼", className: "symbol-sun" },
-              { key: "moon", symbol: "☽", className: "symbol-moon" },
+              { key: "sun", symbol: "☀️", className: "symbol-sun" },
+              { key: "moon", symbol: "🌙", className: "symbol-moon" },
               { key: "eagle", symbol: "🦅", className: "symbol-eagle" },
               { key: "forest", symbol: "🌳", className: "symbol-tree" },
               { key: "wolf", symbol: "🐺", className: "symbol-wolf" },
@@ -158,10 +160,12 @@ export default function RitualSection({ t: tProp }) {
                 onClick={() => setActiveIye(prev => prev === key ? null : key)}
               >
                 <div className="iye-card-img-wrap">
-                  <img loading="lazy" decoding="async"
+                  <img
                     src={`/images/${img}.webp`}
                     alt={t(`ritual.iyeler.${key}.name`)}
                     className="iye-img"
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => { e.target.style.opacity = "0.3"; }}
                   />
                   <div className="iye-glow" />

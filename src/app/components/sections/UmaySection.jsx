@@ -121,11 +121,13 @@ const UmaySection = forwardRef(function UmaySection({ t }, ref) {
           {/* Left — Image */}
           <div className="umay-visual">
             <div className="umay-aura" />
-            <img loading="lazy" decoding="async"
+            <img
               ref={imageRef}
               src="/images/umay-ana.webp"
               alt="Umay Ana"
               className="umay-image"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 

@@ -11,7 +11,9 @@ import { ENTITIES_BY_SLUG, entityHref } from "@/data/entities";
 import { SOURCES_BY_ID } from "@/data/sources";
 
 export default function EntityView({ slug }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  // Bazı varlıkların efsane/bağlantı metni yok; olmayan anahtarı ekrana basma
+  const has = (key) => Boolean(key) && i18n.exists(key);
   const containerRef = useRef(null);
   const [copied, setCopied] = useState(false);
   const entity = ENTITIES_BY_SLUG[slug];
@@ -46,7 +48,6 @@ export default function EntityView({ slug }) {
       <main ref={containerRef} className={`entity-page realm-${entity.realm}`}>
         <article className="entity-layout">
           <div className="entity-portrait-wrap">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className="entity-portrait" src={`/images/${entity.img}.webp`} alt={t(entity.name)} fetchPriority="high" />
           </div>
 
@@ -63,16 +64,16 @@ export default function EntityView({ slug }) {
               <p className="entity-desc">{t(entity.desc)}</p>
             </header>
 
-            {entity.lore && (
+            {entity.lore?.some(has) && (
               <section className="entity-lore">
-                <h2>{entity.loreTitle ? t(entity.loreTitle) : t("entity.lore")}</h2>
-                {entity.lore.map((k) => (
+                <h2>{has(entity.loreTitle) ? t(entity.loreTitle) : t("entity.lore")}</h2>
+                {entity.lore.filter(has).map((k) => (
                   <p key={k}>{t(k)}</p>
                 ))}
               </section>
             )}
 
-            {entity.connection && <p className="entity-connection">{t(entity.connection)}</p>}
+            {has(entity.connection) && <p className="entity-connection">{t(entity.connection)}</p>}
 
             <div className="entity-actions">
               <button type="button" className="entity-share" onClick={share}>
@@ -108,7 +109,6 @@ export default function EntityView({ slug }) {
             <div className="entity-grid">
               {related.map((r) => (
                 <Link key={r.slug} href={entityHref(r.slug)} className={`entity-card realm-${r.realm}`}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`/images/${r.img}.webp`} alt="" loading="lazy" decoding="async" />
                   <span className="entity-card-name">{t(r.name)}</span>
                   <span className="entity-card-type">{t(r.type)}</span>

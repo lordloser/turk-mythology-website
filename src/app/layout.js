@@ -10,23 +10,26 @@ const cinzel = Cinzel({
   variable: "--font-cinzel",
   display: "swap",
 });
+
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
   weight: ["300", "400", "500", "600"],
   variable: "--font-inter",
   display: "swap",
 });
+
+const medievalSharp = MedievalSharp({
+  subsets: ["latin", "latin-ext"],
+  weight: "400",
+  variable: "--font-medievalsharp",
+  display: "swap",
+});
+
 // Göktürk (Orhun) harfleri için; logodaki 𐱅 gibi karakterler her cihazda görünsün
 const oldTurkic = Noto_Sans_Old_Turkic({
   subsets: ["old-turkic"],
   weight: "400",
   variable: "--font-old-turkic",
-  display: "swap",
-});
-const medieval = MedievalSharp({
-  subsets: ["latin", "latin-ext"],
-  weight: "400",
-  variable: "--font-medieval",
   display: "swap",
 });
 
@@ -52,6 +55,7 @@ export const metadata = {
     "Oğuz Kağan",
     "Manas Destanı",
     "Türk destanları",
+    "mitolojik yaratıklar",
     "şamanizm",
   ],
   openGraph: {
@@ -76,13 +80,31 @@ export const viewport = {
   themeColor: "#080808",
 };
 
+// Schema.org yapılandırılmış veri (arama motorları için site tanımı)
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  alternateName: "The Infinite Cycle — Turkic Mythology",
+  url: SITE_URL,
+  description: DEFAULT_DESCRIPTION,
+  genre: "Mythology, Folklore, History",
+  inLanguage: ["tr", "en"],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html
       lang="tr"
       suppressHydrationWarning
-      className={`${cinzel.variable} ${inter.variable} ${medieval.variable} ${oldTurkic.variable}`}
+      className={`${cinzel.variable} ${inter.variable} ${medievalSharp.variable} ${oldTurkic.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <LanguageSync />
         <MotionPreferences />

@@ -22,7 +22,8 @@ Test altyapısı yok. Değişiklikten sonra en azından `npm run lint` ve `npm r
 - Tüm sayfalar `"use client"`; animasyonlar **GSAP + ScrollTrigger** ile `useGSAP` hook'u üzerinden yapılır.
 - `src/app/page.js`: ana sayfa orkestratörü; bölümleri sırayla render eder (`components/sections/*Section.jsx`).
   Sıra: Origin → Migration → WorldTree → Ritual → Pantheon → Umay → Bestiary → ShadowRealm → Sagas → Footer.
-- Alt sayfalar: `sagas/{ergenekon,oghuz,asena,manas,goc}`, `sozluk` (sözlük), `soy-agaci` (soy ağacı, `NexusWeb`), `yeralti-varliklari` (Karanlık Külliyat).
+- Alt sayfalar: `sagas/{ergenekon,oghuz,asena,manas,goc}` (hepsi `components/SagaPageTemplate.jsx` kullanır), `sozluk` (sözlük), `soy-agaci` (soy ağacı, `NexusWeb`), `yeralti-varliklari` (Karanlık Külliyat).
+- Ana sayfadaki Panteon ve Bestiary kartları `src/data/mythology.js` listelerinden gelir (`slug` alanı varlık sayfasına bağlanır). Karta tıklayınca `CodexModal` açılır; içindeki "Detaylı incele" linki `/varlik/[slug]` sayfasına gider. Yeni yaratık eklerken hem `mythology.js` hem `entities.js` güncellenmeli.
 - `varlik/[slug]`: her tanrı/yaratık/iye için statik detay sayfası (`generateStaticParams`). Veri `src/data/entities.js` içinde; metin alanları çeviri anahtarıdır. Yeni varlık eklemek = `ENTITIES` dizisine bir kayıt + görsel + gerekirse çeviri anahtarları.
 - `kozmoloji`: etkileşimli üç dünya haritası (SVG). Seçili katman URL hash'inde (`#sky`, `#middle`, `#under`).
 - `kaynakca`: kaynakça; veri `src/data/sources.js`. Varlıkların `sources` alanı bu id'lere bağlanır.
@@ -41,7 +42,8 @@ Test altyapısı yok. Değişiklikten sonra en azından `npm run lint` ve `npm r
 
 ## Performans
 
-- Fontlar `next/font/google` ile `layout.js`'te yüklenir (`--font-cinzel`, `--font-inter`, `--font-medieval`, Göktürk harfleri için `--font-old-turkic`); CSS'e `@import` ile font ekleme.
+- Fontlar `next/font/google` ile `layout.js`'te yüklenir (`--font-cinzel`, `--font-inter`, `--font-medievalsharp`, Göktürk harfleri için `--font-old-turkic`); CSS'e `@import` ile font ekleme.
+- Ana sayfada ilk ekran dışındaki bölümler `next/dynamic` ile ayrı parçalara bölünür (`page.js`).
 - Metin renkleri: `--text-muted` küçük metinlerde de okunur (≈5:1 kontrast). Daha koyu gri kullanma; küçük metinleri 0.9rem altına indirme.
 - İlk ekrandaki görsel hariç `<img>` etiketlerine `loading="lazy" decoding="async"` ekle.
 - `prefers-reduced-motion` desteği: `MotionPreferences.jsx` (GSAP hızlandırma), `ParticleCanvas` (parçacıkları kapatır) ve `globals.css` sonundaki media query.
@@ -68,5 +70,7 @@ Test altyapısı yok. Değişiklikten sonra en azından `npm run lint` ve `npm r
 - React Compiler lint kuralı render sırasında ref okumayı yasaklar: ref'leri nesne içinde (`refs.foo`) prop olarak geçme, her biri ayrı `useRef` olsun. `contextSafe` ile sarılan handler'ları `(...args) => contextSafe(() => {...})()` şeklinde yaz.
 - Yatay kaydırmalı bölümler (Migration, Bestiary) GSAP transform kullanır; `#hash` ile geri dönüşte `page.js` 500 ms bekleyip kaydırır.
 - Yorumlar ve commit mesajları Türkçe yazılabilir; mevcut koddaki stile uy.
-- Kullanılmayan bileşenler: `RuneNav.jsx`, `AudioToggle.jsx` (`/audio/ambient.mp3` henüz yok).
+- Kullanılmayan bileşen: `RuneNav.jsx`.
+- `globals.css` sonunda "Birleştirme sonrası tasarım düzeltmeleri" bloğu, önceki kuralları ezen tasarım ayarlarını içerir; o bölgedeki bir kuralı değiştirirken buraya bak.
+- Kod içinde sabit Türkçe metin yazma; her görünen metin `t()` ile çeviri dosyalarından gelmeli.
 - `out/` klasörünü yerelde test etmek için `.html` uzantısız adresleri çözen bir statik sunucu kullan (ör. `npx serve out`).
