@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
+import SubPageTopBar from "@/app/components/SubPageTopBar";
 import "@/i18n";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -39,6 +40,7 @@ export default function ManasEpic() {
 
   return (
     <main ref={containerRef} style={{ background: "var(--bg-dark)", minHeight: "100vh", color: "var(--text-primary)", paddingBottom: "100px" }}>
+        <SubPageTopBar />
 
       {/* HERO */}
       <div className="epic-hero" style={{ position: "relative", height: "65vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", marginTop: "60px" }}>
@@ -48,8 +50,8 @@ export default function ManasEpic() {
             backgroundImage: "url('/images/manas.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center top",
-            opacity: 0.5,
-            filter: "brightness(0.55) contrast(1.1)"
+            opacity: 0.8,
+            filter: "brightness(0.8) contrast(1.05)"
           }}
         />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.2), var(--bg-dark))" }} />
@@ -73,7 +75,7 @@ export default function ManasEpic() {
 
       {/* BACK LINK */}
       <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-        <Link href="/#sagas" style={{ display: "inline-flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", textDecoration: "none", fontSize: "0.9rem", letterSpacing: "1px", transition: "color 0.3s" }} className="hover-gold">
+        <Link href="/#sagas" className="back-link">
           <span>←</span> {t("common.back", "Back to Sagas")}
         </Link>
       </div>

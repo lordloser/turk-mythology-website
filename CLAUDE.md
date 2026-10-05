@@ -26,7 +26,9 @@ Test altyapısı yok. Değişiklikten sonra en azından `npm run lint` ve `npm r
 - `varlik/[slug]`: her tanrı/yaratık/iye için statik detay sayfası (`generateStaticParams`). Veri `src/data/entities.js` içinde; metin alanları çeviri anahtarıdır. Yeni varlık eklemek = `ENTITIES` dizisine bir kayıt + görsel + gerekirse çeviri anahtarları.
 - `kozmoloji`: etkileşimli üç dünya haritası (SVG). Seçili katman URL hash'inde (`#sky`, `#middle`, `#under`).
 - `kaynakca`: kaynakça; veri `src/data/sources.js`. Varlıkların `sources` alanı bu id'lere bağlanır.
-- Yeni alt sayfalarda üst bar için `components/SubPageTopBar.jsx` kullan.
+- Tüm alt sayfalar üst bar için `components/SubPageTopBar.jsx` kullanır; geri bağlantıları `className="back-link"` ile yazılır.
+- Üst menü (`TopBar.jsx`): Kozmoloji + "Keşfet" açılır menüsü (`EXPLORE_LINKS`). Yeni sayfa eklerken bu listeye ve mobil menüye ekle.
+- Footer (`FooterSection.jsx`): kozmoloji çağrısı + Keşfet / Destanlar / Diyarlar sütunları.
 - Arka plan parçacıkları: `components/ParticleCanvas.jsx` + `utils/particles.js`.
 - Stil: tek dosya `src/app/globals.css`. Renkler `:root` değişkenleri olarak tanımlı (`--celestial-*` gök, `--steppe-*` yer, `--abyss-*` yeraltı). Yeni renk eklemek yerine bunları kullan.
 
@@ -39,7 +41,8 @@ Test altyapısı yok. Değişiklikten sonra en azından `npm run lint` ve `npm r
 
 ## Performans
 
-- Fontlar `next/font/google` ile `layout.js`'te yüklenir (`--font-cinzel`, `--font-inter`, `--font-medieval`); CSS'e `@import` ile font ekleme.
+- Fontlar `next/font/google` ile `layout.js`'te yüklenir (`--font-cinzel`, `--font-inter`, `--font-medieval`, Göktürk harfleri için `--font-old-turkic`); CSS'e `@import` ile font ekleme.
+- Metin renkleri: `--text-muted` küçük metinlerde de okunur (≈5:1 kontrast). Daha koyu gri kullanma; küçük metinleri 0.9rem altına indirme.
 - İlk ekrandaki görsel hariç `<img>` etiketlerine `loading="lazy" decoding="async"` ekle.
 - `prefers-reduced-motion` desteği: `MotionPreferences.jsx` (GSAP hızlandırma), `ParticleCanvas` (parçacıkları kapatır) ve `globals.css` sonundaki media query.
 

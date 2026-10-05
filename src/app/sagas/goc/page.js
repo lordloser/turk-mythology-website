@@ -7,17 +7,13 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
 import "@/i18n";
-import TopBar from "../../components/TopBar";
+import SubPageTopBar from "@/app/components/SubPageTopBar";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function MigrationEpic() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const containerRef = useRef(null);
-
-  const switchLang = (lng) => {
-    i18n.changeLanguage(lng);
-  };
 
   useGSAP(() => {
     gsap.from(".epic-header", {
@@ -44,7 +40,7 @@ export default function MigrationEpic() {
 
   return (
     <main ref={containerRef} style={{ background: "var(--bg-dark)", minHeight: "100vh", color: "var(--text-primary)", paddingBottom: "100px" }}>
-      <TopBar t={t} lang={i18n.language} onSwitchLang={switchLang} />
+      <SubPageTopBar />
 
       <div className="epic-hero" style={{ position: "relative", height: "60vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", marginTop: "60px" }}>
         <div
@@ -68,7 +64,7 @@ export default function MigrationEpic() {
       </div>
 
       <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-        <Link href="/#migration" style={{ display: "inline-flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", textDecoration: "none", fontSize: "0.9rem", letterSpacing: "1px", transition: "color 0.3s" }} className="hover-gold">
+        <Link href="/#migration" className="back-link">
           <span>←</span> {t("common.back")}
         </Link>
       </div>

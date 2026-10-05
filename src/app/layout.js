@@ -1,4 +1,4 @@
-import { Cinzel, Inter, MedievalSharp } from "next/font/google";
+import { Cinzel, Inter, MedievalSharp, Noto_Sans_Old_Turkic } from "next/font/google";
 import "./globals.css";
 import LanguageSync from "./components/LanguageSync";
 import MotionPreferences from "./components/MotionPreferences";
@@ -14,6 +14,13 @@ const inter = Inter({
   subsets: ["latin", "latin-ext"],
   weight: ["300", "400", "500", "600"],
   variable: "--font-inter",
+  display: "swap",
+});
+// Göktürk (Orhun) harfleri için; logodaki 𐱅 gibi karakterler her cihazda görünsün
+const oldTurkic = Noto_Sans_Old_Turkic({
+  subsets: ["old-turkic"],
+  weight: "400",
+  variable: "--font-old-turkic",
   display: "swap",
 });
 const medieval = MedievalSharp({
@@ -74,7 +81,7 @@ export default function RootLayout({ children }) {
     <html
       lang="tr"
       suppressHydrationWarning
-      className={`${cinzel.variable} ${inter.variable} ${medieval.variable}`}
+      className={`${cinzel.variable} ${inter.variable} ${medieval.variable} ${oldTurkic.variable}`}
     >
       <body>
         <LanguageSync />

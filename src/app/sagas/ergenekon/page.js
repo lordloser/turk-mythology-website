@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
+import SubPageTopBar from "@/app/components/SubPageTopBar";
 import "@/i18n";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,21 +28,22 @@ export default function ErgenekonEpic() {
 
     return (
         <main ref={containerRef} style={{ background: "var(--bg-dark)", minHeight: "100vh", color: "var(--text-primary)", paddingBottom: "100px" }}>
-            <div className="epic-hero" style={{ position: "relative", height: "60vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+            <SubPageTopBar />
+            <div className="epic-hero" style={{ position: "relative", height: "60vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", marginTop: "60px" }}>
                 <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/migration-2.webp')", backgroundSize: "cover", backgroundPosition: "center", opacity: 0.4, filter: "brightness(0.6)" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent, var(--bg-dark))" }} />
                 <div className="epic-header" style={{ position: "relative", zIndex: 10, textAlign: "center", padding: "0 20px" }}>
                     <span style={{ color: "var(--celestial-gold)", letterSpacing: "4px", fontSize: "0.9rem", textTransform: "uppercase" }}>
-                        {t("sagas.ergenekon.subtitle", "Demir Dağ Hapishanesi")}
+                        {t("epic.ergenekon.subtitle")}
                     </span>
                     <h1 style={{ fontSize: "clamp(3rem, 6vw, 5rem)", fontFamily: "var(--font-display)", margin: "10px 0", color: "var(--text-primary)", textShadow: "0 4px 20px rgba(0,0,0,0.8)" }}>
-                        ERGENEKON DESTANI
+                        {t("epic.ergenekon.title")}
                     </h1>
                 </div>
             </div>
 
             <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-                <Link href="/#sagas" style={{ display: "inline-flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", textDecoration: "none", fontSize: "0.9rem", transition: "color 0.3s" }} className="hover-gold">
+                <Link href="/#sagas" className="back-link">
                     <span>←</span> {t("common.back", "Diyarlara Dön")}
                 </Link>
             </div>

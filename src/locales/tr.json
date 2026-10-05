@@ -6,7 +6,9 @@
         "title": "Sonsuz Döngü"
     },
     "common": {
-        "back": "Diyarlara Dön"
+        "back": "Diyarlara Dön",
+        "prev": "Önceki",
+        "next": "Sonraki"
     },
     "runeNav": {
         "origin": "Yaradılış",
@@ -181,7 +183,8 @@
         "desc": "Evreni şekillendiren ve Sonsuz Gök Kubbe altındaki her ruhun kaderini yöneten tanrılar.",
         "tabs": {
             "sky": "Gök Tanrıları",
-            "earth": "Yer ve Doğa"
+            "earth": "Yer ve Doğa",
+            "under": "Yeraltı"
         },
         "mergen": {
             "name": "Mergen Han",
@@ -209,7 +212,17 @@
             "desc": "Doğum, bereket, koruma ve yaşamın ilahi anası. Tengri'nin aşından tutan ve her yeni doğan ruhu koruyan göksel tanrıça."
         },
         "nexusTitle": "Göksel Bağlantı Ağı",
-        "nexusDesc": "Bir tanrının üzerine gelin ve diyarlar üzerindeki bağlantılarını keşfedin"
+        "nexusDesc": "Bir tanrının üzerine gelin ve diyarlar üzerindeki bağlantılarını keşfedin",
+        "akAna": {
+            "name": "Ak Ana",
+            "role": "Yaratılışın Anası",
+            "desc": "Zamandan önceki sonsuz sulardan yükselen ak ışıklı ana. Kayra Han’a “Yarat!” diye seslenerek evrenin yaratılışını başlatır."
+        },
+        "erlik": {
+            "name": "Erlik Han",
+            "role": "Yeraltı Hükümdarı",
+            "desc": "Gökten sürgün edilen ilk varlık, ölümün ve Tamag’ın efendisi. Dokuz dallı kara çamın altında ruhları yargılar."
+        }
     },
     "bestiary": {
         "tag": "Orta Dünya",
@@ -401,18 +414,11 @@
         "subtitle": "Türk Kozmolojisinin Dijital Müzesi",
         "copyright": "© Sonsuz Döngü · Kadim Türk Mitolojisinden İlhamla",
         "source": "Kaynak: Orhun Yazıtları ve Türk Folkloru",
-        "influenceMap": {
-            "title": "Yaradılışın Ağı",
-            "desc": "Her ruh, yaratık ve efsane tek bir kaynaktan akar — Kadim Yaratıcı Kayra Han",
-            "hover": "Ruh ipliklerini ortaya çıkarmak için üzerine gelin",
-            "kayraHan": "Kayra Han",
-            "ulgen": "Ülgen",
-            "erlik": "Erlik Han",
-            "umay": "Umay Ana",
-            "earthSpirits": "Doğa Ruhları",
-            "darkEntities": "Karanlık Varlıklar",
-            "humanity": "İnsanlık"
-        }
+        "cosmosCta": "Üç dünyayı haritada keşfet",
+        "cosmosCtaDesc": "Gök, Yer ve Yeraltı: Bayterek’in bağladığı katmanlarda yaşayan tanrıları, iyeleri ve yaratıkları tek haritada gör.",
+        "explore": "Keşfet",
+        "sagasTitle": "Destanlar",
+        "realmsTitle": "Diyarlar"
     },
     "epic": {
         "ergenekon": {
@@ -421,7 +427,9 @@
             "h2": "Demir Dağın Erimesi",
             "p3": "Dört yüz yıl boyunca Ergenekon'da yaşadılar ve o kadar çoğaldılar ki artık bu vadiye sığmaz oldular. Atalarının buraya geldiği o dar geçidi bulamadılar. Dağların etrafını araştırırken, sadece bir yerde demir madeni olduğunu fark ettiler.",
             "p4": "Bir demirci, bu dağın eritilebileceğini söyledi. Dağın etrafına bir sıra odun, a sıra kömür dizdiler. Yetmiş deriden devasa körükler yaptılar. Hep birlikte körükleri çektiklerinde ateş o kadar hiddetlendi ki, demir dağ eridi ve yüklü bir devenin geçebileceği kadar büyük bir yol açıldı.",
-            "p5": "O gün, Türklerin yeniden doğuş günü oldu. Gök yeleli, kutsal bir Bozkurt'un (Gökböri) rehberliğinde Ergenekon'dan çıktılar ve atalarının intikamını alarak tüm bozkırlara yeniden hakim oldular."
+            "p5": "O gün, Türklerin yeniden doğuş günü oldu. Gök yeleli, kutsal bir Bozkurt'un (Gökböri) rehberliğinde Ergenekon'dan çıktılar ve atalarının intikamını alarak tüm bozkırlara yeniden hakim oldular.",
+            "title": "ERGENEKON DESTANI",
+            "subtitle": "Demir Dağ Hapishanesi"
         },
         "oghuz": {
             "title": "OĞUZ KAĞAN DESTANI",
@@ -506,7 +514,7 @@
     "familyTree": {
         "title": "KÖKEN AĞACI",
         "subtitle": "Tanrılar ve Varlıkların Yaratılış Ağı",
-        "hint": "* Varlıkların üzerindeki bağları ve etkileşimleri görmek için fareyi üzerlerine getirin."
+        "hint": "* Bağlantıları görmek için bir varlığın üzerine gelin; ayrıntılı sayfasını açmak için resimli varlıklara tıklayın."
     },
     "audio": {
         "play": "Sesi Aç",
@@ -521,12 +529,15 @@
         "karshyt": "Karşıt",
         "bai-ulgen": "Bay Ülgen",
         "erlik": "Erlik Han",
-        "alkarisi": "Alkarısı"
+        "alkarisi": "Alkarısı",
+        "mergen": "Mergen"
     },
     "nav": {
         "cosmos": "Kozmoloji",
         "sources": "Kaynakça",
-        "home": "Ana Sayfa"
+        "home": "Ana Sayfa",
+        "explore": "Keşfet",
+        "compendium": "Karanlık Külliyat"
     },
     "entities": {
         "akAna": {

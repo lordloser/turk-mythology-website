@@ -13,15 +13,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 const TABS = [
   { id: "sky", labelKey: "pantheon.tabs.sky" },
-  { id: "earth", labelKey: "pantheon.tabs.earth" }
+  { id: "earth", labelKey: "pantheon.tabs.earth" },
+  { id: "under", labelKey: "pantheon.tabs.under" }
 ];
 
 const DEITIES = [
+  { key: "akAna", img: "ak-ana", slug: "ak-ana", tab: "sky" },
   { key: "kayra", img: "kayra-han", slug: "kayra-han", tab: "sky" },
   { key: "ulgen", img: "ulgen", slug: "ulgen", tab: "sky" },
   { key: "mergen", img: "mergen", slug: "mergen", tab: "sky" },
   { key: "umay", img: "umay-ana", slug: "umay-ana", tab: "earth" },
   { key: "kyzagan", img: "kyzagan", slug: "kyzagan", tab: "earth" },
+  { key: "erlik", img: "erlik-han", slug: "erlik-han", tab: "under" },
 ];
 
 const PantheonSection = forwardRef(function PantheonSection({ t }, ref) {

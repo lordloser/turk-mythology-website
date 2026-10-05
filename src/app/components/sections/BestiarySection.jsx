@@ -55,6 +55,7 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
 
   // Kaydırma Takip State'leri
   const currentScroll = useRef(0);
+  const touchStartX = useRef(0);
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
 
@@ -148,6 +149,12 @@ const BestiarySection = forwardRef(function BestiarySection({ t }, ref) {
       <div
         className="bestiary-wrapper"
         ref={wrapperRef}
+        onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+        onTouchEnd={(e) => {
+          // Mobilde parmakla kaydırma (swipe) desteği
+          const dx = e.changedTouches[0].clientX - touchStartX.current;
+          if (Math.abs(dx) > 50) scrollTrack(dx < 0 ? 1 : -1);
+        }}
       >
         <img loading="lazy" decoding="async"
           src="/images/bukre-dragon.webp"

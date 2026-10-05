@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
   const containerRef = useRef(null);
   const trackRef = useRef(null);
+  const touchStartX = useRef(0);
   const bgRef = useRef(null);
 
   // Slider State (0, 1, 2)
@@ -57,7 +58,16 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
       if (typeof ref === "function") ref(el);
       else if (ref) ref.current = el;
     }}>
-      <div className="migration-wrapper" style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
+      <div
+        className="migration-wrapper"
+        style={{ position: "relative", height: "100vh", overflow: "hidden" }}
+        onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+        onTouchEnd={(e) => {
+          // Mobilde parmakla kaydırma (swipe) desteği
+          const dx = e.changedTouches[0].clientX - touchStartX.current;
+          if (Math.abs(dx) > 50) goToSlide(currentIndex + (dx < 0 ? 1 : -1));
+        }}
+      >
 
         {/* ARKA PLAN TRENI */}
         <div className="migration-layer" ref={bgRef} style={{ display: "flex", position: "absolute", top: 0, left: 0, height: "100vh", width: "300vw" }}>
@@ -72,6 +82,8 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
           {/* Sol Ok (Geri) */}
           <button
             type="button"
+            className="migration-nav-btn prev"
+            aria-label={t("common.prev", "Önceki")}
             onClick={() => goToSlide(currentIndex - 1)}
             disabled={currentIndex === 0}
             style={{
@@ -100,6 +112,8 @@ const MigrationSection = forwardRef(function MigrationSection({ t }, ref) {
           {/* Sağ Ok (İleri) */}
           <button
             type="button"
+            className="migration-nav-btn next"
+            aria-label={t("common.next", "Sonraki")}
             onClick={() => goToSlide(currentIndex + 1)}
             disabled={currentIndex === 2}
             style={{

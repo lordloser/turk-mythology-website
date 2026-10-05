@@ -1,7 +1,14 @@
 "use client";
 
-import { forwardRef, useState, useEffect } from "react";
+import { forwardRef, useState, useEffect, useRef } from "react";
 import Link from "next/link";
+
+const EXPLORE_LINKS = [
+  { href: "/sozluk", labelKey: "glossary.title" },
+  { href: "/soy-agaci", labelKey: "familyTree.title" },
+  { href: "/yeralti-varliklari", labelKey: "nav.compendium" },
+  { href: "/kaynakca", labelKey: "nav.sources" },
+];
 
 const TopBar = forwardRef(function TopBar({ t, lang, onSwitchLang, realmRef }, ref) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -19,6 +26,25 @@ const TopBar = forwardRef(function TopBar({ t, lang, onSwitchLang, realmRef }, r
 
   const closeMenu = () => setIsMobileMenuOpen(false);
 
+  // Keşfet menüsü: dışarı tıklayınca veya Esc ile kapanır
+  const [isExploreOpen, setIsExploreOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  useEffect(() => {
+    if (!isExploreOpen) return;
+    const onDown = (e) => {
+      if (!dropdownRef.current?.contains(e.target)) setIsExploreOpen(false);
+    };
+    const onKey = (e) => {
+      if (e.key === "Escape") setIsExploreOpen(false);
+    };
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [isExploreOpen]);
+
   return (
     <>
       <header className="top-bar" ref={ref}>
@@ -31,18 +57,32 @@ const TopBar = forwardRef(function TopBar({ t, lang, onSwitchLang, realmRef }, r
           
           {/* Desktop Links */}
           <div className="top-bar-links-desktop">
-            <Link href="/sozluk" className="custom-link" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
-              {t("glossary.title")}
-            </Link>
-            <Link href="/soy-agaci" className="custom-link" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
-              {t("familyTree.title")}
-            </Link>
-            <Link href="/kozmoloji" className="custom-link" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
+            <Link href="/kozmoloji" className="custom-link nav-link">
               {t("nav.cosmos")}
             </Link>
-            <Link href="/kaynakca" className="custom-link" style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
-              {t("nav.sources")}
-            </Link>
+
+            {/* Keşfet açılır menüsü */}
+            <div className="nav-dropdown" ref={dropdownRef}>
+              <button
+                type="button"
+                className="custom-link nav-link nav-dropdown-btn"
+                aria-expanded={isExploreOpen}
+                aria-haspopup="true"
+                onClick={() => setIsExploreOpen((o) => !o)}
+              >
+                {t("nav.explore")} <span aria-hidden="true">▾</span>
+              </button>
+              {isExploreOpen && (
+                <div className="nav-dropdown-menu" role="menu">
+                  {EXPLORE_LINKS.map((l) => (
+                    <Link key={l.href} href={l.href} role="menuitem" onClick={() => setIsExploreOpen(false)}>
+                      {t(l.labelKey)}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <div className="realm-indicator" ref={realmRef}>
               {t("realms.origin")}
             </div>
@@ -91,6 +131,9 @@ const TopBar = forwardRef(function TopBar({ t, lang, onSwitchLang, realmRef }, r
         </Link>
         <Link href="/kozmoloji" className="custom-link" onClick={closeMenu} style={{ color: 'var(--text-primary)', textDecoration: 'none' }}>
           {t("nav.cosmos")}
+        </Link>
+        <Link href="/yeralti-varliklari" className="custom-link" onClick={closeMenu} style={{ color: 'var(--text-primary)', textDecoration: 'none' }}>
+          {t("nav.compendium")}
         </Link>
         <Link href="/kaynakca" className="custom-link" onClick={closeMenu} style={{ color: 'var(--text-primary)', textDecoration: 'none' }}>
           {t("nav.sources")}

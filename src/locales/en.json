@@ -6,7 +6,9 @@
         "title": "The Infinite Cycle"
     },
     "common": {
-        "back": "Back to Realms"
+        "back": "Back to Realms",
+        "prev": "Previous",
+        "next": "Next"
     },
     "runeNav": {
         "origin": "The Origin",
@@ -181,7 +183,8 @@
         "desc": "The gods who shaped the cosmos and govern the fate of every soul beneath the Eternal Blue Sky.",
         "tabs": {
             "sky": "Sky Gods",
-            "earth": "Earth & Nature"
+            "earth": "Earth & Nature",
+            "under": "Underworld"
         },
         "mergen": {
             "name": "Mergen",
@@ -209,7 +212,17 @@
             "desc": "Divine mother of birth, fertility, protection, and life. The celestial goddess who holds the thread of Tengri and safeguards every newborn soul into the world."
         },
         "nexusTitle": "The Celestial Nexus",
-        "nexusDesc": "Hover over a deity to reveal their connections and influence over the realms"
+        "nexusDesc": "Hover over a deity to reveal their connections and influence over the realms",
+        "akAna": {
+            "name": "Ak Ana",
+            "role": "Mother of Creation",
+            "desc": "The radiant White Mother who rises from the endless waters before time. She calls out “Create!” to Kayra Khan and so begins the creation of the universe."
+        },
+        "erlik": {
+            "name": "Erlik Khan",
+            "role": "Lord of the Underworld",
+            "desc": "The first being exiled from the sky, master of death and of Tamag. Beneath the nine-branched black pine he judges the souls of the dead."
+        }
     },
     "bestiary": {
         "tag": "The Middle World",
@@ -418,18 +431,11 @@
         "subtitle": "A Digital Museum of Turkic Cosmology",
         "copyright": "© The Infinite Cycle · Inspired by Ancient Turkic Mythology",
         "source": "Source: Orkhon Inscriptions & Turkic Folklore",
-        "influenceMap": {
-            "title": "The Web of Creation",
-            "desc": "Every spirit, creature, and legend flows from a single source — Kayra Han, the Primordial Creator",
-            "hover": "Hover to reveal the spirit threads",
-            "kayraHan": "Kayra Han",
-            "ulgen": "Ülgen",
-            "erlik": "Erlik Han",
-            "umay": "Umay Ana",
-            "earthSpirits": "Common Spirits",
-            "darkEntities": "Dark Entities",
-            "humanity": "Humanity"
-        }
+        "cosmosCta": "Explore the three worlds on the map",
+        "cosmosCtaDesc": "Sky, Earth and Underworld: see the gods, guardian spirits and creatures of every layer bound by Bayterek on a single map.",
+        "explore": "Explore",
+        "sagasTitle": "Sagas",
+        "realmsTitle": "Realms"
     },
     "epic": {
         "ergenekon": {
@@ -438,7 +444,9 @@
             "h2": "Melting of the Iron Mountain",
             "p3": "They lived in Ergenekon for four hundred years and multiplied so much that they could no longer fit in this valley. They could not find the narrow passage their ancestors used to come here. While exploring the surroundings of the mountains, they noticed that there was iron ore in only one place.",
             "p4": "A blacksmith said that this mountain could be melted. They lined up a row of wood and a row of coal around the mountain. They made huge bellows from seventy hides. When they pulled the bellows together, the fire became so fierce that the iron mountain melted and a road large enough for a loaded camel to pass was opened.",
-            "p5": "That day became the day of rebirth for the Turks. They emerged from Ergenekon under the guidance of a celestial Grey Wolf (Gökböri) and dominated all the steppes again by taking revenge on their ancestors."
+            "p5": "That day became the day of rebirth for the Turks. They emerged from Ergenekon under the guidance of a celestial Grey Wolf (Gökböri) and dominated all the steppes again by taking revenge on their ancestors.",
+            "title": "THE EPIC OF ERGENEKON",
+            "subtitle": "Prison of the Iron Mountain"
         },
         "oghuz": {
             "title": "THE EPIC OF OGHUZ KHAGAN",
@@ -510,7 +518,7 @@
     "familyTree": {
         "title": "THE ORIGIN TREE",
         "subtitle": "Web of Creation: Gods and Entities",
-        "hint": "* Hover over the entities to see their connections and interactions."
+        "hint": "* Hover over a being to see its connections; click a being with a portrait to open its page."
     },
     "audio": {
         "play": "Play Sound",
@@ -525,12 +533,15 @@
         "karshyt": "Karşıt",
         "bai-ulgen": "Bai Ülgen",
         "erlik": "Erlik Han",
-        "alkarisi": "Alkarısı"
+        "alkarisi": "Alkarısı",
+        "mergen": "Mergen"
     },
     "nav": {
         "cosmos": "Cosmology",
         "sources": "Sources",
-        "home": "Home"
+        "home": "Home",
+        "explore": "Explore",
+        "compendium": "Dark Compendium"
     },
     "entities": {
         "akAna": {

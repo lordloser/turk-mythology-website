@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
+import SubPageTopBar from "@/app/components/SubPageTopBar";
 import "../../i18n"; // i18n dosyanın yolunu bağıl yol olarak güncelledik
 
 gsap.registerPlugin(ScrollTrigger);
@@ -43,22 +44,23 @@ export default function YeraltiVarliklariPage() {
 
     return (
         <main ref={containerRef} style={{ background: "var(--bg-dark)", minHeight: "100vh", color: "var(--text-primary)", paddingBottom: "100px" }}>
+            <SubPageTopBar />
 
             <div className="section-inner" style={{ maxWidth: "800px", margin: "0 auto", padding: "0 20px" }}>
 
                 {/* ÜST KISIM (HERO) */}
-                <header className="kulliyat-header" style={{ textAlign: "center", padding: "60px 0 40px" }}>
+                <header className="kulliyat-header" style={{ textAlign: "center", padding: "120px 0 40px" }}>
                     <span style={{ color: "var(--celestial-gold)", letterSpacing: "4px", fontSize: "0.9rem", textTransform: "uppercase" }}>
                         {t("kulliyat.subtitle")}
                     </span>
-                    <h1 style={{ fontSize: "clamp(3rem, 6vw, 5rem)", fontFamily: "var(--font-display)", margin: "10px 0", color: "var(--text-primary)", textShadow: "0 4px 20px rgba(0,0,0,0.8)" }}>
+                    <h1 style={{ fontSize: "clamp(2.4rem, 5vw, 4rem)", fontFamily: "var(--font-display)", margin: "10px 0", color: "var(--text-primary)", textShadow: "0 4px 20px rgba(0,0,0,0.8)" }}>
                         {t("kulliyat.title")} {t("kulliyat.titleAccent")}
                     </h1>
                 </header>
 
                 {/* GERİ DÖN BUTONU */}
-                <div style={{ marginBottom: "60px" }}>
-                    <Link href="/#shadow-realm" style={{ display: "inline-flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", textDecoration: "none", fontSize: "0.9rem", letterSpacing: "1px", transition: "color 0.3s" }} className="hover-gold">
+                <div style={{ marginBottom: "60px", textAlign: "center" }}>
+                    <Link href="/#shadow-realm" className="back-link">
                         <span>←</span> {t("common.back")}
                     </Link>
                 </div>
@@ -94,7 +96,10 @@ export default function YeraltiVarliklariPage() {
 
 // Görseller için ortak stil fonksiyonu (Resim adını ve formatını buraya dinamik ekliyoruz)
 const createCreatureImageStyle = (creatureKey) => ({
-    width: "90%", // Kapsayıcı genişliği
+    width: "100%", // Kapsayıcı genişliği
+    maxWidth: "560px",
+    marginLeft: "auto",
+    marginRight: "auto",
     aspectRatio: "1/1", // Kare formatını zorunlu kılar
     backgroundImage: `url('/images/${creatureKey}.webp')`, // Resim yolu / ile başlamalıdır
     backgroundSize: "cover", // Resmi sığdırmak için

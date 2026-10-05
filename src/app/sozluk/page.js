@@ -6,6 +6,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
+import SubPageTopBar from "@/app/components/SubPageTopBar";
 import "../../i18n";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -44,7 +45,8 @@ export default function SozlukPage() {
 
     return (
         <main ref={containerRef} style={{ background: "var(--bg-dark)", minHeight: "100vh", color: "var(--text-primary)", paddingBottom: "100px" }}>
-            <div className="section-inner" style={{ maxWidth: "800px", margin: "0 auto", padding: "60px 20px" }}>
+            <SubPageTopBar />
+            <div className="section-inner" style={{ maxWidth: "800px", margin: "0 auto", padding: "120px 20px 60px" }}>
                 
                 <header className="header-anim" style={{ textAlign: "center", marginBottom: "60px" }}>
                     <span style={{ color: "var(--celestial-gold)", letterSpacing: "4px", fontSize: "0.9rem", textTransform: "uppercase" }}>
@@ -55,8 +57,8 @@ export default function SozlukPage() {
                     </h1>
                 </header>
 
-                <div className="header-anim" style={{ marginBottom: "50px" }}>
-                    <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "10px", color: "var(--text-muted)", textDecoration: "none", transition: "color 0.3s" }} className="hover-gold">
+                <div className="header-anim" style={{ marginBottom: "50px", textAlign: "center" }}>
+                    <Link href="/" className="back-link">
                         <span>←</span> {t("common.back", "Ana Sayfaya Dön")}
                     </Link>
                 </div>
